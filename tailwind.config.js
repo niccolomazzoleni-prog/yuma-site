@@ -1,5 +1,6 @@
 import {
   yumaColors,
+  yumaSurface,
   yumaRadius,
   yumaShadow,
   yumaFont,
@@ -54,6 +55,7 @@ export default {
         fucsia: yumaColors.fucsia,
         teal: yumaColors.teal,
         neutral: yumaColors.neutral,
+        surface: yumaSurface,
       },
       fontFamily: {
         sans: yumaFont.sans,

@@ -39,6 +39,15 @@ export const yumaColors = {
   },
 }
 
+// Superfici semantiche. "bianco caldo" dalla direzione estetica; ink = neutral-900.
+export const yumaSurface = {
+  page: "#FFFFFF",
+  warm: "#FBFAF8",
+  alt: "#F7F8FC",
+  sunken: "#EEF0F7",
+  ink: "#170B2E",
+}
+
 // Raggi (yuma-brand.md §6): input 8 · bottoni 12-13 · card 16 · pill 999.
 export const yumaRadius = {
   input: "8px",

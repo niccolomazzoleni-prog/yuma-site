@@ -42,8 +42,10 @@
   --text-muted: var(--neutral-600);
   --text-faint: var(--neutral-400);
   --surface-page: var(--neutral-0);
+  --surface-warm: #fbfaf8; /* "bianco caldo" (direzione estetica) */
   --surface-alt: var(--neutral-50);
   --surface-sunken: var(--neutral-100);
+  --surface-ink: var(--neutral-900);
   --border-hairline: var(--neutral-200);
 
   /* Raggi */
