@@ -1,0 +1,74 @@
+/* YUMA design tokens — custom properties. Fonte: yuma-brand.md §2-§6.
+   Importato per primo in src/index.css. I componenti usano queste variabili
+   (o le classi Tailwind mappate in tailwind.config.js), mai hex hardcoded. */
+:root {
+  /* Primario · viola */
+  --viola-50: #f4ecff;
+  --viola-100: #e9dcff;
+  --viola-200: #d6bbff;
+  --viola-300: #b98cff;
+  --viola-400: #9a5cff;
+  --viola-500: #6c0ff2;
+  --viola-600: #5a0fd6;
+  --viola-700: #4a0bb0;
+  --viola-800: #3b0a73;
+  --viola-900: #26064d;
+
+  /* Accento · fucsia (raro) */
+  --fucsia-400: #ff6fb0;
+  --fucsia-500: #ff4d9d;
+  --fucsia-600: #e01f7c;
+
+  /* Teal · stati positivi */
+  --teal-50: #e7f6f3;
+  --teal-500: #14b8a6;
+  --teal-600: #0f9488;
+
+  /* Neutri · superfici e testo */
+  --neutral-0: #ffffff;
+  --neutral-50: #f7f8fc;
+  --neutral-100: #eef0f7;
+  --neutral-200: #e2e5f0;
+  --neutral-300: #c9cee0;
+  --neutral-400: #9aa0bc;
+  --neutral-500: #6b7290;
+  --neutral-600: #4a4f6b;
+  --neutral-700: #333756;
+  --neutral-800: #22243f;
+  --neutral-900: #170b2e;
+
+  /* Ruoli testo/superficie (yuma-brand.md §2.4) */
+  --text-strong: var(--neutral-900);
+  --text-muted: var(--neutral-600);
+  --text-faint: var(--neutral-400);
+  --surface-page: var(--neutral-0);
+  --surface-alt: var(--neutral-50);
+  --surface-sunken: var(--neutral-100);
+  --border-hairline: var(--neutral-200);
+
+  /* Raggi */
+  --radius-input: 8px;
+  --radius-btn: 12px;
+  --radius-card: 16px;
+  --radius-pill: 9999px;
+
+  /* Ombre */
+  --shadow-card: 0 20px 40px -32px rgba(23, 11, 46, 0.4);
+  --shadow-panel: 0 24px 46px -28px rgba(23, 11, 46, 0.55);
+  --shadow-glow: 0 12px 26px -12px rgba(108, 15, 242, 0.6);
+
+  /* Gradienti (deroga: solo bottone primario + pill accento) */
+  --gradient-primary: linear-gradient(135deg, #6c0ff2, #5a0fd6);
+  --gradient-brand: linear-gradient(135deg, #6c0ff2, #ff4d9d);
+  --gradient-dark: linear-gradient(150deg, #170b2e, #3b0a73 55%, #6c0ff2);
+
+  /* Tipografia */
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, -apple-system,
+    sans-serif;
+
+  /* Motion */
+  --ease-out-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --dur-fast: 150ms;
+  --dur-base: 200ms;
+  --dur-slow: 250ms;
+}

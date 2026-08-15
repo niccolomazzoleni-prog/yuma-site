@@ -1,0 +1,54 @@
+{
+  "$comment": "Token canonici YUMA. Fonte: yuma-brand.md. Specchiati in design/tokens.css e design/tailwind.tokens.js.",
+  "color": {
+    "viola": {
+      "50": "#F4ECFF",
+      "100": "#E9DCFF",
+      "200": "#D6BBFF",
+      "300": "#B98CFF",
+      "400": "#9A5CFF",
+      "500": "#6C0FF2",
+      "600": "#5A0FD6",
+      "700": "#4A0BB0",
+      "800": "#3B0A73",
+      "900": "#26064D"
+    },
+    "fucsia": { "400": "#FF6FB0", "500": "#FF4D9D", "600": "#E01F7C" },
+    "teal": { "50": "#E7F6F3", "500": "#14B8A6", "600": "#0F9488" },
+    "neutral": {
+      "0": "#FFFFFF",
+      "50": "#F7F8FC",
+      "100": "#EEF0F7",
+      "200": "#E2E5F0",
+      "300": "#C9CEE0",
+      "400": "#9AA0BC",
+      "500": "#6B7290",
+      "600": "#4A4F6B",
+      "700": "#333756",
+      "800": "#22243F",
+      "900": "#170B2E"
+    }
+  },
+  "radius": { "input": "8px", "btn": "12px", "card": "16px", "pill": "9999px" },
+  "shadow": {
+    "card": "0 20px 40px -32px rgba(23,11,46,0.40)",
+    "panel": "0 24px 46px -28px rgba(23,11,46,0.55)",
+    "glow": "0 12px 26px -12px rgba(108,15,242,0.60)"
+  },
+  "gradient": {
+    "primary": "linear-gradient(135deg, #6C0FF2, #5A0FD6)",
+    "brand": "linear-gradient(135deg, #6C0FF2, #FF4D9D)",
+    "dark": "linear-gradient(150deg, #170B2E, #3B0A73 55%, #6C0FF2)"
+  },
+  "font": {
+    "family": "Plus Jakarta Sans",
+    "scale": {
+      "display": { "weight": 800, "size": "46-58px", "tracking": "-0.03em", "leading": 1.02 },
+      "h2": { "weight": 700, "size": "30-34px", "tracking": "-0.02em" },
+      "h3": { "weight": 700, "size": "20-22px" },
+      "body": { "weight": 400, "size": "16px", "leading": 1.6 },
+      "label": { "weight": 600, "size": "15px" },
+      "caption": { "weight": 500, "size": "13px", "color": "neutral-400" }
+    }
+  }
+}
