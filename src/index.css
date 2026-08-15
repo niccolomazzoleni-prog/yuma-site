@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 4%;
+    --foreground: 57 26% 84%;
+
+    --card: 0 0% 4%;
+    --card-foreground: 57 26% 84%;
+
+    --popover: 0 0% 4%;
+    --popover-foreground: 57 26% 84%;
+
+    /* Prisma cream #E1E0CC */
+    --primary: 57 26% 84%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 57 26% 84%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 64%;
+
+    --accent: 0 0% 12%;
+    --accent-foreground: 57 26% 84%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 57 26% 84%;
+
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
+    --ring: 57 26% 84%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    margin: 0;
+  }
+}
+
+/* Grain / noise texture used by the Prisma hero */
+.noise-overlay {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 160px 160px;
+}
