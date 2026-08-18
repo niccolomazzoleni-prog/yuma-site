@@ -1,0 +1,3 @@
+# Sito in lavorazione: non indicizzare.
+User-agent: *
+Disallow: /
