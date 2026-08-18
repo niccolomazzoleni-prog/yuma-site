@@ -1,6 +1,8 @@
 import { ArrowRight } from "lucide-react"
+import { SectionRail } from "@/components/home/section-rail"
 
-// Sezione 4 — Le nostre soluzioni (chiara). Due prodotti. Copy invariato.
+// Sezione 4 — soluzioni. Card stile pricing-tier reference: bianche, 1px Fog,
+// radius 24, nessuna ombra. Link testuale Carbon con freccia. Copy invariato.
 const products = [
   {
     name: "Yuma Projects",
@@ -14,43 +16,33 @@ const products = [
 
 export function Solutions() {
   return (
-    <section
-      id="soluzioni"
-      className="relative w-full text-[#201C18] [scroll-margin-top:80px]"
-      style={{
-        background:
-          "radial-gradient(70% 45% at 50% -6%, rgba(108,15,242,0.07), rgba(243,239,234,0) 60%), #F3EFEA",
-      }}
-    >
-      <div className="mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#6C0FF2]">
-          Le nostre soluzioni
-        </p>
-        <h2 className="mt-6 max-w-[20ch] text-balance text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl md:text-5xl">
-          Dai nostri progetti di consulenza sono nati due prodotti digitali.
-        </h2>
+    <SectionRail id="soluzioni" index="03" label="Le nostre soluzioni" tone="canvas">
+      <h2 className="max-w-[22ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
+        Dai nostri progetti di consulenza sono nati due prodotti digitali.
+      </h2>
 
-        <div className="mt-14 grid gap-6 md:mt-16 md:grid-cols-2">
-          {products.map((p) => (
-            <div
-              key={p.name}
-              className="flex flex-col rounded-2xl border border-black/10 bg-white/60 p-8 backdrop-blur-sm"
+      <div className="mt-12 grid gap-5 md:grid-cols-2">
+        {products.map((p) => (
+          <article
+            key={p.name}
+            className="flex flex-col rounded-[24px] border border-ref-fog bg-white p-8"
+          >
+            <h3 className="text-[20px] font-semibold leading-[1.4] tracking-[-0.016em] text-ref-carbon">
+              {p.name}
+            </h3>
+            <p className="mt-4 flex-1 text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+              {p.desc}
+            </p>
+            <a
+              href="#contatti"
+              className="group mt-6 inline-flex items-center gap-2 self-start rounded-pill text-[14px] font-medium text-ref-carbon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ref-lavender focus-visible:ring-offset-4"
             >
-              <h3 className="text-2xl font-semibold tracking-tight">{p.name}</h3>
-              <p className="mt-4 flex-1 text-lg leading-relaxed text-[#4A443C]">
-                {p.desc}
-              </p>
-              <a
-                href="#contatti"
-                className="group mt-6 inline-flex items-center gap-2 text-[15px] font-semibold text-[#6C0FF2]"
-              >
-                Scopri di più
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
-            </div>
-          ))}
-        </div>
+              Scopri di più
+              <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-out-soft group-hover:translate-x-0.5" />
+            </a>
+          </article>
+        ))}
       </div>
-    </section>
+    </SectionRail>
   )
 }

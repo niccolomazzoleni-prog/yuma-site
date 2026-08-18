@@ -10,7 +10,8 @@ import { Assessment } from "@/components/home/assessment"
 import { Contact } from "@/components/home/contact"
 import { Footer } from "@/components/home/footer"
 
-const PAGE_BG = "#0b1026"
+// Sito chiaro (reference "Visitors"); solo l'hero resta scuro.
+const PAGE_BG = "#ffffff"
 
 export default function Home() {
   useEffect(() => {
@@ -19,7 +20,7 @@ export default function Home() {
     const prevScheme = document.documentElement.style.colorScheme
     document.documentElement.style.background = PAGE_BG
     document.body.style.background = PAGE_BG
-    document.documentElement.style.colorScheme = "dark"
+    document.documentElement.style.colorScheme = "light"
     return () => {
       document.documentElement.style.background = prevHtml
       document.body.style.background = prevBody

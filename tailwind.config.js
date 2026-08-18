@@ -6,6 +6,8 @@ import {
   yumaFont,
   yumaFontSize,
   yumaGradient,
+  refColors,
+  refShadow,
 } from "./design/tailwind.tokens.js";
 
 /** @type {import('tailwindcss').Config} */
@@ -56,6 +58,7 @@ export default {
         teal: yumaColors.teal,
         neutral: yumaColors.neutral,
         surface: yumaSurface,
+        ref: refColors,
       },
       fontFamily: {
         sans: yumaFont.sans,
@@ -74,6 +77,9 @@ export default {
         card: yumaShadow.card,
         panel: yumaShadow.panel,
         glow: yumaShadow.glow,
+        subtle: refShadow.subtle,
+        "subtle-2": refShadow.subtle2,
+        "subtle-3": refShadow.subtle3,
       },
       backgroundImage: {
         "gradient-primary": yumaGradient.primary,

@@ -1,4 +1,7 @@
-// Sezione 5 — Come lavoriamo (scura). Processo in 3 step (sequenza → numerati).
+import { SectionRail } from "@/components/home/section-rail"
+
+// Sezione 5 — come lavoriamo. Sequenza reale → righe numerate con hairline
+// Fog (stile tabella reference), non tre colonne identiche. Copy invariato.
 const steps = [
   {
     n: "01",
@@ -19,40 +22,36 @@ const steps = [
 
 export function HowWeWork() {
   return (
-    <section
-      id="come-lavoriamo"
-      className="relative w-full overflow-hidden bg-[#0b1026] text-white [scroll-margin-top:80px]"
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(46% 40% at 16% 0%, rgba(108,15,242,0.18), rgba(11,16,38,0) 60%)",
-        }}
-      />
+    <SectionRail id="come-lavoriamo" index="04" label="Come lavoriamo" tone="linen">
+      <h2 className="max-w-[16ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
+        Come lavoriamo
+      </h2>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <h2 className="max-w-[16ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl">
-          Come lavoriamo
-        </h2>
-
-        <ol className="mt-14 grid gap-10 sm:mt-20 md:grid-cols-3 md:gap-8">
-          {steps.map((s) => (
-            <li key={s.n}>
-              <div className="text-sm font-semibold tracking-[0.16em] text-[#b18cff]">
-                {s.n}
-              </div>
-              <h3 className="mt-4 text-xl font-semibold tracking-tight text-white">
+      <ol className="mt-12">
+        {steps.map((s, i) => (
+          <li
+            key={s.n}
+            className={`grid grid-cols-[48px_1fr] gap-x-5 py-8 md:grid-cols-[64px_1fr] ${
+              i === 0 ? "" : "border-t border-ref-fog"
+            }`}
+          >
+            <span
+              aria-hidden
+              className="text-[13px] font-medium tabular-nums leading-[1.6] text-ref-ash"
+            >
+              {s.n}
+            </span>
+            <div>
+              <h3 className="text-[20px] font-semibold leading-[1.4] tracking-[-0.016em] text-ref-carbon">
                 {s.title}
               </h3>
-              <p className="mt-3 text-lg leading-relaxed text-white/65">
+              <p className="mt-3 max-w-[58ch] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
                 {s.desc}
               </p>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </section>
+            </div>
+          </li>
+        ))}
+      </ol>
+    </SectionRail>
   )
 }

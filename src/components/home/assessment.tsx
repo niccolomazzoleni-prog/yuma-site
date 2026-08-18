@@ -1,52 +1,42 @@
 import { ArrowRight } from "lucide-react"
+import { SectionRail } from "@/components/home/section-rail"
 
-// Sezione 8 — Da dove si parte (scura). Assessment + CTA. Copy invariato.
+// Sezione 8 — da dove si parte. Momento di conversione: pill Lavender piena
+// (unico colore d'azione della pagina) + callout mint-wash per la garanzia.
 export function Assessment() {
   return (
-    <section
-      id="assessment"
-      className="relative w-full overflow-hidden bg-[#0b1026] text-white [scroll-margin-top:80px]"
-    >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(50% 45% at 78% 4%, rgba(108,15,242,0.20), rgba(11,16,38,0) 60%)",
-        }}
-      />
+    <SectionRail id="assessment" index="06" label="Da dove si parte" tone="canvas" pad="xl">
+      <h2 className="max-w-[26ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
+        Tutti i nostri progetti iniziano con un assessment AI: un modo semplice
+        per conoscersi e pensare in grande assieme.
+      </h2>
 
-      <div className="relative z-10 mx-auto max-w-6xl px-6 py-24 md:py-32">
-        <p className="text-sm font-medium uppercase tracking-[0.2em] text-[#b18cff]">
-          Da dove si parte
+      <div className="mt-7 max-w-[62ch] space-y-4 text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+        <p>
+          Veniamo nella tua azienda, mappiamo i processi insieme alle persone
+          che li vivono ogni giorno e individuiamo dove l'intelligenza
+          artificiale può avere l'impatto maggiore.
         </p>
-        <h2 className="mt-6 max-w-[24ch] text-balance text-3xl font-semibold leading-[1.12] tracking-tight sm:text-4xl md:text-[2.75rem]">
-          Tutti i nostri progetti iniziano con un assessment AI: un modo semplice
-          per conoscersi e pensare in grande assieme.
-        </h2>
+        <p>
+          Alla fine del percorso ti consegniamo un documento con i casi d'uso
+          individuati, ordinati per impatto e ritorno economico, con una stima
+          di cosa serve per realizzarli.
+        </p>
+      </div>
 
-        <div className="mt-8 max-w-[62ch] space-y-5 text-lg leading-relaxed text-white/70">
-          <p>
-            Veniamo nella tua azienda, mappiamo i processi insieme alle persone
-            che li vivono ogni giorno e individuiamo dove l'intelligenza
-            artificiale può avere l'impatto maggiore.
-          </p>
-          <p>
-            Alla fine del percorso ti consegniamo un documento con i casi d'uso
-            individuati, ordinati per impatto e ritorno economico, con una stima
-            di cosa serve per realizzarli. Il risultato è tuo, anche se decidi di
-            fermarti lì.
-          </p>
-        </div>
+      <p className="mt-6 inline-block rounded-[8px] bg-ref-mintwash px-4 py-2.5 text-[14px] font-medium leading-[1.43] text-ref-carbon">
+        Il risultato è tuo, anche se decidi di fermarti lì.
+      </p>
 
+      <div className="mt-9">
         <a
           href="#contatti"
-          className="group mt-10 inline-flex items-center justify-center gap-2 rounded-full bg-white px-6 py-3.5 text-[15px] font-semibold text-[#0b1026] transition hover:scale-[1.03]"
+          className="group inline-flex items-center gap-2 rounded-pill bg-ref-lavender px-6 py-3 text-[15px] font-medium text-white shadow-subtle transition-transform duration-200 ease-out-soft hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ref-carbon focus-visible:ring-offset-2"
         >
           Richiedi il tuo assessment
-          <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
+          <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-out-soft group-hover:translate-x-0.5" />
         </a>
       </div>
-    </section>
+    </SectionRail>
   )
 }

@@ -48,6 +48,30 @@ export const yumaSurface = {
   ink: "#170B2E",
 }
 
+// Reference "Visitors" (DESIGN.md · white engineering blueprint).
+// Palette adottata per le sezioni sotto l'hero: canvas bianco, hairline Fog,
+// testo Carbon/Graphite/Ash, Lavender come UNICO colore d'azione.
+export const refColors = {
+  carbon: "#181925",
+  linen: "#FAFAFA",
+  mist: "#F5F5F5",
+  fog: "#E8E8E8",
+  ash: "#999999",
+  graphite: "#666666",
+  lavender: "#918DF6",
+  iris: "#9580FF",
+  mint: "#33C758",
+  mintwash: "#DEF6E4",
+  sky: "#2C78FC",
+}
+
+export const refShadow = {
+  subtle: "rgba(0,0,0,0.08) 0px 1px 1px 1px, rgba(0,0,0,0.06) 0px 0px 0px 0.5px",
+  subtle2: "rgba(0,0,0,0.08) 0px 1px 1px 0px, rgba(0,0,0,0.05) 0px 0px 0px 1px",
+  subtle3:
+    "rgba(0,0,0,0.06) 0px 1px 3px 0px, rgba(0,0,0,0.06) 0px 8px 16px 0px, rgba(0,0,0,0.02) 0px 0px 0px 1px",
+}
+
 // Raggi (yuma-brand.md §6): input 8 · bottoni 12-13 · card 16 · pill 999.
 export const yumaRadius = {
   input: "8px",
