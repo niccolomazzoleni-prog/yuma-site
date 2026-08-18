@@ -10,7 +10,7 @@ export function Assessment() {
       <div
         aria-hidden
         className="h-[200px] w-full bg-cover bg-center md:h-[280px]"
-        style={{ backgroundImage: "url('/texture-01.jpg')" }}
+        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}texture-01.jpg')` }}
       />
       <SectionRail id="assessment" label="Da dove si parte" tone="canvas" pad="xl">
       <h2 className="max-w-[26ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">

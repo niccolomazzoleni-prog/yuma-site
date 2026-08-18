@@ -17,7 +17,7 @@ export function Credibility() {
 
       <figure className="mt-10 max-w-[560px] overflow-hidden rounded-[8px] border border-ref-fog shadow-subtle-3">
         <img
-          src="/team.jpg"
+          src={`${import.meta.env.BASE_URL}team.jpg`}
           alt="Il team di YUMA a un evento"
           width={800}
           height={600}
