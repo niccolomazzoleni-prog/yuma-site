@@ -56,3 +56,28 @@ Il refactor hex→token e queste scelte cromatiche sono il passo successivo.
 
 ## Mancano nel repo (segnalati)
 `docs/copy-rules.md` e `docs/positioning.md` non esistono: il prompt li dà come fonte di verità (sola lettura) ma non ci sono. Vanno forniti.
+
+---
+
+## Decisione palette (18 agosto 2026)
+
+**Vince la palette reference `ref-*`.** Il sito usa la scala Visitors come unica
+fonte cromatica:
+
+| Ruolo | Token | Hex |
+|---|---|---|
+| Testo primario | `ref-carbon` | #181925 |
+| Testo secondario | `ref-graphite` | #666666 |
+| Testo muted | `ref-ash` | #999999 |
+| Hairline / bordi | `ref-fog` | #E8E8E8 |
+| Banda di sezione | `ref-linen` | #FAFAFA |
+| Superficie tenue | `ref-mist` | #F5F5F5 |
+| **Unico colore d'azione** | `ref-lavender` | #918DF6 |
+| Superficie positiva | `ref-mintwash` | #DEF6E4 |
+
+La scala brand `viola-*` / `fucsia-*` resta registrata in `tailwind.config.js`
+ma **non va usata nelle sezioni**. Il debito delle due palette coesistenti è chiuso:
+in caso di dubbio si usa `ref-*`.
+
+`ref-lavender` compare in un solo ruolo per vista: l'azione. Mai su testo di
+paragrafo, mai su bordi decorativi, mai come fondo di sezione.
