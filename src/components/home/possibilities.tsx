@@ -27,7 +27,7 @@ export function Possibilities() {
   const [open, setOpen] = useState(0)
 
   return (
-    <SectionRail id="cosa-e-possibile" index="02" label="Cosa è possibile" tone="linen">
+    <SectionRail id="cosa-e-possibile" label="Cosa è possibile" tone="linen">
       <h2 className="max-w-[18ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
         Cosa può fare l'AI nella mia azienda?
       </h2>

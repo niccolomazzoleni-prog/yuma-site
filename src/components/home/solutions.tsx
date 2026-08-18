@@ -16,7 +16,7 @@ const products = [
 
 export function Solutions() {
   return (
-    <SectionRail id="soluzioni" index="03" label="Le nostre soluzioni" tone="canvas">
+    <SectionRail id="soluzioni" label="Le nostre soluzioni" tone="canvas">
       <h2 className="max-w-[22ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
         Dai nostri progetti di consulenza sono nati due prodotti digitali.
       </h2>

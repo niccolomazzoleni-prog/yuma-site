@@ -19,14 +19,12 @@ const padClass: Record<Pad, string> = {
 
 export function SectionRail({
   id,
-  index,
   label,
   tone = "canvas",
   pad = "lg",
   children,
 }: {
   id: string
-  index: string
   label: string
   tone?: Tone
   pad?: Pad
@@ -37,18 +35,10 @@ export function SectionRail({
       <div className={`mx-auto max-w-[1200px] px-6 ${padClass[pad]}`}>
         <div className="grid grid-cols-1 gap-x-10 gap-y-10 lg:grid-cols-12">
           <div className="lg:col-span-3 lg:sticky lg:top-28 lg:self-start">
-            <div className="flex items-baseline gap-4 lg:flex-col lg:items-start lg:gap-3">
-              <span
-                aria-hidden
-                className="text-[28px] font-semibold tabular-nums leading-none tracking-[-0.02em] text-ref-ash"
-              >
-                {index}
-              </span>
-              <span className="text-[12px] font-medium uppercase tracking-[0.08em] text-ref-ash">
-                {label}
-              </span>
-            </div>
-            <div className="mt-6 hidden border-t border-ref-fog lg:block" />
+            <span className="text-[12px] font-medium uppercase tracking-[0.08em] text-ref-ash">
+              {label}
+            </span>
+            <div className="mt-5 hidden border-t border-ref-fog lg:block" />
           </div>
 
           <div className="lg:col-span-8 lg:col-start-5">{children}</div>

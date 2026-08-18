@@ -5,7 +5,7 @@ import { SectionRail } from "@/components/home/section-rail"
 // (unico colore d'azione della pagina) + callout mint-wash per la garanzia.
 export function Assessment() {
   return (
-    <SectionRail id="assessment" index="06" label="Da dove si parte" tone="canvas" pad="xl">
+    <SectionRail id="assessment" label="Da dove si parte" tone="canvas" pad="xl">
       <h2 className="max-w-[26ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
         Tutti i nostri progetti iniziano con un assessment AI: un modo semplice
         per conoscersi e pensare in grande assieme.

@@ -19,7 +19,7 @@ export function Contact() {
   }
 
   return (
-    <SectionRail id="contatti" index="07" label="Parliamone" tone="linen" pad="xl">
+    <SectionRail id="contatti" label="Parliamone" tone="linen" pad="xl">
       <h2 className="text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
         Parliamone
       </h2>

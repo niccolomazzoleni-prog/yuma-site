@@ -4,7 +4,7 @@ import { SectionRail } from "@/components/home/section-rail"
 // Graphite, foto in card con hairline Fog e radius immagine 8px. Copy invariato.
 export function Credibility() {
   return (
-    <SectionRail id="perche-ora" index="01" label="Perché lo diciamo noi" tone="canvas" pad="xl">
+    <SectionRail id="perche-ora" label="Perché lo diciamo noi" tone="canvas" pad="xl">
       <h2 className="max-w-[20ch] text-balance text-[clamp(30px,3.6vw,40px)] font-semibold leading-[1.18] tracking-[-0.017em] text-ref-carbon">
         La tecnologia più trasformativa di sempre è alla portata della tua
         azienda.
