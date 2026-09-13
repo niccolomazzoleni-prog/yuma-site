@@ -9,6 +9,7 @@ import { Clients } from "@/components/home/clients"
 import { Assessment } from "@/components/home/assessment"
 import { Contact } from "@/components/home/contact"
 import { Footer } from "@/components/home/footer"
+import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 
 // Sito chiaro (reference "Visitors"); solo l'hero resta scuro.
 const PAGE_BG = "#ffffff"
@@ -40,6 +41,7 @@ export default function Home() {
       <Assessment />
       <Contact />
       <Footer />
+      <WhatsAppBar />
     </main>
   )
 }

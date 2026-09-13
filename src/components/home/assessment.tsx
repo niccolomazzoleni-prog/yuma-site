@@ -2,7 +2,7 @@ import { ArrowRight } from "lucide-react"
 import { SectionRail } from "@/components/home/section-rail"
 
 // Sezione 8 — da dove si parte. Momento di conversione: pill Lavender piena
-// (unico colore d'azione della pagina) + callout mint-wash per la garanzia.
+// (unico colore d'azione della pagina).
 export function Assessment() {
   return (
     <>
@@ -24,10 +24,6 @@ export function Assessment() {
           di cosa serve per realizzarli.
         </p>
       </div>
-
-      <p className="mt-6 inline-block rounded-[8px] bg-ref-mintwash px-5 py-3 text-[16px] md:text-[17px] font-medium leading-[1.5] text-ref-carbon">
-        Il risultato è tuo, anche se decidi di fermarti lì.
-      </p>
 
       <div className="mt-9">
         <a

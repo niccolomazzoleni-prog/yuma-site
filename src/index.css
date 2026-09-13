@@ -67,3 +67,136 @@
   background-repeat: repeat;
   background-size: 160px 160px;
 }
+
+/* Barra sticky WhatsApp, replica di abrarobotics.com (style.css .wa-bar) */
+.wa-bar {
+  --wa-angle: 0deg;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 13px 24px;
+  background: #1a7a3a;
+  box-shadow: 0 -1px 12px rgba(0, 0, 0, 0.08);
+  transition: box-shadow 0.35s ease;
+}
+.wa-bar:hover {
+  box-shadow: 0 -3px 24px rgba(30, 107, 63, 0.28);
+}
+.wa-bar p {
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.98rem;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wa-bar a.wa-btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+  color: #128c7e;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 9px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  white-space: nowrap;
+  border: none;
+  isolation: isolate;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+.wa-bar a.wa-btn::before {
+  content: "";
+  position: absolute;
+  inset: -1.5px;
+  border-radius: inherit;
+  padding: 1.5px;
+  background: conic-gradient(
+    from var(--wa-angle),
+    rgba(255, 107, 107, 0.55),
+    rgba(255, 217, 61, 0.5),
+    rgba(107, 203, 119, 0.55),
+    rgba(77, 150, 255, 0.5),
+    rgba(155, 89, 182, 0.5),
+    rgba(255, 107, 107, 0.55)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  opacity: 0.58;
+  transition: opacity 0.2s ease;
+  pointer-events: none;
+  z-index: -1;
+}
+.wa-bar:hover a.wa-btn::before {
+  opacity: 0.95;
+}
+.wa-bar a.wa-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.14), 0 0 20px rgba(255, 255, 255, 0.25);
+}
+.wa-bar a.wa-btn:focus-visible,
+.wa-bar-close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+.wa-bar-close {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.2rem;
+  cursor: pointer;
+  line-height: 1;
+  padding: 4px 8px;
+  transition: color 0.15s;
+}
+.wa-bar-close:hover {
+  color: #fff;
+}
+/* Spazio sotto il footer per non coprire contenuto */
+body.has-wa-bar main {
+  padding-bottom: 60px;
+}
+@media (max-width: 600px) {
+  .wa-bar {
+    flex-wrap: nowrap;
+    gap: 10px;
+    padding: 12px 44px 12px 14px;
+    justify-content: flex-start;
+  }
+  .wa-bar p {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.73rem;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    display: block;
+  }
+  .wa-bar a.wa-btn {
+    flex-shrink: 0;
+    font-size: 0.75rem;
+    padding: 7px 12px;
+    gap: 0;
+  }
+  .wa-bar a.wa-btn svg {
+    display: none;
+  }
+  .wa-bar-close {
+    right: 12px;
+  }
+}
