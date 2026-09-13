@@ -6,7 +6,7 @@ export function Clients() {
       id="clienti"
       className="border-y border-ref-fog bg-ref-linen [scroll-margin-top:96px]"
     >
-      <div className="mx-auto max-w-[1200px] px-5 py-14 md:px-12">
+      <div className="w-full px-5 py-14 md:px-12">
         <p className="text-[12px] font-medium uppercase tracking-[0.08em] text-ref-ash">
           I nostri clienti e partner
         </p>

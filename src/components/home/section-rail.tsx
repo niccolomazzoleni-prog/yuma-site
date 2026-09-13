@@ -1,7 +1,7 @@
 import type { ReactNode } from "react"
 
 // Contenitore di sezione — "white engineering blueprint" (DESIGN.md):
-// canvas bianco o banda linen, contenuto allineato a sinistra su max 1200px.
+// canvas bianco o banda linen, contenuto a piena larghezza come abrarobotics.com.
 // Padding verticale e laterale allineati ad abrarobotics.com (88/112px, 48px).
 type Tone = "canvas" | "linen"
 type Pad = "md" | "lg" | "xl"
@@ -31,8 +31,8 @@ export function SectionRail({
 }) {
   return (
     <section id={id} className={`${toneClass[tone]} [scroll-margin-top:96px]`}>
-      <div className={`mx-auto max-w-[1200px] px-5 md:px-12 ${padClass[pad]}`}>
-        <div className="max-w-[880px]">{children}</div>
+      <div className={`w-full px-5 md:px-12 ${padClass[pad]}`}>
+        {children}
       </div>
     </section>
   )

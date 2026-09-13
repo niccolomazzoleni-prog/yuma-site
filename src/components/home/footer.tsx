@@ -3,7 +3,7 @@
 export function Footer() {
   return (
     <footer className="border-t border-ref-fog bg-white text-ref-graphite">
-      <div className="mx-auto max-w-[1200px] px-5 py-16 md:px-12">
+      <div className="w-full px-5 py-16 md:px-12">
         <div className="flex flex-col justify-between gap-10 md:flex-row">
           <div>
             <div className="text-[16px] font-semibold tracking-[0.16em] text-ref-carbon">

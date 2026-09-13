@@ -20,7 +20,7 @@ export function HeroSilk() {
 
       {/* Top bar */}
       <header className="absolute inset-x-0 top-0 z-20">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-6">
+        <div className="flex w-full items-center justify-between px-5 py-6 md:px-12">
           <span className="text-lg font-semibold tracking-[0.2em]">YUMA</span>
           <nav className="hidden items-center gap-8 text-sm text-white/70 sm:flex">
             <a className="transition hover:text-white" href="#soluzioni">
@@ -44,7 +44,7 @@ export function HeroSilk() {
 
       {/* Hero content */}
       <div className="relative z-10 flex h-full items-center">
-        <div className="mx-auto w-full max-w-6xl px-6">
+        <div className="w-full px-5 md:px-12">
           <div className="max-w-4xl">
             <h1 className="text-balance text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
               Liberiamo il potenziale inespresso della tua azienda implementando
