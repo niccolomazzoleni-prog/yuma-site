@@ -10,12 +10,12 @@ const steps = [
   },
   {
     n: "02",
-    title: "Know how tecnico",
+    title: "Individuiamo gli strumenti migliori",
     desc: "Conosciamo gli strumenti, le loro potenzialità e i loro limiti. Individuiamo le tecnologie adatte al tuo caso e studiamo la loro applicazione per massimizzare l'impatto sulla tua azienda.",
   },
   {
     n: "03",
-    title: "Implementazione su misura",
+    title: "Li implementiamo a supporto dei tuoi processi",
     desc: "Costruiamo il sistema dentro il tuo modo di lavorare, con l'obiettivo che tutto risulti facile da capire e da usare. Formiamo il tuo team e gli diamo gli strumenti per moltiplicare la propria produttività.",
   },
 ]

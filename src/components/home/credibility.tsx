@@ -1,41 +1,16 @@
 import { SectionRail } from "@/components/home/section-rail"
 
-// Sezione 2 — credibilità. Stile reference: canvas bianco, testo Carbon/
-// Graphite, foto in card con hairline Fog e radius immagine 8px. Copy invariato.
+// Sezione 2 — credibilità. Headline alla stessa scala dell'hero, seguita dal
+// racconto dell'arrivo dell'AI. Canvas bianco, testo Carbon/Graphite.
 export function Credibility() {
   return (
     <SectionRail id="perche-ora" label="Perché lo diciamo noi" tone="canvas" pad="xl">
-      <h2 className="max-w-[20ch] text-balance text-[clamp(30px,3.6vw,40px)] font-semibold leading-[1.18] tracking-[-0.017em] text-ref-carbon">
+      <h2 className="max-w-[20ch] text-balance text-4xl font-semibold leading-[1.1] tracking-tight text-ref-carbon sm:text-5xl md:text-6xl">
         La tecnologia più trasformativa di sempre è alla portata della tua
         azienda.
       </h2>
 
-      <p className="mt-6 max-w-[62ch] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
-        Lo sappiamo perché per più di 10 anni abbiamo lavorato a progetti di
-        trasformazione digitale nelle più grandi aziende italiane.
-      </p>
-
-      <figure className="mt-10 max-w-[560px] overflow-hidden rounded-[8px] border border-ref-fog shadow-subtle-3">
-        <img
-          src={`${import.meta.env.BASE_URL}team.jpg`}
-          alt="Il team di YUMA a un evento"
-          width={800}
-          height={600}
-          loading="lazy"
-          className="h-auto w-full"
-        />
-      </figure>
-
       <p className="mt-10 max-w-[62ch] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
-        Ci siamo scontrati con la complessità di implementare e far utilizzare
-        la tecnologia, e abbiamo toccato con mano i limiti degli strumenti.
-      </p>
-
-      <p className="mt-8 text-[24px] font-semibold leading-[1.17] tracking-[-0.013em] text-ref-carbon">
-        Poi, tutto è cambiato..
-      </p>
-
-      <p className="mt-6 max-w-[62ch] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
         Quando è arrivata l'intelligenza artificiale, ci siamo resi conto di
         essere davanti a qualcosa di rivoluzionario: una tecnologia economica,
         facile da utilizzare, che comprende il linguaggio umano e lavora

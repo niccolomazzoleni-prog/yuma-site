@@ -27,6 +27,14 @@ export function Solutions() {
             key={p.name}
             className="flex flex-col rounded-[24px] border border-ref-fog bg-white p-8"
           >
+            {/* Placeholder immagine prodotto, da sostituire con screenshot reale */}
+            <div
+              role="img"
+              aria-label={`Immagine ${p.name} (placeholder)`}
+              className="mb-8 flex aspect-[16/10] items-center justify-center rounded-[16px] border border-ref-fog bg-ref-linen text-[13px] font-medium text-ref-ash"
+            >
+              Immagine {p.name}
+            </div>
             <h3 className="text-[20px] font-semibold leading-[1.4] tracking-[-0.016em] text-ref-carbon">
               {p.name}
             </h3>
