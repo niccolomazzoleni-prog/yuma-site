@@ -20,10 +20,10 @@ export function Contact() {
 
   return (
     <SectionRail id="contatti" label="Parliamone" tone="linen" pad="xl">
-      <h2 className="text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
+      <h2 className="mx-auto text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
         Parliamone
       </h2>
-      <p className="mt-6 max-w-[58ch] text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
+      <p className="mx-auto mt-6 max-w-[58ch] text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
         Raccontaci come lavori oggi e cosa vorresti migliorare. Ti rispondiamo
         entro un giorno lavorativo e fissiamo una prima call conoscitiva di
         trenta minuti, senza impegno.
@@ -32,7 +32,7 @@ export function Contact() {
       {sent ? (
         <div
           aria-live="polite"
-          className="mt-10 max-w-[560px] rounded-[16px] bg-ref-mintwash p-8 text-[16px] md:text-[17px] leading-[1.7] text-ref-carbon"
+          className="mx-auto mt-10 max-w-[560px] rounded-[16px] bg-ref-mintwash p-8 text-[16px] md:text-[17px] leading-[1.7] text-ref-carbon"
         >
           Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un
           giorno lavorativo.
@@ -40,7 +40,7 @@ export function Contact() {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="mt-10 grid max-w-[640px] gap-5 rounded-[24px] border border-ref-fog bg-white px-8 py-10"
+          className="mx-auto mt-10 grid max-w-[640px] gap-5 text-left rounded-[24px] border border-ref-fog bg-white px-8 py-10"
         >
           <div className="grid gap-2">
             <label htmlFor="nome" className={labelClass}>
@@ -132,7 +132,7 @@ export function Contact() {
 
           <button
             type="submit"
-            className="mt-1 inline-flex items-center justify-center self-start rounded-pill bg-ref-lavender px-6 py-3 text-[15px] font-medium text-white shadow-subtle transition-transform duration-200 ease-out-soft hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ref-carbon focus-visible:ring-offset-2"
+            className="mt-1 inline-flex items-center justify-center justify-self-center rounded-pill bg-ref-lavender px-6 py-3 text-[15px] font-medium text-white shadow-subtle transition-transform duration-200 ease-out-soft hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ref-carbon focus-visible:ring-offset-2"
           >
             Invia la richiesta
           </button>

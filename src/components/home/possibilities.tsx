@@ -28,11 +28,11 @@ export function Possibilities() {
 
   return (
     <SectionRail id="cosa-e-possibile" label="Cosa è possibile" tone="linen">
-      <h2 className="max-w-[18ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
+      <h2 className="mx-auto max-w-[18ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
         Cosa può fare l'AI nella mia azienda?
       </h2>
 
-      <div className="mt-16">
+      <div className="mx-auto mt-16 max-w-[960px] text-left">
         {items.map((it, i) => {
           const isOpen = open === i
           const idx = String(i + 1).padStart(2, "0")

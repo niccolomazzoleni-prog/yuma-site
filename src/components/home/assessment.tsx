@@ -7,12 +7,12 @@ export function Assessment() {
   return (
     <>
       <SectionRail id="assessment" label="Da dove si parte" tone="canvas" pad="xl">
-      <h2 className="max-w-[26ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
+      <h2 className="mx-auto max-w-[26ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
         Vuoi capire come la tua azienda può implementare l'AI? Prenota un
         assessment YUMA.
       </h2>
 
-      <div className="mt-6 max-w-[62ch] space-y-4 text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
+      <div className="mx-auto mt-6 max-w-[62ch] space-y-4 text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
         <p>
           Veniamo nella tua azienda, mappiamo i processi insieme alle persone
           che li vivono ogni giorno e individuiamo dove l'intelligenza

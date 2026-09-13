@@ -29,6 +29,9 @@ export function HeroSilk() {
             <a className="transition hover:text-white" href="#progetti">
               Progetti
             </a>
+            <a className="transition hover:text-white" href="#assessment">
+              Assessment AI
+            </a>
             <a className="transition hover:text-white" href="#contatti">
               Contatti
             </a>

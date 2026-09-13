@@ -11,11 +11,11 @@ const founders = [
 export function Team() {
   return (
     <SectionRail id="team" label="Le persone dietro YUMA" tone="canvas">
-      <h2 className="max-w-[20ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
+      <h2 className="mx-auto max-w-[20ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
         Siamo un team giovane, con tanta esperienza alle spalle.
       </h2>
 
-      <div className="mt-6 max-w-[62ch] space-y-4 text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
+      <div className="mx-auto mt-6 max-w-[62ch] space-y-4 text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
         <p>
           In passato abbiamo gestito progetti di trasformazione digitale per le
           più grandi aziende italiane, partecipato a round di finanziamento a
@@ -30,7 +30,7 @@ export function Team() {
 
       <ul className="mt-16 grid gap-x-8 gap-y-10 sm:grid-cols-3">
         {founders.map((f, i) => (
-          <li key={i}>
+          <li key={i} className="flex flex-col items-center">
             <div
               aria-hidden
               className="h-24 w-24 rounded-pill border border-ref-fog bg-ref-mist"
