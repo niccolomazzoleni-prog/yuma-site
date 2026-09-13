@@ -25,7 +25,7 @@ shadcn/ui: configurato (components.json valido, alias attivi, `npx shadcn@latest
 Design system: token reali e agganciati al build. `yuma-tokens.json`, `design/tokens.css`, `design/tailwind.tokens.js`, registrati in `tailwind.config.js`.
 Due palette coesistono nel progetto:
   a) brand YUMA: `viola-50…900` (base `viola-500 #6C0FF2`), `fucsia-400/500/600` (#FF4D9D, accento raro), `teal-*`, `neutral-0…900`, superfici semantiche `surface-page/warm/alt/sunken/ink`.
-  b) reference "Visitors", oggi effettivamente in uso nelle sezioni: `ref-carbon #181925`, `ref-graphite #666666`, `ref-ash #999999`, `ref-fog #E8E8E8`, `ref-linen #FAFAFA`, `ref-mist #F5F5F5`, `ref-lavender #918DF6` (unico colore d'azione), più `ref-iris`, `ref-mint`, `ref-mintwash`, `ref-sky`.
+  b) reference "Visitors", oggi effettivamente in uso nelle sezioni: `ref-carbon #181925`, `ref-graphite #666666`, `ref-ash #999999`, `ref-fog #E8E8E8`, `ref-linen #FAFAFA`, `ref-mist #F5F5F5`, `ref-lavender #7C5CFA` (unico colore d'azione), più `ref-iris`, `ref-mint`, `ref-mintwash`, `ref-sky`.
 Raggi: `rounded-input` 8, `rounded-btn` 12, `rounded-card` 16, `rounded-pill`. Ombre: `shadow-card`, `shadow-panel`, `shadow-glow`, `shadow-subtle`, `shadow-subtle-2`, `shadow-subtle-3`. Tipografia: `text-display`, `text-h2`, `text-h3`, `text-body`, `text-label`, `text-caption`. Motion: `ease-out-soft` cubic-bezier(0.22, 1, 0.36, 1).
 Font unico: Plus Jakarta Sans, pesi 400 a 800.
 Struttura pagina (`src/components/home/`): `hero-silk.tsx` (shader WebGL, SIGILLATO, non modificabile), `section-rail.tsx` (contenitore di sezione), poi in ordine `credibility`, `possibilities` (accordion), `solutions`, `how-we-work`, `team`, `clients`, `assessment`, `contact` (form), `footer`.

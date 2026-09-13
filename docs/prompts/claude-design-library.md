@@ -5,7 +5,7 @@ Ogni prompt contiene gli 8 blocchi obbligatori: stack, file bersaglio, AS IS,
 obiettivo di gerarchia, specifiche numeriche, responsive, vincoli negativi,
 criterio di accettazione.
 
-**Palette decisa:** scala `ref-*`. `ref-lavender #918DF6` è l'unico colore d'azione.
+**Palette decisa:** scala `ref-*`. `ref-lavender #7C5CFA` è l'unico colore d'azione.
 **Regola trasversale:** `src/components/home/hero-silk.tsx` è READ ONLY in ogni prompt.
 **Placeholder:** i `[TESTO IN MAIUSCOLO]` vanno sostituiti prima di eseguire.
 
@@ -27,7 +27,7 @@ Font unico: Plus Jakarta Sans (400-800), già applicato globalmente su html.
 Token registrati in tailwind.config.js, usa SOLO questi nomi, mai valori arbitrari tipo bg-[#fafafa]:
   colori: ref-carbon #181925 (testo primario), ref-graphite #666666 (testo secondario),
           ref-ash #999999 (muted), ref-fog #E8E8E8 (hairline), ref-linen #FAFAFA (banda),
-          ref-lavender #918DF6 (UNICO colore d'azione), ref-mintwash #DEF6E4 (superficie positiva)
+          ref-lavender #7C5CFA (UNICO colore d'azione), ref-mintwash #DEF6E4 (superficie positiva)
   raggi: rounded-input 8px, rounded-btn 12px, rounded-card 16px, rounded-pill
   ombre: shadow-subtle, shadow-subtle-2, shadow-subtle-3
   easing: ease-out-soft = cubic-bezier(0.22, 1, 0.36, 1)
@@ -242,7 +242,7 @@ CONTESTO TECNICO
 Stack: Vite 6 + React 18.3 + TypeScript strict + Tailwind CSS v3.4.
 Disponibili: framer-motion 11.18, lucide-react 0.469.
 Token: ref-carbon #181925, ref-graphite, ref-ash, ref-fog, ref-linen, ref-mist,
-ref-lavender #918DF6 (unico colore d'azione), ref-mintwash #DEF6E4.
+ref-lavender #7C5CFA (unico colore d'azione), ref-mintwash #DEF6E4.
 Il contenitore SectionRail supporta width="bleed" e tone.
 
 FILE BERSAGLIO

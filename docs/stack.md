@@ -98,7 +98,7 @@ Skill installate in `.agents/skills/`: `shadcn`, `migrate-radix-to-base`.
 - `ref-fog` `#E8E8E8` — hairline e bordi
 - `ref-linen` `#FAFAFA` — bande di sezione alternate
 - `ref-mist` `#F5F5F5` — superfici tenui
-- `ref-lavender` `#918DF6` — **unico colore d'azione**
+- `ref-lavender` `#7C5CFA` — **unico colore d'azione**
 - `ref-iris` `#9580FF`, `ref-mint` `#33C758`, `ref-mintwash` `#DEF6E4`, `ref-sky` `#2C78FC`
 
 ### Altri token registrati

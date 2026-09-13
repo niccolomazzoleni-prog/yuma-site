@@ -58,7 +58,7 @@ export const refColors = {
   fog: "#E8E8E8",
   ash: "#999999",
   graphite: "#666666",
-  lavender: "#918DF6",
+  lavender: "#7C5CFA", // viola d'azione YUMA, saturato (era #918DF6)
   iris: "#9580FF",
   mint: "#33C758",
   mintwash: "#DEF6E4",

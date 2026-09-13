@@ -72,7 +72,7 @@ fonte cromatica:
 | Hairline / bordi | `ref-fog` | #E8E8E8 |
 | Banda di sezione | `ref-linen` | #FAFAFA |
 | Superficie tenue | `ref-mist` | #F5F5F5 |
-| **Unico colore d'azione** | `ref-lavender` | #918DF6 |
+| **Unico colore d'azione** | `ref-lavender` | #7C5CFA |
 | Superficie positiva | `ref-mintwash` | #DEF6E4 |
 
 La scala brand `viola-*` / `fucsia-*` resta registrata in `tailwind.config.js`
