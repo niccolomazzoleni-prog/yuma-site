@@ -43,7 +43,7 @@ export function Solutions() {
             </p>
             <a
               href="#contatti"
-              className="group mt-6 inline-flex items-center gap-2 self-center rounded-pill text-[14px] font-medium text-ref-carbon focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ref-lavender focus-visible:ring-offset-4"
+              className="group mt-8 inline-flex items-center gap-2 self-center rounded-pill bg-ref-lavender px-6 py-3 text-[15px] font-medium text-white shadow-subtle transition-transform duration-200 ease-out-soft hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ref-carbon focus-visible:ring-offset-2"
             >
               Scopri di più
               <ArrowRight className="h-4 w-4 transition-transform duration-200 ease-out-soft group-hover:translate-x-0.5" />
