@@ -51,7 +51,7 @@ export function HeroSilk() {
               l'AI dove serve davvero.
             </h1>
 
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-white/75">
+            <p className="mt-6 max-w-2xl text-lg leading-[1.6] text-white/75 md:text-[22px]">
               Yuma affianca le imprese nel loro percorso di adozione AI unendo
               consulenza aziendale, know how tecnico e implementazione di
               progetti su misura.

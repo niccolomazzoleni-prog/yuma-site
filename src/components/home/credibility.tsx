@@ -10,7 +10,7 @@ export function Credibility() {
         azienda.
       </h2>
 
-      <p className="mt-6 max-w-[62ch] text-[18px] leading-[1.55] tracking-[-0.02em] text-ref-graphite">
+      <p className="mt-6 max-w-[62ch] text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
         Lo sappiamo perché per più di 10 anni abbiamo lavorato a progetti di
         trasformazione digitale nelle grandi aziende, toccando con mano i limiti
         degli strumenti e scontrandoci con la complessità di implementare e far
@@ -26,14 +26,14 @@ export function Credibility() {
         Immagine placeholder
       </div>
 
-      <p className="mt-10 max-w-[62ch] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+      <p className="mt-10 max-w-[62ch] text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
         Quando è arrivata l'intelligenza artificiale, ci siamo resi conto di
         essere davanti a qualcosa di rivoluzionario: una tecnologia economica,
         facile da utilizzare, che comprende il linguaggio umano e lavora
         autonomamente al fianco delle persone.
       </p>
 
-      <p className="mt-4 max-w-[62ch] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+      <p className="mt-4 max-w-[62ch] text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
         Quello che prima richiedeva anni di lavoro, oggi si può costruire in
         pochi mesi e con una frazione dei costi. La barriera si è abbassata, e
         per la prima volta,{" "}

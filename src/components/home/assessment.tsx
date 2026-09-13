@@ -18,7 +18,7 @@ export function Assessment() {
         per conoscersi e pensare in grande assieme.
       </h2>
 
-      <div className="mt-7 max-w-[62ch] space-y-4 text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+      <div className="mt-7 max-w-[62ch] space-y-4 text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
         <p>
           Veniamo nella tua azienda, mappiamo i processi insieme alle persone
           che li vivono ogni giorno e individuiamo dove l'intelligenza
@@ -31,7 +31,7 @@ export function Assessment() {
         </p>
       </div>
 
-      <p className="mt-6 inline-block rounded-[8px] bg-ref-mintwash px-4 py-2.5 text-[14px] font-medium leading-[1.43] text-ref-carbon">
+      <p className="mt-6 inline-block rounded-[8px] bg-ref-mintwash px-4 py-2.5 text-[15px] font-medium leading-[1.5] text-ref-carbon">
         Il risultato è tuo, anche se decidi di fermarti lì.
       </p>
 

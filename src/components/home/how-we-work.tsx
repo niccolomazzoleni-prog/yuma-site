@@ -27,7 +27,7 @@ export function HowWeWork() {
         Come lavoriamo
       </h2>
 
-      <ol className="mt-12">
+      <ol className="mt-16">
         {steps.map((s, i) => (
           <li
             key={s.n}
@@ -42,10 +42,10 @@ export function HowWeWork() {
               {s.n}
             </span>
             <div>
-              <h3 className="text-[20px] font-semibold leading-[1.4] tracking-[-0.016em] text-ref-carbon">
+              <h3 className="text-[20px] md:text-[22px] font-semibold leading-[1.3] tracking-[-0.01em] text-ref-carbon">
                 {s.title}
               </h3>
-              <p className="mt-3 max-w-[58ch] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+              <p className="mt-3 max-w-[58ch] text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
                 {s.desc}
               </p>
             </div>

@@ -4,10 +4,10 @@ import { SectionRail } from "@/components/home/section-rail"
 // Sezione 9 — modulo di contatto. Input 8px radius, bordo Fog, focus Lavender;
 // submit = pill Lavender. Conferma su mint-wash. Copy invariato.
 const inputClass =
-  "w-full rounded-input border border-ref-fog bg-white px-4 py-3 text-[15px] tracking-[-0.02em] text-ref-carbon placeholder:text-ref-ash outline-none transition-shadow duration-200 ease-out-soft focus:border-ref-lavender focus:ring-4 focus:ring-ref-lavender/15"
+  "w-full rounded-input border border-ref-fog bg-white px-4 py-3 text-[16px] text-ref-carbon placeholder:text-ref-ash outline-none transition-shadow duration-200 ease-out-soft focus:border-ref-lavender focus:ring-4 focus:ring-ref-lavender/15"
 
 const labelClass =
-  "text-[13px] font-medium tracking-[-0.025em] text-ref-carbon"
+  "text-[14px] font-medium text-ref-carbon"
 
 export function Contact() {
   const [sent, setSent] = useState(false)
@@ -23,7 +23,7 @@ export function Contact() {
       <h2 className="text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
         Parliamone
       </h2>
-      <p className="mt-5 max-w-[54ch] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+      <p className="mt-5 max-w-[54ch] text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
         Raccontaci come lavori oggi e cosa vorresti migliorare. Ti rispondiamo
         entro un giorno lavorativo e fissiamo una prima call conoscitiva di
         trenta minuti, senza impegno.
@@ -32,7 +32,7 @@ export function Contact() {
       {sent ? (
         <div
           aria-live="polite"
-          className="mt-10 max-w-[560px] rounded-[16px] bg-ref-mintwash p-8 text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-carbon"
+          className="mt-10 max-w-[560px] rounded-[16px] bg-ref-mintwash p-8 text-[16px] md:text-[17px] leading-[1.7] text-ref-carbon"
         >
           Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un
           giorno lavorativo.
@@ -40,7 +40,7 @@ export function Contact() {
       ) : (
         <form
           onSubmit={handleSubmit}
-          className="mt-10 grid max-w-[640px] gap-5 rounded-[24px] border border-ref-fog bg-white p-8"
+          className="mt-10 grid max-w-[640px] gap-5 rounded-[24px] border border-ref-fog bg-white px-8 py-10"
         >
           <div className="grid gap-2">
             <label htmlFor="nome" className={labelClass}>
@@ -125,7 +125,7 @@ export function Contact() {
             />
           </div>
 
-          <p className="text-[12px] leading-[1.5] text-ref-ash">
+          <p className="text-[13px] leading-[1.5] text-ref-ash">
             Usiamo i tuoi dati solo per ricontattarti. Nessuna newsletter,
             nessuna condivisione con terzi.
           </p>

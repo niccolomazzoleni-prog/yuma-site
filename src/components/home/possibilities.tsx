@@ -32,7 +32,7 @@ export function Possibilities() {
         Cosa può fare l'AI nella mia azienda?
       </h2>
 
-      <div className="mt-12">
+      <div className="mt-16">
         {items.map((it, i) => {
           const isOpen = open === i
           const idx = String(i + 1).padStart(2, "0")
@@ -58,7 +58,7 @@ export function Possibilities() {
                     {idx}
                   </span>
                   <span
-                    className={`flex-1 text-[24px] font-semibold leading-[1.17] tracking-[-0.013em] transition-colors duration-200 ease-out-soft ${
+                    className={`flex-1 text-[22px] md:text-[26px] font-semibold leading-[1.3] tracking-[-0.01em] transition-colors duration-200 ease-out-soft ${
                       isOpen
                         ? "text-ref-carbon"
                         : "text-ref-ash group-hover:text-ref-carbon"
@@ -88,7 +88,7 @@ export function Possibilities() {
                 }`}
               >
                 <div className="overflow-hidden">
-                  <p className="max-w-[58ch] pb-8 pl-[60px] text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+                  <p className="max-w-[60ch] pb-8 pl-[60px] text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
                     {it.body}
                   </p>
                 </div>

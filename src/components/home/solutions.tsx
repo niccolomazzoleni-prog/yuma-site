@@ -21,11 +21,11 @@ export function Solutions() {
         Dai nostri progetti di consulenza sono nati due prodotti digitali.
       </h2>
 
-      <div className="mt-12 grid gap-5 md:grid-cols-2">
+      <div className="mt-16 grid gap-5 md:grid-cols-2">
         {products.map((p) => (
           <article
             key={p.name}
-            className="flex flex-col rounded-[24px] border border-ref-fog bg-white p-8"
+            className="flex flex-col rounded-[24px] border border-ref-fog bg-white px-8 py-10"
           >
             {/* Placeholder immagine prodotto, da sostituire con screenshot reale */}
             <div
@@ -35,10 +35,10 @@ export function Solutions() {
             >
               Immagine {p.name}
             </div>
-            <h3 className="text-[20px] font-semibold leading-[1.4] tracking-[-0.016em] text-ref-carbon">
+            <h3 className="text-[20px] md:text-[22px] font-semibold leading-[1.3] tracking-[-0.01em] text-ref-carbon">
               {p.name}
             </h3>
-            <p className="mt-4 flex-1 text-[16px] leading-[1.6] tracking-[-0.02em] text-ref-graphite">
+            <p className="mt-4 flex-1 text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
               {p.desc}
             </p>
             <a
