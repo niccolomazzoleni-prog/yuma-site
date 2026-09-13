@@ -23,7 +23,7 @@ const steps = [
 export function HowWeWork() {
   return (
     <SectionRail id="come-lavoriamo" label="Come lavoriamo" tone="linen">
-      <h2 className="max-w-[16ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
+      <h2 className="max-w-[16ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
         Come lavoriamo
       </h2>
 

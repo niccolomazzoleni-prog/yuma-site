@@ -20,10 +20,10 @@ export function Contact() {
 
   return (
     <SectionRail id="contatti" label="Parliamone" tone="linen" pad="xl">
-      <h2 className="text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
+      <h2 className="text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
         Parliamone
       </h2>
-      <p className="mt-5 max-w-[54ch] text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
+      <p className="mt-6 max-w-[58ch] text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
         Raccontaci come lavori oggi e cosa vorresti migliorare. Ti rispondiamo
         entro un giorno lavorativo e fissiamo una prima call conoscitiva di
         trenta minuti, senza impegno.
