@@ -6,16 +6,10 @@ import { SectionRail } from "@/components/home/section-rail"
 export function Assessment() {
   return (
     <>
-      {/* Banda atmosferica full-bleed: respiro prima del momento di conversione */}
-      <div
-        aria-hidden
-        className="h-[200px] w-full bg-cover bg-center md:h-[280px]"
-        style={{ backgroundImage: `url('${import.meta.env.BASE_URL}texture-01.jpg')` }}
-      />
       <SectionRail id="assessment" label="Da dove si parte" tone="canvas" pad="xl">
       <h2 className="max-w-[26ch] text-balance text-[clamp(30px,3.4vw,36px)] font-semibold leading-[1.22] tracking-[-0.017em] text-ref-carbon">
-        Tutti i nostri progetti iniziano con un assessment AI: un modo semplice
-        per conoscersi e pensare in grande assieme.
+        Vuoi capire come la tua azienda può implementare l'AI? Prenota un
+        assessment YUMA.
       </h2>
 
       <div className="mt-7 max-w-[62ch] space-y-4 text-[16px] md:text-[17px] leading-[1.7] text-ref-graphite">
