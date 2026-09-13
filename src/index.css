@@ -69,7 +69,7 @@
 }
 
 /* Barra sticky WhatsApp, replica di abrarobotics.com (style.css .wa-bar)
-   ricolorata col viola d'azione YUMA (Lavender #918DF6) */
+   ricolorata col viola d'azione YUMA (Lavender saturato #7C5CFA) */
 .wa-bar {
   --wa-angle: 0deg;
   position: fixed;
@@ -82,12 +82,12 @@
   justify-content: center;
   gap: 16px;
   padding: 13px 24px;
-  background: #918df6;
+  background: #7c5cfa;
   box-shadow: 0 -1px 12px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.35s ease;
 }
 .wa-bar:hover {
-  box-shadow: 0 -3px 24px rgba(145, 141, 246, 0.35);
+  box-shadow: 0 -3px 24px rgba(124, 92, 250, 0.4);
 }
 .wa-bar p {
   color: #fff;
@@ -104,7 +104,7 @@
   align-items: center;
   gap: 8px;
   background: #fff;
-  color: #4f4ac7;
+  color: #5b3fd9;
   font-weight: 700;
   font-size: 0.95rem;
   padding: 9px 22px;
