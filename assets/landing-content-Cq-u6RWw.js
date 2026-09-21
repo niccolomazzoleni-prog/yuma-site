@@ -1,4 +1,4 @@
-import{d as f,j as e,S as h,A as v,l as b,a as s,r as p,X as j,b as N,e as z,F as y,W as C}from"./whatsapp-bar-pNpqnB_4.js";/**
+import{d as f,j as e,S as h,A as v,l as b,a as s,r as p,X as j,b as N,e as z,F as y,W as C}from"./whatsapp-bar-DS8ZV_AU.js";/**
  * @license lucide-react v0.469.0 - ISC
  *
  * This source code is licensed under the ISC license.
