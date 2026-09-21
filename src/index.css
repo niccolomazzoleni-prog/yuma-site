@@ -201,3 +201,9 @@ body.has-wa-bar main {
     right: 12px;
   }
 }
+
+/* Versione 2: font Geist, solo dentro il contenitore .v2 */
+.v2 {
+  font-family: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-feature-settings: "ss01";
+}
