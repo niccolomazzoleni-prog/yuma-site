@@ -1,5 +1,5 @@
-// Sezione 7 — clienti e partner. Banda sottile stile "partner logos" della
-// reference: logo grayscale su linen, senza rail (pausa visiva tra sezioni).
+// Sezione 7 — clienti e partner. I loghi vanno pubblicati solo dopo il consenso
+// dei clienti: fino ad allora restano placeholder e parlano i settori serviti.
 export function Clients() {
   return (
     <section
@@ -19,6 +19,10 @@ export function Clients() {
             />
           ))}
         </div>
+        <p className="mt-10 text-[16px] leading-[1.7] text-ref-graphite md:text-[17px]">
+          <span className="font-semibold text-ref-carbon">Dove lavoriamo:</span>{" "}
+          impianti e costruzioni · manifattura · distribuzione B2B · farmaceutico
+        </p>
       </div>
     </section>
   )

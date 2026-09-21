@@ -12,14 +12,14 @@ export function Team() {
   return (
     <SectionRail id="team" label="Le persone dietro YUMA" tone="canvas">
       <h2 className="mx-auto max-w-[20ch] text-balance text-3xl font-semibold leading-[1.1] tracking-tight sm:text-4xl md:text-5xl text-ref-carbon">
-        Siamo un team giovane, con tanta esperienza alle spalle.
+        Un team con l'esperienza delle grandi trasformazioni alle spalle.
       </h2>
 
       <div className="mx-auto mt-6 max-w-[62ch] space-y-4 text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
         <p>
           In passato abbiamo gestito progetti di trasformazione digitale per le
-          più grandi aziende italiane, partecipato a round di finanziamento a
-          sette cifre e accompagnato una startup fino all'exit.
+          più grandi aziende italiane. Tra noi c'è chi ha portato una startup da
+          un round a sette cifre fino all'exit.
         </p>
         <p>
           Oggi applichiamo tutto quello che abbiamo imparato dentro le aziende

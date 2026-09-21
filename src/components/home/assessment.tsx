@@ -14,14 +14,17 @@ export function Assessment() {
 
       <div className="mx-auto mt-6 max-w-[62ch] space-y-4 text-[17px] md:text-[20px] leading-[1.7] text-ref-graphite">
         <p>
-          Veniamo nella tua azienda, mappiamo i processi insieme alle persone
-          che li vivono ogni giorno e individuiamo dove l'intelligenza
-          artificiale può avere l'impatto maggiore.
+          Ogni percorso di consulenza inizia con un assessment AI: un modo
+          semplice per conoscersi e pensare in grande assieme. Veniamo nella tua
+          azienda, mappiamo i processi insieme alle persone che li vivono ogni
+          giorno e individuiamo dove l'intelligenza artificiale può avere
+          l'impatto maggiore.
         </p>
         <p>
           Alla fine del percorso ti consegniamo un documento con i casi d'uso
           individuati, ordinati per impatto e ritorno economico, con una stima
-          di cosa serve per realizzarli.
+          di cosa serve per realizzarli. Il risultato è tuo, anche se decidi di
+          fermarti lì.
         </p>
       </div>
 

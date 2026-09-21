@@ -7,6 +7,15 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   base: process.env.VITE_BASE ?? "/",
   plugins: [react()],
+  build: {
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, "index.html"),
+        projects: path.resolve(__dirname, "projects/index.html"),
+        clientInterface: path.resolve(__dirname, "client-interface/index.html"),
+      },
+    },
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
