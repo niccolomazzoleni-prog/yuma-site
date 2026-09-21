@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { SiteNav, homeNav } from "@/components/site/site-nav"
 import { HeroSilk } from "@/components/home/hero-silk"
+import { KineticBand } from "@/components/home/kinetic-band"
 import { Credibility } from "@/components/home/credibility"
 import { Possibilities } from "@/components/home/possibilities"
 import { Solutions } from "@/components/home/solutions"
@@ -35,6 +36,7 @@ export default function Home() {
       <SiteNav sections={homeNav} cta="Prenota una call" ctaHref="#contatti" current="home" />
       <main>
       <HeroSilk />
+      <KineticBand />
       <Credibility />
       <Possibilities />
       <Solutions />
