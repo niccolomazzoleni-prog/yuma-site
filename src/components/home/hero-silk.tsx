@@ -1,6 +1,5 @@
 import { ArrowRight } from "lucide-react"
 import { ShaderBackground } from "@/components/ui/silk-shader"
-import { links } from "@/lib/links"
 
 // HERO SIGILLATO — versione approvata, da non modificare.
 export function HeroSilk() {
@@ -18,36 +17,6 @@ export function HeroSilk() {
             "radial-gradient(120% 90% at 50% 12%, rgba(6,9,26,0) 40%, rgba(6,9,26,0.55) 100%), linear-gradient(180deg, rgba(6,9,26,0.35) 0%, rgba(6,9,26,0) 30%, rgba(6,9,26,0.72) 100%)",
         }}
       />
-
-      {/* Top bar */}
-      <header className="absolute inset-x-0 top-0 z-20">
-        <div className="flex w-full items-center justify-between px-5 py-6 md:px-12">
-          <span className="text-lg font-semibold tracking-[0.2em]">YUMA</span>
-          <nav className="hidden items-center gap-7 text-sm text-white/70 lg:flex">
-            <a className="transition hover:text-white" href="#soluzioni">
-              Soluzioni
-            </a>
-            <a className="transition hover:text-white" href={links.projects}>
-              YUMA Projects
-            </a>
-            <a className="transition hover:text-white" href={links.clientInterface}>
-              Client Interface
-            </a>
-            <a className="transition hover:text-white" href="#assessment">
-              Assessment AI
-            </a>
-            <a className="transition hover:text-white" href="#contatti">
-              Contatti
-            </a>
-          </nav>
-          <a
-            href="#contatti"
-            className="rounded-full border border-white/25 bg-white/5 px-4 py-2 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/15"
-          >
-            Prenota una call
-          </a>
-        </div>
-      </header>
 
       {/* Hero content */}
       <div className="relative z-10 flex h-full items-center">

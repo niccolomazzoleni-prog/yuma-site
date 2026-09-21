@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { SiteNav, homeNav } from "@/components/site/site-nav"
 import { HeroSilk } from "@/components/home/hero-silk"
 import { Credibility } from "@/components/home/credibility"
 import { Possibilities } from "@/components/home/possibilities"
@@ -30,7 +31,9 @@ export default function Home() {
   }, [])
 
   return (
-    <main>
+    <>
+      <SiteNav sections={homeNav} cta="Prenota una call" ctaHref="#contatti" current="home" />
+      <main>
       <HeroSilk />
       <Credibility />
       <Possibilities />
@@ -42,6 +45,7 @@ export default function Home() {
       <Contact />
       <Footer />
       <WhatsAppBar />
-    </main>
+      </main>
+    </>
   )
 }

@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { SiteNav, landingNav } from "@/components/site/site-nav"
 import { LandingHero } from "@/components/landing/landing-hero"
 import {
   CaseStudy,
@@ -27,7 +28,14 @@ export default function LandingPage({ content }: { content: LandingContent }) {
   }, [])
 
   return (
-    <main>
+    <>
+      <SiteNav
+        sections={landingNav}
+        cta="Richiedi una demo"
+        ctaHref="#demo"
+        current={content.slug === "projects" ? "projects" : "client-interface"}
+      />
+      <main>
       <LandingHero
         product={content.product}
         headline={content.hero.headline}
@@ -46,6 +54,7 @@ export default function LandingPage({ content }: { content: LandingContent }) {
       <DemoCta objection={content.objection} cta={content.cta} />
       <Footer />
       <WhatsAppBar />
-    </main>
+      </main>
+    </>
   )
 }
