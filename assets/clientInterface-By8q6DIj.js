@@ -1,0 +1,1 @@
+import{c as e,j as t,r}from"./whatsapp-bar-wdM7CLV1.js";import{L as o,c as n}from"./landing-content-B16HcwG5.js";import"./footer-ilyUDYXV.js";e.createRoot(document.getElementById("root")).render(t.jsx(r.StrictMode,{children:t.jsx(o,{content:n})}));
