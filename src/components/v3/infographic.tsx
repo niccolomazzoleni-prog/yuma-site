@@ -1,7 +1,38 @@
 import { cn } from "@/lib/utils"
 
-// Segnaposto numerato per le infografiche ancora da produrre.
-// Il numero corrisponde a quello del file YUMA_Prompt_Infografiche.md.
+// Infografiche del sito. Il numero corrisponde a quello del file
+// YUMA_Prompt_Infografiche.md: finché l'immagine non c'è, resta il segnaposto.
+// Per montarne una nuova basta aggiungere la riga qui sotto.
+const READY: Record<number, { file: string; alt: string }> = {
+  1: {
+    file: "infografica-01.webp",
+    alt: "Messaggi, foto, documenti e vocali collegati a una sfera di particelle",
+  },
+  2: {
+    file: "infografica-02.webp",
+    alt: "Prima: una finestra software piena di campi. Dopo: un vocale che diventa tre righe di dati ordinate",
+  },
+  3: {
+    file: "infografica-03.webp",
+    alt: "Documenti che confluiscono in piani impilati fino alla memoria dell'azienda",
+  },
+  4: {
+    file: "infografica-04.webp",
+    alt: "Catena input, agente, controllo, sistema, con avanzamento al 90%",
+  },
+  5: {
+    file: "infografica-05.webp",
+    alt: "Canali diversi che entrano in una sfera e ne escono come schede ordinate",
+  },
+  6: {
+    file: "infografica-06.webp",
+    alt: "Righe ripetitive che si dissolvono e confluiscono in una persona",
+  },
+  7: {
+    file: "infografica-07.webp",
+    alt: "Tre nuclei di conoscenza che confluiscono in un unico archivio",
+  },
+}
 export function Info({
   n,
   ratio = "4 / 3",
@@ -16,11 +47,15 @@ export function Info({
   src?: string
   alt?: string
 }) {
-  if (src) {
+  const ready = READY[n]
+  const source = src ?? (ready ? `${import.meta.env.BASE_URL}${ready.file}` : undefined)
+  const description = alt ?? ready?.alt
+
+  if (source) {
     return (
       <img
-        src={src}
-        alt={alt ?? `Infografica ${n}`}
+        src={source}
+        alt={description ?? `Infografica ${n}`}
         loading="lazy"
         className={cn("h-full w-full object-cover", className)}
       />
