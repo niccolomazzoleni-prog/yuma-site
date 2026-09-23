@@ -370,7 +370,7 @@ function Faq({ c }: { c: LandingContent }) {
   }, {})
 
   return (
-    <Section id="faq" className="pt-0">
+    <Section className="pt-0">
       <FAQ
         title={c.faq.headline}
         subtitle={c.faq.label}

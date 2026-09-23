@@ -288,27 +288,33 @@ export const projectsContent: LandingContent = {
       {
         q: "Dobbiamo cambiare gestionale?",
         a: "No. YUMA Projects si innesta su quello che usate già e lascia il ciclo amministrativo e finanziario dov'è.",
+              group: "Sistemi e dati",
       },
       {
         q: "I capi cantiere devono imparare un'app nuova?",
         a: "No. Continuano a mandare vocali, foto e messaggi come fanno oggi. È la piattaforma a strutturare quello che arriva.",
+              group: "Uso in cantiere",
       },
       {
         q: "In quanto tempo si parte?",
         a: "Tempo di attivazione del cantiere pilota da inserire.",
         todo: true,
+              group: "Tempi e costi",
       },
       {
         q: "Come vengono gestiti i nostri dati?",
         a: "Il titolare del trattamento resta la tua azienda, YUMA opera come responsabile. Ambienti separati per cliente, nessuna condivisione con terze parti, nessun dato usato per addestrare modelli.",
+              group: "Sistemi e dati",
       },
       {
         q: "Cosa succede se un dato arriva sbagliato o incompleto?",
         a: "La piattaforma lo segnala e lo mette in attesa di conferma, con le approvazioni configurate cliente per cliente.",
+              group: "Uso in cantiere",
       },
       {
         q: "Quanto costa?",
         a: "Il prezzo dipende dal numero di commesse e di utenti. Ne parliamo in demo, con una proposta scritta dopo l'analisi.",
+              group: "Tempi e costi",
       },
     ],
   },
