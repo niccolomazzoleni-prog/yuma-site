@@ -328,7 +328,8 @@ export function Clients() {
   )
 }
 
-// ── 8 · Da dove si parte ─────────────────────────────────────────────────────
+// ── 8 · Versione a blocco unico di "Da dove si parte" (sostituita da
+// AssessmentReport in assessment.tsx, tenuta come riferimento) ─────────────
 export function Assessment() {
   return (
     <Section id="assessment" className="pt-0">

@@ -44,7 +44,7 @@ function ReportMock() {
       <div className="flex items-center gap-2 border-b border-[#010110]/8 pb-4">
         <FileText className="h-4 w-4 text-[#7C5CFA]" />
         <span className="text-[13px] font-medium text-[#010110]">
-          Assessment AI · casi d'uso
+          Assessment AI · casi d'uso (esempio)
         </span>
       </div>
       <ul className="mt-4 space-y-3">
@@ -69,7 +69,7 @@ function ReportMock() {
         ))}
       </ul>
       <p className="mt-5 border-t border-[#010110]/8 pt-4 text-[12px] text-[#8A8A97]">
-        Il risultato è tuo, anche se decidi di fermarti lì.
+        Ordinati per impatto e ritorno economico.
       </p>
     </div>
   )
@@ -185,18 +185,29 @@ export function AssessmentThreeSteps() {
 }
 
 // ── C · Il documento che ricevi, mostrato ───────────────────────────────────
+// Copy invariato: le tre frasi del blocco 8, solo distribuite nel layout.
 export function AssessmentReport() {
   return (
     <Section id="assessment">
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div>
           <Eyebrow>Da dove si parte</Eyebrow>
-          <Title className="mt-5 max-w-[16ch]">
-            Alla fine dell'assessment hai un documento, non una promessa
+          <Title className="mt-5 max-w-[18ch]">
+            Ogni percorso di consulenza inizia con un assessment AI
           </Title>
-          <Body className="mt-5 max-w-[48ch]">
-            Veniamo in azienda, mappiamo i processi con le vostre persone e
-            individuiamo dove l'AI può avere l'impatto maggiore.
+          <Lead className="mt-5 max-w-[46ch]">
+            Un modo semplice per conoscersi e pensare in grande assieme.
+          </Lead>
+          <Body className="mt-5 max-w-[50ch]">
+            Veniamo nella tua azienda, mappiamo i processi insieme alle persone
+            che li vivono ogni giorno e individuiamo dove l'intelligenza
+            artificiale può avere l'impatto maggiore.
+          </Body>
+          <Body className="mt-4 max-w-[50ch]">
+            Alla fine del percorso ti consegniamo un documento con i casi d'uso
+            individuati, ordinati per impatto e ritorno economico, con una stima
+            di cosa serve per realizzarli. Il risultato è tuo, anche se decidi di
+            fermarti lì.
           </Body>
           <div className="mt-8">
             <Cta />

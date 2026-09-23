@@ -1,6 +1,5 @@
 import { GradientField } from "@/components/v3/glass"
 import {
-  Assessment,
   Clients,
   Contact,
   Footer,
@@ -10,6 +9,7 @@ import {
 } from "@/components/v3/sections"
 import { StoryAlternating } from "@/components/v3/story"
 import { ProcessVerticalLine } from "@/components/v3/process"
+import { AssessmentReport } from "@/components/v3/assessment"
 import { HeroSilk } from "@/components/home/hero-silk"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
@@ -67,7 +67,7 @@ export default function V3Home() {
         <ProcessVerticalLine />
         <Team />
         <Clients />
-        <Assessment />
+        <AssessmentReport />
         <Contact />
       </main>
 
