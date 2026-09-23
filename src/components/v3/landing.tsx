@@ -1,6 +1,5 @@
-import { useEffect, useRef, useState, type FormEvent, type ReactNode } from "react"
-import { motion, useScroll, useSpring, useMotionValueEvent } from "framer-motion"
-import { ArrowRight, Check, Minus, Plus } from "lucide-react"
+import { useEffect, useState, type FormEvent, type ReactNode } from "react"
+import { ArrowRight, Check } from "lucide-react"
 import {
   Body,
   Eyebrow,
@@ -10,14 +9,14 @@ import {
   Section,
   Title,
 } from "@/components/v3/glass"
-import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import type { Bullet, LandingContent } from "@/lib/landing-content"
 
-// Landing di prodotto nella direzione "vetro su gradiente": stessi mattoni
-// della home v3 (racconto a blocchi, schede animate, timeline che avanza,
-// segnaposto tratteggiati per le immagini che mancano).
+// Landing di prodotto nella direzione "vetro su gradiente". Le strutture sono
+// diverse da quelle della home, per dare varietà: riga di prova con divisori,
+// elenco numerato, bento dei moduli, scheda tecnica dei ruoli, caso editoriale,
+// griglia a filetti, percorso orizzontale, due colonne sì/no, FAQ aperte.
 
 // ── segnaposto immagine ──────────────────────────────────────────────────────
 export function Shot({
@@ -148,29 +147,30 @@ function Hero({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 02 credibilità ───────────────────────────────────────────────────────────
+// ── 02 credibilità: riga di prova con divisori, niente card ─────────────────
 function Credibility({ c }: { c: LandingContent }) {
   return (
     <Section id="credibilita">
-      <div className="mx-auto max-w-[820px] text-center">
-        <Title className="mx-auto max-w-[22ch]">{c.credibility.headline}</Title>
-        <Lead className="mx-auto mt-6 max-w-[62ch]">{c.credibility.body}</Lead>
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
+        <Title className="max-w-[16ch]">{c.credibility.headline}</Title>
+        <Lead className="max-w-[58ch] lg:pt-2">{c.credibility.body}</Lead>
       </div>
 
-      <ul className="mt-12 grid gap-5 md:grid-cols-3">
-        {c.credibility.bullets.map((b) => (
-          <li key={b.text}>
-            <Glass className="h-full p-7">
-              <Body className={b.todo ? "text-[#8A8A97]" : ""}>
-                <BulletText item={b} />
-              </Body>
-            </Glass>
+      <ul className="mt-12 grid divide-y divide-[#010110]/10 border-y border-[#010110]/10 md:grid-cols-3 md:divide-x md:divide-y-0">
+        {c.credibility.bullets.map((b, i) => (
+          <li key={b.text} className="px-0 py-7 md:px-8 md:first:pl-0 md:last:pr-0">
+            <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <p className={`mt-3 text-[16px] leading-[1.5] ${b.todo ? "text-[#8A8A97]" : "text-[#2A2A38]"}`}>
+              <BulletText item={b} />
+            </p>
           </li>
         ))}
       </ul>
 
       {c.credibility.note ? (
-        <p className="mt-8 text-center text-[15px] text-[#8A8A97]">
+        <p className="mt-6 text-[15px] text-[#8A8A97]">
           {c.credibility.note}
           <TodoTag />
         </p>
@@ -179,73 +179,77 @@ function Credibility({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 03 problema ──────────────────────────────────────────────────────────────
+// ── 03 problema: elenco numerato grande, niente riquadri ────────────────────
 function Problem({ c }: { c: LandingContent }) {
   const p = c.problem
   return (
     <Section id="problema" className="pt-0">
-      <div className="mx-auto max-w-[820px] text-center">
-        <Eyebrow>{p.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[24ch]">{p.headline}</Title>
-        {p.sub ? <Lead className="mx-auto mt-5 max-w-[62ch]">{p.sub}</Lead> : null}
-      </div>
+      <Eyebrow>{p.label}</Eyebrow>
+      <Title className="mt-5 max-w-[20ch]">{p.headline}</Title>
+      {p.sub ? <Lead className="mt-5 max-w-[62ch]">{p.sub}</Lead> : null}
 
       {p.items ? (
-        <div className="mt-12 grid gap-5 md:grid-cols-3">
-          {p.items.map((it) => (
-            <Glass key={it.title} className="h-full p-7 md:p-8">
-              <h3 className="text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[22px]">
-                {it.title}
-              </h3>
-              <Body className="mt-3 text-[15px]">{it.desc}</Body>
-            </Glass>
+        <ol className="mt-12 space-y-0">
+          {p.items.map((it, i) => (
+            <li
+              key={it.title}
+              className="grid gap-4 border-t border-[#010110]/10 py-9 md:grid-cols-[80px_minmax(0,1fr)] md:gap-10"
+            >
+              <span className="text-[34px] font-medium leading-none tabular-nums text-[#7C5CFA]/35 md:text-[44px]">
+                {String(i + 1).padStart(2, "0")}
+              </span>
+              <div>
+                <h3 className="max-w-[26ch] text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#010110] md:text-[28px]">
+                  {it.title}
+                </h3>
+                <Body className="mt-3 max-w-[62ch]">{it.desc}</Body>
+              </div>
+            </li>
           ))}
-        </div>
+        </ol>
       ) : null}
 
       {p.causes ? (
-        <div className="mt-12 grid gap-5 md:grid-cols-2">
-          <Glass className="p-8">
+        <div className="mt-12 grid gap-10 md:grid-cols-2">
+          <div>
             <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
               {p.causesTitle}
             </p>
             <ul className="mt-5 space-y-4">
               {p.causes.map((x) => (
-                <li key={x.title}>
+                <li key={x.title} className="border-b border-[#010110]/8 pb-4 last:border-0">
                   <Body>
-                    <span className="font-medium text-[#010110]">{x.title}</span>{" "}
-                    {x.desc}
+                    <span className="font-medium text-[#010110]">{x.title}</span> {x.desc}
                   </Body>
                 </li>
               ))}
             </ul>
-          </Glass>
-          <Glass className="p-8">
+          </div>
+          <div>
             <Eyebrow>{p.solutionTitle}</Eyebrow>
             <ul className="mt-5 space-y-4">
               {p.solutions?.map((x) => (
-                <li key={x.title}>
+                <li key={x.title} className="border-b border-[#010110]/8 pb-4 last:border-0">
                   <Body>
-                    <span className="font-medium text-[#010110]">{x.title}</span>{" "}
-                    {x.desc}
+                    <span className="font-medium text-[#010110]">{x.title}</span> {x.desc}
                   </Body>
                 </li>
               ))}
             </ul>
-          </Glass>
+          </div>
         </div>
       ) : null}
 
       {p.table ? (
-        <Glass className="mt-5 overflow-x-auto p-6 md:p-8">
+        <div className="mt-12 overflow-x-auto">
           <table className="w-full border-collapse text-left">
             <caption className="sr-only">{p.tableTitle}</caption>
             <thead>
               <tr>
-                <th className="w-1/2 border-b border-[#010110]/10 pb-4 text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
+                <th className="w-1/2 border-b border-[#010110]/15 pb-4 text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
                   Oggi
                 </th>
-                <th className="w-1/2 border-b border-[#010110]/10 pb-4 pl-6 text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
+                <th className="w-1/2 border-b border-[#010110]/15 pb-4 pl-6 text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
                   Con {c.product}
                 </th>
               </tr>
@@ -263,65 +267,75 @@ function Problem({ c }: { c: LandingContent }) {
               ))}
             </tbody>
           </table>
-        </Glass>
+        </div>
       ) : null}
     </Section>
   )
 }
 
-// ── 04 moduli, in schede animate ─────────────────────────────────────────────
+// ── 04 moduli: bento, una card grande e le altre piccole ────────────────────
 function Modules({ c }: { c: LandingContent }) {
   const statusStyle: Record<string, string> = {
     attivo: "bg-[#7C5CFA]/15 text-[#5B3FD9]",
     "in rilascio": "bg-[#010110]/6 text-[#4A4A58]",
     "in sviluppo": "bg-[#010110]/6 text-[#8A8A97]",
   }
-
-  const tabs = c.modules.items.map((m) => ({
-    id: m.name,
-    label: m.name,
-    content: (
-      <div className="grid h-full w-full gap-6 md:grid-cols-2">
-        <Shot label={`Schermata ${m.name}`} ratio="4 / 3" className="w-full" />
-        <div className="flex flex-col justify-center gap-y-3">
-          <div className="flex flex-wrap items-center gap-3">
-            <h3 className="m-0 text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
-              {m.name}
-            </h3>
-            <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[m.status]}`}>
-              {m.status}
-            </span>
-          </div>
-          <p className="m-0 text-[15px] leading-[1.55] text-[#4A4A58] md:text-[16px]">
-            {m.desc}
-          </p>
-        </div>
-      </div>
-    ),
-  }))
+  const [first, ...rest] = c.modules.items
 
   return (
     <Section id="moduli" className="pt-0">
-      <div className="mx-auto max-w-[820px] text-center">
-        <Eyebrow>{c.modules.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[24ch]">{c.modules.headline}</Title>
+      <div className="grid gap-6 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)] lg:items-end">
+        <div>
+          <Eyebrow>{c.modules.label}</Eyebrow>
+          <Title className="mt-5 max-w-[18ch]">{c.modules.headline}</Title>
+        </div>
         {c.modules.note ? (
-          <p className="mt-5 text-[15px] text-[#8A8A97]">
+          <p className="text-[15px] text-[#8A8A97] lg:text-right">
             {c.modules.note.text}
             {c.modules.note.todo ? <TodoTag /> : null}
           </p>
         ) : null}
       </div>
 
-      <AnimatedTabs
-        tabs={tabs}
-        tone="glass"
-        className="mx-auto mt-12 max-w-[1000px]"
-        panelClassName="p-6 md:p-8"
-      />
+      <div className="mt-12 grid gap-5 lg:grid-cols-3">
+        {/* modulo principale, su due colonne */}
+        <Glass className="flex flex-col gap-6 p-7 md:p-8 lg:col-span-2 lg:flex-row lg:items-center">
+          <div className="lg:w-1/2">
+            <div className="flex flex-wrap items-center gap-3">
+              <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
+                {first.name}
+              </h3>
+              <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[first.status]}`}>
+                {first.status}
+              </span>
+            </div>
+            <Body className="mt-4 text-[15px]">{first.desc}</Body>
+          </div>
+          <div className="lg:w-1/2">
+            <Shot label={`Schermata ${first.name}`} ratio="4 / 3" />
+          </div>
+        </Glass>
+
+        {/* gli altri moduli, in colonna */}
+        <div className="grid gap-5">
+          {rest.map((m) => (
+            <Glass key={m.name} className="p-7">
+              <div className="flex flex-wrap items-center gap-3">
+                <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
+                  {m.name}
+                </h3>
+                <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[m.status]}`}>
+                  {m.status}
+                </span>
+              </div>
+              <Body className="mt-3 text-[15px]">{m.desc}</Body>
+            </Glass>
+          ))}
+        </div>
+      </div>
 
       {c.modules.items.some((m) => m.statusTodo) ? (
-        <p className="mt-6 text-center text-[14px] text-[#8A8A97]">
+        <p className="mt-6 text-[14px] text-[#8A8A97]">
           Lo stato dei moduli è
           <TodoTag />
         </p>
@@ -330,100 +344,106 @@ function Modules({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 05 ruoli ─────────────────────────────────────────────────────────────────
+// ── 05 ruoli: righe con l'etichetta a sinistra, come una scheda tecnica ─────
 function Roles({ c }: { c: LandingContent }) {
   return (
     <Section id="ruoli" className="pt-0">
-      <div className="mx-auto max-w-[820px] text-center">
-        <Eyebrow>{c.roles.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[22ch]">{c.roles.headline}</Title>
-      </div>
-      <div className="mt-12 grid gap-5 md:grid-cols-3">
-        {c.roles.items.map((r) => (
-          <Glass key={r.role} className="h-full p-7 md:p-8">
-            <h3 className="text-[20px] font-medium tracking-[-0.02em] text-[#010110] md:text-[22px]">
-              {r.role}
-            </h3>
-            <Body className="mt-3 text-[15px]">{r.desc}</Body>
-          </Glass>
-        ))}
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
+        <div>
+          <Eyebrow>{c.roles.label}</Eyebrow>
+          <Title className="mt-5 max-w-[14ch]">{c.roles.headline}</Title>
+        </div>
+
+        <dl className="divide-y divide-[#010110]/10 border-y border-[#010110]/10">
+          {c.roles.items.map((r) => (
+            <div key={r.role} className="grid gap-2 py-7 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8">
+              <dt className="text-[17px] font-medium tracking-[-0.015em] text-[#010110]">
+                {r.role}
+              </dt>
+              <dd className="m-0">
+                <Body className="text-[15px]">{r.desc}</Body>
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </Section>
   )
 }
 
-// ── 06 caso sul campo ────────────────────────────────────────────────────────
+// ── 06 caso sul campo: impaginazione editoriale ─────────────────────────────
 function CaseStudy({ c }: { c: LandingContent }) {
   const cs = c.caseStudy
   return (
     <Section id="caso" className="pt-0">
-      <div className="mx-auto max-w-[820px] text-center">
-        <Eyebrow>{cs.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[24ch]">{cs.headline}</Title>
-        <p className="mt-4 text-[15px] italic text-[#8A8A97]">{cs.note}</p>
+      <Eyebrow>{cs.label}</Eyebrow>
+      <Title className="mt-5 max-w-[20ch]">{cs.headline}</Title>
+      <p className="mt-3 text-[15px] italic text-[#8A8A97]">{cs.note}</p>
+
+      <div className="mt-10">
+        <Shot label="Foto o schermata del caso" ratio="21 / 9" className="w-full" />
       </div>
 
-      <Glass className="mt-12 overflow-hidden">
-        <div className="grid items-center gap-8 md:grid-cols-2">
-          <div className="p-6 md:p-8">
-            <Shot label="Foto o schermata del caso" ratio="4 / 3" />
+      <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-12">
+        {cs.blocks.map((b) => (
+          <div key={b.title}>
+            <h3 className="text-[17px] font-medium text-[#010110]">{b.title}</h3>
+            <Body className="mt-3">{b.desc}</Body>
           </div>
-          <div className="p-6 md:p-10">
-            {cs.blocks.map((b) => (
-              <Body key={b.title} className="mb-4 last:mb-0">
-                <span className="font-medium text-[#010110]">{b.title}</span> {b.desc}
-              </Body>
-            ))}
-          </div>
-        </div>
-      </Glass>
+        ))}
+      </div>
 
-      <Glass className="mt-5 p-8 md:p-10">
+      <div className="mt-12 border-t border-[#010110]/10 pt-8">
         <div className="flex flex-wrap items-baseline gap-3">
-          <h3 className="text-[20px] font-medium text-[#010110] md:text-[22px]">
-            {cs.resultsTitle}
-          </h3>
+          <h3 className="text-[17px] font-medium text-[#010110]">{cs.resultsTitle}</h3>
           <span className="text-[13px] text-[#8A8A97]">{cs.resultsNote}</span>
           <TodoTag />
         </div>
-        <ul className="mt-5 space-y-3">
-          {cs.results.map((r) => (
-            <li key={r.text} className="flex items-start gap-3">
-              <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#7C5CFA]" />
-              <span className={`text-[16px] leading-[1.5] ${r.todo ? "text-[#8A8A97]" : "text-[#2A2A38]"}`}>
-                <BulletText item={r} />
+        <ul className="mt-6 grid gap-6 md:grid-cols-3">
+          {cs.results.map((r, i) => (
+            <li key={r.text} className="border-l border-[#7C5CFA]/30 pl-5">
+              <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+                {String(i + 1).padStart(2, "0")}
               </span>
+              <p className={`mt-2 text-[16px] leading-[1.5] ${r.todo ? "text-[#8A8A97]" : "text-[#2A2A38]"}`}>
+                <BulletText item={r} />
+              </p>
             </li>
           ))}
         </ul>
-      </Glass>
+      </div>
     </Section>
   )
 }
 
-// ── 07 i tuoi sistemi ────────────────────────────────────────────────────────
+// ── 07 i tuoi sistemi: griglia a filetti, senza riquadri ────────────────────
 function Systems({ c }: { c: LandingContent }) {
   return (
     <Section id="sistemi" className="pt-0">
-      <div className="mx-auto max-w-[820px] text-center">
+      <div className="mx-auto max-w-[820px]">
         <Eyebrow>{c.systems.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[24ch]">{c.systems.headline}</Title>
-        <Lead className="mx-auto mt-5 max-w-[62ch]">{c.systems.sub}</Lead>
+        <Title className="mt-5 max-w-[22ch]">{c.systems.headline}</Title>
+        <Lead className="mt-5 max-w-[62ch]">{c.systems.sub}</Lead>
       </div>
 
-      <div className="mt-12 grid gap-5 md:grid-cols-2">
-        {c.systems.items.map((it) => {
+      <div className="mt-12 grid border-t border-[#010110]/10 md:grid-cols-2">
+        {c.systems.items.map((it, i) => {
           const [title, ...rest] = it.text.split(". ")
           return (
-            <Glass key={it.text} className="h-full p-7 md:p-8">
-              <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
+            <div
+              key={it.text}
+              className={`border-b border-[#010110]/10 py-8 md:py-10 ${
+                i % 2 === 0 ? "md:pr-10" : "md:border-l md:pl-10"
+              }`}
+            >
+              <h3 className="text-[18px] font-medium tracking-[-0.015em] text-[#010110] md:text-[20px]">
                 {title}
               </h3>
-              <Body className="mt-3 text-[15px]">
+              <Body className="mt-3 max-w-[52ch] text-[15px]">
                 {rest.join(". ")}
                 {it.todo ? <TodoTag /> : null}
               </Body>
-            </Glass>
+            </div>
           )
         })}
       </div>
@@ -431,54 +451,39 @@ function Systems({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 08 come si lavora insieme: timeline che avanza ───────────────────────────
+// ── 08 come si lavora insieme: percorso orizzontale ─────────────────────────
 function Together({ c }: { c: LandingContent }) {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start 70%", "end 60%"],
-  })
-  const fill = useSpring(scrollYProgress, { stiffness: 120, damping: 24 })
-  const [active, setActive] = useState(0)
   const steps = c.together.steps
-
-  useMotionValueEvent(scrollYProgress, "change", (v) => {
-    setActive(Math.min(steps.length - 1, Math.floor(v * steps.length)))
-  })
-
   return (
     <Section id="come-si-lavora" className="pt-0">
       <div className="mx-auto max-w-[820px] text-center">
         <Eyebrow>{c.together.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[24ch]">{c.together.headline}</Title>
+        <Title className="mx-auto mt-5 max-w-[22ch]">{c.together.headline}</Title>
       </div>
 
-      <div ref={ref} className="relative mx-auto mt-14 max-w-[820px] pl-12 md:pl-16">
-        <div aria-hidden className="absolute bottom-0 left-[22px] top-2 w-px bg-[#010110]/10 md:left-[30px]" />
-        <motion.div
+      <div className="relative mt-14">
+        <div
           aria-hidden
-          style={{ scaleY: fill, originY: 0 }}
-          className="absolute bottom-0 left-[22px] top-2 w-px bg-[#7C5CFA] md:left-[30px]"
+          className="absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-[#7C5CFA]/10 via-[#7C5CFA]/45 to-[#7C5CFA]/10 lg:block"
         />
-        <ol className="space-y-8">
+        <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
           {steps.map((s, i) => (
             <li key={s.n} className="relative">
-              <span
-                aria-hidden
-                className={`absolute -left-12 top-0 flex h-11 w-11 items-center justify-center rounded-full border text-[14px] font-medium tabular-nums transition-colors duration-500 md:-left-16 ${
-                  i <= active
-                    ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
-                    : "border-[#010110]/15 bg-white text-[#A3A3AD]"
-                }`}
-              >
-                {i < active ? <Check className="h-5 w-5" /> : s.n}
-              </span>
-              <Glass className="p-6 md:p-7">
-                <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[22px]">
-                  {s.title}
-                </h3>
-                <Body className="mt-2 text-[15px]">{s.desc}</Body>
-              </Glass>
+              <div className="flex items-center gap-3 lg:block">
+                <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/70 bg-white text-[15px] font-medium tabular-nums text-[#7C5CFA] shadow-[0_10px_30px_-18px_rgba(1,1,16,0.5)]">
+                  {s.n}
+                </span>
+                {i < steps.length - 1 ? (
+                  <ArrowRight
+                    aria-hidden
+                    className="hidden h-4 w-4 text-[#7C5CFA]/50 lg:absolute lg:right-[-14px] lg:top-4 lg:block"
+                  />
+                ) : null}
+              </div>
+              <h3 className="mt-5 text-[18px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[20px]">
+                {s.title}
+              </h3>
+              <Body className="mt-3 text-[15px]">{s.desc}</Body>
             </li>
           ))}
         </ol>
@@ -487,83 +492,63 @@ function Together({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 09 a chi è rivolto ───────────────────────────────────────────────────────
+// ── 09 a chi è rivolto: due colonne, quando sì e quando no ──────────────────
 function ForWhom({ c }: { c: LandingContent }) {
   return (
     <Section id="a-chi-e-rivolto" className="pt-0">
-      <div className="mx-auto max-w-[820px] text-center">
-        <Eyebrow>{c.forWhom.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[22ch]">{c.forWhom.headline}</Title>
+      <Eyebrow>{c.forWhom.label}</Eyebrow>
+      <Title className="mt-5 max-w-[20ch]">{c.forWhom.headline}</Title>
+
+      <div className="mt-10 grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
+        <Glass className="p-8 md:p-10">
+          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
+            Funziona bene se
+          </p>
+          <ul className="mt-6 space-y-4">
+            {c.forWhom.bullets.map((b) => (
+              <li key={b} className="flex items-start gap-3">
+                <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#7C5CFA]" />
+                <span className="text-[16px] leading-[1.5] text-[#2A2A38]">{b}</span>
+              </li>
+            ))}
+          </ul>
+        </Glass>
+
+        <div className="rounded-[28px] border border-[#010110]/10 p-8 md:p-10">
+          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
+            Quando invece no
+          </p>
+          <Body className="mt-6">{c.forWhom.notFor.replace("Quando invece non è lo strumento giusto: ", "")}</Body>
+        </div>
       </div>
-
-      <Glass className="mx-auto mt-12 max-w-[880px] p-8 md:p-10">
-        <ul className="space-y-4">
-          {c.forWhom.bullets.map((b) => (
-            <li key={b} className="flex items-start gap-3 border-b border-[#010110]/8 pb-4 last:border-0 last:pb-0">
-              <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#7C5CFA]" />
-              <span className="text-[16px] leading-[1.5] text-[#2A2A38]">{b}</span>
-            </li>
-          ))}
-        </ul>
-      </Glass>
-
-      <p className="mx-auto mt-6 max-w-[880px] text-[15px] leading-[1.6] text-[#8A8A97]">
-        {c.forWhom.notFor}
-      </p>
     </Section>
   )
 }
 
-// ── 10 domande frequenti ─────────────────────────────────────────────────────
+// ── 10 domande frequenti: due colonne, tutte leggibili ──────────────────────
 function Faq({ c }: { c: LandingContent }) {
-  const [open, setOpen] = useState(0)
   return (
     <Section id="faq" className="pt-0">
-      <div className="mx-auto max-w-[820px] text-center">
-        <Eyebrow>{c.faq.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[22ch]">{c.faq.headline}</Title>
-      </div>
+      <div className="grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-14">
+        <div>
+          <Eyebrow>{c.faq.label}</Eyebrow>
+          <Title className="mt-5 max-w-[14ch]">{c.faq.headline}</Title>
+        </div>
 
-      <Glass className="mx-auto mt-12 max-w-[880px] p-6 md:p-10">
-        {c.faq.items.map((f, i) => {
-          const isOpen = open === i
-          return (
-            <div key={f.q} className="border-b border-[#010110]/8 last:border-0">
-              <h3 className="m-0">
-                <button
-                  type="button"
-                  onClick={() => setOpen(isOpen ? -1 : i)}
-                  aria-expanded={isOpen}
-                  className="flex w-full items-center gap-4 py-5 text-left"
-                >
-                  <span
-                    className={`flex-1 text-[17px] font-medium tracking-[-0.015em] md:text-[19px] ${
-                      isOpen ? "text-[#010110]" : "text-[#4A4A58]"
-                    }`}
-                  >
-                    {f.q}
-                  </span>
-                  <span className="text-[#7C5CFA]">
-                    {isOpen ? <Minus className="h-5 w-5" /> : <Plus className="h-5 w-5" />}
-                  </span>
-                </button>
+        <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
+          {c.faq.items.map((f) => (
+            <div key={f.q}>
+              <h3 className="text-[17px] font-medium leading-[1.3] tracking-[-0.015em] text-[#010110]">
+                {f.q}
               </h3>
-              <div
-                className={`grid transition-[grid-template-rows] duration-200 ${
-                  isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"
-                }`}
-              >
-                <div className="overflow-hidden">
-                  <Body className={`max-w-[62ch] pb-5 ${f.todo ? "text-[#8A8A97]" : ""}`}>
-                    {f.a}
-                    {f.todo ? <TodoTag /> : null}
-                  </Body>
-                </div>
-              </div>
+              <Body className={`mt-2 text-[15px] ${f.todo ? "text-[#8A8A97]" : ""}`}>
+                {f.a}
+                {f.todo ? <TodoTag /> : null}
+              </Body>
             </div>
-          )
-        })}
-      </Glass>
+          ))}
+        </div>
+      </div>
     </Section>
   )
 }
