@@ -148,14 +148,14 @@ export function Possibilities() {
     label: p.label,
     content: (
       <div className="grid h-full w-full gap-6 md:grid-cols-2">
-        <div className="overflow-hidden rounded-lg border border-white/10">
+        <div className="overflow-hidden rounded-[14px] border border-white/60 bg-white/40">
           {p.visual}
         </div>
         <div className="flex flex-col justify-center gap-y-3">
-          <h3 className="m-0 text-[22px] font-medium tracking-[-0.02em] text-white md:text-[26px]">
+          <h3 className="m-0 text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
             {p.title}
           </h3>
-          <p className="m-0 text-[15px] leading-[1.55] text-white/60 md:text-[16px]">
+          <p className="m-0 text-[15px] leading-[1.55] text-[#4A4A58] md:text-[16px]">
             {p.text}
           </p>
         </div>
@@ -172,6 +172,7 @@ export function Possibilities() {
 
       <AnimatedTabs
         tabs={tabs}
+        tone="glass"
         className="mx-auto mt-12 max-w-[1000px]"
         panelClassName="p-6 md:p-8"
       />

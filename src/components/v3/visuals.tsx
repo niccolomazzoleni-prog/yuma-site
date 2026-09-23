@@ -3,7 +3,13 @@
 
 function Panel({ children }: { children: React.ReactNode }) {
   return (
-    <div className="flex h-full w-full items-center justify-center bg-[#0A0A0F] p-8">
+    <div
+      className="flex h-full w-full items-center justify-center p-8"
+      style={{
+        background:
+          "linear-gradient(135deg, rgba(255,255,255,0.55), rgba(255,240,246,0.45))",
+      }}
+    >
       {children}
     </div>
   )
@@ -14,7 +20,7 @@ export function AgentsFlow() {
   return (
     <Panel>
       <svg viewBox="0 0 420 240" className="h-auto w-full max-w-[420px]" aria-hidden>
-        <g stroke="rgba(255,255,255,0.25)" fill="none" strokeWidth="1">
+        <g stroke="rgba(1,1,16,0.22)" fill="none" strokeWidth="1">
           <path d="M60 120 H140" />
           <path d="M180 120 H260" />
           <path d="M300 120 H360" />
@@ -23,8 +29,8 @@ export function AgentsFlow() {
         {[60, 160, 280, 380].map((x, i) => (
           <g key={x}>
             <circle cx={x} cy="120" r="20" fill="rgba(124,92,250,0.14)" stroke="#7C5CFA" strokeWidth="1" />
-            <circle cx={x} cy="120" r="4" fill="#A794FF" />
-            <text x={x} y="172" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="11">
+            <circle cx={x} cy="120" r="4" fill="#7C5CFA" />
+            <text x={x} y="172" textAnchor="middle" fill="rgba(1,1,16,0.45)" fontSize="11">
               {["input", "agente", "controllo", "sistema"][i]}
             </text>
           </g>
@@ -40,7 +46,7 @@ export function DataBars() {
   return (
     <Panel>
       <svg viewBox="0 0 420 240" className="h-auto w-full max-w-[420px]" aria-hidden>
-        <line x1="40" y1="200" x2="380" y2="200" stroke="rgba(255,255,255,0.2)" />
+        <line x1="40" y1="200" x2="380" y2="200" stroke="rgba(1,1,16,0.18)" />
         {bars.map((h, i) => (
           <g key={i}>
             <rect
@@ -49,7 +55,7 @@ export function DataBars() {
               width="26"
               height={h * 1.6}
               rx="3"
-              fill={i === 3 ? "#7C5CFA" : "rgba(255,255,255,0.14)"}
+              fill={i === 3 ? "#7C5CFA" : "rgba(1,1,16,0.10)"}
             />
           </g>
         ))}
@@ -74,14 +80,14 @@ export function FreedRows() {
       <svg viewBox="0 0 420 240" className="h-auto w-full max-w-[420px]" aria-hidden>
         {Array.from({ length: 9 }).map((_, i) => (
           <g key={i} opacity={1 - i * 0.1}>
-            <rect x="40" y={24 + i * 22} width={i < 4 ? 250 : 250 - (i - 3) * 46} height="8" rx="4" fill="rgba(255,255,255,0.12)" />
+            <rect x="40" y={24 + i * 22} width={i < 4 ? 250 : 250 - (i - 3) * 46} height="8" rx="4" fill="rgba(1,1,16,0.09)" />
             <rect x="40" y={24 + i * 22} width={i < 4 ? 90 : Math.max(0, 90 - (i - 3) * 20)} height="8" rx="4" fill={i < 4 ? "rgba(124,92,250,0.6)" : "rgba(124,92,250,0.25)"} />
           </g>
         ))}
         <g transform="translate(320 96)">
           <circle r="26" fill="rgba(124,92,250,0.14)" stroke="#7C5CFA" />
-          <circle cy="-6" r="7" fill="#A794FF" />
-          <path d="M-13 16 A13 13 0 0 1 13 16" fill="#A794FF" />
+          <circle cy="-6" r="7" fill="#7C5CFA" />
+          <path d="M-13 16 A13 13 0 0 1 13 16" fill="#7C5CFA" />
         </g>
       </svg>
     </Panel>
@@ -93,7 +99,7 @@ export function KnowledgeLayers() {
   return (
     <Panel>
       <svg viewBox="0 0 420 240" className="h-auto w-full max-w-[420px]" aria-hidden>
-        <g stroke="rgba(255,255,255,0.3)" fill="none" strokeWidth="1">
+        <g stroke="rgba(1,1,16,0.25)" fill="none" strokeWidth="1">
           {[0, 1, 2, 3].map((i) => (
             <polygon
               key={i}
@@ -107,7 +113,7 @@ export function KnowledgeLayers() {
           <circle cx="340" cy="82" r="3.5" />
           <circle cx="80" cy="82" r="3.5" />
         </g>
-        <text x="210" y="222" textAnchor="middle" fill="rgba(255,255,255,0.45)" fontSize="11">
+        <text x="210" y="222" textAnchor="middle" fill="rgba(1,1,16,0.45)" fontSize="11">
           memoria condivisa dell'azienda
         </text>
       </svg>
