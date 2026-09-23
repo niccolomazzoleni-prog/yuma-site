@@ -1,0 +1,157 @@
+{
+  "version": 1,
+  "project": {
+    "name": "prisma-hero",
+    "productType": null,
+    "stack": [
+      "react",
+      "shadcn",
+      "tailwind-v3",
+      "vite"
+    ]
+  },
+  "sources": {
+    "tokens": [
+      "src/index.css"
+    ],
+    "components": [
+      "src/components/ui"
+    ],
+    "assets": [],
+    "instructions": [
+      "CLAUDE.md"
+    ]
+  },
+  "design": {
+    "colorMode": "light",
+    "colors": {
+      "--background": {
+        "value": "0 0% 4%",
+        "source": "src/index.css"
+      },
+      "--foreground": {
+        "value": "57 26% 84%",
+        "source": "src/index.css"
+      },
+      "--card-foreground": {
+        "value": "57 26% 84%",
+        "source": "src/index.css"
+      },
+      "--popover-foreground": {
+        "value": "57 26% 84%",
+        "source": "src/index.css"
+      },
+      "--primary": {
+        "value": "57 26% 84%",
+        "source": "src/index.css"
+      },
+      "--primary-foreground": {
+        "value": "0 0% 4%",
+        "source": "src/index.css"
+      },
+      "--secondary": {
+        "value": "0 0% 12%",
+        "source": "src/index.css"
+      },
+      "--secondary-foreground": {
+        "value": "57 26% 84%",
+        "source": "src/index.css"
+      },
+      "--muted": {
+        "value": "0 0% 12%",
+        "source": "src/index.css"
+      },
+      "--muted-foreground": {
+        "value": "0 0% 64%",
+        "source": "src/index.css"
+      },
+      "--accent": {
+        "value": "0 0% 12%",
+        "source": "src/index.css"
+      },
+      "--accent-foreground": {
+        "value": "57 26% 84%",
+        "source": "src/index.css"
+      },
+      "--destructive": {
+        "value": "0 84% 60%",
+        "source": "src/index.css"
+      },
+      "--destructive-foreground": {
+        "value": "57 26% 84%",
+        "source": "src/index.css"
+      },
+      "--border": {
+        "value": "0 0% 18%",
+        "source": "src/index.css"
+      },
+      "--ring": {
+        "value": "57 26% 84%",
+        "source": "src/index.css"
+      }
+    },
+    "typography": {},
+    "spacing": {},
+    "radius": {
+      "--radius": {
+        "value": "0.75rem",
+        "source": "src/index.css"
+      }
+    },
+    "shadows": {},
+    "motion": {},
+    "density": "unknown"
+  },
+  "components": {
+    "installed": [
+      "credibilita-variant-a",
+      "credibilita-variant-b",
+      "kinetic-grid",
+      "prisma-hero",
+      "reveal",
+      "silk-shader"
+    ],
+    "preferredPrimitives": [],
+    "patterns": []
+  },
+  "constraints": {
+    "must": [],
+    "avoid": []
+  },
+  "decisions": [],
+  "evidence": [
+    {
+      "fact": "components.installed",
+      "source": "src/components/ui"
+    },
+    {
+      "fact": "design.colorMode:light",
+      "source": "src/index.css"
+    },
+    {
+      "fact": "design.tokens",
+      "source": "src/index.css"
+    },
+    {
+      "fact": "project.instructions",
+      "source": "CLAUDE.md"
+    },
+    {
+      "fact": "project.stack:react",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:shadcn",
+      "source": "components.json"
+    },
+    {
+      "fact": "project.stack:tailwind-v3",
+      "source": "package.json"
+    },
+    {
+      "fact": "project.stack:vite",
+      "source": "package.json"
+    }
+  ],
+  "generatedAt": "2026-09-23T08:37:28.842Z"
+}
