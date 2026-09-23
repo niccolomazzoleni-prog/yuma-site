@@ -318,7 +318,13 @@ function Roles({ c }: { c: LandingContent }) {
 
 // ── 07 i tuoi sistemi: schema del flusso al centro ──────────────────────────
 function Systems({ c }: { c: LandingContent }) {
-  return <SystemsDiagramBlock systems={c.systems} />
+  return (
+    <SystemsDiagramBlock
+      systems={c.systems}
+      image={`${import.meta.env.BASE_URL}schema-client-interface.webp`}
+      imageAlt="Email, WhatsApp, PDF e vocali entrano in YUMA, che li interpreta e li scrive in ERP e CRM"
+    />
+  )
 }
 
 // ── 08 come si lavora insieme: stepper cliccabile ───────────────────────────

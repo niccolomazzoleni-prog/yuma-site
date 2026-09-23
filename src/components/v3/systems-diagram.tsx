@@ -60,7 +60,16 @@ function FlowDiagram() {
   )
 }
 
-export function SystemsDiagramBlock({ systems }: { systems: LandingContent["systems"] }) {
+export function SystemsDiagramBlock({
+  systems,
+  image,
+  imageAlt,
+}: {
+  systems: LandingContent["systems"]
+  /** immagine dello schema; senza, resta il disegno a codice */
+  image?: string
+  imageAlt?: string
+}) {
   const items = systems.items.map((it) => {
     const [title, ...rest] = it.text.split(". ")
     return { title, desc: rest.join(". "), todo: it.todo }
@@ -96,8 +105,19 @@ export function SystemsDiagramBlock({ systems }: { systems: LandingContent["syst
         <Lead className="mx-auto mt-5 max-w-[62ch]">{systems.sub}</Lead>
       </div>
 
-      <Glass className="mt-12 p-8 md:p-10">
-        <FlowDiagram />
+      <Glass className="mt-12 overflow-hidden p-4 md:p-6">
+        {image ? (
+          <img
+            src={image}
+            alt={imageAlt ?? "Schema del flusso"}
+            loading="lazy"
+            className="h-auto w-full rounded-[18px]"
+          />
+        ) : (
+          <div className="p-4 md:p-6">
+            <FlowDiagram />
+          </div>
+        )}
       </Glass>
 
       <AnimatedTabs
