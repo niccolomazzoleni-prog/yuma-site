@@ -6,11 +6,27 @@ export function Info({
   n,
   ratio = "4 / 3",
   className,
+  src,
+  alt,
 }: {
   n: number
   ratio?: string
   className?: string
+  /** quando l'infografica è pronta, basta passarla qui */
+  src?: string
+  alt?: string
 }) {
+  if (src) {
+    return (
+      <img
+        src={src}
+        alt={alt ?? `Infografica ${n}`}
+        loading="lazy"
+        className={cn("h-full w-full object-cover", className)}
+      />
+    )
+  }
+
   return (
     <div
       role="img"

@@ -67,7 +67,14 @@ const beats: Beat[] = [
         con una frazione dei costi.
       </>
     ),
-    visual: <Info n={2} className="h-full" />,
+    visual: (
+      <Info
+        n={2}
+        className="h-full"
+        src={`${import.meta.env.BASE_URL}infografica-02.webp`}
+        alt="Prima: una finestra software piena di campi. Dopo: un messaggio vocale che diventa tre righe di dati ordinate"
+      />
+    ),
   },
   {
     id: "dati",
