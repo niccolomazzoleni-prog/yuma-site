@@ -16,6 +16,7 @@ export default defineConfig({
         v2: path.resolve(__dirname, "v2/index.html"),
         explore: path.resolve(__dirname, "explore/index.html"),
         v3: path.resolve(__dirname, "v3/index.html"),
+        v3client: path.resolve(__dirname, "v3/client-interface/index.html"),
         storia: path.resolve(__dirname, "storia/index.html"),
         schede: path.resolve(__dirname, "schede/index.html"),
         processo: path.resolve(__dirname, "processo/index.html"),
