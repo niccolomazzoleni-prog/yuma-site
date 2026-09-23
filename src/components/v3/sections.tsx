@@ -10,6 +10,7 @@ import {
 } from "@/components/v3/glass"
 import { ParticleGlobe } from "@/components/ui/particle-globe"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
+import { CardsSplit } from "@/components/v3/product-cards"
 import { AgentsFlow, DataBars, FreedRows, KnowledgeLayers } from "@/components/v3/visuals"
 import { links } from "@/lib/links"
 
@@ -182,19 +183,8 @@ export function Possibilities() {
 }
 
 // ── 4 · Le nostre soluzioni ──────────────────────────────────────────────────
-const products = [
-  {
-    name: "YUMA Projects",
-    desc: "Aiuta le aziende che lavorano a commessa a tenere sotto controllo margini, costi e avanzamento di ogni progetto. Raccoglie i dati dal campo come arrivano, con messaggi, foto e note vocali, e li trasforma in un quadro aggiornato ogni giorno di ogni commessa.",
-    href: links.projects,
-  },
-  {
-    name: "YUMA Client Interface",
-    desc: "Gestisce ordini, richieste e reclami che arrivano dai tuoi clienti. Li interpreta e li porta già strutturati nei tuoi sistemi, liberando il tuo team dalle attività di data entry manuali e ripetitive.",
-    href: links.clientInterface,
-  },
-]
-
+// Schede "divise": immagine a fianco del testo, lati alternati. I contenuti
+// stanno in product-cards.tsx, insieme al segnaposto per gli screenshot.
 export function Solutions() {
   return (
     <Section id="soluzioni" className="pt-0">
@@ -205,22 +195,8 @@ export function Solutions() {
         </Title>
       </div>
 
-      <div className="mt-12 grid gap-5 md:grid-cols-2">
-        {products.map((p) => (
-          <Glass key={p.name} className="flex flex-col p-8 md:p-10">
-            <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
-              {p.name}
-            </h3>
-            <Body className="mt-4 flex-1">{p.desc}</Body>
-            <a
-              href={p.href}
-              className="group mt-7 inline-flex items-center gap-2 self-start rounded-full bg-[#7C5CFA] px-5 py-2.5 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#010110] focus-visible:ring-offset-2"
-            >
-              Scopri di più
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-            </a>
-          </Glass>
-        ))}
+      <div className="mt-12">
+        <CardsSplit />
       </div>
 
       <p className="mt-10 text-center text-[16px] text-[#4A4A58]">
