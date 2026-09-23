@@ -16,6 +16,7 @@ import { ProblemAlternating } from "@/components/v3/problem-blocks"
 import { RolesSelector } from "@/components/v3/roles-selector"
 import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
 import { StepsWizard } from "@/components/v3/steps-wizard"
+import { FitStickers } from "@/components/v3/fit-stickers"
 
 // Landing di prodotto nella direzione "vetro su gradiente". Le strutture sono
 // diverse da quelle della home, per dare varietà: riga di prova con divisori,
@@ -324,36 +325,23 @@ function Together({ c }: { c: LandingContent }) {
   return <StepsWizard together={c.together} />
 }
 
-// ── 09 a chi è rivolto: due colonne, quando sì e quando no ──────────────────
+// ── 09 fa per te se: adesivi inclinati ──────────────────────────────────────
+const fitLabels: Record<string, string[]> = {
+  "client-interface": [
+    "Ordini ricorrenti da clienti abituali",
+    "Più canali e formati diversi",
+    "Back office che inserisce a mano",
+    "ERP o CRM che non volete sostituire",
+  ],
+}
+
 function ForWhom({ c }: { c: LandingContent }) {
   return (
-    <Section id="a-chi-e-rivolto" className="pt-0">
-      <Eyebrow>{c.forWhom.label}</Eyebrow>
-      <Title className="mt-5 max-w-[20ch]">{c.forWhom.headline}</Title>
-
-      <div className="mt-10 grid gap-5 lg:grid-cols-[minmax(0,1.3fr)_minmax(0,0.7fr)]">
-        <Glass className="p-8 md:p-10">
-          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
-            Funziona bene se
-          </p>
-          <ul className="mt-6 space-y-4">
-            {c.forWhom.bullets.map((b) => (
-              <li key={b} className="flex items-start gap-3">
-                <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#7C5CFA]" />
-                <span className="text-[16px] leading-[1.5] text-[#2A2A38]">{b}</span>
-              </li>
-            ))}
-          </ul>
-        </Glass>
-
-        <div className="rounded-[28px] border border-[#010110]/10 p-8 md:p-10">
-          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
-            Quando invece no
-          </p>
-          <Body className="mt-6">{c.forWhom.notFor.replace("Quando invece non è lo strumento giusto: ", "")}</Body>
-        </div>
-      </div>
-    </Section>
+    <FitStickers
+      forWhom={c.forWhom}
+      product={c.product}
+      shortLabels={fitLabels[c.slug]}
+    />
   )
 }
 
