@@ -1,4 +1,4 @@
-import{r as q,j as U}from"./arrow-right-CGTbrvgQ.js";const B=`attribute vec2 a_position;
+import{r as q,j as U}from"./index-CZNFmr97.js";const B=`attribute vec2 a_position;
 void main() {
   gl_Position = vec4(a_position, 0.0, 1.0);
 }`,Y=`#ifdef GL_FRAGMENT_PRECISION_HIGH
