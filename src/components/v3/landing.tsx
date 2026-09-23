@@ -12,6 +12,7 @@ import {
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import type { Bullet, LandingContent } from "@/lib/landing-content"
+import { ProblemAlternating } from "@/components/v3/problem-blocks"
 
 // Landing di prodotto nella direzione "vetro su gradiente". Le strutture sono
 // diverse da quelle della home, per dare varietà: riga di prova con divisori,
@@ -189,26 +190,7 @@ function Problem({ c }: { c: LandingContent }) {
       <Title className="mt-5 max-w-[20ch]">{p.headline}</Title>
       {p.sub ? <Lead className="mt-5 max-w-[62ch]">{p.sub}</Lead> : null}
 
-      {p.items ? (
-        <ol className="mt-12 space-y-0">
-          {p.items.map((it, i) => (
-            <li
-              key={it.title}
-              className="grid gap-4 border-t border-[#010110]/10 py-9 md:grid-cols-[80px_minmax(0,1fr)] md:gap-10"
-            >
-              <span className="text-[34px] font-medium leading-none tabular-nums text-[#7C5CFA]/35 md:text-[44px]">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              <div>
-                <h3 className="max-w-[26ch] text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#010110] md:text-[28px]">
-                  {it.title}
-                </h3>
-                <Body className="mt-3 max-w-[62ch]">{it.desc}</Body>
-              </div>
-            </li>
-          ))}
-        </ol>
-      ) : null}
+      {p.items ? <ProblemAlternating items={p.items} /> : null}
 
       {p.causes ? (
         <div className="mt-12 grid gap-10 md:grid-cols-2">

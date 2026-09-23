@@ -1,4 +1,3 @@
-import { useState } from "react"
 import { Body, Eyebrow, Glass, Lead, Section, Title } from "@/components/v3/glass"
 import { clientInterfaceContent } from "@/lib/landing-content"
 
@@ -10,74 +9,7 @@ import { clientInterfaceContent } from "@/lib/landing-content"
 const p = clientInterfaceContent.problem
 const items = p.items ?? []
 
-// ── illustrazioni a codice, una per problema ────────────────────────────────
-function InboxArt() {
-  return (
-    <svg viewBox="0 0 320 180" className="h-auto w-full" aria-hidden>
-      {[0, 1, 2, 3].map((i) => (
-        <g key={i} transform={`translate(${40 + i * 6} ${30 + i * 26})`}>
-          <rect width="200" height="22" rx="6" fill="rgba(1,1,16,0.06)" />
-          <rect width="72" height="22" rx="6" fill="rgba(124,92,250,0.35)" />
-        </g>
-      ))}
-      <g transform="translate(250 96)">
-        <circle r="26" fill="rgba(224,69,123,0.12)" stroke="#E0457B" />
-        <text textAnchor="middle" y="6" fontSize="16" fill="#E0457B">
-          +48
-        </text>
-      </g>
-    </svg>
-  )
-}
-
-function ScatterArt() {
-  const pts = [
-    [50, 40],
-    [110, 90],
-    [80, 130],
-    [180, 55],
-    [230, 110],
-    [150, 145],
-    [270, 60],
-  ]
-  return (
-    <svg viewBox="0 0 320 180" className="h-auto w-full" aria-hidden>
-      <g stroke="rgba(1,1,16,0.12)" strokeDasharray="3 4">
-        {pts.map(([x, y], i) =>
-          i ? <line key={i} x1={pts[i - 1][0]} y1={pts[i - 1][1]} x2={x} y2={y} /> : null,
-        )}
-      </g>
-      {pts.map(([x, y], i) => (
-        <circle key={i} cx={x} cy={y} r={i % 3 === 0 ? 6 : 4} fill={i % 3 === 0 ? "#7C5CFA" : "rgba(1,1,16,0.25)"} />
-      ))}
-      <text x="160" y="172" textAnchor="middle" fontSize="11" fill="rgba(1,1,16,0.4)">
-        segnali sparsi, mai aggregati
-      </text>
-    </svg>
-  )
-}
-
-function KeyholderArt() {
-  return (
-    <svg viewBox="0 0 320 180" className="h-auto w-full" aria-hidden>
-      <g transform="translate(90 90)">
-        <circle r="34" fill="rgba(124,92,250,0.12)" stroke="#7C5CFA" />
-        <circle cy="-8" r="10" fill="#7C5CFA" />
-        <path d="M-18 22 A18 18 0 0 1 18 22" fill="#7C5CFA" />
-      </g>
-      {[0, 1, 2, 3].map((i) => (
-        <g key={i} transform={`translate(200 ${40 + i * 32})`}>
-          <rect width="90" height="20" rx="10" fill="rgba(1,1,16,0.06)" />
-          <circle cx="10" cy="10" r="4" fill="rgba(124,92,250,0.5)" />
-        </g>
-      ))}
-      <path d="M128 90 C160 90 160 50 200 50" stroke="rgba(1,1,16,0.18)" fill="none" />
-      <path d="M128 90 C160 90 160 82 200 82" stroke="rgba(1,1,16,0.18)" fill="none" />
-      <path d="M128 90 C160 90 160 114 200 114" stroke="rgba(1,1,16,0.18)" fill="none" />
-      <path d="M128 90 C160 90 160 146 200 146" stroke="rgba(1,1,16,0.18)" fill="none" />
-    </svg>
-  )
-}
+import { InboxArt, ScatterArt, KeyholderArt } from "@/components/v3/problem-art"
 
 const arts = [InboxArt, ScatterArt, KeyholderArt]
 
@@ -115,44 +47,34 @@ export function ProblemIllustrated() {
   )
 }
 
-// ── B · Carte impilate che si aprono al passaggio del mouse ─────────────────
+// ── B · Carte staccate, testo e immagine che si alternano ───────────────────
 export function ProblemStack() {
-  const [hover, setHover] = useState<number | null>(null)
   return (
     <Section>
       <Head />
-      <div className="mx-auto mt-14 max-w-[860px]">
+      <div className="mx-auto mt-14 flex max-w-[1000px] flex-col gap-6">
         {items.map((it, i) => {
           const Art = arts[i]
-          const lifted = hover === i
+          const imageFirst = i % 2 === 1
           return (
-            <div
+            <Glass
               key={it.title}
-              onMouseEnter={() => setHover(i)}
-              onMouseLeave={() => setHover(null)}
-              className="transition-transform duration-300"
-              style={{
-                marginTop: i === 0 ? 0 : -28,
-                transform: lifted ? "translateY(-10px)" : "none",
-                zIndex: i + 1,
-                position: "relative",
-              }}
+              className="grid items-center gap-8 p-8 md:grid-cols-2 md:gap-12 md:p-10"
             >
-              <Glass className="grid gap-6 p-7 md:grid-cols-[minmax(0,1fr)_200px] md:items-center md:p-8">
-                <div>
-                  <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
-                    {String(i + 1).padStart(2, "0")}
-                  </span>
-                  <h3 className="mt-2 text-[21px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[24px]">
-                    {it.title}
-                  </h3>
-                  <Body className="mt-3 max-w-[56ch] text-[15px]">{it.desc}</Body>
-                </div>
-                <div className="hidden rounded-[14px] bg-white/45 p-3 md:block">
-                  <Art />
-                </div>
-              </Glass>
-            </div>
+              <div className={imageFirst ? "md:order-2" : ""}>
+                <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#010110] md:text-[30px]">
+                  {it.title}
+                </h3>
+                <Body className="mt-4 max-w-[52ch]">{it.desc}</Body>
+              </div>
+
+              <div className={`rounded-[18px] bg-white/45 p-6 ${imageFirst ? "md:order-1" : ""}`}>
+                <Art />
+              </div>
+            </Glass>
           )
         })}
       </div>
