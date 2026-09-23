@@ -17,6 +17,7 @@ import { RolesSelector } from "@/components/v3/roles-selector"
 import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
 import { StepsWizard } from "@/components/v3/steps-wizard"
 import { FitStickers } from "@/components/v3/fit-stickers"
+import { FAQ, type FaqData } from "@/components/ui/faq-tabs"
 
 // Landing di prodotto nella direzione "vetro su gradiente". Le strutture sono
 // diverse da quelle della home, per dare varietà: riga di prova con divisori,
@@ -345,30 +346,37 @@ function ForWhom({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 10 domande frequenti: due colonne, tutte leggibili ──────────────────────
+// ── 10 domande frequenti: schede per gruppo ─────────────────────────────────
 function Faq({ c }: { c: LandingContent }) {
+  // se le domande hanno un gruppo le raccolgo per gruppo, altrimenti una sola scheda
+  const groups = c.faq.items.reduce<FaqData>((acc, item) => {
+    const key = item.group ?? "Tutte"
+    acc[key] = acc[key] ?? []
+    acc[key].push({
+      question: item.q,
+      answer: (
+        <>
+          {item.a}
+          {item.todo ? <TodoTag /> : null}
+        </>
+      ),
+    })
+    return acc
+  }, {})
+
+  const categories = Object.keys(groups).reduce<Record<string, string>>((acc, k) => {
+    acc[k] = k
+    return acc
+  }, {})
+
   return (
     <Section id="faq" className="pt-0">
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,0.7fr)_minmax(0,1.3fr)] lg:gap-14">
-        <div>
-          <Eyebrow>{c.faq.label}</Eyebrow>
-          <Title className="mt-5 max-w-[14ch]">{c.faq.headline}</Title>
-        </div>
-
-        <div className="grid gap-x-12 gap-y-8 md:grid-cols-2">
-          {c.faq.items.map((f) => (
-            <div key={f.q}>
-              <h3 className="text-[17px] font-medium leading-[1.3] tracking-[-0.015em] text-[#010110]">
-                {f.q}
-              </h3>
-              <Body className={`mt-2 text-[15px] ${f.todo ? "text-[#8A8A97]" : ""}`}>
-                {f.a}
-                {f.todo ? <TodoTag /> : null}
-              </Body>
-            </div>
-          ))}
-        </div>
-      </div>
+      <FAQ
+        title={c.faq.headline}
+        subtitle={c.faq.label}
+        categories={categories}
+        faqData={groups}
+      />
     </Section>
   )
 }

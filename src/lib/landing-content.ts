@@ -11,7 +11,7 @@ export type Module = {
   desc: string
 }
 
-export type Faq = { q: string; a: string; todo?: boolean }
+export type Faq = { q: string; a: string; todo?: boolean; group?: string }
 
 export type LandingContent = {
   slug: string
@@ -488,28 +488,34 @@ export const clientInterfaceContent: LandingContent = {
       {
         q: "Dobbiamo chiedere ai clienti di cambiare il modo in cui ordinano?",
         a: "No. Continuano a scrivere su WhatsApp, per email o a voce, come fanno oggi.",
+              group: "Uso quotidiano",
       },
       {
         q: "Chi controlla che l'ordine sia corretto?",
         a: "Le eccezioni e i casi dubbi restano in attesa di conferma umana, con regole definite insieme a voi.",
+              group: "Uso quotidiano",
       },
       {
         q: "Si integra col nostro gestionale?",
         a: "Scriviamo direttamente in ERP e CRM. Elenco dei gestionali già integrati da inserire.",
         todo: true,
+              group: "Sistemi e dati",
       },
       {
         q: "Come vengono gestite le conversazioni dei nostri clienti?",
         a: "Restano di proprietà della tua azienda. Ambienti separati per cliente, nessuna condivisione con terze parti, nessun dato usato per addestrare modelli.",
+              group: "Sistemi e dati",
       },
       {
         q: "In quanto tempo si parte?",
         a: "Tempo di attivazione del primo canale da inserire.",
         todo: true,
+              group: "Tempi e costi",
       },
       {
         q: "Quanto costa?",
         a: "Il prezzo dipende dal volume di ordini e dai canali attivati. Ne parliamo in demo, con una proposta scritta dopo l'analisi.",
+              group: "Tempi e costi",
       },
     ],
   },
