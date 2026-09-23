@@ -15,6 +15,7 @@ import type { Bullet, LandingContent } from "@/lib/landing-content"
 import { ProblemAlternating } from "@/components/v3/problem-blocks"
 import { RolesSelector } from "@/components/v3/roles-selector"
 import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
+import { StepsWizard } from "@/components/v3/steps-wizard"
 
 // Landing di prodotto nella direzione "vetro su gradiente". Le strutture sono
 // diverse da quelle della home, per dare varietà: riga di prova con divisori,
@@ -318,45 +319,9 @@ function Systems({ c }: { c: LandingContent }) {
   return <SystemsDiagramBlock systems={c.systems} />
 }
 
-// ── 08 come si lavora insieme: percorso orizzontale ─────────────────────────
+// ── 08 come si lavora insieme: stepper cliccabile ───────────────────────────
 function Together({ c }: { c: LandingContent }) {
-  const steps = c.together.steps
-  return (
-    <Section id="come-si-lavora" className="pt-0">
-      <div className="mx-auto max-w-[820px] text-center">
-        <Eyebrow>{c.together.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[22ch]">{c.together.headline}</Title>
-      </div>
-
-      <div className="relative mt-14">
-        <div
-          aria-hidden
-          className="absolute left-0 right-0 top-6 hidden h-px bg-gradient-to-r from-[#7C5CFA]/10 via-[#7C5CFA]/45 to-[#7C5CFA]/10 lg:block"
-        />
-        <ol className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-6">
-          {steps.map((s, i) => (
-            <li key={s.n} className="relative">
-              <div className="flex items-center gap-3 lg:block">
-                <span className="relative z-10 flex h-12 w-12 items-center justify-center rounded-full border border-white/70 bg-white text-[15px] font-medium tabular-nums text-[#7C5CFA] shadow-[0_10px_30px_-18px_rgba(1,1,16,0.5)]">
-                  {s.n}
-                </span>
-                {i < steps.length - 1 ? (
-                  <ArrowRight
-                    aria-hidden
-                    className="hidden h-4 w-4 text-[#7C5CFA]/50 lg:absolute lg:right-[-14px] lg:top-4 lg:block"
-                  />
-                ) : null}
-              </div>
-              <h3 className="mt-5 text-[18px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[20px]">
-                {s.title}
-              </h3>
-              <Body className="mt-3 text-[15px]">{s.desc}</Body>
-            </li>
-          ))}
-        </ol>
-      </div>
-    </Section>
-  )
+  return <StepsWizard together={c.together} />
 }
 
 // ── 09 a chi è rivolto: due colonne, quando sì e quando no ──────────────────
