@@ -13,6 +13,7 @@ import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import type { Bullet, LandingContent } from "@/lib/landing-content"
 import { ProblemAlternating } from "@/components/v3/problem-blocks"
+import { RolesSelector } from "@/components/v3/roles-selector"
 
 // Landing di prodotto nella direzione "vetro su gradiente". Le strutture sono
 // diverse da quelle della home, per dare varietà: riga di prova con divisori,
@@ -306,31 +307,9 @@ function Modules({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 05 ruoli: righe con l'etichetta a sinistra, come una scheda tecnica ─────
+// ── 05 ruoli: selettore con dettaglio e immagine ────────────────────────────
 function Roles({ c }: { c: LandingContent }) {
-  return (
-    <Section id="ruoli" className="pt-0">
-      <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
-        <div>
-          <Eyebrow>{c.roles.label}</Eyebrow>
-          <Title className="mt-5 max-w-[14ch]">{c.roles.headline}</Title>
-        </div>
-
-        <dl className="divide-y divide-[#010110]/10 border-y border-[#010110]/10">
-          {c.roles.items.map((r) => (
-            <div key={r.role} className="grid gap-2 py-7 md:grid-cols-[200px_minmax(0,1fr)] md:gap-8">
-              <dt className="text-[17px] font-medium tracking-[-0.015em] text-[#010110]">
-                {r.role}
-              </dt>
-              <dd className="m-0">
-                <Body className="text-[15px]">{r.desc}</Body>
-              </dd>
-            </div>
-          ))}
-        </dl>
-      </div>
-    </Section>
-  )
+  return <RolesSelector roles={c.roles} />
 }
 
 // ── 06 caso sul campo: impaginazione editoriale ─────────────────────────────
