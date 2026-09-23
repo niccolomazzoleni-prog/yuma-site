@@ -25,6 +25,7 @@ export default defineConfig({
         ruoli: path.resolve(__dirname, "ruoli/index.html"),
         sistemi: path.resolve(__dirname, "sistemi/index.html"),
         cardSistemi: path.resolve(__dirname, "card-sistemi/index.html"),
+        passi: path.resolve(__dirname, "passi/index.html"),
       },
     },
   },
