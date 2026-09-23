@@ -4,12 +4,12 @@ import {
   Clients,
   Contact,
   Footer,
-  HowWeWork,
   Possibilities,
   Solutions,
   Team,
 } from "@/components/v3/sections"
 import { StoryAlternating } from "@/components/v3/story"
+import { ProcessVerticalLine } from "@/components/v3/process"
 import { HeroSilk } from "@/components/home/hero-silk"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
@@ -64,7 +64,7 @@ export default function V3Home() {
         <StoryAlternating />
         <Possibilities />
         <Solutions />
-        <HowWeWork />
+        <ProcessVerticalLine />
         <Team />
         <Clients />
         <Assessment />
