@@ -147,8 +147,11 @@ function Hero({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 02 credibilità: riga di prova con divisori, niente card ─────────────────
+// ── 02 credibilità: titolo, grafica e una riga di prova ─────────────────────
 function Credibility({ c }: { c: LandingContent }) {
+  // del blocco resta solo l'ultimo punto (la compatibilità coi gestionali):
+  // gli altri due torneranno dentro la grafica, quando sarà pronta.
+  const claim = c.credibility.bullets[c.credibility.bullets.length - 1]
   return (
     <Section id="credibilita">
       <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
@@ -156,21 +159,19 @@ function Credibility({ c }: { c: LandingContent }) {
         <Lead className="max-w-[58ch] lg:pt-2">{c.credibility.body}</Lead>
       </div>
 
-      <ul className="mt-12 grid divide-y divide-[#010110]/10 border-y border-[#010110]/10 md:grid-cols-3 md:divide-x md:divide-y-0">
-        {c.credibility.bullets.map((b, i) => (
-          <li key={b.text} className="px-0 py-7 md:px-8 md:first:pl-0 md:last:pr-0">
-            <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
-              {String(i + 1).padStart(2, "0")}
-            </span>
-            <p className={`mt-3 text-[16px] leading-[1.5] ${b.todo ? "text-[#8A8A97]" : "text-[#2A2A38]"}`}>
-              <BulletText item={b} />
-            </p>
-          </li>
-        ))}
-      </ul>
+      <Glass className="mt-12 p-5 md:p-6">
+        <Shot label="Grafica: come arrivano gli ordini" ratio="21 / 9" className="w-full" />
+      </Glass>
+
+      <p className="mt-8 flex flex-wrap items-center justify-center gap-3 text-center text-[16px] text-[#2A2A38]">
+        <Check className="h-5 w-5 text-[#7C5CFA]" />
+        <span className={claim.todo ? "text-[#8A8A97]" : ""}>
+          <BulletText item={claim} />
+        </span>
+      </p>
 
       {c.credibility.note ? (
-        <p className="mt-6 text-[15px] text-[#8A8A97]">
+        <p className="mt-3 text-center text-[15px] text-[#8A8A97]">
           {c.credibility.note}
           <TodoTag />
         </p>

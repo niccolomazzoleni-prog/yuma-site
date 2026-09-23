@@ -21,6 +21,7 @@ export default defineConfig({
         schede: path.resolve(__dirname, "schede/index.html"),
         processo: path.resolve(__dirname, "processo/index.html"),
         avvio: path.resolve(__dirname, "avvio/index.html"),
+        problema: path.resolve(__dirname, "problema/index.html"),
       },
     },
   },
