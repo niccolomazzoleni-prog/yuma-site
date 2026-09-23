@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { ArrowRight, Check, FileText, MapPin, Plus, Minus } from "lucide-react"
 import { Body, Eyebrow, Glass, Lead, Section, Title } from "@/components/v3/glass"
+import { Info } from "@/components/v3/infographic"
 
 // Cinque modi di dire "Da dove si parte" (blocco 8 del copy) senza un unico
 // muro di testo. Riferimenti 21st: Cta 4 (2205), cta section with gallery
@@ -28,50 +29,6 @@ function Cta({ variant = "dark" }: { variant?: "dark" | "violet" }) {
       {CTA_LABEL}
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
     </a>
-  )
-}
-
-// Finto documento consegnato a fine assessment.
-function ReportMock() {
-  const rows = [
-    { t: "Rendicontazione ore di cantiere", i: "Alto" },
-    { t: "Ordini da WhatsApp all'ERP", i: "Alto" },
-    { t: "Ricerca nei contratti", i: "Medio" },
-    { t: "Report settimanale automatico", i: "Medio" },
-  ]
-  return (
-    <div className="rounded-[18px] border border-white/65 bg-white/70 p-6">
-      <div className="flex items-center gap-2 border-b border-[#010110]/8 pb-4">
-        <FileText className="h-4 w-4 text-[#7C5CFA]" />
-        <span className="text-[13px] font-medium text-[#010110]">
-          Assessment AI · casi d'uso (esempio)
-        </span>
-      </div>
-      <ul className="mt-4 space-y-3">
-        {rows.map((r, i) => (
-          <li key={r.t} className="flex items-center justify-between gap-4">
-            <span className="flex items-center gap-3 text-[14px] text-[#4A4A58]">
-              <span className="text-[12px] tabular-nums text-[#A3A3AD]">
-                {String(i + 1).padStart(2, "0")}
-              </span>
-              {r.t}
-            </span>
-            <span
-              className={`rounded-full px-2.5 py-1 text-[11px] font-medium ${
-                r.i === "Alto"
-                  ? "bg-[#7C5CFA]/15 text-[#5B3FD9]"
-                  : "bg-[#010110]/6 text-[#6B6B76]"
-              }`}
-            >
-              {r.i}
-            </span>
-          </li>
-        ))}
-      </ul>
-      <p className="mt-5 border-t border-[#010110]/8 pt-4 text-[12px] text-[#8A8A97]">
-        Ordinati per impatto e ritorno economico.
-      </p>
-    </div>
   )
 }
 
@@ -215,7 +172,7 @@ export function AssessmentReport() {
           <p className="mt-4 text-[13px] text-[#6B6B76]">{NOTE}</p>
         </div>
         <Glass className="p-6 md:p-8">
-          <ReportMock />
+          <Info n={8} />
         </Glass>
       </div>
     </Section>

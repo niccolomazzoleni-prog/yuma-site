@@ -14,6 +14,7 @@ import { links } from "@/lib/links"
 import type { Bullet, LandingContent } from "@/lib/landing-content"
 import { ProblemAlternating } from "@/components/v3/problem-blocks"
 import { RolesSelector } from "@/components/v3/roles-selector"
+import { Info } from "@/components/v3/infographic"
 import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
 import { StepsWizard } from "@/components/v3/steps-wizard"
 import { FitStickers } from "@/components/v3/fit-stickers"
@@ -166,7 +167,7 @@ function Credibility({ c }: { c: LandingContent }) {
       </div>
 
       <Glass className="mt-12 p-5 md:p-6">
-        <Shot label="Grafica: come arrivano gli ordini" ratio="21 / 9" className="w-full" />
+        <Info n={9} ratio="21 / 9" />
       </Glass>
 
       <p className="mt-8 flex flex-wrap items-center justify-center gap-3 text-center text-[16px] text-[#2A2A38]">
@@ -313,7 +314,7 @@ function Modules({ c }: { c: LandingContent }) {
 
 // ── 05 ruoli: selettore con dettaglio e immagine ────────────────────────────
 function Roles({ c }: { c: LandingContent }) {
-  return <RolesSelector roles={c.roles} />
+  return <RolesSelector roles={c.roles} infographics={[16, 17, 18]} />
 }
 
 // ── 07 i tuoi sistemi: schema del flusso al centro ──────────────────────────
@@ -321,6 +322,7 @@ function Systems({ c }: { c: LandingContent }) {
   return (
     <SystemsDiagramBlock
       systems={c.systems}
+      tabNumbers={[13, 14, 15]}
       image={`${import.meta.env.BASE_URL}schema-client-interface.webp`}
       imageAlt="Email, WhatsApp, PDF e vocali entrano in YUMA, che li interpreta e li scrive in ERP e CRM"
     />

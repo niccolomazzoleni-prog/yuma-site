@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState, type ReactNode } from "react"
 import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { Eyebrow, Glass, Section, Title, Lead, Body } from "@/components/v3/glass"
-import { ParticleGlobe } from "@/components/ui/particle-globe"
-import { KnowledgeLayers } from "@/components/v3/visuals"
+import { Info } from "@/components/v3/infographic"
 
 // Tre modi di raccontare il blocco 2 del copy (dalla tecnologia alla nota sui
 // dati). Riferimenti 21st: Sticky Scroll Reveal (952), Image Text (19322),
@@ -26,31 +25,6 @@ function Photo({ className = "" }: { className?: string }) {
       loading="lazy"
       className={`h-full w-full object-cover ${className}`}
     />
-  )
-}
-
-function BeforeAfterVisual() {
-  return (
-    <div className="grid h-full w-full grid-rows-2 gap-3 p-6">
-      <div className="rounded-[14px] border border-white/60 bg-white/50 p-5">
-        <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
-          Prima
-        </p>
-        <p className="mt-2 text-[14px] leading-[1.5] text-[#4A4A58]">
-          Schermate, campi obbligatori, codici da ricordare. E qualcuno dedicato
-          a inserire i dati e tenere insieme i pezzi.
-        </p>
-      </div>
-      <div className="rounded-[14px] border border-[#7C5CFA]/30 bg-[#7C5CFA]/10 p-5">
-        <p className="text-[11px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
-          Dopo
-        </p>
-        <p className="mt-2 text-[14px] leading-[1.5] text-[#2A2A38]">
-          Un messaggio o un vocale, con le parole che useresti con un collega.
-          Gli agenti fanno girare il processo dietro le quinte.
-        </p>
-      </div>
-    </div>
   )
 }
 
@@ -80,7 +54,7 @@ const beats: Beat[] = [
         umano e lavora autonomamente al fianco delle persone.
       </>
     ),
-    visual: <ParticleGlobe className="h-full w-full" density={4200} />,
+    visual: <Info n={1} className="h-full" />,
   },
   {
     id: "diverso",
@@ -93,7 +67,7 @@ const beats: Beat[] = [
         con una frazione dei costi.
       </>
     ),
-    visual: <BeforeAfterVisual />,
+    visual: <Info n={2} className="h-full" />,
   },
   {
     id: "dati",
@@ -106,7 +80,7 @@ const beats: Beat[] = [
         per addestrare modelli, né da noi, né dai nostri fornitori tecnologici.
       </>
     ),
-    visual: <KnowledgeLayers />,
+    visual: <Info n={3} className="h-full" />,
   },
 ]
 

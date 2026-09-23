@@ -11,7 +11,7 @@ import {
 import { ParticleGlobe } from "@/components/ui/particle-globe"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { CardsSplit } from "@/components/v3/product-cards"
-import { AgentsFlow, DataBars, FreedRows, KnowledgeLayers } from "@/components/v3/visuals"
+import { Info } from "@/components/v3/infographic"
 import { links } from "@/lib/links"
 
 // Home v3 — un componente per ogni blocco del copy (YUMA_Sito_Copy_revisionato).
@@ -119,28 +119,28 @@ const possibilities = [
     label: "Processi",
     title: "Processi che si muovono da soli",
     text: "Processi che prima richiedevano giornate di lavoro manuale, gestiti da agenti che lavorano al tuo fianco.",
-    visual: <AgentsFlow />,
+    visual: <Info n={4} />,
   },
   {
     id: "dati",
     label: "Dati",
     title: "Dati finalmente leggibili",
     text: "Dati complessi e frammentati, resi leggibili e interpretabili senza doverli estrarre e incrociare a mano ogni volta.",
-    visual: <DataBars />,
+    visual: <Info n={5} />,
   },
   {
     id: "persone",
     label: "Persone",
     title: "Persone su ciò che conta",
     text: "Persone liberate dalle attività ripetitive, concentrate su ciò che conta davvero.",
-    visual: <FreedRows />,
+    visual: <Info n={6} />,
   },
   {
     id: "conoscenza",
     label: "Conoscenza",
     title: "Conoscenza che resta in azienda",
     text: "La conoscenza che oggi vive nella testa delle singole persone, trasformata in patrimonio dell'azienda.",
-    visual: <KnowledgeLayers />,
+    visual: <Info n={7} />,
   },
 ]
 

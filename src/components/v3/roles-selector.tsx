@@ -1,11 +1,17 @@
 import { useState } from "react"
 import { ChevronRight } from "lucide-react"
 import { Body, Eyebrow, Glass, Section, Title } from "@/components/v3/glass"
-import { Shot } from "@/components/v3/landing"
+import { Info } from "@/components/v3/infographic"
 import type { LandingContent } from "@/lib/landing-content"
 
 // Ruoli: elenco selezionabile a sinistra, dettaglio con immagine a destra.
-export function RolesSelector({ roles }: { roles: LandingContent["roles"] }) {
+export function RolesSelector({
+  roles,
+  infographics,
+}: {
+  roles: LandingContent["roles"]
+  infographics?: number[]
+}) {
   const [active, setActive] = useState(0)
   const items = roles.items
 
@@ -50,7 +56,9 @@ export function RolesSelector({ roles }: { roles: LandingContent["roles"] }) {
             </h3>
             <Body className="mt-4">{items[active].desc}</Body>
           </div>
-          <Shot label={`Immagine ${items[active].role}`} ratio="3 / 4" />
+          {infographics ? (
+            <Info n={infographics[active]} ratio="3 / 4" />
+          ) : null}
         </Glass>
       </div>
     </Section>

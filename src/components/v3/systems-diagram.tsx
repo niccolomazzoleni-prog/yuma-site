@@ -1,6 +1,6 @@
 import { Eyebrow, Glass, Lead, Section, Title } from "@/components/v3/glass"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
-import { Shot } from "@/components/v3/landing"
+import { Info } from "@/components/v3/infographic"
 import type { LandingContent } from "@/lib/landing-content"
 
 // "I tuoi sistemi": schema del flusso al centro, i tre punti sotto.
@@ -64,11 +64,17 @@ export function SystemsDiagramBlock({
   systems,
   image,
   imageAlt,
+  tabNumbers,
+  diagramNumber,
 }: {
   systems: LandingContent["systems"]
   /** immagine dello schema; senza, resta il disegno a codice */
   image?: string
   imageAlt?: string
+  /** numeri delle infografiche delle tre schede */
+  tabNumbers?: number[]
+  /** numero dell'infografica dello schema, quando l'immagine non c'è ancora */
+  diagramNumber?: number
 }) {
   const items = systems.items.map((it) => {
     const [title, ...rest] = it.text.split(". ")
@@ -82,8 +88,8 @@ export function SystemsDiagramBlock({
     id: labels[i] ?? it.title,
     label: labels[i] ?? it.title,
     content: (
-      <div className="grid h-full w-full gap-6 md:grid-cols-2">
-        <Shot label={`Immagine ${labels[i] ?? it.title}`} ratio="4 / 3" className="w-full" />
+      <div className={`grid h-full w-full gap-6 ${tabNumbers?.[i] ? "md:grid-cols-2" : ""}`}>
+        {tabNumbers?.[i] ? <Info n={tabNumbers[i]} /> : null}
         <div className="flex flex-col justify-center gap-y-3">
           <h3 className="m-0 text-[21px] font-medium tracking-[-0.02em] text-[#010110] md:text-[24px]">
             {it.title}
@@ -115,7 +121,7 @@ export function SystemsDiagramBlock({
           />
         ) : (
           <div className="p-4 md:p-6">
-            <FlowDiagram />
+            {diagramNumber ? <Info n={diagramNumber} ratio="16 / 9" /> : <FlowDiagram />}
           </div>
         )}
       </Glass>

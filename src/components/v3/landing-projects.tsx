@@ -15,7 +15,7 @@ import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
 import { StepsWizard } from "@/components/v3/steps-wizard"
 import { FAQ, type FaqData } from "@/components/ui/faq-tabs"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
-import { FieldInputsArt, RebuildArt, LateBudgetArt } from "@/components/v3/projects-art"
+import { Info } from "@/components/v3/infographic"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import { projectsContent as c } from "@/lib/landing-content"
@@ -115,7 +115,7 @@ function Credibility() {
       </div>
 
       <Glass className="mt-12 p-5 md:p-6">
-        <Shot label="Grafica: dal cantiere alla commessa" ratio="21 / 9" className="w-full" />
+        <Info n={19} ratio="21 / 9" />
       </Glass>
 
       <p className="mt-8 flex flex-wrap items-center justify-center gap-3 text-center text-[16px] text-[#2A2A38]">
@@ -133,7 +133,7 @@ function Credibility() {
 }
 
 // ── 03 problema: cause a card alternate, soluzioni in schede, poi il confronto
-const causeArts = [FieldInputsArt, RebuildArt, LateBudgetArt]
+const causeNumbers = [20, 21, 22]
 
 function Problem() {
   const p = c.problem
@@ -151,7 +151,6 @@ function Problem() {
 
       <div className="mt-6 flex flex-col gap-6">
         {p.causes?.map((cause, i) => {
-          const Art = causeArts[i % causeArts.length]
           const imageFirst = i % 2 === 1
           return (
             <Glass
@@ -167,8 +166,8 @@ function Problem() {
                 </h3>
                 <Body className="mt-4 max-w-[52ch]">{cause.desc}</Body>
               </div>
-              <div className={`rounded-[18px] bg-white/45 p-6 ${imageFirst ? "md:order-1" : ""}`}>
-                <Art />
+              <div className={imageFirst ? "md:order-1" : ""}>
+                <Info n={causeNumbers[i] ?? i + 1} />
               </div>
             </Glass>
           )
@@ -188,7 +187,7 @@ function Problem() {
           label: ["Il campo comunica", "Si aggancia da sola", "Confronto ogni giorno"][i] ?? s.title,
           content: (
             <div className="grid h-full w-full gap-6 md:grid-cols-2">
-              <Shot label={`Schermata ${["input dal campo", "voci agganciate", "scostamenti"][i] ?? ""}`} ratio="4 / 3" className="w-full" />
+              <Info n={[23, 24, 25][i] ?? i + 1} />
               <div className="flex flex-col justify-center gap-y-3">
                 <h3 className="m-0 text-[21px] font-medium tracking-[-0.02em] text-[#010110] md:text-[24px]">
                   {s.title.replace(/\.$/, "")}
@@ -556,7 +555,7 @@ export default function ProjectsLanding() {
         <Problem />
         <Modules />
         <Roles />
-        <SystemsDiagramBlock systems={c.systems} />
+        <SystemsDiagramBlock systems={c.systems} diagramNumber={26} />
         <StepsWizard together={c.together} />
         <Fit />
         <Faq />

@@ -1,8 +1,8 @@
 import { Body, Glass } from "@/components/v3/glass"
-import { InboxArt, ScatterArt, KeyholderArt } from "@/components/v3/problem-art"
+import { Info } from "@/components/v3/infographic"
 
 // Blocco problema: card staccate, testo e immagine che si alternano.
-const arts = [InboxArt, ScatterArt, KeyholderArt]
+const NUMBERS = [10, 11, 12]
 
 export function ProblemAlternating({
   items,
@@ -12,7 +12,6 @@ export function ProblemAlternating({
   return (
     <div className="mt-12 flex flex-col gap-6">
       {items.map((it, i) => {
-        const Art = arts[i % arts.length]
         const imageFirst = i % 2 === 1
         return (
           <Glass
@@ -28,8 +27,8 @@ export function ProblemAlternating({
               </h3>
               <Body className="mt-4 max-w-[52ch]">{it.desc}</Body>
             </div>
-            <div className={`rounded-[18px] bg-white/45 p-6 ${imageFirst ? "md:order-1" : ""}`}>
-              <Art />
+            <div className={imageFirst ? "md:order-1" : ""}>
+              <Info n={NUMBERS[i] ?? i + 1} />
             </div>
           </Glass>
         )
