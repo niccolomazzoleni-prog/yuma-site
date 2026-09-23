@@ -1,0 +1,1 @@
+import{c as e,j as t,r}from"./arrow-right-DXPqy9am.js";import{L as o,c as n}from"./landing-content-DLfDESot.js";import"./footer-C5K9cHqd.js";import"./whatsapp-bar-CpTscksg.js";import"./silk-shader-CyUDxsBW.js";e.createRoot(document.getElementById("root")).render(t.jsx(r.StrictMode,{children:t.jsx(o,{content:n})}));
