@@ -8,8 +8,8 @@ import {
   Possibilities,
   Solutions,
   Team,
-  WhyNow,
 } from "@/components/v3/sections"
+import { StoryAlternating } from "@/components/v3/story"
 import { HeroSilk } from "@/components/home/hero-silk"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
@@ -61,7 +61,7 @@ export default function V3Home() {
 
       <main id="top">
         <HeroSilk />
-        <WhyNow />
+        <StoryAlternating />
         <Possibilities />
         <Solutions />
         <HowWeWork />

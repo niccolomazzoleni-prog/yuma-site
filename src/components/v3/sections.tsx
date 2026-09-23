@@ -15,7 +15,8 @@ import { links } from "@/lib/links"
 
 // Home v3 — un componente per ogni blocco del copy (YUMA_Sito_Copy_revisionato).
 
-// ── 2 · La tecnologia più avanzata è alla portata delle aziende ───────────────
+// ── 2 · Versione statica del blocco 2 (sostituita da StoryAlternating in
+// story.tsx, tenuta qui come riferimento del copy integrale) ────────────────
 export function WhyNow() {
   return (
     <Section id="perche-ora">
