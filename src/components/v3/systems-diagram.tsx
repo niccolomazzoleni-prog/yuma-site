@@ -1,4 +1,6 @@
-import { Body, Eyebrow, Glass, Lead, Section, Title } from "@/components/v3/glass"
+import { Eyebrow, Glass, Lead, Section, Title } from "@/components/v3/glass"
+import { AnimatedTabs } from "@/components/ui/animated-tabs"
+import { Shot } from "@/components/v3/landing"
 import type { LandingContent } from "@/lib/landing-content"
 
 // "I tuoi sistemi": schema del flusso al centro, i tre punti sotto.
@@ -64,6 +66,28 @@ export function SystemsDiagramBlock({ systems }: { systems: LandingContent["syst
     return { title, desc: rest.join(". "), todo: it.todo }
   })
 
+  // etichette brevi per le schede, i titoli lunghi restano dentro il pannello
+  const labels = ["Integrazione", "Canali", "I tuoi dati"]
+
+  const tabs = items.map((it, i) => ({
+    id: labels[i] ?? it.title,
+    label: labels[i] ?? it.title,
+    content: (
+      <div className="grid h-full w-full gap-6 md:grid-cols-2">
+        <Shot label={`Immagine ${labels[i] ?? it.title}`} ratio="4 / 3" className="w-full" />
+        <div className="flex flex-col justify-center gap-y-3">
+          <h3 className="m-0 text-[21px] font-medium tracking-[-0.02em] text-[#010110] md:text-[24px]">
+            {it.title}
+          </h3>
+          <p className="m-0 text-[15px] leading-[1.55] text-[#4A4A58] md:text-[16px]">
+            {it.desc}
+            {it.todo ? <TodoTag /> : null}
+          </p>
+        </div>
+      </div>
+    ),
+  }))
+
   return (
     <Section id="sistemi" className="pt-0">
       <div className="mx-auto max-w-[820px] text-center">
@@ -76,17 +100,12 @@ export function SystemsDiagramBlock({ systems }: { systems: LandingContent["syst
         <FlowDiagram />
       </Glass>
 
-      <div className="mt-5 grid gap-5 md:grid-cols-3">
-        {items.map((it) => (
-          <div key={it.title} className="border-t border-[#010110]/10 pt-5">
-            <h3 className="text-[17px] font-medium text-[#010110]">{it.title}</h3>
-            <Body className="mt-2 text-[15px]">
-              {it.desc}
-              {it.todo ? <TodoTag /> : null}
-            </Body>
-          </div>
-        ))}
-      </div>
+      <AnimatedTabs
+        tabs={tabs}
+        tone="glass"
+        className="mx-auto mt-5 max-w-[1000px]"
+        panelClassName="p-6 md:p-8"
+      />
     </Section>
   )
 }
