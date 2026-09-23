@@ -15,6 +15,7 @@ export default defineConfig({
         clientInterface: path.resolve(__dirname, "client-interface/index.html"),
         v2: path.resolve(__dirname, "v2/index.html"),
         explore: path.resolve(__dirname, "explore/index.html"),
+        v3: path.resolve(__dirname, "v3/index.html"),
       },
     },
   },
