@@ -260,7 +260,7 @@ function Problem({ c }: { c: LandingContent }) {
 function Modules({ c }: { c: LandingContent }) {
   const statusStyle: Record<string, string> = {
     attivo: "bg-[#7C5CFA]/15 text-[#5B3FD9]",
-    "in rilascio": "bg-[#010110]/6 text-[#4A4A58]",
+    "in rilascio": "bg-[#F5A623]/25 text-[#7A4E00] ring-1 ring-inset ring-[#F5A623]/45",
     "in sviluppo": "bg-[#010110]/6 text-[#8A8A97]",
   }
   const [first, ...rest] = c.modules.items
@@ -302,16 +302,19 @@ function Modules({ c }: { c: LandingContent }) {
         {/* gli altri moduli, in colonna */}
         <div className="grid gap-5">
           {rest.map((m) => (
-            <Glass key={m.name} className="p-7">
-              <div className="flex flex-wrap items-center gap-3">
-                <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
-                  {m.name}
-                </h3>
-                <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[m.status]}`}>
-                  {m.status}
-                </span>
+            <Glass key={m.name} className="grid gap-5 p-7 sm:grid-cols-[minmax(0,1fr)_180px] sm:items-center">
+              <div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
+                    {m.name}
+                  </h3>
+                  <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[m.status]}`}>
+                    {m.status}
+                  </span>
+                </div>
+                <Body className="mt-3 text-[15px]">{m.desc}</Body>
               </div>
-              <Body className="mt-3 text-[15px]">{m.desc}</Body>
+              <Shot label={`Schermata ${m.name}`} ratio="4 / 3" />
             </Glass>
           ))}
         </div>
