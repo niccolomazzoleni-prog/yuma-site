@@ -14,6 +14,7 @@ import { links } from "@/lib/links"
 import type { Bullet, LandingContent } from "@/lib/landing-content"
 import { ProblemAlternating } from "@/components/v3/problem-blocks"
 import { RolesSelector } from "@/components/v3/roles-selector"
+import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
 
 // Landing di prodotto nella direzione "vetro su gradiente". Le strutture sono
 // diverse da quelle della home, per dare varietà: riga di prova con divisori,
@@ -312,39 +313,9 @@ function Roles({ c }: { c: LandingContent }) {
   return <RolesSelector roles={c.roles} />
 }
 
-// ── 07 i tuoi sistemi: griglia a filetti, senza riquadri ────────────────────
+// ── 07 i tuoi sistemi: schema del flusso al centro ──────────────────────────
 function Systems({ c }: { c: LandingContent }) {
-  return (
-    <Section id="sistemi" className="pt-0">
-      <div className="mx-auto max-w-[820px]">
-        <Eyebrow>{c.systems.label}</Eyebrow>
-        <Title className="mt-5 max-w-[22ch]">{c.systems.headline}</Title>
-        <Lead className="mt-5 max-w-[62ch]">{c.systems.sub}</Lead>
-      </div>
-
-      <div className="mt-12 grid border-t border-[#010110]/10 md:grid-cols-2">
-        {c.systems.items.map((it, i) => {
-          const [title, ...rest] = it.text.split(". ")
-          return (
-            <div
-              key={it.text}
-              className={`border-b border-[#010110]/10 py-8 md:py-10 ${
-                i % 2 === 0 ? "md:pr-10" : "md:border-l md:pl-10"
-              }`}
-            >
-              <h3 className="text-[18px] font-medium tracking-[-0.015em] text-[#010110] md:text-[20px]">
-                {title}
-              </h3>
-              <Body className="mt-3 max-w-[52ch] text-[15px]">
-                {rest.join(". ")}
-                {it.todo ? <TodoTag /> : null}
-              </Body>
-            </div>
-          )
-        })}
-      </div>
-    </Section>
-  )
+  return <SystemsDiagramBlock systems={c.systems} />
 }
 
 // ── 08 come si lavora insieme: percorso orizzontale ─────────────────────────
