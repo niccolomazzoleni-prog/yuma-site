@@ -256,14 +256,13 @@ function Problem({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 04 moduli: bento, una card grande e le altre piccole ────────────────────
+// ── 04 moduli: tre schede uguali, schermata grande in alto ──────────────────
 function Modules({ c }: { c: LandingContent }) {
   const statusStyle: Record<string, string> = {
     attivo: "bg-[#7C5CFA]/15 text-[#5B3FD9]",
     "in rilascio": "bg-[#F5A623]/25 text-[#7A4E00] ring-1 ring-inset ring-[#F5A623]/45",
     "in sviluppo": "bg-[#010110]/6 text-[#8A8A97]",
   }
-  const [first, ...rest] = c.modules.items
 
   return (
     <Section id="moduli" className="pt-0">
@@ -280,44 +279,21 @@ function Modules({ c }: { c: LandingContent }) {
         ) : null}
       </div>
 
-      <div className="mt-12 grid gap-5 lg:grid-cols-3">
-        {/* modulo principale, su due colonne */}
-        <Glass className="flex flex-col gap-6 p-7 md:p-8 lg:col-span-2 lg:flex-row lg:items-center">
-          <div className="lg:w-1/2">
-            <div className="flex flex-wrap items-center gap-3">
-              <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
-                {first.name}
+      <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+        {c.modules.items.map((m) => (
+          <Glass key={m.name} className="flex h-full flex-col p-6 md:p-7">
+            <Shot label={`Schermata ${m.name}`} ratio="4 / 3" className="w-full" />
+            <div className="mt-6 flex flex-wrap items-center gap-3">
+              <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
+                {m.name}
               </h3>
-              <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[first.status]}`}>
-                {first.status}
+              <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[m.status]}`}>
+                {m.status}
               </span>
             </div>
-            <Body className="mt-4 text-[15px]">{first.desc}</Body>
-          </div>
-          <div className="lg:w-1/2">
-            <Shot label={`Schermata ${first.name}`} ratio="4 / 3" />
-          </div>
-        </Glass>
-
-        {/* gli altri moduli, in colonna */}
-        <div className="grid gap-5">
-          {rest.map((m) => (
-            <Glass key={m.name} className="grid gap-5 p-7 sm:grid-cols-[minmax(0,1fr)_180px] sm:items-center">
-              <div>
-                <div className="flex flex-wrap items-center gap-3">
-                  <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
-                    {m.name}
-                  </h3>
-                  <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[m.status]}`}>
-                    {m.status}
-                  </span>
-                </div>
-                <Body className="mt-3 text-[15px]">{m.desc}</Body>
-              </div>
-              <Shot label={`Schermata ${m.name}`} ratio="4 / 3" />
-            </Glass>
-          ))}
-        </div>
+            <Body className="mt-3 text-[15px]">{m.desc}</Body>
+          </Glass>
+        ))}
       </div>
 
       {c.modules.items.some((m) => m.statusTodo) ? (

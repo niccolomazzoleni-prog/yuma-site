@@ -22,6 +22,7 @@ export default defineConfig({
         processo: path.resolve(__dirname, "processo/index.html"),
         avvio: path.resolve(__dirname, "avvio/index.html"),
         problema: path.resolve(__dirname, "problema/index.html"),
+        ruoli: path.resolve(__dirname, "ruoli/index.html"),
       },
     },
   },
