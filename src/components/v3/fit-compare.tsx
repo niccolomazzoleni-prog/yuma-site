@@ -1,11 +1,21 @@
 import { useState } from "react"
 import { GradientField } from "@/components/v3/glass"
 import { FitColumns, FitGrid, FitRows } from "@/components/v3/fit-variants"
+import {
+  FitChecklist,
+  FitOrbit,
+  FitSpotlight,
+  FitStickers,
+} from "@/components/v3/fit-exotic"
 
 const options = [
   { key: "grid", name: "A · Due per due", claim: "Quattro riquadri con spunta, titolo breve e frase completa sotto.", node: <FitGrid /> },
   { key: "rows", name: "B · Righe numerate", claim: "Quattro righe su filetti, numero grande a sinistra. Nessun riquadro.", node: <FitRows /> },
   { key: "cols", name: "C · Quattro colonne", claim: "Quattro colonne con icona, titolo breve e frase sotto.", node: <FitColumns /> },
+  { key: "check", name: "D · Checklist che si spunta", claim: "Le condizioni si spuntano mentre scorri, con il contatore quante te ne riconosci.", node: <FitChecklist /> },
+  { key: "orbit", name: "E · Orbita", claim: "Le quattro condizioni attorno a un nucleo, su un cerchio tratteggiato.", node: <FitOrbit /> },
+  { key: "sticker", name: "F · Adesivi inclinati", claim: "Card ruotate come adesivi, si raddrizzano al passaggio del mouse.", node: <FitStickers /> },
+  { key: "spot", name: "G · Banda scura col faro", claim: "Fondo nero, griglia a filetti e un alone viola che segue il cursore.", node: <FitSpotlight /> },
 ]
 
 export default function FitCompare() {
