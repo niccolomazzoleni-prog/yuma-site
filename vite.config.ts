@@ -19,6 +19,7 @@ export default defineConfig({
         storia: path.resolve(__dirname, "storia/index.html"),
         schede: path.resolve(__dirname, "schede/index.html"),
         processo: path.resolve(__dirname, "processo/index.html"),
+        avvio: path.resolve(__dirname, "avvio/index.html"),
       },
     },
   },

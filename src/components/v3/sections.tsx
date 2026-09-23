@@ -282,12 +282,15 @@ export function Team() {
       <ul className="mt-12 grid gap-5 sm:grid-cols-3">
         {[0, 1, 2].map((i) => (
           <li key={i}>
-            <Glass className="h-full p-8 text-center">
+            <Glass className="h-full p-6 text-center md:p-7">
               <div
-                aria-hidden
-                className="mx-auto h-20 w-20 rounded-full border border-white/70 bg-white/60"
-              />
-              <div className="mt-5 text-[17px] font-medium text-[#010110]">
+                role="img"
+                aria-label="Foto del founder (segnaposto)"
+                className="flex aspect-square w-full items-center justify-center rounded-[18px] border border-dashed border-[#7C5CFA]/35 bg-white/45 text-[12px] font-medium text-[#8A8A97]"
+              >
+                Foto
+              </div>
+              <div className="mt-6 text-[17px] font-medium text-[#010110]">
                 Nome Cognome
               </div>
               <div className="mt-1 text-[13px] text-[#6B6B76]">Co-founder</div>
@@ -308,20 +311,18 @@ export function Clients() {
     <Section id="clienti" className="pt-0">
       <Glass className="p-10 text-center md:p-12">
         <Eyebrow>I nostri clienti e partner</Eyebrow>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-12 gap-y-6">
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
           {[0, 1, 2, 3, 4].map((i) => (
             <div
               key={i}
-              aria-hidden
-              className="h-7 w-28 rounded-[4px] bg-white/70"
-            />
+              role="img"
+              aria-label="Logo cliente (segnaposto)"
+              className="flex h-16 w-36 items-center justify-center rounded-[12px] border border-dashed border-[#7C5CFA]/30 bg-white/45 text-[12px] font-medium text-[#A3A3AD]"
+            >
+              Logo
+            </div>
           ))}
         </div>
-        <Body className="mt-8">
-          <span className="font-medium text-[#010110]">Dove lavoriamo:</span>{" "}
-          impianti e costruzioni · manifattura · distribuzione B2B ·
-          farmaceutico
-        </Body>
       </Glass>
     </Section>
   )
