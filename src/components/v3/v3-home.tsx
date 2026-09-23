@@ -2,6 +2,7 @@ import { ArrowRight } from "lucide-react"
 import { VerticalTabs, type VerticalTabItem } from "@/components/ui/vertical-tabs"
 import { ParticleGlobe } from "@/components/ui/particle-globe"
 import { AgentsFlow, DataBars, FreedRows, KnowledgeLayers } from "@/components/v3/visuals"
+import { HeroSilk } from "@/components/home/hero-silk"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 
@@ -64,7 +65,7 @@ export default function V3Home() {
       <GradientField />
 
       {/* nav a pillola */}
-      <header className="sticky top-0 z-50 px-5 pt-5">
+      <header className="fixed inset-x-0 top-0 z-50 px-5 pt-5">
         <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-6 rounded-full border border-white/70 bg-white/55 px-5 py-2.5 backdrop-blur-xl md:px-6">
           <a href="#top" className="text-[15px] font-semibold tracking-[0.18em]">
             YUMA
@@ -93,37 +94,11 @@ export default function V3Home() {
       </header>
 
       <main id="top">
-        {/* hero */}
-        <section className="mx-auto max-w-[1180px] px-5 pb-16 pt-16 md:pt-24">
-          <div className="mx-auto max-w-[860px] text-center">
-            <h1 className="text-balance text-[38px] font-medium leading-[1.02] tracking-[-0.04em] sm:text-[52px] lg:text-[64px]">
-              Liberiamo il potenziale inespresso della tua azienda implementando
-              l'AI dove serve davvero.
-            </h1>
-            <p className="mx-auto mt-6 max-w-[54ch] text-[17px] leading-[1.5] text-[#4A4A58] md:text-[19px]">
-              YUMA affianca le imprese nel percorso di adozione AI unendo
-              consulenza aziendale, know how tecnico e implementazione di
-              progetti su misura.
-            </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <a
-                href="#soluzioni"
-                className="group inline-flex items-center gap-2 rounded-full bg-[#010110] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5"
-              >
-                Scopri i nostri prodotti
-                <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
-              </a>
-              <a
-                href="#contatti"
-                className="inline-flex items-center rounded-full border border-white/70 bg-white/60 px-6 py-3 text-[15px] font-medium backdrop-blur-xl transition-colors hover:bg-white/80"
-              >
-                Richiedi informazioni
-              </a>
-            </div>
-          </div>
+        <HeroSilk />
 
-          {/* lastra con il globo */}
-          <div className={`mt-14 overflow-hidden ${GLASS}`} style={GLASS_SHADOW}>
+        {/* lastra col globo, subito sotto l'hero */}
+        <section className="mx-auto max-w-[1180px] px-5 pt-20 md:pt-28">
+          <div className={`overflow-hidden ${GLASS}`} style={GLASS_SHADOW}>
             <div className="grid items-center gap-8 p-8 md:grid-cols-[minmax(0,0.95fr)_minmax(0,1fr)] md:p-10">
               <div>
                 <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
