@@ -9,7 +9,7 @@ import {
   Title,
 } from "@/components/v3/glass"
 import { ParticleGlobe } from "@/components/ui/particle-globe"
-import { VerticalTabs, type VerticalTabItem } from "@/components/ui/vertical-tabs"
+import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { AgentsFlow, DataBars, FreedRows, KnowledgeLayers } from "@/components/v3/visuals"
 import { links } from "@/lib/links"
 
@@ -110,45 +110,70 @@ export function WhyNow() {
   )
 }
 
-// ── 3 · Cosa è possibile (schede verticali) ──────────────────────────────────
-const possibilities: VerticalTabItem[] = [
+// ── 3 · Cosa è possibile (schede animate) ────────────────────────────────────
+const possibilities = [
   {
-    id: "01",
+    id: "processi",
+    label: "Processi",
     title: "Processi che si muovono da soli",
-    description:
-      "Processi che prima richiedevano giornate di lavoro manuale, gestiti da agenti che lavorano al tuo fianco.",
+    text: "Processi che prima richiedevano giornate di lavoro manuale, gestiti da agenti che lavorano al tuo fianco.",
     visual: <AgentsFlow />,
   },
   {
-    id: "02",
+    id: "dati",
+    label: "Dati",
     title: "Dati finalmente leggibili",
-    description:
-      "Dati complessi e frammentati, resi leggibili e interpretabili senza doverli estrarre e incrociare a mano ogni volta.",
+    text: "Dati complessi e frammentati, resi leggibili e interpretabili senza doverli estrarre e incrociare a mano ogni volta.",
     visual: <DataBars />,
   },
   {
-    id: "03",
+    id: "persone",
+    label: "Persone",
     title: "Persone su ciò che conta",
-    description:
-      "Persone liberate dalle attività ripetitive, concentrate su ciò che conta davvero.",
+    text: "Persone liberate dalle attività ripetitive, concentrate su ciò che conta davvero.",
     visual: <FreedRows />,
   },
   {
-    id: "04",
+    id: "conoscenza",
+    label: "Conoscenza",
     title: "Conoscenza che resta in azienda",
-    description:
-      "La conoscenza che oggi vive nella testa delle singole persone, trasformata in patrimonio dell'azienda.",
+    text: "La conoscenza che oggi vive nella testa delle singole persone, trasformata in patrimonio dell'azienda.",
     visual: <KnowledgeLayers />,
   },
 ]
 
 export function Possibilities() {
+  const tabs = possibilities.map((p) => ({
+    id: p.id,
+    label: p.label,
+    content: (
+      <div className="grid h-full w-full gap-6 md:grid-cols-2">
+        <div className="overflow-hidden rounded-lg border border-white/10">
+          {p.visual}
+        </div>
+        <div className="flex flex-col justify-center gap-y-3">
+          <h3 className="m-0 text-[22px] font-medium tracking-[-0.02em] text-white md:text-[26px]">
+            {p.title}
+          </h3>
+          <p className="m-0 text-[15px] leading-[1.55] text-white/60 md:text-[16px]">
+            {p.text}
+          </p>
+        </div>
+      </div>
+    ),
+  }))
+
   return (
     <Section id="cosa-e-possibile">
-      <VerticalTabs
-        title="Cosa può fare l'AI nella mia azienda"
-        eyebrow="cosa è possibile"
-        items={possibilities}
+      <div className="mx-auto max-w-[760px] text-center">
+        <Eyebrow>Cosa è possibile</Eyebrow>
+        <Title className="mt-5">Cosa può fare l'AI nella mia azienda</Title>
+      </div>
+
+      <AnimatedTabs
+        tabs={tabs}
+        className="mx-auto mt-12 max-w-[1000px]"
+        panelClassName="p-6 md:p-8"
       />
     </Section>
   )
