@@ -26,6 +26,7 @@ export default defineConfig({
         sistemi: path.resolve(__dirname, "sistemi/index.html"),
         cardSistemi: path.resolve(__dirname, "card-sistemi/index.html"),
         passi: path.resolve(__dirname, "passi/index.html"),
+        faPerTe: path.resolve(__dirname, "fa-per-te/index.html"),
       },
     },
   },
