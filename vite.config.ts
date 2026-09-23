@@ -17,6 +17,7 @@ export default defineConfig({
         explore: path.resolve(__dirname, "explore/index.html"),
         v3: path.resolve(__dirname, "v3/index.html"),
         storia: path.resolve(__dirname, "storia/index.html"),
+        schede: path.resolve(__dirname, "schede/index.html"),
       },
     },
   },
