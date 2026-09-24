@@ -49,7 +49,7 @@ export function FitGrid() {
               <Check className="h-5 w-5" />
             </span>
             <div>
-              <h3 className="text-[17px] font-medium tracking-[-0.015em] text-[#010110] md:text-[19px]">
+              <h3 className="text-[17px] font-medium tracking-[-0.015em] text-[#1B1A2E] md:text-[19px]">
                 {short[i]}
               </h3>
               <Body className="mt-2 text-[15px]">{b}</Body>
@@ -71,7 +71,7 @@ export function FitRows() {
         {bullets.map((b, i) => (
           <li
             key={b}
-            className="grid gap-4 border-t border-[#010110]/10 py-7 last:border-b md:grid-cols-[64px_minmax(0,1fr)] md:gap-8"
+            className="grid gap-4 border-t border-[#1B1A2E]/10 py-7 last:border-b md:grid-cols-[64px_minmax(0,1fr)] md:gap-8"
           >
             <span className="text-[26px] font-medium leading-none tabular-nums text-[#7C5CFA]/35 md:text-[32px]">
               {String(i + 1).padStart(2, "0")}
@@ -98,7 +98,7 @@ export function FitColumns() {
               <span className="flex h-11 w-11 items-center justify-center rounded-[14px] bg-[#7C5CFA]/12 text-[#7C5CFA]">
                 <Icon className="h-5 w-5" strokeWidth={1.75} />
               </span>
-              <h3 className="mt-6 text-[17px] font-medium leading-[1.25] tracking-[-0.015em] text-[#010110]">
+              <h3 className="mt-6 text-[17px] font-medium leading-[1.25] tracking-[-0.015em] text-[#1B1A2E]">
                 {short[i]}
               </h3>
               <Body className="mt-3 text-[15px]">{b}</Body>

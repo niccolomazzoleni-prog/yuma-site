@@ -75,7 +75,7 @@ export function Title({
   return (
     <h2
       className={cn(
-        "text-balance text-[30px] font-medium leading-[1.05] tracking-[-0.035em] text-[#010110] md:text-[44px]",
+        "text-balance text-[30px] font-medium leading-[1.05] tracking-[-0.035em] text-[#1B1A2E] md:text-[44px]",
         className,
       )}
     >

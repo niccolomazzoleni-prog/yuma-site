@@ -46,7 +46,7 @@ function FlowDiagram() {
       {systems.map((sname, i) => (
         <g key={sname} transform={`translate(400 ${80 + i * 60})`}>
           <rect width="110" height="44" rx="10" fill="rgba(255,255,255,0.85)" stroke="rgba(1,1,16,0.12)" />
-          <text x="55" y="27" textAnchor="middle" fontSize="13" fill="#010110">
+          <text x="55" y="27" textAnchor="middle" fontSize="13" fill="#1B1A2E">
             {sname}
           </text>
           <path d={`M-90 ${50 - i * 60} C-40 ${50 - i * 60} -30 22 0 22`} stroke="rgba(1,1,16,0.2)" fill="none" />
@@ -91,7 +91,7 @@ export function SystemsDiagramBlock({
       <div className={`grid h-full w-full gap-6 ${tabNumbers?.[i] ? "md:grid-cols-2" : ""}`}>
         {tabNumbers?.[i] ? <Info n={tabNumbers[i]} /> : null}
         <div className="flex flex-col justify-center gap-y-3">
-          <h3 className="m-0 text-[21px] font-medium tracking-[-0.02em] text-[#010110] md:text-[24px]">
+          <h3 className="m-0 text-[21px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[24px]">
             {it.title}
           </h3>
           <p className="m-0 text-[15px] leading-[1.55] text-[#4A4A58] md:text-[16px]">

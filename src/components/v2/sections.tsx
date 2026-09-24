@@ -25,12 +25,12 @@ export function V2Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#E6E6EA] bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between gap-6 px-5 py-3.5 md:px-10">
-        <a href="#top" className="text-[17px] font-semibold tracking-[0.18em] text-[#010110]">
+        <a href="#top" className="text-[17px] font-semibold tracking-[0.18em] text-[#1B1A2E]">
           YUMA
         </a>
         <nav className="hidden items-center gap-8 text-[14px] text-[#6B6B76] lg:flex">
           {items.map((i) => (
-            <a key={i.href} href={i.href} className="transition-colors hover:text-[#010110]">
+            <a key={i.href} href={i.href} className="transition-colors hover:text-[#1B1A2E]">
               {i.label}
             </a>
           ))}
@@ -57,7 +57,7 @@ export function V2Nav() {
               key={i.href}
               href={i.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-[#E6E6EA] py-4 text-[16px] text-[#010110]"
+              className="block border-b border-[#E6E6EA] py-4 text-[16px] text-[#1B1A2E]"
             >
               {i.label}
             </a>
@@ -79,7 +79,7 @@ export function V2Hero() {
       <TickGrid />
       <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-14 px-5 pb-24 pt-20 md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:px-10 md:pb-32 md:pt-24">
         <div>
-          <h1 className="max-w-[16ch] text-balance text-[42px] font-medium leading-[1.02] tracking-[-0.045em] text-[#010110] sm:text-[58px] md:text-[72px]">
+          <h1 className="max-w-[16ch] text-balance text-[42px] font-medium leading-[1.02] tracking-[-0.045em] text-[#1B1A2E] sm:text-[58px] md:text-[72px]">
             L'AI dove serve davvero, dentro il lavoro che fai già.
           </h1>
           <Lead className="mt-7 max-w-[46ch]">
@@ -294,7 +294,7 @@ export function V2Products() {
             </p>
             <a
               href={p.href}
-              className="group mt-7 inline-flex items-center gap-2 self-start rounded-[6px] bg-white px-5 py-3 text-[15px] font-medium text-[#010110] transition-colors hover:bg-white/90"
+              className="group mt-7 inline-flex items-center gap-2 self-start rounded-[6px] bg-white px-5 py-3 text-[15px] font-medium text-[#1B1A2E] transition-colors hover:bg-white/90"
             >
               Scopri di più
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -305,7 +305,7 @@ export function V2Products() {
 
       <p className="mt-10 text-center text-[15px] text-[#6B6B76]">
         Ti interessa solo il software?{" "}
-        <a href="#contatti" className="font-medium text-[#010110] underline underline-offset-4">
+        <a href="#contatti" className="font-medium text-[#1B1A2E] underline underline-offset-4">
           Richiedi una demo
         </a>
       </p>
@@ -347,7 +347,7 @@ export function V2Process() {
             <span className="text-[13px] font-medium tabular-nums text-[#6B6B76]">
               {s.n}
             </span>
-            <h3 className="mt-5 text-[20px] font-medium tracking-[-0.015em] text-[#010110]">
+            <h3 className="mt-5 text-[20px] font-medium tracking-[-0.015em] text-[#1B1A2E]">
               {s.title}
             </h3>
             <p className="mt-3 text-[15px] leading-[1.6] text-[#6B6B76]">
@@ -390,7 +390,7 @@ export function V2Team() {
         {[0, 1, 2].map((i) => (
           <li key={i} className="rounded-[8px] border border-[#E6E6EA] p-8">
             <div aria-hidden className="h-16 w-16 rounded-full bg-[#F4F4F6]" />
-            <div className="mt-6 text-[17px] font-medium text-[#010110]">
+            <div className="mt-6 text-[17px] font-medium text-[#1B1A2E]">
               Nome Cognome
             </div>
             <div className="mt-1 text-[13px] text-[#6B6B76]">Co-founder</div>
@@ -439,7 +439,7 @@ export function V2Footer() {
     <footer className="border-t border-[#E6E6EA] bg-white">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-8 px-5 py-14 md:flex-row md:items-start md:justify-between md:px-10">
         <div>
-          <div className="text-[16px] font-semibold tracking-[0.18em] text-[#010110]">
+          <div className="text-[16px] font-semibold tracking-[0.18em] text-[#1B1A2E]">
             YUMA
           </div>
           <div className="mt-4 space-y-1 text-[13px] leading-[1.6] text-[#6B6B76]">
@@ -449,13 +449,13 @@ export function V2Footer() {
           </div>
         </div>
         <nav className="flex flex-col gap-3 text-[14px] text-[#6B6B76]">
-          <a href={links.projects} className="hover:text-[#010110]">
+          <a href={links.projects} className="hover:text-[#1B1A2E]">
             YUMA Projects
           </a>
-          <a href={links.clientInterface} className="hover:text-[#010110]">
+          <a href={links.clientInterface} className="hover:text-[#1B1A2E]">
             YUMA Client Interface
           </a>
-          <a href={links.home} className="hover:text-[#010110]">
+          <a href={links.home} className="hover:text-[#1B1A2E]">
             Versione 1 del sito
           </a>
         </nav>

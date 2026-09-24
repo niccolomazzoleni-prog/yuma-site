@@ -38,7 +38,7 @@ export function FAQ({
             {subtitle}
           </span>
         ) : null}
-        <h2 className="mt-5 max-w-[22ch] text-balance text-[30px] font-medium leading-[1.05] tracking-[-0.035em] text-[#010110] md:text-[44px]">
+        <h2 className="mt-5 max-w-[22ch] text-balance text-[30px] font-medium leading-[1.05] tracking-[-0.035em] text-[#1B1A2E] md:text-[44px]">
           {title}
         </h2>
       </div>
@@ -54,7 +54,7 @@ export function FAQ({
               "relative overflow-hidden whitespace-nowrap rounded-full border px-4 py-2 text-[14px] font-medium transition-colors duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA]",
               selected === key
                 ? "border-[#7C5CFA] text-white"
-                : "border-white/70 bg-white/50 text-[#4A4A58] hover:text-[#010110]",
+                : "border-white/70 bg-white/50 text-[#4A4A58] hover:text-[#1B1A2E]",
             )}
           >
             <span className="relative z-10">{label}</span>
@@ -122,7 +122,7 @@ function FAQItem({ question, answer }: FaqEntry) {
         <span
           className={cn(
             "text-[17px] font-medium tracking-[-0.015em] transition-colors md:text-[19px]",
-            isOpen ? "text-[#010110]" : "text-[#4A4A58]",
+            isOpen ? "text-[#1B1A2E]" : "text-[#4A4A58]",
           )}
         >
           {question}

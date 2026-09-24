@@ -80,13 +80,13 @@ function Cta({
 }) {
   const styles = {
     violet: "bg-[#7C5CFA] text-white",
-    dark: "bg-[#010110] text-white",
-    ghost: "border border-white/70 bg-white/60 text-[#010110] backdrop-blur-xl",
+    dark: "bg-[#1B1A2E] text-white",
+    ghost: "border border-white/70 bg-white/60 text-[#1B1A2E] backdrop-blur-xl",
   }[variant]
   return (
     <a
       href={href}
-      className={`group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#010110] focus-visible:ring-offset-2 ${styles}`}
+      className={`group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1A2E] focus-visible:ring-offset-2 ${styles}`}
     >
       {children}
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -105,12 +105,12 @@ function LandingNav({ product }: { product: string }) {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-5 pt-5">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-6 rounded-full border border-white/70 bg-white/55 px-5 py-2.5 backdrop-blur-xl md:px-6">
-        <a href={links.home} className="text-[15px] font-semibold tracking-[0.18em] text-[#010110]">
+        <a href={links.home} className="text-[15px] font-semibold tracking-[0.18em] text-[#1B1A2E]">
           YUMA
         </a>
         <nav className="hidden items-center gap-7 text-[14px] text-[#4A4A58] lg:flex">
           {items.map((i) => (
-            <a key={i.href} href={i.href} className="transition-colors hover:text-[#010110]">
+            <a key={i.href} href={i.href} className="transition-colors hover:text-[#1B1A2E]">
               {i.label}
             </a>
           ))}
@@ -134,7 +134,7 @@ function Hero({ c }: { c: LandingContent }) {
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
         <div>
           <Eyebrow>{c.product}</Eyebrow>
-          <h1 className="mt-5 max-w-[18ch] text-balance text-[36px] font-medium leading-[1.03] tracking-[-0.04em] text-[#010110] sm:text-[46px] lg:text-[54px]">
+          <h1 className="mt-5 max-w-[18ch] text-balance text-[36px] font-medium leading-[1.03] tracking-[-0.04em] text-[#1B1A2E] sm:text-[46px] lg:text-[54px]">
             {c.hero.headline}
           </h1>
           <Lead className="mt-6 max-w-[52ch]">{c.hero.sub}</Lead>
@@ -206,9 +206,9 @@ function Problem({ c }: { c: LandingContent }) {
             </p>
             <ul className="mt-5 space-y-4">
               {p.causes.map((x) => (
-                <li key={x.title} className="border-b border-[#010110]/8 pb-4 last:border-0">
+                <li key={x.title} className="border-b border-[#1B1A2E]/8 pb-4 last:border-0">
                   <Body>
-                    <span className="font-medium text-[#010110]">{x.title}</span> {x.desc}
+                    <span className="font-medium text-[#1B1A2E]">{x.title}</span> {x.desc}
                   </Body>
                 </li>
               ))}
@@ -218,9 +218,9 @@ function Problem({ c }: { c: LandingContent }) {
             <Eyebrow>{p.solutionTitle}</Eyebrow>
             <ul className="mt-5 space-y-4">
               {p.solutions?.map((x) => (
-                <li key={x.title} className="border-b border-[#010110]/8 pb-4 last:border-0">
+                <li key={x.title} className="border-b border-[#1B1A2E]/8 pb-4 last:border-0">
                   <Body>
-                    <span className="font-medium text-[#010110]">{x.title}</span> {x.desc}
+                    <span className="font-medium text-[#1B1A2E]">{x.title}</span> {x.desc}
                   </Body>
                 </li>
               ))}
@@ -235,10 +235,10 @@ function Problem({ c }: { c: LandingContent }) {
             <caption className="sr-only">{p.tableTitle}</caption>
             <thead>
               <tr>
-                <th className="w-1/2 border-b border-[#010110]/15 pb-4 text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
+                <th className="w-1/2 border-b border-[#1B1A2E]/15 pb-4 text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
                   Oggi
                 </th>
-                <th className="w-1/2 border-b border-[#010110]/15 pb-4 pl-6 text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
+                <th className="w-1/2 border-b border-[#1B1A2E]/15 pb-4 pl-6 text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
                   Con {c.product}
                 </th>
               </tr>
@@ -246,10 +246,10 @@ function Problem({ c }: { c: LandingContent }) {
             <tbody>
               {p.table.map((row) => (
                 <tr key={row.before}>
-                  <td className="border-b border-[#010110]/8 py-5 pr-6 text-[16px] leading-[1.5] text-[#4A4A58]">
+                  <td className="border-b border-[#1B1A2E]/8 py-5 pr-6 text-[16px] leading-[1.5] text-[#4A4A58]">
                     {row.before}
                   </td>
-                  <td className="border-b border-[#010110]/8 py-5 pl-6 text-[16px] font-medium leading-[1.5] text-[#010110]">
+                  <td className="border-b border-[#1B1A2E]/8 py-5 pl-6 text-[16px] font-medium leading-[1.5] text-[#1B1A2E]">
                     {row.after}
                   </td>
                 </tr>
@@ -290,7 +290,7 @@ function Modules({ c }: { c: LandingContent }) {
           <Glass key={m.name} className="flex h-full flex-col p-6 md:p-7">
             <Shot label={`Schermata ${m.name}`} ratio="4 / 3" className="w-full" />
             <div className="mt-6 flex flex-wrap items-center gap-3">
-              <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
+              <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
                 {m.name}
               </h3>
               <span className={`rounded-full px-3 py-1 text-[12px] font-medium ${statusStyle[m.status]}`}>
@@ -391,8 +391,8 @@ function Faq({ c }: { c: LandingContent }) {
 
 // ── 11 obiezione + modulo demo ───────────────────────────────────────────────
 const inputClass =
-  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#010110] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
-const labelClass = "text-[14px] font-medium text-[#010110]"
+  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1B1A2E] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
+const labelClass = "text-[14px] font-medium text-[#1B1A2E]"
 
 function DemoForm({ c }: { c: LandingContent }) {
   const [sent, setSent] = useState(false)
@@ -406,7 +406,7 @@ function DemoForm({ c }: { c: LandingContent }) {
   return (
     <Section id="demo" className="pt-0">
       <Glass className="mx-auto max-w-[820px] p-8 md:p-10">
-        <h2 className="text-[22px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[26px]">
+        <h2 className="text-[22px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
           {c.objection.title}
         </h2>
         <Body className="mt-4">{c.objection.body}</Body>
@@ -419,7 +419,7 @@ function DemoForm({ c }: { c: LandingContent }) {
 
       {sent ? (
         <Glass className="mx-auto mt-10 max-w-[620px] p-10 text-center">
-          <Body className="text-[#010110]">
+          <Body className="text-[#1B1A2E]">
             Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un
             giorno lavorativo.
           </Body>
@@ -504,7 +504,7 @@ function Footer() {
     <footer className="border-t border-white/60 bg-white/40 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1180px] flex-col gap-6 px-5 py-12 md:flex-row md:items-start md:justify-between">
         <div>
-          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#010110]">YUMA</div>
+          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#1B1A2E]">YUMA</div>
           <div className="mt-3 space-y-1 text-[13px] leading-[1.6] text-[#6B6B76]">
             <div>YUMA TX S.r.l. · P. IVA 14244440963</div>
             <div>Sede legale: Via Giacomo Leopardi 14, Milano</div>
@@ -512,9 +512,9 @@ function Footer() {
           </div>
         </div>
         <nav className="flex flex-col gap-2 text-[14px] text-[#6B6B76]">
-          <a href={links.home} className="hover:text-[#010110]">Home</a>
-          <a href="#" className="hover:text-[#010110]">Privacy policy</a>
-          <a href="#" className="hover:text-[#010110]">Cookie policy</a>
+          <a href={links.home} className="hover:text-[#1B1A2E]">Home</a>
+          <a href="#" className="hover:text-[#1B1A2E]">Privacy policy</a>
+          <a href="#" className="hover:text-[#1B1A2E]">Cookie policy</a>
         </nav>
       </div>
     </footer>
@@ -528,7 +528,7 @@ export default function LandingV3({ content }: { content: LandingContent }) {
   }, [])
 
   return (
-    <div className="relative min-h-screen text-[#010110]">
+    <div className="relative min-h-screen text-[#1B1A2E]">
       <GradientField />
       <LandingNav product={content.product} />
 

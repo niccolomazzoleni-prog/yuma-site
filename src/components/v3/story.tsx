@@ -114,7 +114,7 @@ export function StoryStickyScroll() {
           {beats.map((b, i) => (
             <div key={b.id} className={i === active ? "" : "opacity-45 transition-opacity duration-500"}>
               <Eyebrow>{b.kicker}</Eyebrow>
-              <h3 className="mt-4 max-w-[18ch] text-[26px] font-medium leading-[1.1] tracking-[-0.03em] text-[#010110] md:text-[34px]">
+              <h3 className="mt-4 max-w-[18ch] text-[26px] font-medium leading-[1.1] tracking-[-0.03em] text-[#1B1A2E] md:text-[34px]">
                 {b.title}
               </h3>
               <Body className="mt-4 max-w-[52ch]">{b.body}</Body>
@@ -172,7 +172,7 @@ export function StoryAlternating() {
               </div>
               <div className="p-8 md:p-10">
                 <Eyebrow>{b.kicker}</Eyebrow>
-                <h3 className="mt-4 max-w-[20ch] text-[24px] font-medium leading-[1.1] tracking-[-0.03em] text-[#010110] md:text-[30px]">
+                <h3 className="mt-4 max-w-[20ch] text-[24px] font-medium leading-[1.1] tracking-[-0.03em] text-[#1B1A2E] md:text-[30px]">
                   {b.title}
                 </h3>
                 <Body className="mt-4 max-w-[50ch]">{b.body}</Body>
@@ -216,7 +216,7 @@ export function StoryTimeline() {
         </Lead>
       </div>
 
-      <ol className="relative mx-auto mt-16 max-w-[880px] border-l border-[#010110]/10 pl-8 md:pl-12">
+      <ol className="relative mx-auto mt-16 max-w-[880px] border-l border-[#1B1A2E]/10 pl-8 md:pl-12">
         {beats.map((b, i) => (
           <li
             key={b.id}
@@ -233,14 +233,14 @@ export function StoryTimeline() {
               className={`absolute -left-[38px] top-1.5 flex h-5 w-5 items-center justify-center rounded-full border md:-left-[54px] ${
                 seen.includes(i)
                   ? "border-[#7C5CFA] bg-[#7C5CFA]"
-                  : "border-[#010110]/20 bg-white"
+                  : "border-[#1B1A2E]/20 bg-white"
               }`}
             >
               <span className="h-1.5 w-1.5 rounded-full bg-white" />
             </span>
 
             <Eyebrow>{b.kicker}</Eyebrow>
-            <h3 className="mt-3 max-w-[20ch] text-[24px] font-medium leading-[1.1] tracking-[-0.03em] text-[#010110] md:text-[30px]">
+            <h3 className="mt-3 max-w-[20ch] text-[24px] font-medium leading-[1.1] tracking-[-0.03em] text-[#1B1A2E] md:text-[30px]">
               {b.title}
             </h3>
             <Body className="mt-3 max-w-[54ch]">{b.body}</Body>

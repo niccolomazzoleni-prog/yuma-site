@@ -39,7 +39,7 @@ export function StepsTrack() {
               {i < steps.length - 1 ? (
                 <ArrowRight aria-hidden className="absolute right-[-14px] top-4 hidden h-4 w-4 text-[#7C5CFA]/50 lg:block" />
               ) : null}
-              <h3 className="mt-5 text-[18px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[20px]">
+              <h3 className="mt-5 text-[18px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[20px]">
                 {s.title}
               </h3>
               <Body className="mt-3 text-[15px]">{s.desc}</Body>
@@ -68,7 +68,7 @@ export function StepsLadder() {
                 {s.n}
               </span>
               <div>
-                <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
+                <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
                   {s.title}
                 </h3>
                 <Body className="mt-2 max-w-[60ch] text-[15px]">{s.desc}</Body>
@@ -103,7 +103,7 @@ export function StepsSerpentine() {
                 <span aria-hidden className="h-px flex-1 bg-[#7C5CFA]/25" />
               ) : null}
             </div>
-            <h3 className="mt-5 text-[20px] font-medium tracking-[-0.02em] text-[#010110] md:text-[22px]">
+            <h3 className="mt-5 text-[20px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[22px]">
               {s.title}
             </h3>
             <Body className="mt-3 text-[15px]">{s.desc}</Body>
@@ -124,7 +124,7 @@ export function StepsProgressBar() {
     <Section>
       <Head />
       <div ref={ref} className="mt-14">
-        <div aria-hidden className="relative h-1 w-full rounded-full bg-[#010110]/8">
+        <div aria-hidden className="relative h-1 w-full rounded-full bg-[#1B1A2E]/8">
           <motion.div
             style={{ scaleX: width, originX: 0 }}
             className="absolute inset-0 rounded-full bg-[#7C5CFA]"
@@ -134,7 +134,7 @@ export function StepsProgressBar() {
           {steps.map((s) => (
             <li key={s.n}>
               <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">{s.n}</span>
-              <h3 className="mt-3 text-[18px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[20px]">
+              <h3 className="mt-3 text-[18px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[20px]">
                 {s.title}
               </h3>
               <Body className="mt-3 text-[15px]">{s.desc}</Body>
@@ -182,7 +182,7 @@ export function StepsWizard() {
           <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
             {steps[active].n}
           </span>
-          <h3 className="mt-3 text-[24px] font-medium tracking-[-0.025em] text-[#010110] md:text-[30px]">
+          <h3 className="mt-3 text-[24px] font-medium tracking-[-0.025em] text-[#1B1A2E] md:text-[30px]">
             {steps[active].title}
           </h3>
           <Body className="mt-4 max-w-[62ch]">{steps[active].desc}</Body>
@@ -212,10 +212,10 @@ export function StepsChain() {
           ))}
         </ol>
 
-        <div className="mt-8 grid gap-6 border-t border-[#010110]/8 pt-8 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-6 border-t border-[#1B1A2E]/8 pt-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s) => (
             <div key={s.n}>
-              <h3 className="text-[16px] font-medium text-[#010110]">{s.title}</h3>
+              <h3 className="text-[16px] font-medium text-[#1B1A2E]">{s.title}</h3>
               <Body className="mt-2 text-[15px]">{s.desc}</Body>
             </div>
           ))}

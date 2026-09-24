@@ -37,11 +37,11 @@ function Cta({ children, href = "#demo", variant = "violet" }: { children: React
   const styles =
     variant === "violet"
       ? "bg-[#7C5CFA] text-white"
-      : "border border-white/70 bg-white/60 text-[#010110] backdrop-blur-xl"
+      : "border border-white/70 bg-white/60 text-[#1B1A2E] backdrop-blur-xl"
   return (
     <a
       href={href}
-      className={`group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#010110] focus-visible:ring-offset-2 ${styles}`}
+      className={`group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1A2E] focus-visible:ring-offset-2 ${styles}`}
     >
       {children}
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -60,12 +60,12 @@ function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-5 pt-5">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-6 rounded-full border border-white/70 bg-white/55 px-5 py-2.5 backdrop-blur-xl md:px-6">
-        <a href={links.home} className="text-[15px] font-semibold tracking-[0.18em] text-[#010110]">
+        <a href={links.home} className="text-[15px] font-semibold tracking-[0.18em] text-[#1B1A2E]">
           YUMA
         </a>
         <nav className="hidden items-center gap-7 text-[14px] text-[#4A4A58] lg:flex">
           {items.map((i) => (
-            <a key={i.href} href={i.href} className="transition-colors hover:text-[#010110]">
+            <a key={i.href} href={i.href} className="transition-colors hover:text-[#1B1A2E]">
               {i.label}
             </a>
           ))}
@@ -85,7 +85,7 @@ function Hero() {
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
         <div>
           <Eyebrow>{c.product}</Eyebrow>
-          <h1 className="mt-5 max-w-[18ch] text-balance text-[36px] font-medium leading-[1.03] tracking-[-0.04em] text-[#010110] sm:text-[46px] lg:text-[54px]">
+          <h1 className="mt-5 max-w-[18ch] text-balance text-[36px] font-medium leading-[1.03] tracking-[-0.04em] text-[#1B1A2E] sm:text-[46px] lg:text-[54px]">
             {c.hero.headline}
           </h1>
           <Lead className="mt-6 max-w-[52ch]">{c.hero.sub}</Lead>
@@ -161,7 +161,7 @@ function Problem() {
                 <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#010110] md:text-[30px]">
+                <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1B1A2E] md:text-[30px]">
                   {cause.title.replace(/\.$/, "")}
                 </h3>
                 <Body className="mt-4 max-w-[52ch]">{cause.desc}</Body>
@@ -189,7 +189,7 @@ function Problem() {
             <div className="grid h-full w-full gap-6 md:grid-cols-2">
               <Info n={[23, 24, 25][i] ?? i + 1} />
               <div className="flex flex-col justify-center gap-y-3">
-                <h3 className="m-0 text-[21px] font-medium tracking-[-0.02em] text-[#010110] md:text-[24px]">
+                <h3 className="m-0 text-[21px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[24px]">
                   {s.title.replace(/\.$/, "")}
                 </h3>
                 <p className="m-0 text-[15px] leading-[1.55] text-[#4A4A58] md:text-[16px]">
@@ -208,10 +208,10 @@ function Problem() {
             <caption className="sr-only">{p.tableTitle}</caption>
             <thead>
               <tr>
-                <th className="w-1/2 border-b border-[#010110]/12 pb-4 text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
+                <th className="w-1/2 border-b border-[#1B1A2E]/12 pb-4 text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
                   Oggi
                 </th>
-                <th className="w-1/2 border-b border-[#010110]/12 pb-4 pl-6 text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
+                <th className="w-1/2 border-b border-[#1B1A2E]/12 pb-4 pl-6 text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
                   Con {c.product}
                 </th>
               </tr>
@@ -219,10 +219,10 @@ function Problem() {
             <tbody>
               {p.table.map((row) => (
                 <tr key={row.before}>
-                  <td className="border-b border-[#010110]/8 py-5 pr-6 text-[16px] leading-[1.5] text-[#4A4A58]">
+                  <td className="border-b border-[#1B1A2E]/8 py-5 pr-6 text-[16px] leading-[1.5] text-[#4A4A58]">
                     {row.before}
                   </td>
-                  <td className="border-b border-[#010110]/8 py-5 pl-6 text-[16px] font-medium leading-[1.5] text-[#010110]">
+                  <td className="border-b border-[#1B1A2E]/8 py-5 pl-6 text-[16px] font-medium leading-[1.5] text-[#1B1A2E]">
                     {row.after}
                   </td>
                 </tr>
@@ -297,7 +297,7 @@ function Roles() {
                 aria-hidden
                 className="absolute -top-3 left-7 h-6 w-14 rounded-[4px] bg-[#7C5CFA]/25 backdrop-blur-sm"
               />
-              <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
+              <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
                 {r.role}
               </h3>
               <Body className="mt-3 text-[15px]">{r.desc}</Body>
@@ -337,7 +337,7 @@ function Fit() {
       </div>
 
       <Glass className="mx-auto mt-12 max-w-[880px] p-8 md:p-10">
-        <div className="flex items-baseline justify-between gap-4 border-b border-[#010110]/10 pb-5">
+        <div className="flex items-baseline justify-between gap-4 border-b border-[#1B1A2E]/10 pb-5">
           <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
             Quante te ne riconosci?
           </span>
@@ -356,20 +356,20 @@ function Fit() {
                 ref={(el) => {
                   refs.current[i] = el
                 }}
-                className="flex items-start gap-4 border-b border-[#010110]/8 py-6 last:border-0"
+                className="flex items-start gap-4 border-b border-[#1B1A2E]/8 py-6 last:border-0"
               >
                 <span
                   className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] border transition-all duration-500 ${
                     isDone
                       ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
-                      : "border-[#010110]/20 bg-white/60 text-transparent"
+                      : "border-[#1B1A2E]/20 bg-white/60 text-transparent"
                   }`}
                 >
                   <Check className="h-4 w-4" />
                 </span>
                 <span
                   className={`text-[17px] leading-[1.5] transition-colors duration-500 ${
-                    isDone ? "text-[#010110]" : "text-[#A3A3AD]"
+                    isDone ? "text-[#1B1A2E]" : "text-[#A3A3AD]"
                   }`}
                 >
                   {b}
@@ -418,8 +418,8 @@ function Faq() {
 
 // ── 11 obiezione + modulo demo ───────────────────────────────────────────────
 const inputClass =
-  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#010110] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
-const labelClass = "text-[14px] font-medium text-[#010110]"
+  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1B1A2E] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
+const labelClass = "text-[14px] font-medium text-[#1B1A2E]"
 
 function DemoForm() {
   const [sent, setSent] = useState(false)
@@ -433,7 +433,7 @@ function DemoForm() {
   return (
     <Section id="demo" className="pt-0">
       <Glass className="mx-auto max-w-[820px] p-8 md:p-10">
-        <h2 className="text-[22px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[26px]">
+        <h2 className="text-[22px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
           {c.objection.title}
         </h2>
         <Body className="mt-4">{c.objection.body}</Body>
@@ -446,7 +446,7 @@ function DemoForm() {
 
       {sent ? (
         <Glass className="mx-auto mt-10 max-w-[620px] p-10 text-center">
-          <Body className="text-[#010110]">
+          <Body className="text-[#1B1A2E]">
             Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un
             giorno lavorativo.
           </Body>
@@ -522,7 +522,7 @@ function Footer() {
     <footer className="border-t border-white/60 bg-white/40 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1180px] flex-col gap-6 px-5 py-12 md:flex-row md:items-start md:justify-between">
         <div>
-          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#010110]">YUMA</div>
+          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#1B1A2E]">YUMA</div>
           <div className="mt-3 space-y-1 text-[13px] leading-[1.6] text-[#6B6B76]">
             <div>YUMA TX S.r.l. · P. IVA 14244440963</div>
             <div>Sede legale: Via Giacomo Leopardi 14, Milano</div>
@@ -530,9 +530,9 @@ function Footer() {
           </div>
         </div>
         <nav className="flex flex-col gap-2 text-[14px] text-[#6B6B76]">
-          <a href={links.home} className="hover:text-[#010110]">Home</a>
-          <a href={links.clientInterface} className="hover:text-[#010110]">YUMA Client Interface</a>
-          <a href="#" className="hover:text-[#010110]">Privacy policy</a>
+          <a href={links.home} className="hover:text-[#1B1A2E]">Home</a>
+          <a href={links.clientInterface} className="hover:text-[#1B1A2E]">YUMA Client Interface</a>
+          <a href="#" className="hover:text-[#1B1A2E]">Privacy policy</a>
         </nav>
       </div>
     </footer>
@@ -545,7 +545,7 @@ export default function ProjectsLanding() {
   }, [])
 
   return (
-    <div className="relative min-h-screen text-[#010110]">
+    <div className="relative min-h-screen text-[#1B1A2E]">
       <GradientField />
       <Nav />
 

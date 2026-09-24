@@ -32,7 +32,7 @@ export function RolesSelector({
                 aria-current={i === active}
                 className={`flex w-full items-center justify-between gap-4 rounded-[16px] px-5 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA] ${
                   i === active
-                    ? "border border-white/70 bg-white/70 text-[#010110]"
+                    ? "border border-white/70 bg-white/70 text-[#1B1A2E]"
                     : "border border-transparent text-[#4A4A58] hover:bg-white/40"
                 }`}
               >
@@ -51,7 +51,7 @@ export function RolesSelector({
 
         <Glass className="grid gap-6 p-7 md:grid-cols-[minmax(0,1fr)_200px] md:items-center md:p-8">
           <div>
-            <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
+            <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
               {items[active].role}
             </h3>
             <Body className="mt-4">{items[active].desc}</Body>

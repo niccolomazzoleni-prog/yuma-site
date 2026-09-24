@@ -36,7 +36,7 @@ export function FitStickers({
                 {String(i + 1).padStart(2, "0")}
               </span>
               {shortLabels?.[i] ? (
-                <h3 className="mt-3 text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[21px]">
+                <h3 className="mt-3 text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
                   {shortLabels[i]}
                 </h3>
               ) : null}

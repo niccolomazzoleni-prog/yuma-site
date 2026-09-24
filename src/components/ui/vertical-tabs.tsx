@@ -66,11 +66,11 @@ export function VerticalTabs({
     exit: (d: number) => ({ zIndex: 0, y: d > 0 ? "100%" : "-100%", opacity: 0 }),
   }
 
-  const ink = tone === "dark" ? "text-white" : "text-[#010110]"
+  const ink = tone === "dark" ? "text-white" : "text-[#1B1A2E]"
   const muted = tone === "dark" ? "text-white/55" : "text-[#6B6B76]"
   const dim = tone === "dark" ? "text-white/35" : "text-[#A3A3AD]"
-  const rule = tone === "dark" ? "border-white/15" : "border-[#010110]/10"
-  const track = tone === "dark" ? "bg-white/15" : "bg-[#010110]/10"
+  const rule = tone === "dark" ? "border-white/15" : "border-[#1B1A2E]/10"
+  const track = tone === "dark" ? "bg-white/15" : "bg-[#1B1A2E]/10"
   const bar = tone === "dark" ? "bg-white" : "bg-[#7C5CFA]"
 
   return (
@@ -106,7 +106,7 @@ export function VerticalTabs({
                   className={cn(
                     "group relative flex items-start gap-4 border-t py-6 text-left transition-colors duration-500 first:border-0 md:py-7",
                     rule,
-                    isActive ? ink : cn(muted, "hover:text-[#010110]"),
+                    isActive ? ink : cn(muted, "hover:text-[#1B1A2E]"),
                     tone === "dark" && !isActive ? "hover:text-white" : "",
                   )}
                 >
@@ -201,7 +201,7 @@ export function VerticalTabs({
                     "flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-md transition active:scale-90 md:h-12 md:w-12",
                     tone === "dark"
                       ? "border-white/20 bg-white/10 text-white hover:bg-white/20"
-                      : "border-white/70 bg-white/70 text-[#010110] hover:bg-white",
+                      : "border-white/70 bg-white/70 text-[#1B1A2E] hover:bg-white",
                   )}
                 >
                   <ChevronLeft className="h-5 w-5" />
@@ -214,7 +214,7 @@ export function VerticalTabs({
                     "flex h-10 w-10 items-center justify-center rounded-full border backdrop-blur-md transition active:scale-90 md:h-12 md:w-12",
                     tone === "dark"
                       ? "border-white/20 bg-white/10 text-white hover:bg-white/20"
-                      : "border-white/70 bg-white/70 text-[#010110] hover:bg-white",
+                      : "border-white/70 bg-white/70 text-[#1B1A2E] hover:bg-white",
                   )}
                 >
                   <ChevronRight className="h-5 w-5" />

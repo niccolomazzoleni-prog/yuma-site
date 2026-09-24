@@ -44,7 +44,7 @@ const options = [
 export default function RolesCompare() {
   const [active, setActive] = useState(0)
   return (
-    <div className="relative min-h-screen text-[#010110]">
+    <div className="relative min-h-screen text-[#1B1A2E]">
       <GradientField />
       <header className="sticky top-0 z-50 border-b border-white/50 bg-white/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1180px] flex-wrap items-center gap-3 px-5 py-4">
@@ -58,8 +58,8 @@ export default function RolesCompare() {
               onClick={() => setActive(i)}
               className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${
                 i === active
-                  ? "bg-[#010110] text-white"
-                  : "border border-white/70 bg-white/60 text-[#4A4A58] hover:text-[#010110]"
+                  ? "bg-[#1B1A2E] text-white"
+                  : "border border-white/70 bg-white/60 text-[#4A4A58] hover:text-[#1B1A2E]"
               }`}
             >
               {o.name}

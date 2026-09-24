@@ -43,8 +43,8 @@ export default function ExplorePage() {
               onClick={() => setActive(i)}
               className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${
                 i === active
-                  ? "bg-[#010110] text-white"
-                  : "border border-[#E6E6EA] text-[#4A4A58] hover:border-[#010110]"
+                  ? "bg-[#1B1A2E] text-white"
+                  : "border border-[#E6E6EA] text-[#4A4A58] hover:border-[#1B1A2E]"
               }`}
             >
               {t.name}

@@ -124,7 +124,7 @@ const STATS = [
 
 export function DirectionProduct() {
   return (
-    <div className="bg-white text-[#010110]">
+    <div className="bg-white text-[#1B1A2E]">
       <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-24">
         <div>
           <span className="inline-flex rounded-full border border-[#E6E6EA] px-3 py-1 text-[12px] font-medium text-[#6B6B76]">
@@ -192,7 +192,7 @@ export function DirectionProduct() {
 
 export function DirectionGlass() {
   return (
-    <div className="relative overflow-hidden bg-[#F7F7FB] text-[#010110]">
+    <div className="relative overflow-hidden bg-[#F7F7FB] text-[#1B1A2E]">
       {/* macchie di colore sotto il vetro */}
       <div
         aria-hidden
@@ -207,7 +207,7 @@ export function DirectionGlass() {
       <div className="relative mx-auto max-w-[1180px] px-6 py-20 lg:py-24">
         {/* nav a pillola */}
         <div className="mx-auto mb-16 flex w-fit items-center gap-6 rounded-full border border-white/70 bg-white/55 px-6 py-3 text-[14px] text-[#4A4A58] backdrop-blur-xl">
-          <span className="font-semibold tracking-[0.16em] text-[#010110]">YUMA</span>
+          <span className="font-semibold tracking-[0.16em] text-[#1B1A2E]">YUMA</span>
           <span>Soluzioni</span>
           <span>Come lavoriamo</span>
           <span className="rounded-full bg-[#7C5CFA] px-4 py-1.5 text-white">Prenota una call</span>
@@ -221,7 +221,7 @@ export function DirectionGlass() {
             {HERO_SUB}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="#" className="rounded-full bg-[#010110] px-6 py-3 text-[15px] font-medium text-white">
+            <a href="#" className="rounded-full bg-[#1B1A2E] px-6 py-3 text-[15px] font-medium text-white">
               Scopri i nostri prodotti
             </a>
             <a href="#" className="rounded-full border border-white/70 bg-white/60 px-6 py-3 text-[15px] font-medium backdrop-blur-xl">

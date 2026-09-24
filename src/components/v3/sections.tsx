@@ -47,7 +47,7 @@ export function WhyNow() {
               Quello che prima richiedeva anni di lavoro, oggi si può costruire
               in pochi mesi e con una frazione dei costi. La barriera si è
               abbassata, e per la prima volta{" "}
-              <strong className="font-medium text-[#010110]">
+              <strong className="font-medium text-[#1B1A2E]">
                 il potenziale trasformativo della tecnologia è alla portata di
                 tutte le aziende.
               </strong>
@@ -154,7 +154,7 @@ export function Possibilities() {
           {p.visual}
         </div>
         <div className="flex flex-col justify-center gap-y-3">
-          <h3 className="m-0 text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
+          <h3 className="m-0 text-[22px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
             {p.title}
           </h3>
           <p className="m-0 text-[15px] leading-[1.55] text-[#4A4A58] md:text-[16px]">
@@ -203,7 +203,7 @@ export function Solutions() {
         Ti interessa solo il software?{" "}
         <a
           href="#contatti"
-          className="font-medium text-[#010110] underline decoration-[#7C5CFA] decoration-2 underline-offset-4 transition-colors hover:text-[#7C5CFA]"
+          className="font-medium text-[#1B1A2E] underline decoration-[#7C5CFA] decoration-2 underline-offset-4 transition-colors hover:text-[#7C5CFA]"
         >
           Richiedi una demo
         </a>
@@ -246,7 +246,7 @@ export function HowWeWork() {
               <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
                 {s.n}
               </span>
-              <h3 className="mt-4 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[22px]">
+              <h3 className="mt-4 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[22px]">
                 {s.title}
               </h3>
               <Body className="mt-3 text-[15px]">{s.desc}</Body>
@@ -290,7 +290,7 @@ export function Team() {
               >
                 Foto
               </div>
-              <div className="mt-6 text-[17px] font-medium text-[#010110]">
+              <div className="mt-6 text-[17px] font-medium text-[#1B1A2E]">
                 Nome Cognome
               </div>
               <div className="mt-1 text-[13px] text-[#6B6B76]">Co-founder</div>
@@ -352,7 +352,7 @@ export function Assessment() {
         </Lead>
         <a
           href="#contatti"
-          className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[#010110] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA] focus-visible:ring-offset-2"
+          className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[#1B1A2E] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA] focus-visible:ring-offset-2"
         >
           Richiedi il tuo assessment
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -364,8 +364,8 @@ export function Assessment() {
 
 // ── 9 · Modulo di contatto ───────────────────────────────────────────────────
 const inputClass =
-  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#010110] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
-const labelClass = "text-[14px] font-medium text-[#010110]"
+  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1B1A2E] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
+const labelClass = "text-[14px] font-medium text-[#1B1A2E]"
 
 export function Contact() {
   const [sent, setSent] = useState(false)
@@ -390,7 +390,7 @@ export function Contact() {
 
       {sent ? (
         <Glass className="mx-auto mt-10 max-w-[620px] p-10 text-center">
-          <Body className="text-[#010110]">
+          <Body className="text-[#1B1A2E]">
             Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un
             giorno lavorativo.
           </Body>
@@ -488,7 +488,7 @@ export function Contact() {
 
             <button
               type="submit"
-              className="mt-1 inline-flex items-center justify-center justify-self-center rounded-full bg-[#7C5CFA] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#010110] focus-visible:ring-offset-2"
+              className="mt-1 inline-flex items-center justify-center justify-self-center rounded-full bg-[#7C5CFA] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1A2E] focus-visible:ring-offset-2"
             >
               Invia la richiesta
             </button>
@@ -505,7 +505,7 @@ export function Footer() {
     <footer className="border-t border-white/60 bg-white/40 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1180px] flex-col gap-6 px-5 py-12 md:flex-row md:items-start md:justify-between">
         <div>
-          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#010110]">
+          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#1B1A2E]">
             YUMA
           </div>
           <div className="mt-3 space-y-1 text-[13px] leading-[1.6] text-[#6B6B76]">
@@ -513,7 +513,7 @@ export function Footer() {
             <div>Sede legale: Via Giacomo Leopardi 14, Milano</div>
             <div>
               PEC{" "}
-              <a href="mailto:yumatxsrl@pec.it" className="hover:text-[#010110]">
+              <a href="mailto:yumatxsrl@pec.it" className="hover:text-[#1B1A2E]">
                 yumatxsrl@pec.it
               </a>{" "}
               · SDI WY7PJ6k
@@ -524,19 +524,19 @@ export function Footer() {
           </div>
         </div>
         <nav className="flex flex-col gap-2 text-[14px] text-[#6B6B76]">
-          <a href={links.projects} className="hover:text-[#010110]">
+          <a href={links.projects} className="hover:text-[#1B1A2E]">
             YUMA Projects
           </a>
-          <a href={links.clientInterface} className="hover:text-[#010110]">
+          <a href={links.clientInterface} className="hover:text-[#1B1A2E]">
             YUMA Client Interface
           </a>
-          <a href="#" className="hover:text-[#010110]">
+          <a href="#" className="hover:text-[#1B1A2E]">
             LinkedIn
           </a>
-          <a href="#" className="hover:text-[#010110]">
+          <a href="#" className="hover:text-[#1B1A2E]">
             Privacy policy
           </a>
-          <a href="#" className="hover:text-[#010110]">
+          <a href="#" className="hover:text-[#1B1A2E]">
             Cookie policy
           </a>
         </nav>

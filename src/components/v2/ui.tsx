@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils"
 // chiaro/scuro a tutta larghezza, trama a crocette sul chiaro, card squadrate.
 
 export const V2 = {
-  ink: "#010110", // testo e fondo delle bande scure
+  ink: "#1B1A2E", // testo e fondo delle bande scure
   band: "#0A0A0F",
   card: "#22222A",
   paper: "#FFFFFF",
@@ -48,7 +48,7 @@ export function SectionTitle({
     <h2
       className={cn(
         "text-balance text-[34px] font-medium leading-[1.04] tracking-[-0.035em] sm:text-[44px] md:text-[56px]",
-        tone === "dark" ? "text-white" : "text-[#010110]",
+        tone === "dark" ? "text-white" : "text-[#1B1A2E]",
         className,
       )}
     >
@@ -116,8 +116,8 @@ export function Band({
     tone === "dark"
       ? "bg-[#0A0A0F] text-white"
       : tone === "mist"
-        ? "bg-[#F4F4F6] text-[#010110]"
-        : "bg-white text-[#010110]"
+        ? "bg-[#F4F4F6] text-[#1B1A2E]"
+        : "bg-white text-[#1B1A2E]"
   return (
     <section
       id={id}
@@ -146,7 +146,7 @@ export function Card({
         "rounded-[8px] p-9",
         tone === "dark"
           ? "bg-[#22222A] text-white"
-          : "border border-[#E6E6EA] bg-white text-[#010110]",
+          : "border border-[#E6E6EA] bg-white text-[#1B1A2E]",
         className,
       )}
     >
@@ -168,10 +168,10 @@ export function ButtonLink({
 }) {
   const styles = {
     primary:
-      "bg-[#010110] text-white hover:bg-[#22222A]",
-    light: "bg-white text-[#010110] hover:bg-white/90",
+      "bg-[#1B1A2E] text-white hover:bg-[#22222A]",
+    light: "bg-white text-[#1B1A2E] hover:bg-white/90",
     ghost:
-      "border border-[#E6E6EA] bg-white text-[#010110] hover:border-[#010110]",
+      "border border-[#E6E6EA] bg-white text-[#1B1A2E] hover:border-[#1B1A2E]",
   }[variant]
   return (
     <a

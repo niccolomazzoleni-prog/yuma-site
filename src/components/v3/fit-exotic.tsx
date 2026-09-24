@@ -23,7 +23,7 @@ function Head({ tone = "light" }: { tone?: "light" | "dark" }) {
       <Eyebrow>{f.label}</Eyebrow>
       <h2
         className={`mx-auto mt-5 max-w-[22ch] text-balance text-[30px] font-medium leading-[1.05] tracking-[-0.035em] md:text-[44px] ${
-          tone === "dark" ? "text-white" : "text-[#010110]"
+          tone === "dark" ? "text-white" : "text-[#1B1A2E]"
         }`}
       >
         {TITLE}
@@ -68,7 +68,7 @@ export function FitChecklist() {
     <Section>
       <Head />
       <Glass className="mx-auto mt-12 max-w-[880px] p-8 md:p-10">
-        <div className="flex items-baseline justify-between gap-4 border-b border-[#010110]/10 pb-5">
+        <div className="flex items-baseline justify-between gap-4 border-b border-[#1B1A2E]/10 pb-5">
           <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
             Quante te ne riconosci?
           </span>
@@ -87,20 +87,20 @@ export function FitChecklist() {
                 ref={(el) => {
                   refs.current[i] = el
                 }}
-                className="flex items-start gap-4 border-b border-[#010110]/8 py-6 last:border-0"
+                className="flex items-start gap-4 border-b border-[#1B1A2E]/8 py-6 last:border-0"
               >
                 <span
                   className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] border transition-all duration-500 ${
                     isDone
                       ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
-                      : "border-[#010110]/20 bg-white/60 text-transparent"
+                      : "border-[#1B1A2E]/20 bg-white/60 text-transparent"
                   }`}
                 >
                   <Check className="h-4 w-4" />
                 </span>
                 <span
                   className={`text-[17px] leading-[1.5] transition-colors duration-500 ${
-                    isDone ? "text-[#010110]" : "text-[#A3A3AD]"
+                    isDone ? "text-[#1B1A2E]" : "text-[#A3A3AD]"
                   }`}
                 >
                   {b}
@@ -208,7 +208,7 @@ export function FitStickers() {
               <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-3 text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#010110] md:text-[21px]">
+              <h3 className="mt-3 text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
                 {short[i]}
               </h3>
               <Body className="mt-3 text-[15px]">{b}</Body>

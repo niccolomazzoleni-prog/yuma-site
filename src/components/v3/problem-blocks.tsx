@@ -22,7 +22,7 @@ export function ProblemAlternating({
               <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#010110] md:text-[30px]">
+              <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1B1A2E] md:text-[30px]">
                 {it.title}
               </h3>
               <Body className="mt-4 max-w-[52ch]">{it.desc}</Body>

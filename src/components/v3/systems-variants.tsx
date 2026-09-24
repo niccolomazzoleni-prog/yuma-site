@@ -62,7 +62,7 @@ function FlowDiagram({ compact = false }: { compact?: boolean }) {
       {systems.map((sname, i) => (
         <g key={sname} transform={`translate(400 ${80 + i * 60})`}>
           <rect width="110" height="44" rx="10" fill="rgba(255,255,255,0.85)" stroke="rgba(1,1,16,0.12)" />
-          <text x="55" y="27" textAnchor="middle" fontSize="13" fill="#010110">
+          <text x="55" y="27" textAnchor="middle" fontSize="13" fill="#1B1A2E">
             {sname}
           </text>
           <path d={`M-90 ${50 - i * 60} C-40 ${50 - i * 60} -30 22 0 22`} stroke="rgba(1,1,16,0.2)" fill="none" />
@@ -86,8 +86,8 @@ export function SystemsDiagram() {
       </Glass>
       <div className="mt-5 grid gap-5 md:grid-cols-3">
         {items.map((it) => (
-          <div key={it.title} className="border-t border-[#010110]/10 pt-5">
-            <h3 className="text-[17px] font-medium text-[#010110]">{it.title}</h3>
+          <div key={it.title} className="border-t border-[#1B1A2E]/10 pt-5">
+            <h3 className="text-[17px] font-medium text-[#1B1A2E]">{it.title}</h3>
             <Body className="mt-2 text-[15px]">
               {it.desc}
               {it.todo ? <TodoTag /> : null}
@@ -108,10 +108,10 @@ export function SystemsSplit() {
         <Glass className="p-7 md:p-8">
           <FlowDiagram compact />
         </Glass>
-        <div className="divide-y divide-[#010110]/10 border-y border-[#010110]/10">
+        <div className="divide-y divide-[#1B1A2E]/10 border-y border-[#1B1A2E]/10">
           {items.map((it) => (
             <div key={it.title} className="py-6">
-              <h3 className="text-[18px] font-medium text-[#010110]">{it.title}</h3>
+              <h3 className="text-[18px] font-medium text-[#1B1A2E]">{it.title}</h3>
               <Body className="mt-2 max-w-[52ch] text-[15px]">
                 {it.desc}
                 {it.todo ? <TodoTag /> : null}
@@ -135,7 +135,7 @@ export function SystemsNumbered() {
             <span className="text-[40px] font-medium leading-none tabular-nums text-[#7C5CFA]/30">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3 className="mt-6 text-[19px] font-medium tracking-[-0.02em] text-[#010110] md:text-[21px]">
+            <h3 className="mt-6 text-[19px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
               {it.title}
             </h3>
             <Body className="mt-3 text-[15px]">
@@ -202,13 +202,13 @@ export function SystemsRows() {
         {items.map((it, i) => (
           <div
             key={it.title}
-            className="grid gap-4 border-t border-[#010110]/10 py-8 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)] md:gap-12"
+            className="grid gap-4 border-t border-[#1B1A2E]/10 py-8 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)] md:gap-12"
           >
             <div className="flex items-baseline gap-4">
               <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#010110] md:text-[26px]">
+              <h3 className="text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1B1A2E] md:text-[26px]">
                 {it.title}
               </h3>
             </div>
@@ -218,7 +218,7 @@ export function SystemsRows() {
             </Body>
           </div>
         ))}
-        <div className="border-t border-[#010110]/10" />
+        <div className="border-t border-[#1B1A2E]/10" />
       </div>
     </Section>
   )

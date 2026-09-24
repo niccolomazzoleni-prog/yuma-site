@@ -22,8 +22,8 @@ function Cta({ variant = "dark" }: { variant?: "dark" | "violet" }) {
       href="#contatti"
       className={`group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
         variant === "violet"
-          ? "bg-[#7C5CFA] focus-visible:ring-[#010110]"
-          : "bg-[#010110] focus-visible:ring-[#7C5CFA]"
+          ? "bg-[#7C5CFA] focus-visible:ring-[#1B1A2E]"
+          : "bg-[#1B1A2E] focus-visible:ring-[#7C5CFA]"
       }`}
     >
       {CTA_LABEL}
@@ -77,7 +77,7 @@ export function AssessmentTwoColumns() {
               </li>
             ))}
           </ul>
-          <p className="mt-6 border-t border-[#010110]/8 pt-5 text-[15px] text-[#4A4A58]">
+          <p className="mt-6 border-t border-[#1B1A2E]/8 pt-5 text-[15px] text-[#4A4A58]">
             Il risultato è tuo, anche se decidi di fermarti lì.
           </p>
         </Glass>
@@ -122,7 +122,7 @@ export function AssessmentThreeSteps() {
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="mt-5 text-[20px] font-medium tracking-[-0.02em] text-[#010110]">
+              <h3 className="mt-5 text-[20px] font-medium tracking-[-0.02em] text-[#1B1A2E]">
                 {s.title}
               </h3>
               <Body className="mt-3 text-[15px]">{s.desc}</Body>
@@ -209,7 +209,7 @@ export function AssessmentQa() {
         {qa.map((item, i) => {
           const isOpen = open === i
           return (
-            <div key={item.q} className="border-b border-[#010110]/8 last:border-0">
+            <div key={item.q} className="border-b border-[#1B1A2E]/8 last:border-0">
               <h3 className="m-0">
                 <button
                   type="button"
@@ -219,7 +219,7 @@ export function AssessmentQa() {
                 >
                   <span
                     className={`flex-1 text-[18px] font-medium tracking-[-0.015em] md:text-[20px] ${
-                      isOpen ? "text-[#010110]" : "text-[#4A4A58]"
+                      isOpen ? "text-[#1B1A2E]" : "text-[#4A4A58]"
                     }`}
                   >
                     {item.q}

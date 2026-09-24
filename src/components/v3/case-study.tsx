@@ -38,15 +38,15 @@ export function CaseStudy({ c }: { c: LandingContent }) {
       <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-12">
         {cs.blocks.map((b) => (
           <div key={b.title}>
-            <h3 className="text-[17px] font-medium text-[#010110]">{b.title}</h3>
+            <h3 className="text-[17px] font-medium text-[#1B1A2E]">{b.title}</h3>
             <Body className="mt-3">{b.desc}</Body>
           </div>
         ))}
       </div>
 
-      <div className="mt-12 border-t border-[#010110]/10 pt-8">
+      <div className="mt-12 border-t border-[#1B1A2E]/10 pt-8">
         <div className="flex flex-wrap items-baseline gap-3">
-          <h3 className="text-[17px] font-medium text-[#010110]">{cs.resultsTitle}</h3>
+          <h3 className="text-[17px] font-medium text-[#1B1A2E]">{cs.resultsTitle}</h3>
           <span className="text-[13px] text-[#8A8A97]">{cs.resultsNote}</span>
           <TodoTag />
         </div>

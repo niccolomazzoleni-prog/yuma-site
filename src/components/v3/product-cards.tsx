@@ -72,7 +72,7 @@ function Cta({ href }: { href: string }) {
   return (
     <a
       href={href}
-      className="group inline-flex items-center gap-2 self-start rounded-full bg-[#7C5CFA] px-5 py-2.5 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#010110] focus-visible:ring-offset-2"
+      className="group inline-flex items-center gap-2 self-start rounded-full bg-[#7C5CFA] px-5 py-2.5 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1A2E] focus-visible:ring-offset-2"
     >
       Scopri di più
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -90,7 +90,7 @@ export function CardsShowcase() {
           className="group flex flex-col p-6 transition-transform duration-300 hover:-translate-y-1 md:p-8"
         >
           <Shot product={p} className="w-full" />
-          <h3 className="mt-7 text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
+          <h3 className="mt-7 text-[22px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
             {p.name}
           </h3>
           <Body className="mt-3 flex-1">{p.desc}</Body>
@@ -119,7 +119,7 @@ export function CardsSplit() {
             </div>
             <div className="flex flex-col justify-center p-6 md:p-10">
               <Eyebrow>Prodotto</Eyebrow>
-              <h3 className="mt-3 text-[24px] font-medium tracking-[-0.02em] text-[#010110] md:text-[30px]">
+              <h3 className="mt-3 text-[24px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[30px]">
                 {p.name}
               </h3>
               <Body className="mt-4 max-w-[46ch]">{p.desc}</Body>
@@ -142,9 +142,9 @@ export function CardsWindow() {
         <Glass key={p.name} className="flex flex-col p-6 md:p-8">
           <div className="overflow-hidden rounded-[14px] border border-white/60 bg-white/50">
             <div className="flex items-center gap-2 border-b border-white/60 px-4 py-2.5">
-              <span className="h-2.5 w-2.5 rounded-full bg-[#010110]/15" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#010110]/15" />
-              <span className="h-2.5 w-2.5 rounded-full bg-[#010110]/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#1B1A2E]/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#1B1A2E]/15" />
+              <span className="h-2.5 w-2.5 rounded-full bg-[#1B1A2E]/15" />
               <span className="ml-2 text-[11px] font-medium text-[#8A8A97]">
                 {p.name.toLowerCase().replace(/\s+/g, "-")}.yuma.app
               </span>
@@ -161,7 +161,7 @@ export function CardsWindow() {
             )}
           </div>
 
-          <h3 className="mt-7 text-[22px] font-medium tracking-[-0.02em] text-[#010110] md:text-[26px]">
+          <h3 className="mt-7 text-[22px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
             {p.name}
           </h3>
           <Body className="mt-3 flex-1">{p.desc}</Body>
