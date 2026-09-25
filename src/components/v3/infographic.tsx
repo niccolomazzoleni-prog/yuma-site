@@ -32,6 +32,42 @@ const READY: Record<number, { file: string; alt: string }> = {
     file: "infografica-07.webp",
     alt: "Tre nuclei di conoscenza che confluiscono in un unico archivio",
   },
+  9: {
+    file: "infografica-09.webp",
+    alt: "Email, WhatsApp, PDF e vocali che si aggrovigliano prima di arrivare sulla scrivania del back office",
+  },
+  10: {
+    file: "infografica-10.webp",
+    alt: "Una casella di posta traboccante di messaggi, con una clessidra e il contatore +48",
+  },
+  11: {
+    file: "infografica-11.webp",
+    alt: "Punti sparsi collegati da linee tratteggiate e una lente che non inquadra nulla",
+  },
+  12: {
+    file: "infografica-12.webp",
+    alt: "Una persona che tiene da sola tutte le schede cliente, accanto a una porta socchiusa",
+  },
+  13: {
+    file: "infografica-13.webp",
+    alt: "Dati ordinati che entrano in ERP e CRM: ordini, anagrafiche, transazioni",
+  },
+  14: {
+    file: "infografica-14.webp",
+    alt: "Email, WhatsApp, portali, PDF e vocali che confluiscono in un imbuto e ne escono come dati strutturati",
+  },
+  16: {
+    file: "infografica-16.webp",
+    alt: "Un cruscotto con l'andamento dei clienti e le schede di sintesi per la direzione",
+  },
+  17: {
+    file: "infografica-17.webp",
+    alt: "Una conversazione su smartphone che diventa un ordine gia compilato e confermato",
+  },
+  18: {
+    file: "infografica-18.webp",
+    alt: "Un documento che diventa una tabella di righe verificate una a una",
+  },
 }
 export function Info({
   n,
