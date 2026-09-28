@@ -1,4 +1,3 @@
-import { useState, type FormEvent } from "react"
 import { ArrowRight } from "lucide-react"
 import {
   Body,
@@ -13,6 +12,7 @@ import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { CardsSplit } from "@/components/v3/product-cards"
 import { Info } from "@/components/v3/infographic"
 import { links } from "@/lib/links"
+import { LeadForm } from "@/components/v3/lead-form"
 
 // Home v3 — un componente per ogni blocco del copy (YUMA_Sito_Copy_revisionato).
 
@@ -363,19 +363,7 @@ export function Assessment() {
 }
 
 // ── 9 · Modulo di contatto ───────────────────────────────────────────────────
-const inputClass =
-  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1D1D1F] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
-const labelClass = "text-[14px] font-medium text-[#1D1D1F]"
-
 export function Contact() {
-  const [sent, setSent] = useState(false)
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    // TODO: collegare invio (email/CRM). Per ora mostra la conferma.
-    setSent(true)
-  }
-
   return (
     <Section id="contatti" className="pt-0">
       <div className="mx-auto max-w-[760px] text-center">
@@ -388,113 +376,7 @@ export function Contact() {
         </Lead>
       </div>
 
-      {sent ? (
-        <Glass className="mx-auto mt-10 max-w-[620px] p-10 text-center">
-          <Body className="text-[#1D1D1F]">
-            Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un
-            giorno lavorativo.
-          </Body>
-        </Glass>
-      ) : (
-        <Glass className="mx-auto mt-10 max-w-[720px] p-8 md:p-10">
-          <form onSubmit={handleSubmit} className="grid gap-5 text-left">
-            <div className="grid gap-2">
-              <label htmlFor="v3-nome" className={labelClass}>
-                Nome e cognome
-              </label>
-              <input id="v3-nome" name="nome" type="text" required autoComplete="name" className={inputClass} />
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="grid gap-2">
-                <label htmlFor="v3-azienda" className={labelClass}>
-                  Azienda
-                </label>
-                <input id="v3-azienda" name="azienda" type="text" required autoComplete="organization" className={inputClass} />
-              </div>
-              <div className="grid gap-2">
-                <label htmlFor="v3-ruolo" className={labelClass}>
-                  Ruolo
-                </label>
-                <input id="v3-ruolo" name="ruolo" type="text" autoComplete="organization-title" className={inputClass} />
-              </div>
-            </div>
-
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="grid gap-2">
-                <label htmlFor="v3-email" className={labelClass}>
-                  Email di lavoro
-                </label>
-                <input
-                  id="v3-email"
-                  name="email"
-                  type="email"
-                  required
-                  inputMode="email"
-                  autoComplete="email"
-                  spellCheck={false}
-                  className={inputClass}
-                />
-              </div>
-              <div className="grid gap-2">
-                <label htmlFor="v3-telefono" className={labelClass}>
-                  Telefono{" "}
-                  <span className="font-normal text-[#6E6E73]">(facoltativo)</span>
-                </label>
-                <input id="v3-telefono" name="telefono" type="tel" inputMode="tel" autoComplete="tel" className={inputClass} />
-              </div>
-            </div>
-
-            <div className="grid gap-2">
-              <label htmlFor="v3-dipendenti" className={labelClass}>
-                Numero di dipendenti
-              </label>
-              <select
-                id="v3-dipendenti"
-                name="dipendenti"
-                required
-                defaultValue=""
-                className={inputClass}
-              >
-                <option value="" disabled>
-                  Seleziona
-                </option>
-                <option value="1-10">1-10</option>
-                <option value="11-50">11-50</option>
-                <option value="51-200">51-200</option>
-                <option value="201-500">201-500</option>
-                <option value="500+">Oltre 500</option>
-              </select>
-            </div>
-
-            <div className="grid gap-2">
-              <label htmlFor="v3-messaggio" className={labelClass}>
-                Come possiamo aiutarti
-              </label>
-              <textarea
-                id="v3-messaggio"
-                name="messaggio"
-                rows={4}
-                required
-                placeholder="Descrivi in due righe la situazione attuale e cosa vorresti ottenere."
-                className={inputClass + " resize-y"}
-              />
-            </div>
-
-            <p className="text-[13px] leading-[1.5] text-[#6E6E73]">
-              Usiamo i tuoi dati solo per ricontattarti. Nessuna newsletter,
-              nessuna condivisione con terzi.
-            </p>
-
-            <button
-              type="submit"
-              className="mt-1 inline-flex items-center justify-center justify-self-center rounded-full bg-[#7C5CFA] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D1D1F] focus-visible:ring-offset-2"
-            >
-              Invia la richiesta
-            </button>
-          </form>
-        </Glass>
-      )}
+      <LeadForm form="home" submitLabel="Invia la richiesta" />
     </Section>
   )
 }

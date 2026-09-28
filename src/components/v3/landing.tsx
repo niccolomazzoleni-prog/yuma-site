@@ -1,4 +1,4 @@
-import { useEffect, useState, type FormEvent, type ReactNode } from "react"
+import { useEffect, type ReactNode } from "react"
 import { ArrowRight, Check } from "lucide-react"
 import {
   Body,
@@ -11,6 +11,7 @@ import {
 } from "@/components/v3/glass"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
+import { LeadForm } from "@/components/v3/lead-form"
 import type { Bullet, LandingContent } from "@/lib/landing-content"
 import { ProblemAlternating } from "@/components/v3/problem-blocks"
 import { CheckAccordion } from "@/components/v3/solutions-variants"
@@ -397,19 +398,7 @@ function Faq({ c }: { c: LandingContent }) {
 }
 
 // ── 11 obiezione + modulo demo ───────────────────────────────────────────────
-const inputClass =
-  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1D1D1F] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
-const labelClass = "text-[14px] font-medium text-[#1D1D1F]"
-
 function DemoForm({ c }: { c: LandingContent }) {
-  const [sent, setSent] = useState(false)
-
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    // TODO: collegare invio (email/CRM). Per ora mostra la conferma.
-    setSent(true)
-  }
-
   return (
     <Section id="demo" className="pt-0">
       <Glass className="mx-auto max-w-[820px] p-8 md:p-10">
@@ -424,84 +413,7 @@ function DemoForm({ c }: { c: LandingContent }) {
         <Lead className="mx-auto mt-5 max-w-[58ch]">{c.cta.body}</Lead>
       </div>
 
-      {sent ? (
-        <Glass className="mx-auto mt-10 max-w-[620px] p-10 text-center">
-          <Body className="text-[#1D1D1F]">
-            Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un
-            giorno lavorativo.
-          </Body>
-        </Glass>
-      ) : (
-        <Glass className="mx-auto mt-10 max-w-[720px] p-8 md:p-10">
-          <form onSubmit={handleSubmit} className="grid gap-5 text-left">
-            <div className="grid gap-2">
-              <label htmlFor="l-nome" className={labelClass}>
-                Nome e cognome
-              </label>
-              <input id="l-nome" name="nome" type="text" required autoComplete="name" className={inputClass} />
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="grid gap-2">
-                <label htmlFor="l-azienda" className={labelClass}>
-                  Azienda
-                </label>
-                <input id="l-azienda" name="azienda" type="text" required autoComplete="organization" className={inputClass} />
-              </div>
-              <div className="grid gap-2">
-                <label htmlFor="l-ruolo" className={labelClass}>
-                  Ruolo
-                </label>
-                <input id="l-ruolo" name="ruolo" type="text" autoComplete="organization-title" className={inputClass} />
-              </div>
-            </div>
-            <div className="grid gap-5 sm:grid-cols-2">
-              <div className="grid gap-2">
-                <label htmlFor="l-telefono" className={labelClass}>
-                  Telefono
-                </label>
-                <input id="l-telefono" name="telefono" type="tel" inputMode="tel" autoComplete="tel" className={inputClass} />
-              </div>
-              <div className="grid gap-2">
-                <label htmlFor="l-email" className={labelClass}>
-                  Email
-                </label>
-                <input
-                  id="l-email"
-                  name="email"
-                  type="email"
-                  required
-                  inputMode="email"
-                  autoComplete="email"
-                  spellCheck={false}
-                  className={inputClass}
-                />
-              </div>
-            </div>
-            <div className="grid gap-2">
-              <label htmlFor="l-domande" className={labelClass}>
-                Domande <span className="font-normal text-[#6E6E73]">(eventuali)</span>
-              </label>
-              <textarea
-                id="l-domande"
-                name="domande"
-                rows={4}
-                placeholder="C'è qualcosa che vuoi vedere nella demo?"
-                className={inputClass + " resize-y"}
-              />
-            </div>
-            <p className="text-[13px] leading-[1.5] text-[#6E6E73]">
-              Usiamo i tuoi dati solo per ricontattarti. Nessuna newsletter,
-              nessuna condivisione con terzi.
-            </p>
-            <button
-              type="submit"
-              className="mt-1 inline-flex items-center justify-center justify-self-center rounded-full bg-[#7C5CFA] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5"
-            >
-              Richiedi la demo
-            </button>
-          </form>
-        </Glass>
-      )}
+      <LeadForm form="client" submitLabel="Richiedi la demo" />
     </Section>
   )
 }
