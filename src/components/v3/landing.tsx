@@ -13,7 +13,7 @@ import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import type { Bullet, LandingContent } from "@/lib/landing-content"
 import { ProblemAlternating } from "@/components/v3/problem-blocks"
-import { RolesSelector } from "@/components/v3/roles-selector"
+import { CheckAccordion } from "@/components/v3/solutions-variants"
 import { Info } from "@/components/v3/infographic"
 import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
 import { StepsWizard } from "@/components/v3/steps-wizard"
@@ -312,9 +312,17 @@ function Modules({ c }: { c: LandingContent }) {
   )
 }
 
-// ── 05 ruoli: selettore con dettaglio e immagine ────────────────────────────
+// ── 05 ruoli: fisarmonica con spunta verde, come "come ti aiuta" in Projects
 function Roles({ c }: { c: LandingContent }) {
-  return <RolesSelector roles={c.roles} infographics={[16, 17, 18]} />
+  return (
+    <Section id="ruoli" className="pt-0">
+      <div className="mx-auto max-w-[820px] text-center">
+        <Eyebrow>{c.roles.label}</Eyebrow>
+        <Title className="mx-auto mt-5 max-w-[20ch]">{c.roles.headline}</Title>
+      </div>
+      <CheckAccordion items={c.roles.items.map((r) => ({ title: r.role, desc: r.desc }))} />
+    </Section>
+  )
 }
 
 // ── 07 i tuoi sistemi: schema del flusso al centro ──────────────────────────

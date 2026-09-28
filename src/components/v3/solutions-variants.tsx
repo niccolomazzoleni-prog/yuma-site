@@ -127,42 +127,53 @@ export function SolutionsAchievements() {
 }
 
 // ── E · Fisarmonica: si legge il titolo, si apre il dettaglio ───────────────
-// L'elenco è esportato a parte: è quello montato nella landing Projects.
-export function SolutionsAccordionBlock({ className = "mt-12" }: { className?: string }) {
+// Generica (titolo + testo): la usano "come ti aiuta" in Projects e
+// "per chi è pensato" in Client Interface.
+export function CheckAccordion({
+  items: list,
+  className = "mt-12",
+}: {
+  items: { title: string; desc: string }[]
+  className?: string
+}) {
   const [open, setOpen] = useState(0)
   return (
-    <ul className={`mx-auto flex ${className} max-w-[860px] flex-col gap-3`}>
-        {items.map((it, i) => {
-          const isOpen = open === i
-          return (
-            <li key={it.title}>
-              <Glass className="overflow-hidden rounded-[22px] p-0">
-                <button
-                  type="button"
-                  aria-expanded={isOpen}
-                  onClick={() => setOpen(isOpen ? -1 : i)}
-                  className="flex w-full items-center gap-5 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#7C5CFA] md:px-7"
-                >
-                  <GreenCheck />
-                  <span className={`flex-1 ${itemTitle}`}>{it.title}</span>
-                  <Plus
-                    aria-hidden
-                    className={`h-5 w-5 shrink-0 text-[#7C5CFA] transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
-                  />
-                </button>
-                <div
-                  className={`grid transition-[grid-template-rows] duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
-                >
-                  <div className="overflow-hidden">
-                    <Body className="px-6 pb-6 pl-[84px] text-[15px] md:px-7 md:pl-[88px]">{it.desc}</Body>
-                  </div>
+    <ul className={`mx-auto flex max-w-[860px] flex-col gap-3 ${className}`}>
+      {list.map((it, i) => {
+        const isOpen = open === i
+        return (
+          <li key={it.title}>
+            <Glass className="overflow-hidden rounded-[22px] p-0">
+              <button
+                type="button"
+                aria-expanded={isOpen}
+                onClick={() => setOpen(isOpen ? -1 : i)}
+                className="flex w-full items-center gap-5 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#7C5CFA] md:px-7"
+              >
+                <GreenCheck />
+                <span className={`flex-1 ${itemTitle}`}>{it.title}</span>
+                <Plus
+                  aria-hidden
+                  className={`h-5 w-5 shrink-0 text-[#7C5CFA] transition-transform duration-300 ${isOpen ? "rotate-45" : ""}`}
+                />
+              </button>
+              <div
+                className={`grid transition-[grid-template-rows] duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+              >
+                <div className="overflow-hidden">
+                  <Body className="px-6 pb-6 pl-[84px] text-[15px] md:px-7 md:pl-[88px]">{it.desc}</Body>
                 </div>
-              </Glass>
-            </li>
-          )
-        })}
-      </ul>
+              </div>
+            </Glass>
+          </li>
+        )
+      })}
+    </ul>
   )
+}
+
+export function SolutionsAccordionBlock({ className = "mt-12" }: { className?: string }) {
+  return <CheckAccordion items={items} className={className} />
 }
 
 export function SolutionsAccordion() {
