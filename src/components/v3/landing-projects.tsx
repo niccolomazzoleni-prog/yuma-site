@@ -16,6 +16,7 @@ import { StepsWizard } from "@/components/v3/steps-wizard"
 import { FAQ, type FaqData } from "@/components/ui/faq-tabs"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { Info } from "@/components/v3/infographic"
+import { PhotoSlot } from "@/components/v3/photo-slot"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import { projectsContent as c } from "@/lib/landing-content"
@@ -115,7 +116,7 @@ function Credibility() {
       </div>
 
       <Glass className="mt-12 p-5 md:p-6">
-        <Info n={19} ratio="21 / 9" />
+        <PhotoSlot n={5} ratio="21 / 9" subject="un cantiere vero in piena attività: un capo cantiere con il casco al telefono, mezzi e materiali sullo sfondo" />
       </Glass>
 
       <p className="mt-8 flex flex-wrap items-center justify-center gap-3 text-center text-[16px] text-[#2A2A38]">
@@ -133,7 +134,11 @@ function Credibility() {
 }
 
 // ── 03 problema: cause a card alternate, soluzioni in schede, poi il confronto
-const causeNumbers = [20, 21, 22]
+const causePhotos = [
+  { n: 6, subject: "un operatore in cantiere che fotografa un DDT o manda un vocale dallo smartphone" },
+  { n: 7, subject: "un'impiegata dell'ufficio tecnico tra pile di rapportini e DDT, che li ricopia al computer" },
+  { n: 8, subject: "titolare e project manager a fine lavori che confrontano preventivo e consuntivo su carta, espressione preoccupata" },
+]
 
 function Problem() {
   const p = c.problem
@@ -167,7 +172,7 @@ function Problem() {
                 <Body className="mt-4 max-w-[52ch]">{cause.desc}</Body>
               </div>
               <div className={imageFirst ? "md:order-1" : ""}>
-                <Info n={causeNumbers[i] ?? i + 1} />
+                {causePhotos[i] ? <PhotoSlot n={causePhotos[i].n} subject={causePhotos[i].subject} /> : null}
               </div>
             </Glass>
           )

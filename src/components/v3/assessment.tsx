@@ -1,7 +1,7 @@
 import { useState } from "react"
 import { ArrowRight, Check, FileText, MapPin, Plus, Minus } from "lucide-react"
 import { Body, Eyebrow, Glass, Lead, Section, Title } from "@/components/v3/glass"
-import { Info } from "@/components/v3/infographic"
+import { PhotoSlot } from "@/components/v3/photo-slot"
 
 // Cinque modi di dire "Da dove si parte" (blocco 8 del copy) senza un unico
 // muro di testo. Riferimenti 21st: Cta 4 (2205), cta section with gallery
@@ -172,7 +172,7 @@ export function AssessmentReport() {
           <p className="mt-4 text-[13px] text-[#6B6B76]">{NOTE}</p>
         </div>
         <Glass className="p-6 md:p-8">
-          <Info n={8} />
+          <PhotoSlot n={1} subject="un workshop con il team di un cliente: persone attorno a un tavolo, post-it e portatili, luce naturale" />
         </Glass>
       </div>
     </Section>

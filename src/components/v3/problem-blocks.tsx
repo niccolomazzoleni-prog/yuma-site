@@ -1,8 +1,12 @@
 import { Body, Glass } from "@/components/v3/glass"
-import { Info } from "@/components/v3/infographic"
+import { PhotoSlot } from "@/components/v3/photo-slot"
 
 // Blocco problema: card staccate, testo e immagine che si alternano.
-const NUMBERS = [10, 11, 12]
+const PHOTOS = [
+  { n: 2, subject: "un'operatrice di back office alla scrivania che ricopia a mano ordini arrivati da email e WhatsApp, due monitor e il telefono" },
+  { n: 3, subject: "un direttore commerciale che sfoglia report ed Excel stampati cercando di capire come va un cliente" },
+  { n: 4, subject: "un agente commerciale in auto o da un cliente, al telefono, con il suo taccuino personale" },
+]
 
 export function ProblemAlternating({
   items,
@@ -28,7 +32,7 @@ export function ProblemAlternating({
               <Body className="mt-4 max-w-[52ch]">{it.desc}</Body>
             </div>
             <div className={imageFirst ? "md:order-1" : ""}>
-              <Info n={NUMBERS[i] ?? i + 1} />
+              {PHOTOS[i] ? <PhotoSlot n={PHOTOS[i].n} subject={PHOTOS[i].subject} /> : null}
             </div>
           </Glass>
         )
