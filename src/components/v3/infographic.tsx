@@ -32,6 +32,10 @@ const READY: Record<number, { file: string; alt: string }> = {
     file: "infografica-07.webp",
     alt: "Tre nuclei di conoscenza che confluiscono in un unico archivio",
   },
+  8: {
+    file: "infografica-08.webp",
+    alt: "Il documento dell'assessment AI: quattro casi d'uso ordinati per impatto, alto e medio, con il sigillo di verifica",
+  },
   9: {
     file: "infografica-09.webp",
     alt: "Email, WhatsApp, PDF e vocali che si aggrovigliano prima di arrivare sulla scrivania del back office",
