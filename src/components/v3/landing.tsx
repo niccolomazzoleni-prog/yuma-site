@@ -330,7 +330,6 @@ function Systems({ c }: { c: LandingContent }) {
   return (
     <SystemsDiagramBlock
       systems={c.systems}
-      tabNumbers={[13, 14, 15]}
       image={`${import.meta.env.BASE_URL}schema-client-interface.webp`}
       imageAlt="Email, WhatsApp, PDF e vocali entrano in YUMA, che li interpreta e li scrive in ERP e CRM"
     />

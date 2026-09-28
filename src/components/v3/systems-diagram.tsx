@@ -130,7 +130,8 @@ export function SystemsDiagramBlock({
         tabs={tabs}
         tone="glass"
         className="mx-auto mt-5 max-w-[1000px]"
-        panelClassName="p-6 md:p-8"
+        // senza infografiche il pannello si adatta al testo
+        panelClassName={tabNumbers ? "p-6 md:p-8" : "min-h-0 p-6 md:p-8"}
       />
     </Section>
   )
