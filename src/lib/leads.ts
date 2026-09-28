@@ -2,7 +2,8 @@
 // in `apps-script/leads.gs`. Ogni modulo scrive in una tab dedicata del foglio.
 
 // URL della web app Apps Script (Distribuisci > Nuova distribuzione > App web, finisce con /exec).
-export const LEADS_ENDPOINT = ""
+export const LEADS_ENDPOINT =
+  "https://script.google.com/macros/s/AKfycbzlU4LXgoniqOHsgiUlnbJ7yzFfYYbSb3uHuosOpdnacVIPyL_qLkYTNGWTJRNJ4bptjQ/exec"
 
 // reCAPTCHA v3 (google.com/recaptcha/admin, tipo "Basato sul punteggio (v3)").
 // Vuota = disattivato lato browser; gli altri controlli anti-spam restano attivi.

@@ -52,6 +52,15 @@ const PERSONAL_DOMAINS = [
   'tutanota.com', 'tuta.io', 'hey.com', 'qq.com', '163.com',
 ];
 
+// Esegui una volta dall'editor: autorizza l'accesso al foglio, imposta il fuso
+// orario di Roma e crea le tab. Resta la prima funzione del file, cosi' e'
+// quella selezionata di default nell'editor.
+function setup() {
+  SpreadsheetApp.openById(SHEET_ID).setSpreadsheetTimeZone('Europe/Rome');
+  Object.keys(FORMS).forEach(function (k) { getTab(FORMS[k].tab, HEADERS); });
+  getTab(SPAM_TAB, SPAM_HEADERS);
+}
+
 // ── Entry point ──────────────────────────────────────────────
 function doPost(e) {
   try {
@@ -210,12 +219,6 @@ function clean(v) {
 
 function ok() {
   return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(ContentService.MimeType.JSON);
-}
-
-// Esegui una volta dall'editor: autorizza l'accesso al foglio e crea le tab.
-function setup() {
-  Object.keys(FORMS).forEach(function (k) { getTab(FORMS[k].tab, HEADERS); });
-  getTab(SPAM_TAB, SPAM_HEADERS);
 }
 
 // Test dall'editor: simula un invio valido (compare una riga in "Projects").
