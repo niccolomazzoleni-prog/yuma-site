@@ -33,8 +33,9 @@ const READY: Record<number, { file: string; alt: string }> = {
     alt: "Tre nuclei di conoscenza che confluiscono in un unico archivio",
   },
   8: {
-    file: "infografica-08.webp",
-    alt: "Il documento dell'assessment AI: casi d'uso ordinati per impatto, alto e medio, collegati a dati, documenti e persone dell'azienda",
+    // nome versionato: così il browser non mostra la versione precedente in cache
+    file: "infografica-08-v3.webp",
+    alt: "Il documento dell'assessment AI: casi d'uso ordinati per impatto, alto e medio, con il sigillo di verifica",
   },
   9: {
     file: "infografica-09.webp",
