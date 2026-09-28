@@ -34,7 +34,7 @@ const READY: Record<number, { file: string; alt: string }> = {
   },
   8: {
     file: "infografica-08.webp",
-    alt: "Il documento dell'assessment AI: quattro casi d'uso ordinati per impatto, alto e medio, con il sigillo di verifica",
+    alt: "Il documento dell'assessment AI: casi d'uso ordinati per impatto, alto e medio, collegati a dati, documenti e persone dell'azienda",
   },
   9: {
     file: "infografica-09.webp",
