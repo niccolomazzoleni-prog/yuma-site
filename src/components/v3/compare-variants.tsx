@@ -158,11 +158,10 @@ export function CompareSlider() {
 }
 
 // ── C · Due schede, una in evidenza ─────────────────────────────────────────
-export function CompareCards() {
+// La griglia è esportata a parte: è quella montata nella landing Projects.
+export function CompareCardsBlock({ className = "mt-10" }: { className?: string }) {
   return (
-    <Section>
-      <Head />
-      <div className="mx-auto mt-10 grid max-w-[1000px] items-start gap-5 md:grid-cols-2">
+    <div className={`mx-auto grid ${className} max-w-[1000px] items-start gap-5 md:grid-cols-2`}>
         <div className="rounded-[28px] border border-white/50 bg-white/25 p-8 backdrop-blur-xl md:mt-8 md:p-9">
           <p className={`${label} text-[#A3A3AD]`}>{BEFORE}</p>
           <ul className="mt-7 flex flex-col gap-4 border-t border-[#1B1A2E]/8 pt-6">
@@ -199,6 +198,14 @@ export function CompareCards() {
           </a>
         </Glass>
       </div>
+  )
+}
+
+export function CompareCards() {
+  return (
+    <Section>
+      <Head />
+      <CompareCardsBlock />
     </Section>
   )
 }

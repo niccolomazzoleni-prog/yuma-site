@@ -17,6 +17,7 @@ import { FAQ, type FaqData } from "@/components/ui/faq-tabs"
 import { AnimatedTabs } from "@/components/ui/animated-tabs"
 import { Info } from "@/components/v3/infographic"
 import { PhotoSlot } from "@/components/v3/photo-slot"
+import { CompareCardsBlock } from "@/components/v3/compare-variants"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import { projectsContent as c } from "@/lib/landing-content"
@@ -206,35 +207,12 @@ function Problem() {
         }))}
       />
 
-      {/* oggi / con YUMA Projects */}
+      {/* oggi / con YUMA Projects: due schede, quella YUMA in evidenza */}
       {p.table ? (
-        <Glass className="mt-6 overflow-x-auto p-6 md:p-8">
-          <table className="w-full border-collapse text-left">
-            <caption className="sr-only">{p.tableTitle}</caption>
-            <thead>
-              <tr>
-                <th className="w-1/2 border-b border-[#1B1A2E]/12 pb-4 text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
-                  Oggi
-                </th>
-                <th className="w-1/2 border-b border-[#1B1A2E]/12 pb-4 pl-6 text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
-                  Con {c.product}
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-              {p.table.map((row) => (
-                <tr key={row.before}>
-                  <td className="border-b border-[#1B1A2E]/8 py-5 pr-6 text-[16px] leading-[1.5] text-[#4A4A58]">
-                    {row.before}
-                  </td>
-                  <td className="border-b border-[#1B1A2E]/8 py-5 pl-6 text-[16px] font-medium leading-[1.5] text-[#1B1A2E]">
-                    {row.after}
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </Glass>
+        <div className="mt-24">
+          <Title className="mx-auto max-w-[22ch] text-center">{p.tableTitle}</Title>
+          <CompareCardsBlock className="mt-12" />
+        </div>
       ) : null}
     </Section>
   )
