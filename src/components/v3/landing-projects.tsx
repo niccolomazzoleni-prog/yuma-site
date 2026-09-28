@@ -296,7 +296,7 @@ function Fit() {
     <Section id="a-chi-e-rivolto" className="pt-0">
       <div className="mx-auto max-w-[820px] text-center">
         <Eyebrow>{c.forWhom.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[22ch]">{c.product} fa per te se:</Title>
+        <Title className="mx-auto mt-5 max-w-[22ch]">{c.product} fa per la tua azienda se:</Title>
       </div>
 
       <Glass className="mx-auto mt-12 max-w-[880px] p-8 md:p-10">
