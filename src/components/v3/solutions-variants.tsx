@@ -127,12 +127,11 @@ export function SolutionsAchievements() {
 }
 
 // ── E · Fisarmonica: si legge il titolo, si apre il dettaglio ───────────────
-export function SolutionsAccordion() {
+// L'elenco è esportato a parte: è quello montato nella landing Projects.
+export function SolutionsAccordionBlock({ className = "mt-12" }: { className?: string }) {
   const [open, setOpen] = useState(0)
   return (
-    <Section>
-      <Title className="mx-auto max-w-[22ch] text-center">{TITLE}</Title>
-      <ul className="mx-auto mt-12 flex max-w-[860px] flex-col gap-3">
+    <ul className={`mx-auto flex ${className} max-w-[860px] flex-col gap-3`}>
         {items.map((it, i) => {
           const isOpen = open === i
           return (
@@ -163,6 +162,14 @@ export function SolutionsAccordion() {
           )
         })}
       </ul>
+  )
+}
+
+export function SolutionsAccordion() {
+  return (
+    <Section>
+      <Title className="mx-auto max-w-[22ch] text-center">{TITLE}</Title>
+      <SolutionsAccordionBlock />
     </Section>
   )
 }

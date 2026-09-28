@@ -14,10 +14,9 @@ import { SelectorBlock, type SelectorItem } from "@/components/v3/selector-block
 import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
 import { StepsWizard } from "@/components/v3/steps-wizard"
 import { FAQ, type FaqData } from "@/components/ui/faq-tabs"
-import { AnimatedTabs } from "@/components/ui/animated-tabs"
-import { Info } from "@/components/v3/infographic"
 import { PhotoSlot } from "@/components/v3/photo-slot"
 import { CompareCardsBlock } from "@/components/v3/compare-variants"
+import { SolutionsAccordionBlock } from "@/components/v3/solutions-variants"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import { projectsContent as c } from "@/lib/landing-content"
@@ -180,32 +179,13 @@ function Problem() {
         })}
       </div>
 
-      {/* come YUMA Projects risolve: schede animate */}
-      <div className="mt-20 text-center">
-        <Eyebrow>{p.solutionTitle}</Eyebrow>
-      </div>
-      <AnimatedTabs
-        tone="glass"
-        className="mx-auto mt-8 max-w-[1000px]"
-        panelClassName="p-6 md:p-8"
-        tabs={(p.solutions ?? []).map((s, i) => ({
-          id: s.title,
-          label: ["Il campo comunica", "Si aggancia da sola", "Confronto ogni giorno"][i] ?? s.title,
-          content: (
-            <div className="grid h-full w-full gap-6 md:grid-cols-2">
-              <Info n={[23, 24, 25][i] ?? i + 1} />
-              <div className="flex flex-col justify-center gap-y-3">
-                <h3 className="m-0 text-[21px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[24px]">
-                  {s.title.replace(/\.$/, "")}
-                </h3>
-                <p className="m-0 text-[15px] leading-[1.55] text-[#4A4A58] md:text-[16px]">
-                  {s.desc}
-                </p>
-              </div>
-            </div>
-          ),
-        }))}
-      />
+      {/* come YUMA Projects risolve: fisarmonica con spunta verde */}
+      {p.solutions ? (
+        <div className="mt-24">
+          <Title className="mx-auto max-w-[22ch] text-center">{p.solutionTitle}</Title>
+          <SolutionsAccordionBlock className="mt-12" />
+        </div>
+      ) : null}
 
       {/* oggi / con YUMA Projects: due schede, quella YUMA in evidenza */}
       {p.table ? (
