@@ -4,7 +4,16 @@ import { cn } from "@/lib/utils"
 // Foto vere del sito. Il numero corrisponde all'elenco "Foto" in
 // YUMA_Prompt_Infografiche.md: finché la foto non c'è, resta il segnaposto
 // con la descrizione di cosa serve. Per montarne una basta aggiungere la riga.
-const READY: Record<number, { file: string; alt: string }> = {}
+const READY: Record<number, { file: string; alt: string; position?: string }> = {
+  1: { file: "foto-01.webp", alt: "Un workshop con il team di un'azienda: una facilitatrice indica i post-it divisi per idee, priorità, azioni e impatto" },
+  2: { file: "foto-02.webp", alt: "Un'operatrice di back office alle sei di sera, tra due monitor, il telefono e pile di ordini stampati" },
+  3: { file: "foto-03.webp", alt: "Un direttore commerciale chino su report stampati, evidenziatore in mano" },
+  4: { file: "foto-04.webp", alt: "Un agente commerciale in auto, al telefono, con il catalogo aperto sulle ginocchia" },
+  5: { file: "foto-05.webp", alt: "Un capo cantiere al telefono in un cantiere in piena attività, con escavatore e gru", position: "50% 80%" },
+  6: { file: "foto-06.webp", alt: "Un operatore in cantiere che fotografa con lo smartphone un DDT appoggiato sui mattoni" },
+  7: { file: "foto-07.webp", alt: "Un'impiegata dell'ufficio tecnico che ricopia al computer i dati di un rapportino" },
+  8: { file: "foto-08.webp", alt: "Titolare e project manager in un container di cantiere che confrontano preventivo e consuntivo" },
+}
 
 export function PhotoSlot({
   n,
@@ -27,7 +36,7 @@ export function PhotoSlot({
         alt={ready.alt}
         loading="lazy"
         className={cn("w-full rounded-[16px] object-cover", className)}
-        style={{ aspectRatio: ratio }}
+        style={{ aspectRatio: ratio, objectPosition: ready.position }}
       />
     )
   }
