@@ -29,6 +29,7 @@ export default defineConfig({
         ruoli: path.resolve(__dirname, "ruoli/index.html"),
         confronto: path.resolve(__dirname, "confronto/index.html"),
         aiuta: path.resolve(__dirname, "aiuta/index.html"),
+        font: path.resolve(__dirname, "font/index.html"),
         sistemi: path.resolve(__dirname, "sistemi/index.html"),
         cardSistemi: path.resolve(__dirname, "card-sistemi/index.html"),
         passi: path.resolve(__dirname, "passi/index.html"),
