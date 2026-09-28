@@ -68,6 +68,18 @@ const READY: Record<number, { file: string; alt: string }> = {
     file: "infografica-18.webp",
     alt: "Un documento che diventa una tabella di righe verificate una a una",
   },
+  23: {
+    file: "infografica-23.webp",
+    alt: "Portatile, smartphone e tablet collegati: il campo comunica da qualunque dispositivo",
+  },
+  24: {
+    file: "infografica-24.webp",
+    alt: "File sparsi che vengono smistati da soli, ognuno nella cartella giusta",
+  },
+  25: {
+    file: "infografica-25.webp",
+    alt: "Documenti che diventano grafici e tabelle di confronto aggiornati",
+  },
 }
 export function Info({
   n,
