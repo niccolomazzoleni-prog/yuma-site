@@ -21,6 +21,8 @@ export default {
       screens: { "2xl": "1400px" },
     },
     extend: {
+      // passi di opacità usati nei filetti e negli sfondi, assenti nella scala di default
+      opacity: { 6: "0.06", 7: "0.07", 8: "0.08", 12: "0.12" },
       colors: {
         // shadcn semantic (invariati)
         border: "hsl(var(--border))",

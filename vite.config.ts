@@ -27,6 +27,7 @@ export default defineConfig({
         avvio: path.resolve(__dirname, "avvio/index.html"),
         problema: path.resolve(__dirname, "problema/index.html"),
         ruoli: path.resolve(__dirname, "ruoli/index.html"),
+        confronto: path.resolve(__dirname, "confronto/index.html"),
         sistemi: path.resolve(__dirname, "sistemi/index.html"),
         cardSistemi: path.resolve(__dirname, "card-sistemi/index.html"),
         passi: path.resolve(__dirname, "passi/index.html"),
