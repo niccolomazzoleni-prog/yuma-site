@@ -44,8 +44,8 @@ export function SelectorBlock({
                 aria-current={i === active}
                 className={`flex w-full items-center justify-between gap-4 rounded-[16px] px-5 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA] ${
                   i === active
-                    ? "border border-white/70 bg-white/70 text-[#1B1A2E]"
-                    : "border border-transparent text-[#4A4A58] hover:bg-white/40"
+                    ? "border border-white/70 bg-white/70 text-[#1D1D1F]"
+                    : "border border-transparent text-[#424245] hover:bg-white/40"
                 }`}
               >
                 <span className="flex flex-wrap items-center gap-3">
@@ -55,7 +55,7 @@ export function SelectorBlock({
                   {it.badge}
                 </span>
                 <ChevronRight
-                  className={`h-4 w-4 shrink-0 ${i === active ? "text-[#7C5CFA]" : "text-[#A3A3AD]"}`}
+                  className={`h-4 w-4 shrink-0 ${i === active ? "text-[#7C5CFA]" : "text-[#A1A1A6]"}`}
                 />
               </button>
             </li>
@@ -65,7 +65,7 @@ export function SelectorBlock({
         <Glass className="grid gap-6 p-7 md:grid-cols-[minmax(0,1fr)_220px] md:items-center md:p-8">
           <div>
             <div className="flex flex-wrap items-center gap-3">
-              <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
+              <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[26px]">
                 {items[active].title}
               </h3>
               {items[active].badge}

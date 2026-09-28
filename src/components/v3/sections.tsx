@@ -47,7 +47,7 @@ export function WhyNow() {
               Quello che prima richiedeva anni di lavoro, oggi si può costruire
               in pochi mesi e con una frazione dei costi. La barriera si è
               abbassata, e per la prima volta{" "}
-              <strong className="font-medium text-[#1B1A2E]">
+              <strong className="font-medium text-[#1D1D1F]">
                 il potenziale trasformativo della tecnologia è alla portata di
                 tutte le aziende.
               </strong>
@@ -74,7 +74,7 @@ export function WhyNow() {
 
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         <Glass className="p-8 md:p-10">
-          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
+          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
             Prima
           </p>
           <Body className="mt-5">
@@ -86,7 +86,7 @@ export function WhyNow() {
         </Glass>
         <Glass className="p-8 md:p-10">
           <Eyebrow>Dopo</Eyebrow>
-          <Body className="mt-5 text-[#2A2A38]">
+          <Body className="mt-5 text-[#333336]">
             Si scrive o si manda un vocale, con le stesse parole che si
             userebbero con un collega: cosa è stato fatto, per quale cliente,
             quanto tempo è servito. Gli agenti AI lo interpretano e fanno girare
@@ -154,10 +154,10 @@ export function Possibilities() {
           {p.visual}
         </div>
         <div className="flex flex-col justify-center gap-y-3">
-          <h3 className="m-0 text-[22px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
+          <h3 className="m-0 text-[22px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[26px]">
             {p.title}
           </h3>
-          <p className="m-0 text-[15px] leading-[1.55] text-[#4A4A58] md:text-[16px]">
+          <p className="m-0 text-[15px] leading-[1.55] text-[#424245] md:text-[16px]">
             {p.text}
           </p>
         </div>
@@ -199,11 +199,11 @@ export function Solutions() {
         <CardsSplit />
       </div>
 
-      <p className="mt-10 text-center text-[16px] text-[#4A4A58]">
+      <p className="mt-10 text-center text-[16px] text-[#424245]">
         Ti interessa solo il software?{" "}
         <a
           href="#contatti"
-          className="font-medium text-[#1B1A2E] underline decoration-[#7C5CFA] decoration-2 underline-offset-4 transition-colors hover:text-[#7C5CFA]"
+          className="font-medium text-[#1D1D1F] underline decoration-[#7C5CFA] decoration-2 underline-offset-4 transition-colors hover:text-[#7C5CFA]"
         >
           Richiedi una demo
         </a>
@@ -246,7 +246,7 @@ export function HowWeWork() {
               <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
                 {s.n}
               </span>
-              <h3 className="mt-4 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[22px]">
+              <h3 className="mt-4 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[22px]">
                 {s.title}
               </h3>
               <Body className="mt-3 text-[15px]">{s.desc}</Body>
@@ -286,14 +286,14 @@ export function Team() {
               <div
                 role="img"
                 aria-label="Foto del founder (segnaposto)"
-                className="flex aspect-square w-full items-center justify-center rounded-[18px] border border-dashed border-[#7C5CFA]/35 bg-white/45 text-[12px] font-medium text-[#8A8A97]"
+                className="flex aspect-square w-full items-center justify-center rounded-[18px] border border-dashed border-[#7C5CFA]/35 bg-white/45 text-[12px] font-medium text-[#86868B]"
               >
                 Foto
               </div>
-              <div className="mt-6 text-[17px] font-medium text-[#1B1A2E]">
+              <div className="mt-6 text-[17px] font-medium text-[#1D1D1F]">
                 Nome Cognome
               </div>
-              <div className="mt-1 text-[13px] text-[#6B6B76]">Co-founder</div>
+              <div className="mt-1 text-[13px] text-[#6E6E73]">Co-founder</div>
               <Body className="mt-3 text-[15px]">
                 Una riga di descrizione del founder.
               </Body>
@@ -317,7 +317,7 @@ export function Clients() {
               key={i}
               role="img"
               aria-label="Logo cliente (segnaposto)"
-              className="flex h-16 w-36 items-center justify-center rounded-[12px] border border-dashed border-[#7C5CFA]/30 bg-white/45 text-[12px] font-medium text-[#A3A3AD]"
+              className="flex h-16 w-36 items-center justify-center rounded-[12px] border border-dashed border-[#7C5CFA]/30 bg-white/45 text-[12px] font-medium text-[#A1A1A6]"
             >
               Logo
             </div>
@@ -352,7 +352,7 @@ export function Assessment() {
         </Lead>
         <a
           href="#contatti"
-          className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[#1B1A2E] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA] focus-visible:ring-offset-2"
+          className="group mt-9 inline-flex items-center gap-2 rounded-full bg-[#1D1D1F] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA] focus-visible:ring-offset-2"
         >
           Richiedi il tuo assessment
           <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -364,8 +364,8 @@ export function Assessment() {
 
 // ── 9 · Modulo di contatto ───────────────────────────────────────────────────
 const inputClass =
-  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1B1A2E] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
-const labelClass = "text-[14px] font-medium text-[#1B1A2E]"
+  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1D1D1F] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15"
+const labelClass = "text-[14px] font-medium text-[#1D1D1F]"
 
 export function Contact() {
   const [sent, setSent] = useState(false)
@@ -390,7 +390,7 @@ export function Contact() {
 
       {sent ? (
         <Glass className="mx-auto mt-10 max-w-[620px] p-10 text-center">
-          <Body className="text-[#1B1A2E]">
+          <Body className="text-[#1D1D1F]">
             Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un
             giorno lavorativo.
           </Body>
@@ -439,7 +439,7 @@ export function Contact() {
               <div className="grid gap-2">
                 <label htmlFor="v3-telefono" className={labelClass}>
                   Telefono{" "}
-                  <span className="font-normal text-[#6B6B76]">(facoltativo)</span>
+                  <span className="font-normal text-[#6E6E73]">(facoltativo)</span>
                 </label>
                 <input id="v3-telefono" name="telefono" type="tel" inputMode="tel" autoComplete="tel" className={inputClass} />
               </div>
@@ -481,14 +481,14 @@ export function Contact() {
               />
             </div>
 
-            <p className="text-[13px] leading-[1.5] text-[#6B6B76]">
+            <p className="text-[13px] leading-[1.5] text-[#6E6E73]">
               Usiamo i tuoi dati solo per ricontattarti. Nessuna newsletter,
               nessuna condivisione con terzi.
             </p>
 
             <button
               type="submit"
-              className="mt-1 inline-flex items-center justify-center justify-self-center rounded-full bg-[#7C5CFA] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1B1A2E] focus-visible:ring-offset-2"
+              className="mt-1 inline-flex items-center justify-center justify-self-center rounded-full bg-[#7C5CFA] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D1D1F] focus-visible:ring-offset-2"
             >
               Invia la richiesta
             </button>
@@ -505,15 +505,15 @@ export function Footer() {
     <footer className="border-t border-white/60 bg-white/40 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1180px] flex-col gap-6 px-5 py-12 md:flex-row md:items-start md:justify-between">
         <div>
-          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#1B1A2E]">
+          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#1D1D1F]">
             YUMA
           </div>
-          <div className="mt-3 space-y-1 text-[13px] leading-[1.6] text-[#6B6B76]">
+          <div className="mt-3 space-y-1 text-[13px] leading-[1.6] text-[#6E6E73]">
             <div>YUMA TX S.r.l. · P. IVA 14244440963</div>
             <div>Sede legale: Via Giacomo Leopardi 14, Milano</div>
             <div>
               PEC{" "}
-              <a href="mailto:yumatxsrl@pec.it" className="hover:text-[#1B1A2E]">
+              <a href="mailto:yumatxsrl@pec.it" className="hover:text-[#1D1D1F]">
                 yumatxsrl@pec.it
               </a>{" "}
               · SDI WY7PJ6k
@@ -523,20 +523,20 @@ export function Footer() {
             </div>
           </div>
         </div>
-        <nav className="flex flex-col gap-2 text-[14px] text-[#6B6B76]">
-          <a href={links.projects} className="hover:text-[#1B1A2E]">
+        <nav className="flex flex-col gap-2 text-[14px] text-[#6E6E73]">
+          <a href={links.projects} className="hover:text-[#1D1D1F]">
             YUMA Projects
           </a>
-          <a href={links.clientInterface} className="hover:text-[#1B1A2E]">
+          <a href={links.clientInterface} className="hover:text-[#1D1D1F]">
             YUMA Client Interface
           </a>
-          <a href="#" className="hover:text-[#1B1A2E]">
+          <a href="#" className="hover:text-[#1D1D1F]">
             LinkedIn
           </a>
-          <a href="#" className="hover:text-[#1B1A2E]">
+          <a href="#" className="hover:text-[#1D1D1F]">
             Privacy policy
           </a>
-          <a href="#" className="hover:text-[#1B1A2E]">
+          <a href="#" className="hover:text-[#1D1D1F]">
             Cookie policy
           </a>
         </nav>

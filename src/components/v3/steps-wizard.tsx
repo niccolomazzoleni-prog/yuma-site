@@ -27,7 +27,7 @@ export function StepsWizard({ together }: { together: LandingContent["together"]
                   ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
                   : i < active
                     ? "border-[#7C5CFA]/35 bg-white/70 text-[#5B3FD9]"
-                    : "border-white/70 bg-white/50 text-[#8A8A97]"
+                    : "border-white/70 bg-white/50 text-[#86868B]"
               }`}
             >
               <span className="tabular-nums">
@@ -48,7 +48,7 @@ export function StepsWizard({ together }: { together: LandingContent["together"]
         <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
           {steps[active].n}
         </span>
-        <h3 className="mt-3 text-[24px] font-medium tracking-[-0.025em] text-[#1B1A2E] md:text-[30px]">
+        <h3 className="mt-3 text-[24px] font-medium tracking-[-0.025em] text-[#1D1D1F] md:text-[30px]">
           {steps[active].title}
         </h3>
         <Body className="mt-4 max-w-[62ch]">{steps[active].desc}</Body>

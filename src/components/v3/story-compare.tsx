@@ -31,11 +31,11 @@ const options = [
 export default function StoryCompare() {
   const [active, setActive] = useState(0)
   return (
-    <div className="relative min-h-screen text-[#1B1A2E]">
+    <div className="relative min-h-screen text-[#1D1D1F]">
       <GradientField />
       <header className="sticky top-0 z-50 border-b border-white/50 bg-white/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1180px] flex-wrap items-center gap-3 px-5 py-4">
-          <span className="mr-3 text-[12px] uppercase tracking-[0.14em] text-[#A3A3AD]">
+          <span className="mr-3 text-[12px] uppercase tracking-[0.14em] text-[#A1A1A6]">
             Sezione 2 · storytelling
           </span>
           {options.map((o, i) => (
@@ -45,15 +45,15 @@ export default function StoryCompare() {
               onClick={() => setActive(i)}
               className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${
                 i === active
-                  ? "bg-[#1B1A2E] text-white"
-                  : "border border-white/70 bg-white/60 text-[#4A4A58] hover:text-[#1B1A2E]"
+                  ? "bg-[#1D1D1F] text-white"
+                  : "border border-white/70 bg-white/60 text-[#424245] hover:text-[#1D1D1F]"
               }`}
             >
               {o.name}
             </button>
           ))}
         </div>
-        <div className="mx-auto max-w-[1180px] px-5 pb-4 text-[14px] text-[#6B6B76]">
+        <div className="mx-auto max-w-[1180px] px-5 pb-4 text-[14px] text-[#6E6E73]">
           {options[active].claim}
         </div>
       </header>

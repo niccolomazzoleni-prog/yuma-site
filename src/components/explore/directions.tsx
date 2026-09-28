@@ -28,8 +28,8 @@ export function DirectionEditorial() {
       <div className="mx-auto grid max-w-[1180px] gap-12 px-6 py-20 lg:grid-cols-[180px_minmax(0,1fr)] lg:py-28">
         {/* indice laterale */}
         <aside className="hidden lg:block">
-          <div className="sticky top-16 space-y-3 text-[13px] text-[#6B6B76]">
-            <div className="mb-5 text-[12px] uppercase tracking-[0.16em] text-[#A3A3AD]">
+          <div className="sticky top-16 space-y-3 text-[13px] text-[#6E6E73]">
+            <div className="mb-5 text-[12px] uppercase tracking-[0.16em] text-[#A1A1A6]">
               Indice
             </div>
             {index.map((i, n) => (
@@ -50,7 +50,7 @@ export function DirectionEditorial() {
           </h1>
 
           <div className="mt-10 flex flex-col gap-8 border-t border-[#E3E3DE] pt-8 md:flex-row">
-            <p className="max-w-[46ch] flex-1 text-[17px] leading-[1.55] text-[#4A4A58]">
+            <p className="max-w-[46ch] flex-1 text-[17px] leading-[1.55] text-[#424245]">
               {HERO_SUB}
             </p>
             <div className="flex flex-col gap-3 md:w-[240px]">
@@ -74,7 +74,7 @@ export function DirectionEditorial() {
           {/* blocco di lettura, niente card */}
           <div className="mt-20 border-t border-[#E3E3DE] pt-10">
             <div className="mb-8 flex items-baseline gap-4">
-              <span className="text-[12px] uppercase tracking-[0.16em] text-[#A3A3AD]">
+              <span className="text-[12px] uppercase tracking-[0.16em] text-[#A1A1A6]">
                 02
               </span>
               <h2 className="text-[26px] font-medium tracking-[-0.03em] md:text-[34px]">
@@ -84,16 +84,16 @@ export function DirectionEditorial() {
             <ol className="divide-y divide-[#E3E3DE] border-y border-[#E3E3DE]">
               {POSSIBILITIES.map((p, i) => (
                 <li key={p} className="grid gap-4 py-7 md:grid-cols-[64px_minmax(0,1fr)]">
-                  <span className="text-[13px] tabular-nums text-[#A3A3AD]">
+                  <span className="text-[13px] tabular-nums text-[#A1A1A6]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="max-w-[62ch] text-[17px] leading-[1.55] text-[#4A4A58]">
+                  <p className="max-w-[62ch] text-[17px] leading-[1.55] text-[#424245]">
                     {p}
                   </p>
                 </li>
               ))}
             </ol>
-            <p className="mt-8 flex items-center gap-2 text-[14px] text-[#6B6B76]">
+            <p className="mt-8 flex items-center gap-2 text-[14px] text-[#6E6E73]">
               <Minus className="h-4 w-4" /> Viola usato solo sui link e sulle
               azioni, mai come superficie.
             </p>
@@ -124,16 +124,16 @@ const STATS = [
 
 export function DirectionProduct() {
   return (
-    <div className="bg-white text-[#1B1A2E]">
+    <div className="bg-white text-[#1D1D1F]">
       <div className="mx-auto grid max-w-[1280px] items-center gap-12 px-6 py-20 lg:grid-cols-2 lg:py-24">
         <div>
-          <span className="inline-flex rounded-full border border-[#E6E6EA] px-3 py-1 text-[12px] font-medium text-[#6B6B76]">
+          <span className="inline-flex rounded-full border border-[#E6E6EA] px-3 py-1 text-[12px] font-medium text-[#6E6E73]">
             Consulenza + software
           </span>
           <h1 className="mt-6 max-w-[16ch] text-balance text-[40px] font-medium leading-[1.04] tracking-[-0.04em] sm:text-[52px] lg:text-[60px]">
             L'AI dove serve davvero, dentro il lavoro che fai già.
           </h1>
-          <p className="mt-6 max-w-[46ch] text-[17px] leading-[1.55] text-[#6B6B76]">
+          <p className="mt-6 max-w-[46ch] text-[17px] leading-[1.55] text-[#6E6E73]">
             {HERO_SUB}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
@@ -148,7 +148,7 @@ export function DirectionProduct() {
             {STATS.map((s) => (
               <div key={s.l}>
                 <div className="text-[26px] font-medium tracking-[-0.03em]">{s.v}</div>
-                <div className="mt-1 text-[13px] leading-[1.4] text-[#6B6B76]">{s.l}</div>
+                <div className="mt-1 text-[13px] leading-[1.4] text-[#6E6E73]">{s.l}</div>
               </div>
             ))}
           </div>
@@ -165,18 +165,18 @@ export function DirectionProduct() {
               className={`rounded-[14px] border border-[#E6E6EA] bg-[#FAFAFC] p-7 ${b.span}`}
             >
               <h3 className="text-[19px] font-medium tracking-[-0.015em]">{b.t}</h3>
-              <p className="mt-2 text-[15px] leading-[1.55] text-[#6B6B76]">{b.d}</p>
+              <p className="mt-2 text-[15px] leading-[1.55] text-[#6E6E73]">{b.d}</p>
             </article>
           ))}
         </div>
 
         {/* riga loghi */}
         <div className="mt-14 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 border-t border-[#E6E6EA] pt-10">
-          <span className="text-[12px] uppercase tracking-[0.14em] text-[#A3A3AD]">
+          <span className="text-[12px] uppercase tracking-[0.14em] text-[#A1A1A6]">
             Dove lavoriamo
           </span>
           {["Impianti", "Manifattura", "Distribuzione B2B", "Farmaceutico"].map((s) => (
-            <span key={s} className="text-[15px] text-[#6B6B76]">
+            <span key={s} className="text-[15px] text-[#6E6E73]">
               {s}
             </span>
           ))}
@@ -192,7 +192,7 @@ export function DirectionProduct() {
 
 export function DirectionGlass() {
   return (
-    <div className="relative overflow-hidden bg-[#F7F7FB] text-[#1B1A2E]">
+    <div className="relative overflow-hidden bg-[#F7F7FB] text-[#1D1D1F]">
       {/* macchie di colore sotto il vetro */}
       <div
         aria-hidden
@@ -206,8 +206,8 @@ export function DirectionGlass() {
 
       <div className="relative mx-auto max-w-[1180px] px-6 py-20 lg:py-24">
         {/* nav a pillola */}
-        <div className="mx-auto mb-16 flex w-fit items-center gap-6 rounded-full border border-white/70 bg-white/55 px-6 py-3 text-[14px] text-[#4A4A58] backdrop-blur-xl">
-          <span className="font-semibold tracking-[0.16em] text-[#1B1A2E]">YUMA</span>
+        <div className="mx-auto mb-16 flex w-fit items-center gap-6 rounded-full border border-white/70 bg-white/55 px-6 py-3 text-[14px] text-[#424245] backdrop-blur-xl">
+          <span className="font-semibold tracking-[0.16em] text-[#1D1D1F]">YUMA</span>
           <span>Soluzioni</span>
           <span>Come lavoriamo</span>
           <span className="rounded-full bg-[#7C5CFA] px-4 py-1.5 text-white">Prenota una call</span>
@@ -217,11 +217,11 @@ export function DirectionGlass() {
           <h1 className="text-balance text-[40px] font-medium leading-[1.02] tracking-[-0.04em] sm:text-[54px] lg:text-[64px]">
             Liberiamo il potenziale inespresso della tua azienda.
           </h1>
-          <p className="mx-auto mt-6 max-w-[52ch] text-[17px] leading-[1.5] text-[#4A4A58] md:text-[19px]">
+          <p className="mx-auto mt-6 max-w-[52ch] text-[17px] leading-[1.5] text-[#424245] md:text-[19px]">
             {HERO_SUB}
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href="#" className="rounded-full bg-[#1B1A2E] px-6 py-3 text-[15px] font-medium text-white">
+            <a href="#" className="rounded-full bg-[#1D1D1F] px-6 py-3 text-[15px] font-medium text-white">
               Scopri i nostri prodotti
             </a>
             <a href="#" className="rounded-full border border-white/70 bg-white/60 px-6 py-3 text-[15px] font-medium backdrop-blur-xl">
@@ -244,7 +244,7 @@ export function DirectionGlass() {
               <span className="text-[12px] uppercase tracking-[0.14em] text-[#7C5CFA]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <p className="mt-5 text-[16px] leading-[1.5] text-[#2A2A38]">{p}</p>
+              <p className="mt-5 text-[16px] leading-[1.5] text-[#333336]">{p}</p>
             </article>
           ))}
         </div>
@@ -261,7 +261,7 @@ export function DirectionGlass() {
             <h2 className="max-w-[18ch] text-[26px] font-medium leading-[1.1] tracking-[-0.03em] md:text-[34px]">
               Dai progetti di consulenza sono nati due prodotti.
             </h2>
-            <p className="mt-4 max-w-[52ch] text-[16px] leading-[1.5] text-[#4A4A58]">
+            <p className="mt-4 max-w-[52ch] text-[16px] leading-[1.5] text-[#424245]">
               YUMA Projects tiene sotto controllo margini e avanzamento delle
               commesse. YUMA Client Interface porta ordini e richieste già
               strutturati nei tuoi sistemi.

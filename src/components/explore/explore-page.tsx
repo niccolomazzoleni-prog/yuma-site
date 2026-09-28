@@ -33,7 +33,7 @@ export default function ExplorePage() {
     <div className="min-h-screen bg-white">
       <header className="sticky top-0 z-50 border-b border-[#E6E6EA] bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1280px] flex-wrap items-center gap-3 px-6 py-4">
-          <span className="mr-4 text-[13px] uppercase tracking-[0.14em] text-[#A3A3AD]">
+          <span className="mr-4 text-[13px] uppercase tracking-[0.14em] text-[#A1A1A6]">
             YUMA · direzioni
           </span>
           {tabs.map((t, i) => (
@@ -43,15 +43,15 @@ export default function ExplorePage() {
               onClick={() => setActive(i)}
               className={`rounded-full px-4 py-2 text-[14px] font-medium transition-colors ${
                 i === active
-                  ? "bg-[#1B1A2E] text-white"
-                  : "border border-[#E6E6EA] text-[#4A4A58] hover:border-[#1B1A2E]"
+                  ? "bg-[#1D1D1F] text-white"
+                  : "border border-[#E6E6EA] text-[#424245] hover:border-[#1D1D1F]"
               }`}
             >
               {t.name}
             </button>
           ))}
         </div>
-        <div className="mx-auto max-w-[1280px] px-6 pb-4 text-[14px] text-[#6B6B76]">
+        <div className="mx-auto max-w-[1280px] px-6 pb-4 text-[14px] text-[#6E6E73]">
           {tabs[active].claim}
         </div>
       </header>

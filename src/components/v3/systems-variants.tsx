@@ -13,7 +13,7 @@ const items = sys.items.map((it) => {
 
 function TodoTag() {
   return (
-    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#A3A3AD]">
+    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#A1A1A6]">
       da confermare
     </span>
   )
@@ -38,7 +38,7 @@ function FlowDiagram({ compact = false }: { compact?: boolean }) {
       {channels.map((ch, i) => (
         <g key={ch} transform={`translate(10 ${24 + i * 56})`}>
           <rect width="110" height="38" rx="10" fill="rgba(255,255,255,0.75)" stroke="rgba(1,1,16,0.1)" />
-          <text x="55" y="24" textAnchor="middle" fontSize="13" fill="#4A4A58">
+          <text x="55" y="24" textAnchor="middle" fontSize="13" fill="#424245">
             {ch}
           </text>
           <path
@@ -62,7 +62,7 @@ function FlowDiagram({ compact = false }: { compact?: boolean }) {
       {systems.map((sname, i) => (
         <g key={sname} transform={`translate(400 ${80 + i * 60})`}>
           <rect width="110" height="44" rx="10" fill="rgba(255,255,255,0.85)" stroke="rgba(1,1,16,0.12)" />
-          <text x="55" y="27" textAnchor="middle" fontSize="13" fill="#1B1A2E">
+          <text x="55" y="27" textAnchor="middle" fontSize="13" fill="#1D1D1F">
             {sname}
           </text>
           <path d={`M-90 ${50 - i * 60} C-40 ${50 - i * 60} -30 22 0 22`} stroke="rgba(1,1,16,0.2)" fill="none" />
@@ -86,8 +86,8 @@ export function SystemsDiagram() {
       </Glass>
       <div className="mt-5 grid gap-5 md:grid-cols-3">
         {items.map((it) => (
-          <div key={it.title} className="border-t border-[#1B1A2E]/10 pt-5">
-            <h3 className="text-[17px] font-medium text-[#1B1A2E]">{it.title}</h3>
+          <div key={it.title} className="border-t border-[#1D1D1F]/10 pt-5">
+            <h3 className="text-[17px] font-medium text-[#1D1D1F]">{it.title}</h3>
             <Body className="mt-2 text-[15px]">
               {it.desc}
               {it.todo ? <TodoTag /> : null}
@@ -108,10 +108,10 @@ export function SystemsSplit() {
         <Glass className="p-7 md:p-8">
           <FlowDiagram compact />
         </Glass>
-        <div className="divide-y divide-[#1B1A2E]/10 border-y border-[#1B1A2E]/10">
+        <div className="divide-y divide-[#1D1D1F]/10 border-y border-[#1D1D1F]/10">
           {items.map((it) => (
             <div key={it.title} className="py-6">
-              <h3 className="text-[18px] font-medium text-[#1B1A2E]">{it.title}</h3>
+              <h3 className="text-[18px] font-medium text-[#1D1D1F]">{it.title}</h3>
               <Body className="mt-2 max-w-[52ch] text-[15px]">
                 {it.desc}
                 {it.todo ? <TodoTag /> : null}
@@ -135,7 +135,7 @@ export function SystemsNumbered() {
             <span className="text-[40px] font-medium leading-none tabular-nums text-[#7C5CFA]/30">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <h3 className="mt-6 text-[19px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
+            <h3 className="mt-6 text-[19px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]">
               {it.title}
             </h3>
             <Body className="mt-3 text-[15px]">
@@ -175,13 +175,13 @@ export function SystemsTrustBand() {
               {chips.map((c) => (
                 <li
                   key={c}
-                  className="rounded-full border border-white/70 bg-white/60 px-4 py-2 text-[14px] text-[#4A4A58]"
+                  className="rounded-full border border-white/70 bg-white/60 px-4 py-2 text-[14px] text-[#424245]"
                 >
                   {c}
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[14px] text-[#8A8A97]">
+            <p className="mt-6 text-[14px] text-[#86868B]">
               Il titolare del trattamento resta la tua azienda, YUMA opera come
               responsabile.
               <TodoTag />
@@ -202,13 +202,13 @@ export function SystemsRows() {
         {items.map((it, i) => (
           <div
             key={it.title}
-            className="grid gap-4 border-t border-[#1B1A2E]/10 py-8 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)] md:gap-12"
+            className="grid gap-4 border-t border-[#1D1D1F]/10 py-8 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)] md:gap-12"
           >
             <div className="flex items-baseline gap-4">
               <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1B1A2E] md:text-[26px]">
+              <h3 className="text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[26px]">
                 {it.title}
               </h3>
             </div>
@@ -218,7 +218,7 @@ export function SystemsRows() {
             </Body>
           </div>
         ))}
-        <div className="border-t border-[#1B1A2E]/10" />
+        <div className="border-t border-[#1D1D1F]/10" />
       </div>
     </Section>
   )

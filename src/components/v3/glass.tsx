@@ -75,7 +75,7 @@ export function Title({
   return (
     <h2
       className={cn(
-        "text-balance text-[30px] font-medium leading-[1.05] tracking-[-0.035em] text-[#1B1A2E] md:text-[44px]",
+        "text-balance text-[30px] font-medium leading-[1.05] tracking-[-0.035em] text-[#1D1D1F] md:text-[44px]",
         className,
       )}
     >
@@ -92,7 +92,7 @@ export function Lead({
   className?: string
 }) {
   return (
-    <p className={cn("text-[16px] leading-[1.5] text-[#4A4A58] md:text-[18px]", className)}>
+    <p className={cn("text-[16px] leading-[1.5] text-[#424245] md:text-[18px]", className)}>
       {children}
     </p>
   )
@@ -106,7 +106,7 @@ export function Body({
   className?: string
 }) {
   return (
-    <p className={cn("text-[16px] leading-[1.55] text-[#4A4A58]", className)}>
+    <p className={cn("text-[16px] leading-[1.55] text-[#424245]", className)}>
       {children}
     </p>
   )

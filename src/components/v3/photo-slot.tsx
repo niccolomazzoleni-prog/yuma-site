@@ -56,10 +56,10 @@ export function PhotoSlot({
         <span className="mt-3 block text-[15px] font-medium text-[#C2336A]">
           Foto n. {n}
         </span>
-        <span className="mt-1.5 block text-[13px] leading-[1.45] text-[#6B6B76]">
+        <span className="mt-1.5 block text-[13px] leading-[1.45] text-[#6E6E73]">
           Foto di {subject}
         </span>
-        <span className="mt-2 block text-[11px] text-[#A3A3AD]">
+        <span className="mt-2 block text-[11px] text-[#A1A1A6]">
           formato {ratio.replace(" / ", ":")}
         </span>
       </span>

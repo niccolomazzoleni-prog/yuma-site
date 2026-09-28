@@ -66,7 +66,7 @@ export function ProcessTrack() {
                   />
                 ) : null}
               </div>
-              <h3 className="mt-6 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[22px]">
+              <h3 className="mt-6 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[22px]">
                 {s.title}
               </h3>
               <Body className="mt-3 text-[15px]">{s.desc}</Body>
@@ -98,7 +98,7 @@ export function ProcessVerticalLine() {
 
       <div ref={ref} className="relative mx-auto mt-16 max-w-[820px] pl-12 md:pl-16">
         {/* binario e riempimento */}
-        <div aria-hidden className="absolute bottom-0 left-[22px] top-2 w-px bg-[#1B1A2E]/10 md:left-[30px]" />
+        <div aria-hidden className="absolute bottom-0 left-[22px] top-2 w-px bg-[#1D1D1F]/10 md:left-[30px]" />
         <motion.div
           aria-hidden
           style={{ scaleY: height, originY: 0 }}
@@ -113,13 +113,13 @@ export function ProcessVerticalLine() {
                 className={`absolute -left-12 top-0 flex h-11 w-11 items-center justify-center rounded-full border text-[14px] font-medium tabular-nums transition-colors duration-500 md:-left-16 ${
                   i <= active
                     ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
-                    : "border-[#1B1A2E]/15 bg-white text-[#A3A3AD]"
+                    : "border-[#1D1D1F]/15 bg-white text-[#A1A1A6]"
                 }`}
               >
                 {i < active ? <Check className="h-5 w-5" /> : s.n}
               </span>
               <Glass className="p-7 md:p-8">
-                <h3 className="text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[24px]">
+                <h3 className="text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[24px]">
                   {s.title}
                 </h3>
                 <Body className="mt-3">{s.desc}</Body>
@@ -161,7 +161,7 @@ export function ProcessBigNumber() {
             >
               {steps[active].n}
             </motion.div>
-            <p className="mt-4 max-w-[22ch] text-[18px] text-[#4A4A58]">
+            <p className="mt-4 max-w-[22ch] text-[18px] text-[#424245]">
               {steps[active].short}
             </p>
             <div className="mt-8 flex gap-2">
@@ -170,7 +170,7 @@ export function ProcessBigNumber() {
                   key={s.n}
                   aria-hidden
                   className={`h-1 w-12 rounded-full transition-colors duration-300 ${
-                    i <= active ? "bg-[#7C5CFA]" : "bg-[#1B1A2E]/12"
+                    i <= active ? "bg-[#7C5CFA]" : "bg-[#1D1D1F]/12"
                   }`}
                 />
               ))}
@@ -185,7 +185,7 @@ export function ProcessBigNumber() {
                 <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA] lg:hidden">
                   {s.n}
                 </span>
-                <h3 className="mt-2 text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1B1A2E] md:text-[28px] lg:mt-0">
+                <h3 className="mt-2 text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[28px] lg:mt-0">
                   {s.title}
                 </h3>
                 <Body className="mt-4">{s.desc}</Body>
@@ -243,7 +243,7 @@ export function ProcessStepper() {
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-[14px] font-medium tabular-nums transition-colors duration-500 ${
                       done
                         ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
-                        : "border-[#1B1A2E]/15 bg-white/70 text-[#A3A3AD]"
+                        : "border-[#1D1D1F]/15 bg-white/70 text-[#A1A1A6]"
                     }`}
                   >
                     {s.n}
@@ -252,7 +252,7 @@ export function ProcessStepper() {
                     <span
                       aria-hidden
                       className={`my-2 w-px flex-1 transition-colors duration-500 ${
-                        seen.includes(i + 1) ? "bg-[#7C5CFA]" : "bg-[#1B1A2E]/12"
+                        seen.includes(i + 1) ? "bg-[#7C5CFA]" : "bg-[#1D1D1F]/12"
                       }`}
                     />
                   ) : null}
@@ -260,10 +260,10 @@ export function ProcessStepper() {
 
                 <div className={i < steps.length - 1 ? "pb-10" : ""}>
                   <div className="flex flex-wrap items-baseline gap-x-3">
-                    <h3 className="text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[24px]">
+                    <h3 className="text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[24px]">
                       {s.title}
                     </h3>
-                    <span className="text-[13px] text-[#8A8A97]">{s.short}</span>
+                    <span className="text-[13px] text-[#86868B]">{s.short}</span>
                   </div>
                   <Body className="mt-3">{s.desc}</Body>
                 </div>

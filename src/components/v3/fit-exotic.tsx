@@ -23,7 +23,7 @@ function Head({ tone = "light" }: { tone?: "light" | "dark" }) {
       <Eyebrow>{f.label}</Eyebrow>
       <h2
         className={`mx-auto mt-5 max-w-[22ch] text-balance text-[30px] font-medium leading-[1.05] tracking-[-0.035em] md:text-[44px] ${
-          tone === "dark" ? "text-white" : "text-[#1B1A2E]"
+          tone === "dark" ? "text-white" : "text-[#1D1D1F]"
         }`}
       >
         {TITLE}
@@ -36,7 +36,7 @@ function NotFor({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
     <p
       className={`mx-auto mt-10 max-w-[760px] text-center text-[15px] leading-[1.6] ${
-        tone === "dark" ? "text-white/45" : "text-[#8A8A97]"
+        tone === "dark" ? "text-white/45" : "text-[#86868B]"
       }`}
     >
       {f.notFor}
@@ -68,8 +68,8 @@ export function FitChecklist() {
     <Section>
       <Head />
       <Glass className="mx-auto mt-12 max-w-[880px] p-8 md:p-10">
-        <div className="flex items-baseline justify-between gap-4 border-b border-[#1B1A2E]/10 pb-5">
-          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
+        <div className="flex items-baseline justify-between gap-4 border-b border-[#1D1D1F]/10 pb-5">
+          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
             Quante te ne riconosci?
           </span>
           <span className="text-[15px] font-medium tabular-nums text-[#7C5CFA]">
@@ -87,20 +87,20 @@ export function FitChecklist() {
                 ref={(el) => {
                   refs.current[i] = el
                 }}
-                className="flex items-start gap-4 border-b border-[#1B1A2E]/8 py-6 last:border-0"
+                className="flex items-start gap-4 border-b border-[#1D1D1F]/8 py-6 last:border-0"
               >
                 <span
                   className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] border transition-all duration-500 ${
                     isDone
                       ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
-                      : "border-[#1B1A2E]/20 bg-white/60 text-transparent"
+                      : "border-[#1D1D1F]/20 bg-white/60 text-transparent"
                   }`}
                 >
                   <Check className="h-4 w-4" />
                 </span>
                 <span
                   className={`text-[17px] leading-[1.5] transition-colors duration-500 ${
-                    isDone ? "text-[#1B1A2E]" : "text-[#A3A3AD]"
+                    isDone ? "text-[#1D1D1F]" : "text-[#A1A1A6]"
                   }`}
                 >
                   {b}
@@ -139,7 +139,7 @@ export function FitOrbit() {
           <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
             {String(active + 1).padStart(2, "0")}
           </span>
-          <p className="mt-3 text-[14px] leading-[1.45] text-[#2A2A38]">
+          <p className="mt-3 text-[14px] leading-[1.45] text-[#333336]">
             {short[active]}
           </p>
         </div>
@@ -165,7 +165,7 @@ export function FitOrbit() {
             <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
               {String(i + 1).padStart(2, "0")}
             </span>
-            <p className="mt-2 text-[14px] leading-[1.45] text-[#2A2A38]">{bullets[i]}</p>
+            <p className="mt-2 text-[14px] leading-[1.45] text-[#333336]">{bullets[i]}</p>
           </button>
         ))}
       </div>
@@ -208,7 +208,7 @@ export function FitStickers() {
               <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
                 {String(i + 1).padStart(2, "0")}
               </span>
-              <h3 className="mt-3 text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
+              <h3 className="mt-3 text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]">
                 {short[i]}
               </h3>
               <Body className="mt-3 text-[15px]">{b}</Body>

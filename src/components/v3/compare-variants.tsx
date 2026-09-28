@@ -33,12 +33,12 @@ export function CompareStrike() {
       <Head />
       <div className="mx-auto mt-10 grid max-w-[1000px] gap-px overflow-hidden rounded-[28px] border border-white/65 bg-white/50 shadow-[0_40px_90px_-45px_rgba(1,1,16,0.35)] backdrop-blur-2xl md:grid-cols-2">
         <div className="bg-white/25 p-8 md:p-10">
-          <p className={`${label} text-[#A3A3AD]`}>{BEFORE}</p>
+          <p className={`${label} text-[#A1A1A6]`}>{BEFORE}</p>
           <ul className="mt-7 flex flex-col gap-5">
             {rows.map((r) => (
-              <li key={r.before} className="flex gap-3 text-[16px] leading-[1.5] text-[#8A8A97]">
-                <Minus aria-hidden className="mt-1 h-4 w-4 shrink-0 text-[#A3A3AD]/70" />
-                <span className="line-through decoration-[#8A8A97]/35">{r.before}</span>
+              <li key={r.before} className="flex gap-3 text-[16px] leading-[1.5] text-[#86868B]">
+                <Minus aria-hidden className="mt-1 h-4 w-4 shrink-0 text-[#A1A1A6]/70" />
+                <span className="line-through decoration-[#86868B]/35">{r.before}</span>
               </li>
             ))}
           </ul>
@@ -47,7 +47,7 @@ export function CompareStrike() {
           <p className={`${label} text-[#7C5CFA]`}>{AFTER}</p>
           <ul className="mt-7 flex flex-col gap-5">
             {rows.map((r) => (
-              <li key={r.after} className="flex gap-3 text-[16px] font-medium leading-[1.5] text-[#1B1A2E]">
+              <li key={r.after} className="flex gap-3 text-[16px] font-medium leading-[1.5] text-[#1D1D1F]">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-[#7C5CFA] text-white">
                   <Check aria-hidden className="h-3 w-3" strokeWidth={3} />
                 </span>
@@ -81,18 +81,18 @@ export function CompareSlider() {
         <li
           key={r.before}
           className={`flex min-h-[88px] items-center border-b px-7 last:border-0 md:px-9 ${
-            after ? "justify-end border-[#7C5CFA]/15" : "justify-start border-[#1B1A2E]/8"
+            after ? "justify-end border-[#7C5CFA]/15" : "justify-start border-[#1D1D1F]/8"
           }`}
         >
           <span
             className={`flex max-w-[44%] items-center gap-3 text-[16px] leading-[1.4] md:text-[18px] ${
-              after ? "flex-row-reverse text-right font-medium text-[#1B1A2E]" : "text-[#8A8A97]"
+              after ? "flex-row-reverse text-right font-medium text-[#1D1D1F]" : "text-[#86868B]"
             }`}
           >
             {after ? (
               <Check aria-hidden className="h-5 w-5 shrink-0 text-[#7C5CFA]" />
             ) : (
-              <X aria-hidden className="h-5 w-5 shrink-0 text-[#A3A3AD]" />
+              <X aria-hidden className="h-5 w-5 shrink-0 text-[#A1A1A6]" />
             )}
             {after ? r.after : r.before}
           </span>
@@ -104,10 +104,10 @@ export function CompareSlider() {
   return (
     <Section>
       <Head />
-      <p className="mt-3 text-center text-[14px] text-[#8A8A97]">Trascina il cursore: a sinistra resta solo YUMA, a destra solo oggi</p>
+      <p className="mt-3 text-center text-[14px] text-[#86868B]">Trascina il cursore: a sinistra resta solo YUMA, a destra solo oggi</p>
       <Glass className="mx-auto mt-8 max-w-[900px] overflow-hidden p-0">
-        <div className="flex justify-between border-b border-[#1B1A2E]/8 px-7 py-4">
-          <span className={`${label} text-[#A3A3AD]`}>{BEFORE}</span>
+        <div className="flex justify-between border-b border-[#1D1D1F]/8 px-7 py-4">
+          <span className={`${label} text-[#A1A1A6]`}>{BEFORE}</span>
           <span className={`${label} text-[#7C5CFA]`}>{AFTER}</span>
         </div>
         <div
@@ -163,12 +163,12 @@ export function CompareCardsBlock({ className = "mt-10" }: { className?: string 
   return (
     <div className={`mx-auto grid ${className} max-w-[1000px] items-start gap-5 md:grid-cols-2`}>
         <div className="rounded-[28px] border border-white/50 bg-white/25 p-8 backdrop-blur-xl md:mt-8 md:p-9">
-          <p className={`${label} text-[#A3A3AD]`}>{BEFORE}</p>
-          <ul className="mt-7 flex flex-col gap-4 border-t border-[#1B1A2E]/8 pt-6">
+          <p className={`${label} text-[#A1A1A6]`}>{BEFORE}</p>
+          <ul className="mt-7 flex flex-col gap-4 border-t border-[#1D1D1F]/8 pt-6">
             {rows.map((r) => (
-              <li key={r.before} className="flex items-start gap-3 text-[16px] leading-[1.5] text-[#6B6B76]">
-                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-[6px] bg-[#1B1A2E]/8">
-                  <X aria-hidden className="h-3 w-3 text-[#8A8A97]" strokeWidth={2.5} />
+              <li key={r.before} className="flex items-start gap-3 text-[16px] leading-[1.5] text-[#6E6E73]">
+                <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-[6px] bg-[#1D1D1F]/8">
+                  <X aria-hidden className="h-3 w-3 text-[#86868B]" strokeWidth={2.5} />
                 </span>
                 {r.before}
               </li>
@@ -182,7 +182,7 @@ export function CompareCardsBlock({ className = "mt-10" }: { className?: string 
           </span>
           <ul className="mt-3 flex flex-col gap-4 pt-2">
             {rows.map((r) => (
-              <li key={r.after} className="flex items-start gap-3 text-[16px] font-medium leading-[1.5] text-[#1B1A2E]">
+              <li key={r.after} className="flex items-start gap-3 text-[16px] font-medium leading-[1.5] text-[#1D1D1F]">
                 <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-[6px] bg-[#7C5CFA]">
                   <Check aria-hidden className="h-3 w-3 text-white" strokeWidth={3} />
                 </span>
@@ -238,7 +238,7 @@ export function CompareToggle() {
                 aria-pressed={on}
                 onClick={() => setAfter(i === 1)}
                 className={`relative rounded-full px-5 py-2.5 text-[14px] font-medium transition-colors ${
-                  on ? (i === 1 ? "text-white" : "text-[#1B1A2E]") : "text-[#6B6B76]"
+                  on ? (i === 1 ? "text-white" : "text-[#1D1D1F]") : "text-[#6E6E73]"
                 }`}
               >
                 {on ? (
@@ -259,11 +259,11 @@ export function CompareToggle() {
             {rows.map((r, i) => (
               <li
                 key={r.before}
-                className="flex min-h-[76px] items-center gap-4 border-b border-[#1B1A2E]/8 px-4 last:border-0 md:px-5"
+                className="flex min-h-[76px] items-center gap-4 border-b border-[#1D1D1F]/8 px-4 last:border-0 md:px-5"
               >
                 <span
                   className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-full transition-colors duration-500 ${
-                    after ? "bg-[#7C5CFA] text-white" : "bg-[#1B1A2E]/8 text-[#8A8A97]"
+                    after ? "bg-[#7C5CFA] text-white" : "bg-[#1D1D1F]/8 text-[#86868B]"
                   }`}
                   style={{ transitionDelay: `${i * 80}ms` }}
                 >
@@ -277,7 +277,7 @@ export function CompareToggle() {
                     exit={{ opacity: 0, y: -8, filter: "blur(4px)" }}
                     transition={{ duration: 0.28, delay: i * 0.06 }}
                     className={`text-[17px] leading-[1.45] md:text-[19px] ${
-                      after ? "font-medium text-[#1B1A2E]" : "text-[#6B6B76]"
+                      after ? "font-medium text-[#1D1D1F]" : "text-[#6E6E73]"
                     }`}
                   >
                     {after ? r.after : r.before}
@@ -298,7 +298,7 @@ export function CompareArrows() {
     <Section>
       <Head />
       <div className="mx-auto mt-10 hidden max-w-[1000px] grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] px-7 md:grid">
-        <span className={`${label} text-[#A3A3AD]`}>{BEFORE}</span>
+        <span className={`${label} text-[#A1A1A6]`}>{BEFORE}</span>
         <span />
         <span className={`${label} text-[#7C5CFA]`}>{AFTER}</span>
       </div>
@@ -312,13 +312,13 @@ export function CompareArrows() {
             transition={{ duration: 0.45, delay: i * 0.08 }}
           >
             <Glass className="grid items-center gap-3 rounded-[20px] px-7 py-5 md:grid-cols-[minmax(0,1fr)_56px_minmax(0,1fr)] md:gap-0">
-              <span className="text-[16px] leading-[1.45] text-[#8A8A97]">{r.before}</span>
+              <span className="text-[16px] leading-[1.45] text-[#86868B]">{r.before}</span>
               <span className="flex md:justify-center">
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#7C5CFA]/12 text-[#7C5CFA]">
                   <ArrowRight className="h-4 w-4 rotate-90 md:rotate-0" />
                 </span>
               </span>
-              <span className="text-[17px] font-medium leading-[1.45] text-[#1B1A2E]">{r.after}</span>
+              <span className="text-[17px] font-medium leading-[1.45] text-[#1D1D1F]">{r.after}</span>
             </Glass>
           </motion.li>
         ))}
@@ -348,11 +348,11 @@ function FlipCard({ before, after, i }: { before: string; after: string; i: numb
       >
         <span className={`${face} border-white/60 bg-white/40 backdrop-blur-xl group-focus-visible:ring-2 group-focus-visible:ring-[#7C5CFA]`}>
           <span className="flex items-center justify-between">
-            <span className={`${label} text-[#A3A3AD]`}>{BEFORE}</span>
-            <span className="text-[13px] tabular-nums text-[#A3A3AD]">{String(i + 1).padStart(2, "0")}</span>
+            <span className={`${label} text-[#A1A1A6]`}>{BEFORE}</span>
+            <span className="text-[13px] tabular-nums text-[#A1A1A6]">{String(i + 1).padStart(2, "0")}</span>
           </span>
-          <span className="text-[20px] leading-[1.3] tracking-[-0.015em] text-[#4A4A58] md:text-[22px]">{before}</span>
-          <span className="flex items-center gap-1.5 text-[13px] text-[#8A8A97]">
+          <span className="text-[20px] leading-[1.3] tracking-[-0.015em] text-[#424245] md:text-[22px]">{before}</span>
+          <span className="flex items-center gap-1.5 text-[13px] text-[#86868B]">
             <RotateCw className="h-3.5 w-3.5" /> Girala
           </span>
         </span>
@@ -375,7 +375,7 @@ export function CompareFlip() {
   return (
     <Section>
       <Head />
-      <p className="mt-3 text-center text-[14px] text-[#8A8A97]">Passa sopra o tocca una carta</p>
+      <p className="mt-3 text-center text-[14px] text-[#86868B]">Passa sopra o tocca una carta</p>
       <div className="mx-auto mt-10 grid max-w-[1000px] gap-5 md:grid-cols-2">
         {rows.map((r, i) => (
           <FlipCard key={r.before} before={r.before} after={r.after} i={i} />

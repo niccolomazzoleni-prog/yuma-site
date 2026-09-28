@@ -22,8 +22,8 @@ function Cta({ variant = "dark" }: { variant?: "dark" | "violet" }) {
       href="#contatti"
       className={`group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
         variant === "violet"
-          ? "bg-[#7C5CFA] focus-visible:ring-[#1B1A2E]"
-          : "bg-[#1B1A2E] focus-visible:ring-[#7C5CFA]"
+          ? "bg-[#7C5CFA] focus-visible:ring-[#1D1D1F]"
+          : "bg-[#1D1D1F] focus-visible:ring-[#7C5CFA]"
       }`}
     >
       {CTA_LABEL}
@@ -62,22 +62,22 @@ export function AssessmentTwoColumns() {
           <div className="mt-8">
             <Cta />
           </div>
-          <p className="mt-4 text-[13px] text-[#6B6B76]">{NOTE}</p>
+          <p className="mt-4 text-[13px] text-[#6E6E73]">{NOTE}</p>
         </div>
 
         <Glass className="p-8 md:p-10">
-          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
+          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
             Cosa ti resta in mano
           </p>
           <ul className="mt-6 space-y-4">
             {deliverables.map((d) => (
               <li key={d} className="flex items-start gap-3">
                 <Check className="mt-0.5 h-5 w-5 shrink-0 text-[#7C5CFA]" />
-                <span className="text-[16px] leading-[1.5] text-[#2A2A38]">{d}</span>
+                <span className="text-[16px] leading-[1.5] text-[#333336]">{d}</span>
               </li>
             ))}
           </ul>
-          <p className="mt-6 border-t border-[#1B1A2E]/8 pt-5 text-[15px] text-[#4A4A58]">
+          <p className="mt-6 border-t border-[#1D1D1F]/8 pt-5 text-[15px] text-[#424245]">
             Il risultato è tuo, anche se decidi di fermarti lì.
           </p>
         </Glass>
@@ -118,11 +118,11 @@ export function AssessmentThreeSteps() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7C5CFA]/12 text-[#7C5CFA]">
                   <s.icon className="h-5 w-5" />
                 </span>
-                <span className="text-[13px] font-medium tabular-nums text-[#A3A3AD]">
+                <span className="text-[13px] font-medium tabular-nums text-[#A1A1A6]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>
-              <h3 className="mt-5 text-[20px] font-medium tracking-[-0.02em] text-[#1B1A2E]">
+              <h3 className="mt-5 text-[20px] font-medium tracking-[-0.02em] text-[#1D1D1F]">
                 {s.title}
               </h3>
               <Body className="mt-3 text-[15px]">{s.desc}</Body>
@@ -133,7 +133,7 @@ export function AssessmentThreeSteps() {
 
       <div className="mt-10 text-center">
         <Cta variant="violet" />
-        <p className="mt-4 text-[13px] text-[#6B6B76]">
+        <p className="mt-4 text-[13px] text-[#6E6E73]">
           Il risultato è tuo, anche se decidi di fermarti lì.
         </p>
       </div>
@@ -169,7 +169,7 @@ export function AssessmentReport() {
           <div className="mt-8">
             <Cta />
           </div>
-          <p className="mt-4 text-[13px] text-[#6B6B76]">{NOTE}</p>
+          <p className="mt-4 text-[13px] text-[#6E6E73]">{NOTE}</p>
         </div>
         <Glass className="p-6 md:p-8">
           <Info n={8} className="rounded-[16px]" />
@@ -209,7 +209,7 @@ export function AssessmentQa() {
         {qa.map((item, i) => {
           const isOpen = open === i
           return (
-            <div key={item.q} className="border-b border-[#1B1A2E]/8 last:border-0">
+            <div key={item.q} className="border-b border-[#1D1D1F]/8 last:border-0">
               <h3 className="m-0">
                 <button
                   type="button"
@@ -219,7 +219,7 @@ export function AssessmentQa() {
                 >
                   <span
                     className={`flex-1 text-[18px] font-medium tracking-[-0.015em] md:text-[20px] ${
-                      isOpen ? "text-[#1B1A2E]" : "text-[#4A4A58]"
+                      isOpen ? "text-[#1D1D1F]" : "text-[#424245]"
                     }`}
                   >
                     {item.q}
@@ -245,7 +245,7 @@ export function AssessmentQa() {
 
       <div className="mt-10 text-center">
         <Cta variant="violet" />
-        <p className="mt-4 text-[13px] text-[#6B6B76]">{NOTE}</p>
+        <p className="mt-4 text-[13px] text-[#6E6E73]">{NOTE}</p>
       </div>
     </Section>
   )
@@ -268,7 +268,7 @@ export function AssessmentBanner() {
             {["Un giorno in azienda", "Processi mappati", "Casi d'uso per impatto"].map((c) => (
               <li
                 key={c}
-                className="rounded-full border border-white/70 bg-white/60 px-4 py-2 text-[14px] text-[#4A4A58]"
+                className="rounded-full border border-white/70 bg-white/60 px-4 py-2 text-[14px] text-[#424245]"
               >
                 {c}
               </li>
@@ -277,7 +277,7 @@ export function AssessmentBanner() {
 
           <div className="shrink-0">
             <Cta variant="violet" />
-            <p className="mt-3 text-[13px] text-[#6B6B76]">{NOTE}</p>
+            <p className="mt-3 text-[13px] text-[#6E6E73]">{NOTE}</p>
           </div>
         </div>
       </Glass>

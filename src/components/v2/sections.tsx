@@ -25,12 +25,12 @@ export function V2Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-[#E6E6EA] bg-white/85 backdrop-blur-md">
       <div className="mx-auto flex w-full max-w-[1280px] items-center justify-between gap-6 px-5 py-3.5 md:px-10">
-        <a href="#top" className="text-[17px] font-semibold tracking-[0.18em] text-[#1B1A2E]">
+        <a href="#top" className="text-[17px] font-semibold tracking-[0.18em] text-[#1D1D1F]">
           YUMA
         </a>
-        <nav className="hidden items-center gap-8 text-[14px] text-[#6B6B76] lg:flex">
+        <nav className="hidden items-center gap-8 text-[14px] text-[#6E6E73] lg:flex">
           {items.map((i) => (
-            <a key={i.href} href={i.href} className="transition-colors hover:text-[#1B1A2E]">
+            <a key={i.href} href={i.href} className="transition-colors hover:text-[#1D1D1F]">
               {i.label}
             </a>
           ))}
@@ -57,7 +57,7 @@ export function V2Nav() {
               key={i.href}
               href={i.href}
               onClick={() => setOpen(false)}
-              className="block border-b border-[#E6E6EA] py-4 text-[16px] text-[#1B1A2E]"
+              className="block border-b border-[#E6E6EA] py-4 text-[16px] text-[#1D1D1F]"
             >
               {i.label}
             </a>
@@ -79,7 +79,7 @@ export function V2Hero() {
       <TickGrid />
       <div className="relative mx-auto grid w-full max-w-[1280px] items-center gap-14 px-5 pb-24 pt-20 md:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] md:px-10 md:pb-32 md:pt-24">
         <div>
-          <h1 className="max-w-[16ch] text-balance text-[42px] font-medium leading-[1.02] tracking-[-0.045em] text-[#1B1A2E] sm:text-[58px] md:text-[72px]">
+          <h1 className="max-w-[16ch] text-balance text-[42px] font-medium leading-[1.02] tracking-[-0.045em] text-[#1D1D1F] sm:text-[58px] md:text-[72px]">
             L'AI dove serve davvero, dentro il lavoro che fai già.
           </h1>
           <Lead className="mt-7 max-w-[46ch]">
@@ -96,7 +96,7 @@ export function V2Hero() {
               Richiedi informazioni
             </ButtonLink>
           </div>
-          <p className="mt-10 text-[13px] text-[#6B6B76]">
+          <p className="mt-10 text-[13px] text-[#6E6E73]">
             Impianti e costruzioni · manifattura · distribuzione B2B ·
             farmaceutico
           </p>
@@ -167,7 +167,7 @@ export function V2BeforeAfter() {
       <div className="mt-16 grid gap-4 md:grid-cols-2">
         <Card tone="light">
           <Eyebrow>Prima</Eyebrow>
-          <p className="mt-5 text-[16px] leading-[1.6] text-[#6B6B76] md:text-[17px]">
+          <p className="mt-5 text-[16px] leading-[1.6] text-[#6E6E73] md:text-[17px]">
             Qualcuno imparava a usare il software: schermate, campi obbligatori,
             codici da ricordare. La persona si adattava alla procedura, e serviva
             qualcuno dedicato a inserire i dati, correggerli e tenere insieme i
@@ -294,7 +294,7 @@ export function V2Products() {
             </p>
             <a
               href={p.href}
-              className="group mt-7 inline-flex items-center gap-2 self-start rounded-[6px] bg-white px-5 py-3 text-[15px] font-medium text-[#1B1A2E] transition-colors hover:bg-white/90"
+              className="group mt-7 inline-flex items-center gap-2 self-start rounded-[6px] bg-white px-5 py-3 text-[15px] font-medium text-[#1D1D1F] transition-colors hover:bg-white/90"
             >
               Scopri di più
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -303,9 +303,9 @@ export function V2Products() {
         ))}
       </div>
 
-      <p className="mt-10 text-center text-[15px] text-[#6B6B76]">
+      <p className="mt-10 text-center text-[15px] text-[#6E6E73]">
         Ti interessa solo il software?{" "}
-        <a href="#contatti" className="font-medium text-[#1B1A2E] underline underline-offset-4">
+        <a href="#contatti" className="font-medium text-[#1D1D1F] underline underline-offset-4">
           Richiedi una demo
         </a>
       </p>
@@ -344,13 +344,13 @@ export function V2Process() {
       <div className="mt-16 grid gap-4 md:grid-cols-3">
         {steps.map((s) => (
           <Card key={s.n} tone="light" className="bg-white">
-            <span className="text-[13px] font-medium tabular-nums text-[#6B6B76]">
+            <span className="text-[13px] font-medium tabular-nums text-[#6E6E73]">
               {s.n}
             </span>
-            <h3 className="mt-5 text-[20px] font-medium tracking-[-0.015em] text-[#1B1A2E]">
+            <h3 className="mt-5 text-[20px] font-medium tracking-[-0.015em] text-[#1D1D1F]">
               {s.title}
             </h3>
-            <p className="mt-3 text-[15px] leading-[1.6] text-[#6B6B76]">
+            <p className="mt-3 text-[15px] leading-[1.6] text-[#6E6E73]">
               {s.desc}
             </p>
           </Card>
@@ -390,11 +390,11 @@ export function V2Team() {
         {[0, 1, 2].map((i) => (
           <li key={i} className="rounded-[8px] border border-[#E6E6EA] p-8">
             <div aria-hidden className="h-16 w-16 rounded-full bg-[#F4F4F6]" />
-            <div className="mt-6 text-[17px] font-medium text-[#1B1A2E]">
+            <div className="mt-6 text-[17px] font-medium text-[#1D1D1F]">
               Nome Cognome
             </div>
-            <div className="mt-1 text-[13px] text-[#6B6B76]">Co-founder</div>
-            <p className="mt-3 text-[14px] leading-[1.6] text-[#6B6B76]">
+            <div className="mt-1 text-[13px] text-[#6E6E73]">Co-founder</div>
+            <p className="mt-3 text-[14px] leading-[1.6] text-[#6E6E73]">
               Una riga di descrizione del founder.
             </p>
           </li>
@@ -439,23 +439,23 @@ export function V2Footer() {
     <footer className="border-t border-[#E6E6EA] bg-white">
       <div className="mx-auto flex w-full max-w-[1280px] flex-col gap-8 px-5 py-14 md:flex-row md:items-start md:justify-between md:px-10">
         <div>
-          <div className="text-[16px] font-semibold tracking-[0.18em] text-[#1B1A2E]">
+          <div className="text-[16px] font-semibold tracking-[0.18em] text-[#1D1D1F]">
             YUMA
           </div>
-          <div className="mt-4 space-y-1 text-[13px] leading-[1.6] text-[#6B6B76]">
+          <div className="mt-4 space-y-1 text-[13px] leading-[1.6] text-[#6E6E73]">
             <div>Yuma Tx Srl · P. IVA 14244440963</div>
             <div>Via G. Leopardi 14, 20123 Milano (MI)</div>
             <div>PEC yumatxsrl@pec.it · SDI WY7PJ6k</div>
           </div>
         </div>
-        <nav className="flex flex-col gap-3 text-[14px] text-[#6B6B76]">
-          <a href={links.projects} className="hover:text-[#1B1A2E]">
+        <nav className="flex flex-col gap-3 text-[14px] text-[#6E6E73]">
+          <a href={links.projects} className="hover:text-[#1D1D1F]">
             YUMA Projects
           </a>
-          <a href={links.clientInterface} className="hover:text-[#1B1A2E]">
+          <a href={links.clientInterface} className="hover:text-[#1D1D1F]">
             YUMA Client Interface
           </a>
-          <a href={links.home} className="hover:text-[#1B1A2E]">
+          <a href={links.home} className="hover:text-[#1D1D1F]">
             Versione 1 del sito
           </a>
         </nav>

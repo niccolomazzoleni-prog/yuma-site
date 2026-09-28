@@ -35,7 +35,7 @@ export function ProblemIllustrated() {
               <div className="rounded-[14px] bg-white/45 p-4">
                 <Art />
               </div>
-              <h3 className="mt-6 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E]">
+              <h3 className="mt-6 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F]">
                 {it.title}
               </h3>
               <Body className="mt-3 text-[15px]">{it.desc}</Body>
@@ -65,7 +65,7 @@ export function ProblemStack() {
                 <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1B1A2E] md:text-[30px]">
+                <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[30px]">
                   {it.title}
                 </h3>
                 <Body className="mt-4 max-w-[52ch]">{it.desc}</Body>
@@ -100,7 +100,7 @@ export function ProblemAsymmetric() {
           <div className="rounded-[16px] bg-white/45 p-6">
             <First />
           </div>
-          <h3 className="mt-7 text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1B1A2E] md:text-[28px]">
+          <h3 className="mt-7 text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[28px]">
             {first.title}
           </h3>
           <Body className="mt-4">{first.desc}</Body>
@@ -112,7 +112,7 @@ export function ProblemAsymmetric() {
             return (
               <Glass key={it.title} className="grid gap-5 p-7 md:grid-cols-[minmax(0,1fr)_140px] md:items-center">
                 <div>
-                  <h3 className="text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
+                  <h3 className="text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]">
                     {it.title}
                   </h3>
                   <Body className="mt-3 text-[15px]">{it.desc}</Body>
@@ -148,7 +148,7 @@ export function ProblemDay() {
         {items.map((it, i) => (
           <div
             key={it.title}
-            className={`relative border-t border-[#1B1A2E]/10 py-8 md:border-t-0 md:px-8 md:first:pl-0 md:last:pr-0 ${
+            className={`relative border-t border-[#1D1D1F]/10 py-8 md:border-t-0 md:px-8 md:first:pl-0 md:last:pr-0 ${
               i > 0 ? "md:border-l md:border-t-0" : ""
             }`}
           >
@@ -156,9 +156,9 @@ export function ProblemDay() {
               <span className="rounded-full bg-[#7C5CFA]/12 px-3 py-1 text-[13px] font-medium tabular-nums text-[#5B3FD9]">
                 {day[i].time}
               </span>
-              <span className="text-[13px] text-[#8A8A97]">{day[i].label}</span>
+              <span className="text-[13px] text-[#86868B]">{day[i].label}</span>
             </div>
-            <h3 className="mt-5 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E]">
+            <h3 className="mt-5 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F]">
               {it.title}
             </h3>
             <Body className="mt-3 text-[15px]">{it.desc}</Body>
@@ -181,8 +181,8 @@ export function ProblemConsequences() {
     <Section>
       <Head />
       <Glass className="mt-12 overflow-hidden p-2 md:p-3">
-        <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] border-b border-[#1B1A2E]/10 px-5 py-4 md:px-7">
-          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A3A3AD]">
+        <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] border-b border-[#1D1D1F]/10 px-5 py-4 md:px-7">
+          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
             Cosa succede
           </span>
           <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#E0457B]">
@@ -192,15 +192,15 @@ export function ProblemConsequences() {
         {items.map((it, i) => (
           <div
             key={it.title}
-            className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start gap-6 border-b border-[#1B1A2E]/8 px-5 py-7 last:border-0 md:px-7"
+            className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] items-start gap-6 border-b border-[#1D1D1F]/8 px-5 py-7 last:border-0 md:px-7"
           >
             <div>
-              <h3 className="text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
+              <h3 className="text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]">
                 {it.title}
               </h3>
               <Body className="mt-3 max-w-[52ch] text-[15px]">{it.desc}</Body>
             </div>
-            <p className="text-[16px] leading-[1.5] text-[#4A4A58]">
+            <p className="text-[16px] leading-[1.5] text-[#424245]">
               {consequences[i]}
             </p>
           </div>

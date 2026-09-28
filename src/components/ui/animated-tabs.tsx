@@ -37,13 +37,13 @@ const AnimatedTabs = ({
   const barClass = glass
     ? "bg-white/35 border border-white/60 backdrop-blur-xl"
     : "bg-[#11111198] bg-opacity-50 backdrop-blur-sm";
-  const tabTextClass = glass ? "text-[#4A4A58]" : "text-white";
+  const tabTextClass = glass ? "text-[#424245]" : "text-white";
   const activePillClass = glass
     ? "bg-white/80 shadow-[0_10px_30px_-18px_rgba(1,1,16,0.5)] backdrop-blur-sm"
     : "bg-[#111111d1] bg-opacity-50 shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm";
-  const activeTextClass = glass ? "text-[#1B1A2E]" : "text-white";
+  const activeTextClass = glass ? "text-[#1D1D1F]" : "text-white";
   const panelBaseClass = glass
-    ? "border border-white/65 bg-white/45 text-[#1B1A2E] shadow-[0_40px_90px_-45px_rgba(1,1,16,0.35)] backdrop-blur-2xl"
+    ? "border border-white/65 bg-white/45 text-[#1D1D1F] shadow-[0_40px_90px_-45px_rgba(1,1,16,0.35)] backdrop-blur-2xl"
     : "border border-white/10 bg-[#11111198] bg-opacity-50 text-white shadow-[0_0_20px_rgba(0,0,0,0.2)] backdrop-blur-sm";
 
   return (

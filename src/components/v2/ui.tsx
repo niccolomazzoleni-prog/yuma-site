@@ -5,13 +5,13 @@ import { cn } from "@/lib/utils"
 // chiaro/scuro a tutta larghezza, trama a crocette sul chiaro, card squadrate.
 
 export const V2 = {
-  ink: "#1B1A2E", // testo e fondo delle bande scure
+  ink: "#1D1D1F", // testo e fondo delle bande scure
   band: "#0A0A0F",
   card: "#22222A",
   paper: "#FFFFFF",
   mist: "#F4F4F6",
   line: "#E6E6EA",
-  muted: "#6B6B76",
+  muted: "#6E6E73",
   accent: "#7C5CFA",
 }
 
@@ -26,7 +26,7 @@ export function Eyebrow({
     <p
       className={cn(
         "text-[12px] font-medium uppercase tracking-[0.14em]",
-        tone === "dark" ? "text-white/45" : "text-[#6B6B76]",
+        tone === "dark" ? "text-white/45" : "text-[#6E6E73]",
       )}
     >
       {children}
@@ -48,7 +48,7 @@ export function SectionTitle({
     <h2
       className={cn(
         "text-balance text-[34px] font-medium leading-[1.04] tracking-[-0.035em] sm:text-[44px] md:text-[56px]",
-        tone === "dark" ? "text-white" : "text-[#1B1A2E]",
+        tone === "dark" ? "text-white" : "text-[#1D1D1F]",
         className,
       )}
     >
@@ -70,7 +70,7 @@ export function Lead({
     <p
       className={cn(
         "text-[17px] leading-[1.6] md:text-[19px]",
-        tone === "dark" ? "text-white/60" : "text-[#6B6B76]",
+        tone === "dark" ? "text-white/60" : "text-[#6E6E73]",
         className,
       )}
     >
@@ -116,8 +116,8 @@ export function Band({
     tone === "dark"
       ? "bg-[#0A0A0F] text-white"
       : tone === "mist"
-        ? "bg-[#F4F4F6] text-[#1B1A2E]"
-        : "bg-white text-[#1B1A2E]"
+        ? "bg-[#F4F4F6] text-[#1D1D1F]"
+        : "bg-white text-[#1D1D1F]"
   return (
     <section
       id={id}
@@ -146,7 +146,7 @@ export function Card({
         "rounded-[8px] p-9",
         tone === "dark"
           ? "bg-[#22222A] text-white"
-          : "border border-[#E6E6EA] bg-white text-[#1B1A2E]",
+          : "border border-[#E6E6EA] bg-white text-[#1D1D1F]",
         className,
       )}
     >
@@ -168,10 +168,10 @@ export function ButtonLink({
 }) {
   const styles = {
     primary:
-      "bg-[#1B1A2E] text-white hover:bg-[#22222A]",
-    light: "bg-white text-[#1B1A2E] hover:bg-white/90",
+      "bg-[#1D1D1F] text-white hover:bg-[#22222A]",
+    light: "bg-white text-[#1D1D1F] hover:bg-white/90",
     ghost:
-      "border border-[#E6E6EA] bg-white text-[#1B1A2E] hover:border-[#1B1A2E]",
+      "border border-[#E6E6EA] bg-white text-[#1D1D1F] hover:border-[#1D1D1F]",
   }[variant]
   return (
     <a

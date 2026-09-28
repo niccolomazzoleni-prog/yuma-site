@@ -129,7 +129,7 @@ export function Info({
         <span className="block text-[15px] font-medium text-[#5B3FD9]">
           Infografica n. {n}
         </span>
-        <span className="mt-1 block text-[11px] font-normal text-[#A3A3AD]">
+        <span className="mt-1 block text-[11px] font-normal text-[#A1A1A6]">
           formato {ratio.replace(" / ", ":")}
         </span>
       </span>

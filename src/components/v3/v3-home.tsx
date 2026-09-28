@@ -44,7 +44,7 @@ function PillNav() {
         </nav>
         <a
           href="#contatti"
-          className="rounded-full bg-white px-4 py-2 text-[14px] font-medium text-[#1B1A2E] transition-transform hover:-translate-y-0.5"
+          className="rounded-full bg-white px-4 py-2 text-[14px] font-medium text-[#1D1D1F] transition-transform hover:-translate-y-0.5"
         >
           Prenota una call
         </a>
@@ -55,7 +55,7 @@ function PillNav() {
 
 export default function V3Home() {
   return (
-    <div className="relative min-h-screen text-[#1B1A2E]">
+    <div className="relative min-h-screen text-[#1D1D1F]">
       <GradientField />
       <PillNav />
 

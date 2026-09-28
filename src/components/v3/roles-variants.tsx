@@ -28,11 +28,11 @@ export function RolesSpecList() {
     <Section>
       <div className="grid gap-8 lg:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] lg:gap-14">
         <Head align="left" />
-        <dl className="divide-y divide-[#1B1A2E]/10 border-y border-[#1B1A2E]/10">
+        <dl className="divide-y divide-[#1D1D1F]/10 border-y border-[#1D1D1F]/10">
           {items.map((it) => (
             <div key={it.role} className="grid gap-4 py-7 md:grid-cols-[96px_160px_minmax(0,1fr)] md:items-start md:gap-6">
               <Shot label="Icona" ratio="1 / 1" className="w-full" />
-              <dt className="text-[17px] font-medium tracking-[-0.015em] text-[#1B1A2E]">
+              <dt className="text-[17px] font-medium tracking-[-0.015em] text-[#1D1D1F]">
                 {it.role}
               </dt>
               <dd className="m-0">
@@ -55,7 +55,7 @@ export function RolesCards() {
         {items.map((it) => (
           <Glass key={it.role} className="flex h-full flex-col p-6 md:p-7">
             <Shot label={`Immagine ${it.role}`} ratio="16 / 10" className="w-full" />
-            <h3 className="mt-6 text-[19px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]">
+            <h3 className="mt-6 text-[19px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]">
               {it.role}
             </h3>
             <Body className="mt-3 text-[15px]">{it.desc}</Body>
@@ -82,15 +82,15 @@ export function RolesSelector() {
                 aria-current={i === active}
                 className={`flex w-full items-center justify-between gap-4 rounded-[16px] px-5 py-4 text-left transition-colors ${
                   i === active
-                    ? "border border-white/70 bg-white/70 text-[#1B1A2E]"
-                    : "border border-transparent text-[#4A4A58] hover:bg-white/40"
+                    ? "border border-white/70 bg-white/70 text-[#1D1D1F]"
+                    : "border border-transparent text-[#424245] hover:bg-white/40"
                 }`}
               >
                 <span className="text-[17px] font-medium tracking-[-0.015em]">
                   {it.role}
                 </span>
                 <ChevronRight
-                  className={`h-4 w-4 transition-transform ${i === active ? "text-[#7C5CFA]" : "text-[#A3A3AD]"}`}
+                  className={`h-4 w-4 transition-transform ${i === active ? "text-[#7C5CFA]" : "text-[#A1A1A6]"}`}
                 />
               </button>
             </li>
@@ -99,7 +99,7 @@ export function RolesSelector() {
 
         <Glass className="grid gap-6 p-7 md:grid-cols-[minmax(0,1fr)_200px] md:items-center md:p-8">
           <div>
-            <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[26px]">
+            <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[26px]">
               {items[active].role}
             </h3>
             <Body className="mt-4">{items[active].desc}</Body>
@@ -121,7 +121,7 @@ export function RolesAccordion() {
         {items.map((it, i) => {
           const isOpen = open === i
           return (
-            <div key={it.role} className="border-b border-[#1B1A2E]/8 last:border-0">
+            <div key={it.role} className="border-b border-[#1D1D1F]/8 last:border-0">
               <h3 className="m-0">
                 <button
                   type="button"
@@ -129,7 +129,7 @@ export function RolesAccordion() {
                   aria-expanded={isOpen}
                   className="flex w-full items-center gap-4 py-5 text-left"
                 >
-                  <span className={`flex-1 text-[19px] font-medium tracking-[-0.015em] ${isOpen ? "text-[#1B1A2E]" : "text-[#4A4A58]"}`}>
+                  <span className={`flex-1 text-[19px] font-medium tracking-[-0.015em] ${isOpen ? "text-[#1D1D1F]" : "text-[#424245]"}`}>
                     {it.role}
                   </span>
                   <span className="text-[#7C5CFA]">
@@ -170,7 +170,7 @@ export function RolesSplit() {
               onMouseEnter={() => setActive(i)}
               onFocus={() => setActive(i)}
               onClick={() => setActive(i)}
-              className={`border-t border-[#1B1A2E]/10 py-6 text-left transition-opacity last:border-b ${
+              className={`border-t border-[#1D1D1F]/10 py-6 text-left transition-opacity last:border-b ${
                 i === active ? "opacity-100" : "opacity-55"
               }`}
             >
@@ -178,7 +178,7 @@ export function RolesSplit() {
                 <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
-                <h3 className="text-[21px] font-medium tracking-[-0.02em] text-[#1B1A2E] md:text-[24px]">
+                <h3 className="text-[21px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[24px]">
                   {it.role}
                 </h3>
               </div>

@@ -25,7 +25,7 @@ function GreenCheck({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
   )
 }
 
-const itemTitle = "text-[19px] font-medium leading-[1.25] tracking-[-0.02em] text-[#1B1A2E] md:text-[21px]"
+const itemTitle = "text-[19px] font-medium leading-[1.25] tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]"
 
 // ── A · Tre colonne, solo spunta e testo ────────────────────────────────────
 export function SolutionsColumns() {
@@ -55,7 +55,7 @@ export function SolutionsRows() {
           {items.map((it) => (
             <li
               key={it.title}
-              className="flex gap-5 border-b border-[#1B1A2E]/8 px-4 py-7 last:border-0 md:px-6"
+              className="flex gap-5 border-b border-[#1D1D1F]/8 px-4 py-7 last:border-0 md:px-6"
             >
               <GreenCheck />
               <div>
@@ -80,7 +80,7 @@ export function SolutionsSplit() {
           {items.map((it) => (
             <li
               key={it.title}
-              className="grid grid-cols-[32px_minmax(0,1fr)] gap-x-5 border-t border-[#1B1A2E]/10 py-8 last:border-b"
+              className="grid grid-cols-[32px_minmax(0,1fr)] gap-x-5 border-t border-[#1D1D1F]/10 py-8 last:border-b"
             >
               <GreenCheck />
               <div>
@@ -115,7 +115,7 @@ export function SolutionsAchievements() {
                 <h3 className={itemTitle}>{it.title}</h3>
                 <Body className="mt-2 text-[15px]">{it.desc}</Body>
               </div>
-              <span className="hidden text-[28px] font-medium tabular-nums text-[#1B1A2E]/15 md:block">
+              <span className="hidden text-[28px] font-medium tabular-nums text-[#1D1D1F]/15 md:block">
                 {String(i + 1).padStart(2, "0")}
               </span>
             </Glass>
