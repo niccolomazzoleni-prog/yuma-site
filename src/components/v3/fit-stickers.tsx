@@ -17,7 +17,7 @@ export function FitStickers({
     <Section id="a-chi-e-rivolto" className="pt-0">
       <div className="mx-auto max-w-[820px] text-center">
         <Eyebrow>{forWhom.label}</Eyebrow>
-        <Title className="mx-auto mt-5 max-w-[22ch]">{product} fa per te se:</Title>
+        <Title className="mx-auto mt-5 max-w-[22ch]">{product} fa per la tua azienda se:</Title>
       </div>
 
       <div className="mx-auto mt-14 grid max-w-[1000px] gap-6 md:grid-cols-2">
