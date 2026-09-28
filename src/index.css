@@ -1,5 +1,16 @@
 @import "../design/tokens.css";
 
+/* Geist servito dal sito (licenza OFL in assets/fonts): niente foglio di Google
+   che blocca il primo disegno della pagina. Variabile, pesi 100-900, latino. */
+@font-face {
+  font-family: "Geist";
+  font-style: normal;
+  font-display: swap;
+  font-weight: 100 900;
+  src: url("./assets/fonts/geist-latin-wght-normal.woff2") format("woff2-variations");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -82,7 +93,7 @@
   justify-content: center;
   gap: 16px;
   padding: 13px 24px;
-  background: #7c5cfa;
+  background: #6d4cf2;
   box-shadow: 0 -1px 12px rgba(0, 0, 0, 0.08);
   transition: box-shadow 0.35s ease;
 }
@@ -162,43 +173,55 @@
   font-size: 1.2rem;
   cursor: pointer;
   line-height: 1;
-  padding: 4px 8px;
+  /* area di tocco 44x44 */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
   transition: color 0.15s;
 }
 .wa-bar-close:hover {
   color: #fff;
 }
-/* Spazio sotto il footer per non coprire contenuto */
-body.has-wa-bar main {
-  padding-bottom: 60px;
+/* Spazio in fondo alla pagina (footer compreso) per non finire sotto la barra */
+body.has-wa-bar {
+  padding-bottom: 64px;
+}
+.wa-bar {
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    opacity 0.35s,
+    box-shadow 0.35s ease;
+}
+.wa-bar--hidden {
+  transform: translateY(110%);
+  opacity: 0;
+  pointer-events: none;
+}
+/* col menu mobile aperto la barra non serve */
+body.nav-open .wa-bar {
+  display: none;
 }
 @media (max-width: 600px) {
+  /* su telefono resta solo il pulsante, centrato: la frase veniva troncata */
   .wa-bar {
     flex-wrap: nowrap;
     gap: 10px;
-    padding: 12px 44px 12px 14px;
-    justify-content: flex-start;
+    padding: 10px 56px;
+    justify-content: center;
   }
   .wa-bar p {
-    flex: 1;
-    min-width: 0;
-    font-size: 0.73rem;
-    overflow: hidden;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    display: block;
+    display: none;
   }
   .wa-bar a.wa-btn {
     flex-shrink: 0;
-    font-size: 0.75rem;
-    padding: 7px 12px;
-    gap: 0;
-  }
-  .wa-bar a.wa-btn svg {
-    display: none;
+    font-size: 0.85rem;
+    padding: 9px 16px;
   }
   .wa-bar-close {
-    right: 12px;
+    right: 6px;
   }
 }
 
@@ -206,4 +229,43 @@ body.has-wa-bar main {
 .v2 {
   font-family: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
   font-feature-settings: "ss01";
+}
+
+
+/* ── Pagine pubbliche v3: accessibilità e comportamento comune ─────────────── */
+/* le ancore e il focus non finiscono sotto la barra in alto o quella WhatsApp */
+html {
+  scroll-padding-top: 96px;
+  scroll-padding-bottom: 80px;
+}
+
+/* menu mobile */
+@keyframes yuma-slide-in {
+  from { transform: translateX(100%); }
+  to { transform: none; }
+}
+@keyframes yuma-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.yuma-slide-in { animation: yuma-slide-in 0.32s cubic-bezier(0.2, 0.8, 0.2, 1); }
+.yuma-fade-in { animation: yuma-fade-in 0.25s ease; }
+
+/* "riduci animazioni" del sistema operativo */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto !important; }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* sfondo chiaro sotto il gradiente: niente nero nel rimbalzo dello scroll su Mac e iPhone */
+body.v3-page {
+  background: #f7f7fb;
+  color: #1d1d1f;
 }

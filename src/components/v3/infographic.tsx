@@ -86,6 +86,31 @@ const READY: Record<number, { file: string; alt: string }> = {
     alt: "Documenti che diventano grafici e tabelle di confronto aggiornati",
   },
 }
+
+// Dimensioni reali dei file: con width/height il browser riserva lo spazio
+// prima che l'immagine arrivi e la pagina non salta mentre scorri.
+const SIZE: Record<string, [number, number]> = {
+  "infografica-01.webp": [1280, 960],
+  "infografica-02.webp": [1280, 960],
+  "infografica-03.webp": [1280, 960],
+  "infografica-04.webp": [1280, 960],
+  "infografica-05.webp": [1280, 960],
+  "infografica-06.webp": [1280, 853],
+  "infografica-07.webp": [1280, 853],
+  "infografica-08-v3.webp": [1280, 960],
+  "infografica-09.webp": [1916, 821],
+  "infografica-10.webp": [1448, 1086],
+  "infografica-11.webp": [1448, 1086],
+  "infografica-12.webp": [1448, 1086],
+  "infografica-13.webp": [1448, 1086],
+  "infografica-14.webp": [1448, 1086],
+  "infografica-16.webp": [1086, 1448],
+  "infografica-17.webp": [1086, 1448],
+  "infografica-18.webp": [1086, 1448],
+  "infografica-23.webp": [1672, 941],
+  "infografica-24.webp": [1672, 941],
+  "infografica-25.webp": [1672, 941],
+}
 export function Info({
   n,
   ratio = "4 / 3",
@@ -108,6 +133,8 @@ export function Info({
     return (
       <img
         src={source}
+        width={ready ? SIZE[ready.file]?.[0] : undefined}
+        height={ready ? SIZE[ready.file]?.[1] : undefined}
         alt={description ?? `Infografica ${n}`}
         loading="lazy"
         className={cn("h-full w-full object-cover", className)}
@@ -129,7 +156,7 @@ export function Info({
         <span className="block text-[15px] font-medium text-[#5B3FD9]">
           Infografica n. {n}
         </span>
-        <span className="mt-1 block text-[11px] font-normal text-[#A1A1A6]">
+        <span className="mt-1 block text-[11px] font-normal text-[#56565B]">
           formato {ratio.replace(" / ", ":")}
         </span>
       </span>

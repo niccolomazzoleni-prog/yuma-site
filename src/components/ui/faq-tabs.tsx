@@ -1,7 +1,8 @@
-import { useState, type ReactNode } from "react"
+import { useId, useState, type ReactNode } from "react"
 import { AnimatePresence, motion } from "framer-motion"
 import { Plus } from "lucide-react"
 import { cn } from "@/lib/utils"
+import { useTabs } from "@/lib/use-tabs"
 
 // FAQ a categorie (21st.dev): le schede in alto filtrano le domande, ogni
 // domanda si apre con il "+" che ruota. Portato a TypeScript e ai colori YUMA
@@ -29,12 +30,15 @@ export function FAQ({
 }) {
   const categoryKeys = Object.keys(categories)
   const [selected, setSelected] = useState(categoryKeys[0])
+  const { tab, panel } = useTabs(categoryKeys.length, categoryKeys.indexOf(selected), (i) =>
+    setSelected(categoryKeys[i]),
+  )
 
   return (
     <section id="faq" className={cn("relative", className)}>
       <div className="relative z-10 flex flex-col items-center justify-center text-center">
         {subtitle ? (
-          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
+          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#5B3FD9]">
             {subtitle}
           </span>
         ) : null}
@@ -43,17 +47,17 @@ export function FAQ({
         </h2>
       </div>
 
-      <div className="relative z-10 mt-10 flex flex-wrap items-center justify-center gap-3">
-        {Object.entries(categories).map(([key, label]) => (
+      <div role="tablist" aria-label="Categorie di domande" className="relative z-10 mt-10 flex flex-wrap items-center justify-center gap-3">
+        {Object.entries(categories).map(([key, label], i) => (
           <button
             key={key}
             type="button"
+            {...tab(i)}
             onClick={() => setSelected(key)}
-            aria-current={selected === key}
             className={cn(
               "relative overflow-hidden whitespace-nowrap rounded-full border px-4 py-2 text-[14px] font-medium transition-colors duration-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA]",
               selected === key
-                ? "border-[#7C5CFA] text-white"
+                ? "border-[#6D4CF2] text-white"
                 : "border-white/70 bg-white/50 text-[#424245] hover:text-[#1D1D1F]",
             )}
           >
@@ -65,7 +69,7 @@ export function FAQ({
                   animate={{ y: "0%" }}
                   exit={{ y: "100%" }}
                   transition={{ duration: 0.5, ease: "backIn" }}
-                  className="absolute inset-0 z-0 bg-[#7C5CFA]"
+                  className="absolute inset-0 z-0 bg-[#6D4CF2]"
                 />
               )}
             </AnimatePresence>
@@ -73,7 +77,7 @@ export function FAQ({
         ))}
       </div>
 
-      <div className="mx-auto mt-10 max-w-[880px]">
+      <div {...panel()} className="mx-auto mt-10 max-w-[880px] outline-none">
         <AnimatePresence mode="wait">
           {Object.entries(faqData).map(([category, questions]) =>
             selected === category ? (
@@ -99,6 +103,7 @@ export function FAQ({
 
 function FAQItem({ question, answer }: FaqEntry) {
   const [isOpen, setIsOpen] = useState(false)
+  const answerId = useId()
 
   return (
     <motion.div
@@ -117,7 +122,8 @@ function FAQItem({ question, answer }: FaqEntry) {
         type="button"
         onClick={() => setIsOpen(!isOpen)}
         aria-expanded={isOpen}
-        className="flex w-full items-center justify-between gap-4 p-5 text-left md:p-6"
+        aria-controls={answerId}
+        className="flex w-full items-center justify-between gap-4 p-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#7C5CFA] md:p-6"
       >
         <span
           className={cn(
@@ -132,7 +138,7 @@ function FAQItem({ question, answer }: FaqEntry) {
           transition={{ duration: 0.2 }}
           className="shrink-0"
         >
-          <Plus className={cn("h-5 w-5", isOpen ? "text-[#7C5CFA]" : "text-[#A1A1A6]")} />
+          <Plus className={cn("h-5 w-5", isOpen ? "text-[#7C5CFA]" : "text-[#56565B]")} />
         </motion.span>
       </button>
 
@@ -140,7 +146,9 @@ function FAQItem({ question, answer }: FaqEntry) {
         initial={false}
         animate={{ height: isOpen ? "auto" : 0, marginBottom: isOpen ? 20 : 0 }}
         transition={{ duration: 0.3, ease: "easeInOut" }}
-        className="overflow-hidden px-5 md:px-6"
+        id={answerId}
+        aria-hidden={!isOpen}
+        className={cn("overflow-hidden px-5 md:px-6", !isOpen && "invisible")}
       >
         <p className="max-w-[62ch] text-[16px] leading-[1.55] text-[#424245]">{answer}</p>
       </motion.div>

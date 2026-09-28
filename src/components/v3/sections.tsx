@@ -74,7 +74,7 @@ export function WhyNow() {
 
       <div className="mt-10 grid gap-5 md:grid-cols-2">
         <Glass className="p-8 md:p-10">
-          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
+          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#56565B]">
             Prima
           </p>
           <Body className="mt-5">
@@ -243,7 +243,7 @@ export function HowWeWork() {
         {steps.map((s) => (
           <li key={s.n}>
             <Glass className="h-full p-8">
-              <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
+              <span className="text-[13px] font-medium tabular-nums text-[#5B3FD9]">
                 {s.n}
               </span>
               <h3 className="mt-4 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[22px]">
@@ -282,21 +282,24 @@ export function Team() {
       <ul className="mt-12 grid gap-5 sm:grid-cols-3">
         {[0, 1, 2].map((i) => (
           <li key={i}>
-            <Glass className="h-full p-6 text-center md:p-7">
+            {/* su telefono foto piccola accanto al testo, da sm in su foto quadrata sopra */}
+            <Glass className="flex h-full items-start gap-4 p-5 text-left sm:block sm:p-6 sm:text-center md:p-7">
               <div
                 role="img"
                 aria-label="Foto del founder (segnaposto)"
-                className="flex aspect-square w-full items-center justify-center rounded-[18px] border border-dashed border-[#7C5CFA]/35 bg-white/45 text-[12px] font-medium text-[#86868B]"
+                className="flex aspect-square w-24 shrink-0 items-center justify-center rounded-[18px] border border-dashed border-[#7C5CFA]/35 bg-white/45 text-[12px] font-medium text-[#56565B] sm:w-full"
               >
                 Foto
               </div>
-              <div className="mt-6 text-[17px] font-medium text-[#1D1D1F]">
-                Nome Cognome
+              <div>
+                <div className="text-[17px] font-medium text-[#1D1D1F] sm:mt-6">
+                  Nome Cognome
+                </div>
+                <div className="mt-1 text-[13px] text-[#56565B]">Co-founder</div>
+                <Body className="mt-3 text-[15px]">
+                  Una riga di descrizione del founder.
+                </Body>
               </div>
-              <div className="mt-1 text-[13px] text-[#6E6E73]">Co-founder</div>
-              <Body className="mt-3 text-[15px]">
-                Una riga di descrizione del founder.
-              </Body>
             </Glass>
           </li>
         ))}
@@ -309,15 +312,17 @@ export function Team() {
 export function Clients() {
   return (
     <Section id="clienti" className="pt-0">
-      <Glass className="p-10 text-center md:p-12">
-        <Eyebrow>I nostri clienti e partner</Eyebrow>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-5">
+      <Glass className="p-6 text-center md:p-12">
+        <h2 className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#5B3FD9]">
+          I nostri clienti e partner
+        </h2>
+        <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-5">
           {[0, 1, 2, 3, 4].map((i) => (
             <div
               key={i}
               role="img"
               aria-label="Logo cliente (segnaposto)"
-              className="flex h-16 w-36 items-center justify-center rounded-[12px] border border-dashed border-[#7C5CFA]/30 bg-white/45 text-[12px] font-medium text-[#A1A1A6]"
+              className="flex h-16 w-full items-center justify-center rounded-[12px] border border-dashed border-[#7C5CFA]/30 bg-white/45 text-[12px] font-medium text-[#56565B] sm:w-36"
             >
               Logo
             </div>
@@ -333,7 +338,7 @@ export function Clients() {
 export function Assessment() {
   return (
     <Section id="assessment" className="pt-0">
-      <Glass className="mx-auto max-w-[920px] p-10 text-center md:p-14">
+      <Glass className="mx-auto max-w-[920px] p-6 text-center sm:p-10 md:p-14">
         <Eyebrow>Da dove si parte</Eyebrow>
         <Title className="mx-auto mt-5 max-w-[24ch]">
           Ogni percorso di consulenza inizia con un assessment AI: un modo
@@ -400,7 +405,7 @@ export function Footer() {
               </a>{" "}
               · SDI WY7PJ6k
             </div>
-            <div className="text-[#9A9AA6]">
+            <div className="text-[#56565B]">
               Email pubblica da confermare
             </div>
           </div>

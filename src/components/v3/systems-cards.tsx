@@ -10,7 +10,7 @@ const icons = [Plug, Merge, ShieldCheck]
 
 function TodoTag() {
   return (
-    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#A1A1A6]">
+    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#56565B]">
       da confermare
     </span>
   )
@@ -57,7 +57,7 @@ export function CardsRule({ items }: { items: Item[] }) {
       {items.map((it, i) => (
         <Glass key={it.title} className="relative flex h-full flex-col overflow-hidden p-7 md:p-8">
           <span aria-hidden className="absolute inset-x-0 top-0 h-[3px] bg-[#7C5CFA]" />
-          <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
+          <span className="text-[13px] font-medium tabular-nums text-[#5B3FD9]">
             {String(i + 1).padStart(2, "0")}
           </span>
           <h3 className="mt-4 text-[19px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[20px]">

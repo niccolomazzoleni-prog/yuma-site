@@ -41,7 +41,7 @@ export function RolesSelector({
                 </span>
                 <ChevronRight
                   className={`h-4 w-4 transition-transform ${
-                    i === active ? "text-[#7C5CFA]" : "text-[#A1A1A6]"
+                    i === active ? "text-[#7C5CFA]" : "text-[#56565B]"
                   }`}
                 />
               </button>

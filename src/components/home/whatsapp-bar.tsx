@@ -23,7 +23,10 @@ function WaIcon({ className }: { className?: string }) {
 
 export function WhatsAppBar() {
   const [open, setOpen] = useState(true)
-  const barRef = useRef<HTMLDivElement>(null)
+  // compare dopo l'hero e si toglie di mezzo quando è in vista il modulo
+  const [pastHero, setPastHero] = useState(false)
+  const [formInView, setFormInView] = useState(false)
+  const barRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     document.body.classList.toggle("has-wa-bar", open)
@@ -34,12 +37,44 @@ export function WhatsAppBar() {
 
   useEffect(() => () => document.body.classList.remove("has-wa-bar"), [])
 
+  useEffect(() => {
+    const onScroll = () => setPastHero(window.scrollY > window.innerHeight * 0.6)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+
+    const forms = ["#contatti", "#demo"]
+      .map((id) => document.querySelector(id))
+      .filter((el): el is Element => Boolean(el))
+    const seen = new Set<Element>()
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => (e.isIntersecting ? seen.add(e.target) : seen.delete(e.target)))
+        setFormInView(seen.size > 0)
+      },
+      { threshold: 0.15 },
+    )
+    forms.forEach((f) => io.observe(f))
+    return () => {
+      window.removeEventListener("scroll", onScroll)
+      io.disconnect()
+    }
+  }, [])
+
+  const hidden = !pastHero || formInView
+
+  // quando è nascosta non deve ricevere il focus da tastiera
+  useEffect(() => {
+    barRef.current?.toggleAttribute("inert", hidden)
+  }, [hidden, open])
+
   if (!open) return null
 
   return (
-    <div
+    <aside
       ref={barRef}
-      className="wa-bar"
+      aria-label="Contatto WhatsApp"
+      aria-hidden={hidden}
+      className={`wa-bar${hidden ? " wa-bar--hidden" : ""}`}
       onMouseMove={(e) => {
         const bar = barRef.current
         if (!bar) return
@@ -62,15 +97,16 @@ export function WhatsAppBar() {
         rel="noopener"
       >
         <WaIcon className="shrink-0" /> Contattaci su WhatsApp
+        <span className="sr-only"> (si apre in una nuova scheda)</span>
       </a>
       <button
         type="button"
-        aria-label="Chiudi"
+        aria-label="Chiudi la barra WhatsApp"
         className="wa-bar-close"
         onClick={() => setOpen(false)}
       >
         ×
       </button>
-    </div>
+    </aside>
   )
 }

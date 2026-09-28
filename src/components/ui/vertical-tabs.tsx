@@ -68,7 +68,7 @@ export function VerticalTabs({
 
   const ink = tone === "dark" ? "text-white" : "text-[#1D1D1F]"
   const muted = tone === "dark" ? "text-white/55" : "text-[#6E6E73]"
-  const dim = tone === "dark" ? "text-white/35" : "text-[#A1A1A6]"
+  const dim = tone === "dark" ? "text-white/35" : "text-[#56565B]"
   const rule = tone === "dark" ? "border-white/15" : "border-[#1D1D1F]/10"
   const track = tone === "dark" ? "bg-white/15" : "bg-[#1D1D1F]/10"
   const bar = tone === "dark" ? "bg-white" : "bg-[#7C5CFA]"

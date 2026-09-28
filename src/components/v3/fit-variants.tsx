@@ -31,7 +31,7 @@ function Head() {
 
 function NotFor() {
   return (
-    <p className="mx-auto mt-8 max-w-[760px] text-center text-[15px] leading-[1.6] text-[#86868B]">
+    <p className="mx-auto mt-8 max-w-[760px] text-center text-[15px] leading-[1.6] text-[#56565B]">
       {f.notFor}
     </p>
   )

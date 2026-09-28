@@ -15,6 +15,17 @@ const READY: Record<number, { file: string; alt: string; position?: string }> = 
   8: { file: "foto-08.webp", alt: "Titolare e project manager in un container di cantiere che confrontano preventivo e consuntivo" },
 }
 
+const SIZE: Record<string, [number, number]> = {
+  "foto-01.webp": [1536, 1024],
+  "foto-02.webp": [1200, 800],
+  "foto-03.webp": [1200, 800],
+  "foto-04.webp": [768, 512],
+  "foto-05.webp": [768, 512],
+  "foto-06.webp": [768, 512],
+  "foto-07.webp": [768, 512],
+  "foto-08.webp": [768, 512],
+}
+
 export function PhotoSlot({
   n,
   subject,
@@ -33,6 +44,8 @@ export function PhotoSlot({
     return (
       <img
         src={`${import.meta.env.BASE_URL}${ready.file}`}
+        width={SIZE[ready.file]?.[0]}
+        height={SIZE[ready.file]?.[1]}
         alt={ready.alt}
         loading="lazy"
         className={cn("w-full rounded-[16px] object-cover", className)}
@@ -59,7 +72,7 @@ export function PhotoSlot({
         <span className="mt-1.5 block text-[13px] leading-[1.45] text-[#6E6E73]">
           Foto di {subject}
         </span>
-        <span className="mt-2 block text-[11px] text-[#A1A1A6]">
+        <span className="mt-2 block text-[11px] text-[#56565B]">
           formato {ratio.replace(" / ", ":")}
         </span>
       </span>

@@ -9,7 +9,7 @@ import {
   Section,
   Title,
 } from "@/components/v3/glass"
-import { Shot } from "@/components/v3/landing"
+import { Shot } from "@/components/v3/shot"
 import { SelectorBlock, type SelectorItem } from "@/components/v3/selector-block"
 import { SystemsDiagramBlock } from "@/components/v3/systems-diagram"
 import { StepsWizard } from "@/components/v3/steps-wizard"
@@ -17,6 +17,7 @@ import { FAQ, type FaqData } from "@/components/ui/faq-tabs"
 import { PhotoSlot } from "@/components/v3/photo-slot"
 import { CompareCardsBlock } from "@/components/v3/compare-variants"
 import { SolutionsAccordionBlock } from "@/components/v3/solutions-variants"
+import { MobileNav, SiteFooter, SkipLink } from "@/components/v3/site-chrome"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import { LeadForm } from "@/components/v3/lead-form"
@@ -29,7 +30,7 @@ import { projectsContent as c } from "@/lib/landing-content"
 
 function TodoTag() {
   return (
-    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#A1A1A6]">
+    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#56565B]">
       da confermare
     </span>
   )
@@ -38,7 +39,7 @@ function TodoTag() {
 function Cta({ children, href = "#demo", variant = "violet" }: { children: React.ReactNode; href?: string; variant?: "violet" | "ghost" }) {
   const styles =
     variant === "violet"
-      ? "bg-[#7C5CFA] text-white"
+      ? "bg-[#6D4CF2] text-white"
       : "border border-white/70 bg-white/60 text-[#1D1D1F] backdrop-blur-xl"
   return (
     <a
@@ -60,21 +61,24 @@ function Nav() {
     { label: "FAQ", href: "#faq" },
   ]
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-5 pt-5">
-      <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-6 rounded-full border border-white/70 bg-white/55 px-5 py-2.5 backdrop-blur-xl md:px-6">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 md:pt-5">
+      <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-full border border-white/70 bg-white/55 px-5 py-2 backdrop-blur-xl md:px-6">
         <a href={links.home} className="text-[15px] font-semibold tracking-[0.18em] text-[#1D1D1F]">
           YUMA
         </a>
-        <nav className="hidden items-center gap-7 text-[14px] text-[#424245] lg:flex">
+        <nav aria-label="Principale" className="hidden items-center gap-7 text-[14px] text-[#424245] lg:flex">
           {items.map((i) => (
             <a key={i.href} href={i.href} className="transition-colors hover:text-[#1D1D1F]">
               {i.label}
             </a>
           ))}
         </nav>
-        <a href="#demo" className="rounded-full bg-[#7C5CFA] px-4 py-2 text-[14px] font-medium text-white">
-          Richiedi una demo
-        </a>
+        <div className="flex items-center gap-2">
+          <a href="#demo" className="rounded-full bg-[#6D4CF2] px-4 py-2.5 text-[14px] font-medium text-white">
+            Richiedi una demo
+          </a>
+          <MobileNav anchors={items} current="projects" cta={{ label: "Richiedi una demo", href: "#demo" }} />
+        </div>
       </div>
     </header>
   )
@@ -87,11 +91,11 @@ function Hero() {
       <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.05fr)] lg:gap-14">
         <div>
           <Eyebrow>{c.product}</Eyebrow>
-          <h1 className="mt-5 max-w-[18ch] text-balance text-[36px] font-medium leading-[1.03] tracking-[-0.04em] text-[#1D1D1F] sm:text-[46px] lg:text-[54px]">
+          <h1 className="mt-5 max-w-[18ch] text-balance text-[32px] font-medium leading-[1.03] tracking-[-0.04em] text-[#1D1D1F] sm:text-[46px] lg:text-[44px] xl:text-[54px]">
             {c.hero.headline}
           </h1>
           <Lead className="mt-6 max-w-[52ch]">{c.hero.sub}</Lead>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap [&>a]:justify-center sm:[&>a]:justify-start">
             <Cta>{c.hero.cta}</Cta>
             <Cta href={links.home} variant="ghost">
               Scopri YUMA
@@ -125,7 +129,7 @@ function Credibility() {
         {claim.text}
       </p>
       {c.credibility.note ? (
-        <p className="mt-3 text-center text-[15px] text-[#86868B]">
+        <p className="mt-3 text-center text-[15px] text-[#56565B]">
           {c.credibility.note}
           <TodoTag />
         </p>
@@ -151,7 +155,7 @@ function Problem() {
         {p.sub ? <Lead className="mx-auto mt-5 max-w-[62ch]">{p.sub}</Lead> : null}
       </div>
 
-      <p className="mt-14 text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
+      <p className="mt-14 text-[12px] font-medium uppercase tracking-[0.14em] text-[#56565B]">
         {p.causesTitle}
       </p>
 
@@ -164,7 +168,7 @@ function Problem() {
               className="grid items-center gap-8 p-8 md:grid-cols-2 md:gap-12 md:p-10"
             >
               <div className={imageFirst ? "md:order-2" : ""}>
-                <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+                <span className="text-[12px] font-medium tabular-nums text-[#5B3FD9]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[30px]">
@@ -203,7 +207,7 @@ function Problem() {
 const statusStyle: Record<string, string> = {
   attivo: "bg-[#7C5CFA]/15 text-[#5B3FD9]",
   "in rilascio": "bg-[#F5A623]/25 text-[#7A4E00] ring-1 ring-inset ring-[#F5A623]/45",
-  "in sviluppo": "bg-[#F5A623]/15 text-[#8A5E14] ring-1 ring-inset ring-[#F5A623]/30",
+  "in sviluppo": "bg-[#F5A623]/15 text-[#7A4E00] ring-1 ring-inset ring-[#F5A623]/30",
 }
 
 function Modules() {
@@ -229,7 +233,7 @@ function Modules() {
       />
       <div className="mx-auto -mt-16 max-w-[1180px] px-5 pb-20 text-center md:pb-28">
         {c.modules.note ? (
-          <p className="text-[14px] text-[#86868B]">
+          <p className="text-[14px] text-[#56565B]">
             {c.modules.note.text}
             <TodoTag />
           </p>
@@ -302,10 +306,10 @@ function Fit() {
 
       <Glass className="mx-auto mt-12 max-w-[880px] p-8 md:p-10">
         <div className="flex items-baseline justify-between gap-4 border-b border-[#1D1D1F]/10 pb-5">
-          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
+          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#56565B]">
             Quante te ne riconosci?
           </span>
-          <span className="text-[15px] font-medium tabular-nums text-[#7C5CFA]">
+          <span aria-hidden className="text-[15px] font-medium tabular-nums text-[#5B3FD9]">
             {done.length} / {c.forWhom.bullets.length}
           </span>
         </div>
@@ -323,9 +327,10 @@ function Fit() {
                 className="flex items-start gap-4 border-b border-[#1D1D1F]/8 py-6 last:border-0"
               >
                 <span
+                  aria-hidden
                   className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] border transition-all duration-500 ${
                     isDone
-                      ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
+                      ? "border-[#6D4CF2] bg-[#6D4CF2] text-white"
                       : "border-[#1D1D1F]/20 bg-white/60 text-transparent"
                   }`}
                 >
@@ -333,7 +338,7 @@ function Fit() {
                 </span>
                 <span
                   className={`text-[17px] leading-[1.5] transition-colors duration-500 ${
-                    isDone ? "text-[#1D1D1F]" : "text-[#A1A1A6]"
+                    isDone ? "text-[#1D1D1F]" : "text-[#56565B]"
                   }`}
                 >
                   {b}
@@ -344,7 +349,7 @@ function Fit() {
         </ul>
       </Glass>
 
-      <p className="mx-auto mt-8 max-w-[760px] text-center text-[15px] leading-[1.6] text-[#86868B]">
+      <p className="mx-auto mt-8 max-w-[760px] text-center text-[15px] leading-[1.6] text-[#56565B]">
         {c.forWhom.notFor}
       </p>
     </Section>
@@ -401,28 +406,6 @@ function DemoForm() {
   )
 }
 
-function Footer() {
-  return (
-    <footer className="border-t border-white/60 bg-white/40 backdrop-blur-xl">
-      <div className="mx-auto flex max-w-[1180px] flex-col gap-6 px-5 py-12 md:flex-row md:items-start md:justify-between">
-        <div>
-          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#1D1D1F]">YUMA</div>
-          <div className="mt-3 space-y-1 text-[13px] leading-[1.6] text-[#6E6E73]">
-            <div>YUMA TX S.r.l. · P. IVA 14244440963</div>
-            <div>Sede legale: Via Giacomo Leopardi 14, Milano</div>
-            <div>PEC yumatxsrl@pec.it · SDI WY7PJ6k</div>
-          </div>
-        </div>
-        <nav className="flex flex-col gap-2 text-[14px] text-[#6E6E73]">
-          <a href={links.home} className="hover:text-[#1D1D1F]">Home</a>
-          <a href={links.clientInterface} className="hover:text-[#1D1D1F]">YUMA Client Interface</a>
-          <a href="#" className="hover:text-[#1D1D1F]">Privacy policy</a>
-        </nav>
-      </div>
-    </footer>
-  )
-}
-
 export default function ProjectsLanding() {
   useEffect(() => {
     document.documentElement.style.colorScheme = "light"
@@ -430,10 +413,11 @@ export default function ProjectsLanding() {
 
   return (
     <div className="relative min-h-screen text-[#1D1D1F]">
+      <SkipLink />
       <GradientField />
       <Nav />
 
-      <main>
+      <main id="contenuto">
         <Hero />
         <Credibility />
         <Problem />
@@ -446,7 +430,7 @@ export default function ProjectsLanding() {
         <DemoForm />
       </main>
 
-      <Footer />
+      <SiteFooter current="projects" />
       <WhatsAppBar />
     </div>
   )

@@ -2,7 +2,6 @@ import { GradientField } from "@/components/v3/glass"
 import {
   Clients,
   Contact,
-  Footer,
   Possibilities,
   Solutions,
   Team,
@@ -13,6 +12,8 @@ import { AssessmentReport } from "@/components/v3/assessment"
 import { HeroSilk } from "@/components/home/hero-silk"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
+import { useEffect, useState } from "react"
+import { MobileNav, SiteFooter, SkipLink } from "@/components/v3/site-chrome"
 
 // Versione 3 — vetro su gradiente viola, hero con shader invariata.
 // I blocchi seguono uno a uno il copy definitivo (10 blocchi della home).
@@ -23,31 +24,63 @@ function PillNav() {
     { label: "Come lavoriamo", href: "#come-lavoriamo" },
     { label: "Assessment", href: "#assessment" },
   ]
+  // sopra l'hero scuro la barra è trasparente; dopo, diventa vetro chiaro
+  const [light, setLight] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setLight(window.scrollY > window.innerHeight - 120)
+    onScroll()
+    window.addEventListener("scroll", onScroll, { passive: true })
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  const linkClass = light
+    ? "transition-colors hover:text-[#1D1D1F]"
+    : "transition-colors hover:text-white"
+
   return (
-    <header className="fixed inset-x-0 top-0 z-50 px-5 pt-5">
-      <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-6 rounded-full border border-white/25 bg-white/10 px-5 py-2.5 text-white backdrop-blur-xl md:px-6">
+    <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 md:pt-5">
+      <div
+        className={`mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-full border px-5 py-2 backdrop-blur-xl transition-colors duration-300 md:px-6 ${
+          light
+            ? "border-white/70 bg-white/55 text-[#1D1D1F]"
+            : "border-white/25 bg-white/10 text-white"
+        }`}
+      >
         <a href="#top" className="text-[15px] font-semibold tracking-[0.18em]">
           YUMA
         </a>
-        <nav className="hidden items-center gap-7 text-[14px] text-white/70 lg:flex">
+        <nav
+          aria-label="Principale"
+          className={`hidden items-center gap-5 text-[14px] lg:flex xl:gap-7 ${light ? "text-[#424245]" : "text-white/80"}`}
+        >
           {items.map((i) => (
-            <a key={i.href} href={i.href} className="transition-colors hover:text-white">
+            <a key={i.href} href={i.href} className={linkClass}>
               {i.label}
             </a>
           ))}
-          <a href={links.projects} className="transition-colors hover:text-white">
+          <a href={links.projects} className={linkClass}>
             YUMA Projects
           </a>
-          <a href={links.clientInterface} className="transition-colors hover:text-white">
+          <a href={links.clientInterface} className={linkClass}>
             Client Interface
           </a>
         </nav>
-        <a
-          href="#contatti"
-          className="rounded-full bg-white px-4 py-2 text-[14px] font-medium text-[#1D1D1F] transition-transform hover:-translate-y-0.5"
-        >
-          Prenota una call
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href="#contatti"
+            className={`rounded-full px-4 py-2.5 text-[14px] font-medium transition-transform hover:-translate-y-0.5 ${
+              light ? "bg-[#6D4CF2] text-white" : "bg-white text-[#1D1D1F]"
+            }`}
+          >
+            Prenota una call
+          </a>
+          <MobileNav
+            anchors={items}
+            current="home"
+            cta={{ label: "Prenota una call", href: "#contatti" }}
+            tone={light ? "light" : "dark"}
+          />
+        </div>
       </div>
     </header>
   )
@@ -56,10 +89,12 @@ function PillNav() {
 export default function V3Home() {
   return (
     <div className="relative min-h-screen text-[#1D1D1F]">
+      <SkipLink />
       <GradientField />
       <PillNav />
 
-      <main id="top">
+      <main id="contenuto">
+        <span id="top" />
         <HeroSilk />
         <StoryAlternating />
         <Possibilities />
@@ -71,7 +106,7 @@ export default function V3Home() {
         <Contact />
       </main>
 
-      <Footer />
+      <SiteFooter current="home" extra={<div>Email pubblica da confermare</div>} />
       <WhatsAppBar />
     </div>
   )

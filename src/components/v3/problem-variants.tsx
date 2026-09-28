@@ -62,7 +62,7 @@ export function ProblemStack() {
               className="grid items-center gap-8 p-8 md:grid-cols-2 md:gap-12 md:p-10"
             >
               <div className={imageFirst ? "md:order-2" : ""}>
-                <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+                <span className="text-[12px] font-medium tabular-nums text-[#5B3FD9]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[30px]">
@@ -156,7 +156,7 @@ export function ProblemDay() {
               <span className="rounded-full bg-[#7C5CFA]/12 px-3 py-1 text-[13px] font-medium tabular-nums text-[#5B3FD9]">
                 {day[i].time}
               </span>
-              <span className="text-[13px] text-[#86868B]">{day[i].label}</span>
+              <span className="text-[13px] text-[#56565B]">{day[i].label}</span>
             </div>
             <h3 className="mt-5 text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F]">
               {it.title}
@@ -182,7 +182,7 @@ export function ProblemConsequences() {
       <Head />
       <Glass className="mt-12 overflow-hidden p-2 md:p-3">
         <div className="grid grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)] border-b border-[#1D1D1F]/10 px-5 py-4 md:px-7">
-          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
+          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#56565B]">
             Cosa succede
           </span>
           <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#E0457B]">

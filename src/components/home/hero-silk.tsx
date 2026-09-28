@@ -1,12 +1,42 @@
+import { useEffect, useState } from "react"
 import { ArrowRight } from "lucide-react"
 import { ShaderBackground } from "@/components/ui/silk-shader"
 
-// HERO SIGILLATO — versione approvata, da non modificare.
+// HERO SIGILLATO — versione approvata. Ritocchi dell'audit (settembre 2026):
+// shader avviato a pagina già disegnata, altezza sicura su iPhone piccoli,
+// velo più scuro dietro al testo solo su telefono. Aspetto desktop invariato.
+
+// Lo shader si compila solo quando il browser è libero: il testo compare
+// subito sul blu di fondo e la seta entra in dissolvenza.
+function DeferredShader() {
+  const [ready, setReady] = useState(false)
+  useEffect(() => {
+    const w = window as Window & {
+      requestIdleCallback?: (cb: () => void, o?: { timeout: number }) => number
+      cancelIdleCallback?: (id: number) => void
+    }
+    if (w.requestIdleCallback) {
+      const id = w.requestIdleCallback(() => setReady(true), { timeout: 1200 })
+      return () => w.cancelIdleCallback?.(id)
+    }
+    const t = window.setTimeout(() => setReady(true), 300)
+    return () => window.clearTimeout(t)
+  }, [])
+  return (
+    <div
+      aria-hidden
+      className={`absolute inset-0 transition-opacity duration-1000 ${ready ? "opacity-100" : "opacity-0"}`}
+    >
+      {ready ? <ShaderBackground className="absolute inset-0 h-full w-full" /> : null}
+    </div>
+  )
+}
+
 export function HeroSilk() {
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-[#0b1026] text-white">
+    <section className="relative min-h-[100svh] w-full overflow-hidden bg-[#0b1026] text-white">
       {/* Animated Silk shader background */}
-      <ShaderBackground className="absolute inset-0 h-full w-full" />
+      <DeferredShader />
 
       {/* Legibility scrim: darkens edges and the lower third so text stays readable */}
       <div
@@ -18,11 +48,18 @@ export function HeroSilk() {
         }}
       />
 
+      {/* velo in più dietro al testo, solo su telefono dove la seta schiarisce */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 md:hidden"
+        style={{ background: "linear-gradient(180deg, rgba(6,9,26,0.55) 0%, rgba(6,9,26,0.25) 60%, rgba(6,9,26,0) 100%)" }}
+      />
+
       {/* Hero content */}
-      <div className="relative z-10 flex h-full items-center">
+      <div className="relative z-10 flex min-h-[100svh] items-center pb-24 pt-28">
         <div className="w-full px-5 md:px-12">
           <div className="max-w-4xl">
-            <h1 className="text-balance text-4xl font-semibold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
+            <h1 className="text-balance text-[32px] font-semibold leading-[1.1] tracking-tight sm:text-5xl md:text-6xl">
               Liberiamo il potenziale inespresso della tua azienda implementando
               l'AI dove serve davvero.
             </h1>

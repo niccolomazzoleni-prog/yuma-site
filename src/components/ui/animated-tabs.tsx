@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { cn } from "@/lib/utils";
+import { useTabs } from "@/lib/use-tabs";
 
 interface Tab {
   id: string;
@@ -30,6 +31,8 @@ const AnimatedTabs = ({
   tone = "dark",
 }: AnimatedTabsProps) => {
   const [activeTab, setActiveTab] = useState<string>(defaultTab || tabs[0]?.id);
+  const activeIndex = Math.max(0, tabs.findIndex((t) => t.id === activeTab));
+  const { tab: tabProps, panel } = useTabs(tabs.length, activeIndex, (i) => setActiveTab(tabs[i].id));
 
   if (!tabs?.length) return null;
 
@@ -48,15 +51,15 @@ const AnimatedTabs = ({
 
   return (
     <div className={cn("flex w-full flex-col gap-y-2", className)}>
-      <div className={cn("flex flex-wrap gap-2 rounded-xl p-1", barClass)}>
-        {tabs.map((tab) => (
+      <div role="tablist" className={cn("flex flex-wrap gap-2 rounded-xl p-1", barClass)}>
+        {tabs.map((tab, i) => (
           <button
             key={tab.id}
             type="button"
+            {...tabProps(i)}
             onClick={() => setActiveTab(tab.id)}
-            aria-current={activeTab === tab.id}
             className={cn(
-              "relative rounded-lg px-3 py-1.5 text-sm font-medium outline-none transition-colors focus-visible:ring-2",
+              "relative flex-1 whitespace-nowrap rounded-lg px-3 py-2.5 text-sm font-medium outline-none transition-colors focus-visible:ring-2 sm:flex-none sm:py-1.5",
               activeTab === tab.id ? activeTextClass : tabTextClass,
               glass ? "focus-visible:ring-[#7C5CFA]/60" : "focus-visible:ring-white/60",
             )}
@@ -74,8 +77,9 @@ const AnimatedTabs = ({
       </div>
 
       <div
+        {...panel()}
         className={cn(
-          "h-full min-h-60 rounded-[20px] p-4",
+          "h-full min-h-60 rounded-[20px] p-4 outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA]/60",
           panelBaseClass,
           panelClassName,
         )}

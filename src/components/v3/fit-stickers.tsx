@@ -32,7 +32,7 @@ export function FitStickers({
                 aria-hidden
                 className="absolute -top-3 left-8 h-6 w-16 rounded-[4px] bg-[#7C5CFA]/25 backdrop-blur-sm"
               />
-              <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
+              <span className="text-[13px] font-medium tabular-nums text-[#5B3FD9]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               {shortLabels?.[i] ? (
@@ -48,7 +48,7 @@ export function FitStickers({
         ))}
       </div>
 
-      <p className="mx-auto mt-10 max-w-[760px] text-center text-[15px] leading-[1.6] text-[#86868B]">
+      <p className="mx-auto mt-10 max-w-[760px] text-center text-[15px] leading-[1.6] text-[#56565B]">
         {forWhom.notFor}
       </p>
     </Section>

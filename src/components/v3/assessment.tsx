@@ -22,7 +22,7 @@ function Cta({ variant = "dark" }: { variant?: "dark" | "violet" }) {
       href="#contatti"
       className={`group inline-flex items-center gap-2 rounded-full px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 ${
         variant === "violet"
-          ? "bg-[#7C5CFA] focus-visible:ring-[#1D1D1F]"
+          ? "bg-[#6D4CF2] focus-visible:ring-[#1D1D1F]"
           : "bg-[#1D1D1F] focus-visible:ring-[#7C5CFA]"
       }`}
     >
@@ -66,7 +66,7 @@ export function AssessmentTwoColumns() {
         </div>
 
         <Glass className="p-8 md:p-10">
-          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
+          <p className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#56565B]">
             Cosa ti resta in mano
           </p>
           <ul className="mt-6 space-y-4">
@@ -118,7 +118,7 @@ export function AssessmentThreeSteps() {
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-[#7C5CFA]/12 text-[#7C5CFA]">
                   <s.icon className="h-5 w-5" />
                 </span>
-                <span className="text-[13px] font-medium tabular-nums text-[#A1A1A6]">
+                <span className="text-[13px] font-medium tabular-nums text-[#56565B]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
               </div>

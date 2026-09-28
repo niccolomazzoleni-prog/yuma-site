@@ -90,7 +90,7 @@ export function RolesSelector() {
                   {it.role}
                 </span>
                 <ChevronRight
-                  className={`h-4 w-4 transition-transform ${i === active ? "text-[#7C5CFA]" : "text-[#A1A1A6]"}`}
+                  className={`h-4 w-4 transition-transform ${i === active ? "text-[#7C5CFA]" : "text-[#56565B]"}`}
                 />
               </button>
             </li>
@@ -175,7 +175,7 @@ export function RolesSplit() {
               }`}
             >
               <div className="flex items-baseline gap-3">
-                <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+                <span className="text-[12px] font-medium tabular-nums text-[#5B3FD9]">
                   {String(i + 1).padStart(2, "0")}
                 </span>
                 <h3 className="text-[21px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[24px]">

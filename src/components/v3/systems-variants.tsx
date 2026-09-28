@@ -13,7 +13,7 @@ const items = sys.items.map((it) => {
 
 function TodoTag() {
   return (
-    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#A1A1A6]">
+    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#56565B]">
       da confermare
     </span>
   )
@@ -181,7 +181,7 @@ export function SystemsTrustBand() {
                 </li>
               ))}
             </ul>
-            <p className="mt-6 text-[14px] text-[#86868B]">
+            <p className="mt-6 text-[14px] text-[#56565B]">
               Il titolare del trattamento resta la tua azienda, YUMA opera come
               responsabile.
               <TodoTag />
@@ -205,7 +205,7 @@ export function SystemsRows() {
             className="grid gap-4 border-t border-[#1D1D1F]/10 py-8 md:grid-cols-[minmax(0,0.6fr)_minmax(0,1fr)] md:gap-12"
           >
             <div className="flex items-baseline gap-4">
-              <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
+              <span className="text-[13px] font-medium tabular-nums text-[#5B3FD9]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[26px]">

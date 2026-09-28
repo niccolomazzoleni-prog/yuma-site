@@ -7,7 +7,7 @@ import { Info } from "@/components/v3/infographic"
 // dati). Riferimenti 21st: Sticky Scroll Reveal (952), Image Text (19322),
 // Alternating Rows With Stats (28168), Growth Story Timeline (28273).
 
-const PHOTO = `${import.meta.env.BASE_URL}team.jpg`
+const PHOTO = `${import.meta.env.BASE_URL}team.webp`
 
 type Beat = {
   id: string
@@ -21,6 +21,8 @@ function Photo({ className = "" }: { className?: string }) {
   return (
     <img
       src={PHOTO}
+      width={800}
+      height={600}
       alt="Il team di YUMA al lavoro"
       loading="lazy"
       className={`h-full w-full object-cover ${className}`}

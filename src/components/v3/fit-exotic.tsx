@@ -36,7 +36,7 @@ function NotFor({ tone = "light" }: { tone?: "light" | "dark" }) {
   return (
     <p
       className={`mx-auto mt-10 max-w-[760px] text-center text-[15px] leading-[1.6] ${
-        tone === "dark" ? "text-white/45" : "text-[#86868B]"
+        tone === "dark" ? "text-white/45" : "text-[#56565B]"
       }`}
     >
       {f.notFor}
@@ -69,7 +69,7 @@ export function FitChecklist() {
       <Head />
       <Glass className="mx-auto mt-12 max-w-[880px] p-8 md:p-10">
         <div className="flex items-baseline justify-between gap-4 border-b border-[#1D1D1F]/10 pb-5">
-          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#A1A1A6]">
+          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#56565B]">
             Quante te ne riconosci?
           </span>
           <span className="text-[15px] font-medium tabular-nums text-[#7C5CFA]">
@@ -92,7 +92,7 @@ export function FitChecklist() {
                 <span
                   className={`mt-0.5 flex h-7 w-7 shrink-0 items-center justify-center rounded-[8px] border transition-all duration-500 ${
                     isDone
-                      ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
+                      ? "border-[#6D4CF2] bg-[#6D4CF2] text-white"
                       : "border-[#1D1D1F]/20 bg-white/60 text-transparent"
                   }`}
                 >
@@ -100,7 +100,7 @@ export function FitChecklist() {
                 </span>
                 <span
                   className={`text-[17px] leading-[1.5] transition-colors duration-500 ${
-                    isDone ? "text-[#1D1D1F]" : "text-[#A1A1A6]"
+                    isDone ? "text-[#1D1D1F]" : "text-[#56565B]"
                   }`}
                 >
                   {b}
@@ -136,7 +136,7 @@ export function FitOrbit() {
           className="absolute inset-[12%] rounded-full border border-dashed border-[#7C5CFA]/30"
         />
         <div className="absolute left-1/2 top-1/2 flex h-[190px] w-[190px] -translate-x-1/2 -translate-y-1/2 flex-col items-center justify-center rounded-full border border-white/70 bg-white/70 p-6 text-center backdrop-blur-xl">
-          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#7C5CFA]">
+          <span className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#5B3FD9]">
             {String(active + 1).padStart(2, "0")}
           </span>
           <p className="mt-3 text-[14px] leading-[1.45] text-[#333336]">
@@ -162,7 +162,7 @@ export function FitOrbit() {
                 : "border-white/60 bg-white/45 hover:bg-white/60"
             }`}
           >
-            <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+            <span className="text-[12px] font-medium tabular-nums text-[#5B3FD9]">
               {String(i + 1).padStart(2, "0")}
             </span>
             <p className="mt-2 text-[14px] leading-[1.45] text-[#333336]">{bullets[i]}</p>
@@ -174,7 +174,7 @@ export function FitOrbit() {
       <ul className="mt-12 grid gap-4 lg:hidden">
         {bullets.map((b, i) => (
           <Glass key={b} className="p-6">
-            <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+            <span className="text-[12px] font-medium tabular-nums text-[#5B3FD9]">
               {String(i + 1).padStart(2, "0")}
             </span>
             <Body className="mt-2 text-[15px]">{b}</Body>
@@ -205,7 +205,7 @@ export function FitStickers() {
                 aria-hidden
                 className="absolute -top-3 left-8 h-6 w-16 rounded-[4px] bg-[#7C5CFA]/25 backdrop-blur-sm"
               />
-              <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
+              <span className="text-[13px] font-medium tabular-nums text-[#5B3FD9]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-[19px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]">

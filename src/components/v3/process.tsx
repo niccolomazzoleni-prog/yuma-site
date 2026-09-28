@@ -112,8 +112,8 @@ export function ProcessVerticalLine() {
                 aria-hidden
                 className={`absolute -left-12 top-0 flex h-11 w-11 items-center justify-center rounded-full border text-[14px] font-medium tabular-nums transition-colors duration-500 md:-left-16 ${
                   i <= active
-                    ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
-                    : "border-[#1D1D1F]/15 bg-white text-[#A1A1A6]"
+                    ? "border-[#6D4CF2] bg-[#6D4CF2] text-white"
+                    : "border-[#1D1D1F]/15 bg-white text-[#56565B]"
                 }`}
               >
                 {i < active ? <Check className="h-5 w-5" /> : s.n}
@@ -182,7 +182,7 @@ export function ProcessBigNumber() {
           {steps.map((s, i) => (
             <li key={s.n}>
               <Glass className="p-7 md:p-9">
-                <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA] lg:hidden">
+                <span className="text-[13px] font-medium tabular-nums text-[#5B3FD9] lg:hidden">
                   {s.n}
                 </span>
                 <h3 className="mt-2 text-[22px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[28px] lg:mt-0">
@@ -242,8 +242,8 @@ export function ProcessStepper() {
                   <span
                     className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border text-[14px] font-medium tabular-nums transition-colors duration-500 ${
                       done
-                        ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
-                        : "border-[#1D1D1F]/15 bg-white/70 text-[#A1A1A6]"
+                        ? "border-[#6D4CF2] bg-[#6D4CF2] text-white"
+                        : "border-[#1D1D1F]/15 bg-white/70 text-[#56565B]"
                     }`}
                   >
                     {s.n}
@@ -263,7 +263,7 @@ export function ProcessStepper() {
                     <h3 className="text-[20px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[24px]">
                       {s.title}
                     </h3>
-                    <span className="text-[13px] text-[#86868B]">{s.short}</span>
+                    <span className="text-[13px] text-[#56565B]">{s.short}</span>
                   </div>
                   <Body className="mt-3">{s.desc}</Body>
                 </div>

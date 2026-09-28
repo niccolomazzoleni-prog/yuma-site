@@ -8,7 +8,7 @@ import type { LandingContent } from "@/lib/landing-content"
 
 function TodoTag() {
   return (
-    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#A1A1A6]">
+    <span className="ml-2 inline-block rounded-[4px] bg-white/70 px-2 py-0.5 align-middle text-[11px] font-medium uppercase tracking-[0.06em] text-[#56565B]">
       da confermare
     </span>
   )
@@ -116,6 +116,8 @@ export function SystemsDiagramBlock({
           <img
             src={image}
             alt={imageAlt ?? "Schema del flusso"}
+            width={1703}
+            height={924}
             loading="lazy"
             className="h-auto w-full rounded-[18px]"
           />

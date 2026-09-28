@@ -29,7 +29,7 @@ export function DirectionEditorial() {
         {/* indice laterale */}
         <aside className="hidden lg:block">
           <div className="sticky top-16 space-y-3 text-[13px] text-[#6E6E73]">
-            <div className="mb-5 text-[12px] uppercase tracking-[0.16em] text-[#A1A1A6]">
+            <div className="mb-5 text-[12px] uppercase tracking-[0.16em] text-[#56565B]">
               Indice
             </div>
             {index.map((i, n) => (
@@ -74,7 +74,7 @@ export function DirectionEditorial() {
           {/* blocco di lettura, niente card */}
           <div className="mt-20 border-t border-[#E3E3DE] pt-10">
             <div className="mb-8 flex items-baseline gap-4">
-              <span className="text-[12px] uppercase tracking-[0.16em] text-[#A1A1A6]">
+              <span className="text-[12px] uppercase tracking-[0.16em] text-[#56565B]">
                 02
               </span>
               <h2 className="text-[26px] font-medium tracking-[-0.03em] md:text-[34px]">
@@ -84,7 +84,7 @@ export function DirectionEditorial() {
             <ol className="divide-y divide-[#E3E3DE] border-y border-[#E3E3DE]">
               {POSSIBILITIES.map((p, i) => (
                 <li key={p} className="grid gap-4 py-7 md:grid-cols-[64px_minmax(0,1fr)]">
-                  <span className="text-[13px] tabular-nums text-[#A1A1A6]">
+                  <span className="text-[13px] tabular-nums text-[#56565B]">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <p className="max-w-[62ch] text-[17px] leading-[1.55] text-[#424245]">
@@ -137,7 +137,7 @@ export function DirectionProduct() {
             {HERO_SUB}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="#" className="inline-flex items-center gap-2 rounded-[8px] bg-[#7C5CFA] px-5 py-3 text-[15px] font-medium text-white">
+            <a href="#" className="inline-flex items-center gap-2 rounded-[8px] bg-[#6D4CF2] px-5 py-3 text-[15px] font-medium text-white">
               Scopri i nostri prodotti <ArrowRight className="h-4 w-4" />
             </a>
             <a href="#" className="inline-flex items-center rounded-[8px] border border-[#E6E6EA] px-5 py-3 text-[15px] font-medium">
@@ -172,7 +172,7 @@ export function DirectionProduct() {
 
         {/* riga loghi */}
         <div className="mt-14 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 border-t border-[#E6E6EA] pt-10">
-          <span className="text-[12px] uppercase tracking-[0.14em] text-[#A1A1A6]">
+          <span className="text-[12px] uppercase tracking-[0.14em] text-[#56565B]">
             Dove lavoriamo
           </span>
           {["Impianti", "Manifattura", "Distribuzione B2B", "Farmaceutico"].map((s) => (
@@ -210,7 +210,7 @@ export function DirectionGlass() {
           <span className="font-semibold tracking-[0.16em] text-[#1D1D1F]">YUMA</span>
           <span>Soluzioni</span>
           <span>Come lavoriamo</span>
-          <span className="rounded-full bg-[#7C5CFA] px-4 py-1.5 text-white">Prenota una call</span>
+          <span className="rounded-full bg-[#6D4CF2] px-4 py-1.5 text-white">Prenota una call</span>
         </div>
 
         <div className="mx-auto max-w-[840px] text-center">
@@ -241,7 +241,7 @@ export function DirectionGlass() {
                   "0 40px 90px -45px rgba(1,1,16,0.35), inset 0 1px 0 rgba(255,255,255,0.85)",
               }}
             >
-              <span className="text-[12px] uppercase tracking-[0.14em] text-[#7C5CFA]">
+              <span className="text-[12px] uppercase tracking-[0.14em] text-[#5B3FD9]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <p className="mt-5 text-[16px] leading-[1.5] text-[#333336]">{p}</p>

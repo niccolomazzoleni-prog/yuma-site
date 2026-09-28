@@ -25,7 +25,7 @@ export default function FitCompare() {
       <GradientField />
       <header className="sticky top-0 z-50 border-b border-white/50 bg-white/70 backdrop-blur-xl">
         <div className="mx-auto flex max-w-[1180px] flex-wrap items-center gap-3 px-5 py-4">
-          <span className="mr-3 text-[12px] uppercase tracking-[0.14em] text-[#A1A1A6]">
+          <span className="mr-3 text-[12px] uppercase tracking-[0.14em] text-[#56565B]">
             Fa per te se
           </span>
           {options.map((o, i) => (

@@ -335,65 +335,79 @@ export function ShaderBackground({ className }: { className?: string }) {
     gl.linkProgram(program)
     gl.deleteShader(vertexShader)
     gl.deleteShader(fragmentShader)
-    gl.useProgram(program)
+    // Con KHR_parallel_shader_compile il driver compila in un altro thread:
+    // la prima lettura dal programma aspetterebbe la compilazione bloccando la
+    // pagina per un secondo abbondante sui telefoni. Si prepara tutto solo
+    // quando il programma è pronto (vedi whenCompiled in fondo).
+    const parallel = gl.getExtension("KHR_parallel_shader_compile")
+    let buf: WebGLBuffer | null = null
+    let uni = {} as Record<
+      "colors" | "scene" | "shape" | "surface" | "finish" | "transform" | "space" | "cursor",
+      WebGLUniformLocation | null
+    >
+    let ready = false
+    const setup = () => {
+      gl.useProgram(program)
 
-    const buf = gl.createBuffer()
-    gl.bindBuffer(gl.ARRAY_BUFFER, buf)
-    gl.bufferData(
-      gl.ARRAY_BUFFER,
-      new Float32Array([-1, -1, 3, -1, -1, 3]),
-      gl.STATIC_DRAW,
-    )
-    const loc = gl.getAttribLocation(program, "a_position")
-    gl.enableVertexAttribArray(loc)
-    gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0)
+      buf = gl.createBuffer()
+      gl.bindBuffer(gl.ARRAY_BUFFER, buf)
+      gl.bufferData(
+        gl.ARRAY_BUFFER,
+        new Float32Array([-1, -1, 3, -1, -1, 3]),
+        gl.STATIC_DRAW,
+      )
+      const loc = gl.getAttribLocation(program, "a_position")
+      gl.enableVertexAttribArray(loc)
+      gl.vertexAttribPointer(loc, 2, gl.FLOAT, false, 0, 0)
 
-    const uni = {
-      colors: gl.getUniformLocation(program, "u_colors"),
-      scene: gl.getUniformLocation(program, "u_scene"),
-      shape: gl.getUniformLocation(program, "u_shape"),
-      surface: gl.getUniformLocation(program, "u_surface"),
-      finish: gl.getUniformLocation(program, "u_finish"),
-      transform: gl.getUniformLocation(program, "u_transform"),
-      space: gl.getUniformLocation(program, "u_space"),
-      cursor: gl.getUniformLocation(program, "u_cursor"),
+      uni = {
+        colors: gl.getUniformLocation(program, "u_colors"),
+        scene: gl.getUniformLocation(program, "u_scene"),
+        shape: gl.getUniformLocation(program, "u_shape"),
+        surface: gl.getUniformLocation(program, "u_surface"),
+        finish: gl.getUniformLocation(program, "u_finish"),
+        transform: gl.getUniformLocation(program, "u_transform"),
+        space: gl.getUniformLocation(program, "u_space"),
+        cursor: gl.getUniformLocation(program, "u_cursor"),
+      }
+      gl.uniform3fv(uni.colors, new Float32Array(UNIFORMS.colors.flat()))
+      gl.uniform4f(
+        uni.shape,
+        UNIFORMS.scale,
+        UNIFORMS.intensity,
+        UNIFORMS.paramA,
+        UNIFORMS.warp,
+      )
+      gl.uniform4f(
+        uni.surface,
+        UNIFORMS.detail,
+        UNIFORMS.contrast,
+        UNIFORMS.brightness,
+        UNIFORMS.saturation,
+      )
+      gl.uniform4f(
+        uni.finish,
+        UNIFORMS.hue,
+        UNIFORMS.vignette,
+        UNIFORMS.blur,
+        UNIFORMS.grain,
+      )
+      gl.uniform4f(
+        uni.transform,
+        UNIFORMS.seed,
+        UNIFORMS.rotate,
+        UNIFORMS.drift,
+        UNIFORMS.oklab,
+      )
+      gl.uniform4f(
+        uni.cursor,
+        0,
+        UNIFORMS.cursorEffect,
+        UNIFORMS.cursorStrength,
+        UNIFORMS.cursorRadius,
+      )
+      ready = true
     }
-    gl.uniform3fv(uni.colors, new Float32Array(UNIFORMS.colors.flat()))
-    gl.uniform4f(
-      uni.shape,
-      UNIFORMS.scale,
-      UNIFORMS.intensity,
-      UNIFORMS.paramA,
-      UNIFORMS.warp,
-    )
-    gl.uniform4f(
-      uni.surface,
-      UNIFORMS.detail,
-      UNIFORMS.contrast,
-      UNIFORMS.brightness,
-      UNIFORMS.saturation,
-    )
-    gl.uniform4f(
-      uni.finish,
-      UNIFORMS.hue,
-      UNIFORMS.vignette,
-      UNIFORMS.blur,
-      UNIFORMS.grain,
-    )
-    gl.uniform4f(
-      uni.transform,
-      UNIFORMS.seed,
-      UNIFORMS.rotate,
-      UNIFORMS.drift,
-      UNIFORMS.oklab,
-    )
-    gl.uniform4f(
-      uni.cursor,
-      0,
-      UNIFORMS.cursorEffect,
-      UNIFORMS.cursorStrength,
-      UNIFORMS.cursorRadius,
-    )
 
     let targetX = 0
     let targetY = 0
@@ -411,7 +425,10 @@ export function ShaderBackground({ className }: { className?: string }) {
     let inView = true
     let disposed = false
     const start = performance.now()
-    const timeAnimated = Math.abs(UNIFORMS.timeScale) > 0.0001
+    // con "riduci animazioni" attivo resta un fotogramma fermo
+    const timeAnimated =
+      Math.abs(UNIFORMS.timeScale) > 0.0001 &&
+      !window.matchMedia("(prefers-reduced-motion: reduce)").matches
 
     const resizeCanvas = () => {
       const dpr = Math.min(window.devicePixelRatio || 1, 2)
@@ -431,7 +448,7 @@ export function ShaderBackground({ className }: { className?: string }) {
     }
 
     const requestRender = () => {
-      if (!disposed && visible && inView && raf === 0) {
+      if (ready && !disposed && visible && inView && raf === 0) {
         raf = requestAnimationFrame(render)
       }
     }
@@ -551,9 +568,20 @@ export function ShaderBackground({ className }: { className?: string }) {
       if (timeAnimated || pointerSettling) requestRender()
       else lastNow = null
     }
-    requestRender()
+    let pollRaf = 0
+    const whenCompiled = () => {
+      if (disposed) return
+      if (parallel && !gl.getProgramParameter(program, parallel.COMPLETION_STATUS_KHR)) {
+        pollRaf = requestAnimationFrame(whenCompiled)
+        return
+      }
+      setup()
+      requestRender()
+    }
+    whenCompiled()
     return () => {
       disposed = true
+      cancelAnimationFrame(pollRaf)
       cancelAnimationFrame(raf)
       resizeObserver.disconnect()
       intersectionObserver.disconnect()
@@ -583,6 +611,6 @@ export function ShaderBackground({ className }: { className?: string }) {
   }, [])
 
   return (
-    <canvas ref={canvasRef} className={className} style={{ display: "block", width: "100%", height: "100%" }} />
+    <canvas ref={canvasRef} aria-hidden="true" className={className} style={{ display: "block", width: "100%", height: "100%" }} />
   )
 }

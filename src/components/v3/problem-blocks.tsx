@@ -23,7 +23,7 @@ export function ProblemAlternating({
             className="grid items-center gap-8 p-8 md:grid-cols-2 md:gap-12 md:p-10"
           >
             <div className={imageFirst ? "md:order-2" : ""}>
-              <span className="text-[12px] font-medium tabular-nums text-[#7C5CFA]">
+              <span className="text-[12px] font-medium tabular-nums text-[#5B3FD9]">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 max-w-[22ch] text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[30px]">

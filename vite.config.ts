@@ -1,12 +1,13 @@
 import path from "path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
+import { seo } from "./seo.config";
 
 // base: su GitHub Pages il sito vive sotto /yuma-site/, in locale sotto /.
 // Impostato via variabile d'ambiente dal workflow di deploy.
 export default defineConfig({
   base: process.env.VITE_BASE ?? "/",
-  plugins: [react()],
+  plugins: [react(), seo()],
   build: {
     rollupOptions: {
       input: {

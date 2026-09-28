@@ -64,7 +64,7 @@ export function StepsLadder() {
             style={{ ["--indent" as string]: `${i * 72}px` }}
           >
             <Glass className="flex items-start gap-5 p-6 md:p-7">
-              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#7C5CFA] text-[14px] font-medium tabular-nums text-white">
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-[14px] bg-[#6D4CF2] text-[14px] font-medium tabular-nums text-white">
                 {s.n}
               </span>
               <div>
@@ -133,7 +133,7 @@ export function StepsProgressBar() {
         <ol className="mt-8 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s) => (
             <li key={s.n}>
-              <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">{s.n}</span>
+              <span className="text-[13px] font-medium tabular-nums text-[#5B3FD9]">{s.n}</span>
               <h3 className="mt-3 text-[18px] font-medium leading-[1.2] tracking-[-0.02em] text-[#1D1D1F] md:text-[20px]">
                 {s.title}
               </h3>
@@ -162,10 +162,10 @@ export function StepsWizard() {
                 aria-current={i === active}
                 className={`flex items-center gap-2 rounded-full border px-4 py-2 text-[14px] font-medium transition-colors ${
                   i === active
-                    ? "border-[#7C5CFA] bg-[#7C5CFA] text-white"
+                    ? "border-[#6D4CF2] bg-[#6D4CF2] text-white"
                     : i < active
-                      ? "border-[#7C5CFA]/35 bg-white/70 text-[#5B3FD9]"
-                      : "border-white/70 bg-white/50 text-[#86868B]"
+                      ? "border-[#6D4CF2]/35 bg-white/70 text-[#5B3FD9]"
+                      : "border-white/70 bg-white/50 text-[#56565B]"
                 }`}
               >
                 <span className="tabular-nums">{i < active ? <Check className="h-4 w-4" /> : s.n}</span>
@@ -179,7 +179,7 @@ export function StepsWizard() {
         </ol>
 
         <Glass className="mt-6 p-8 md:p-10">
-          <span className="text-[13px] font-medium tabular-nums text-[#7C5CFA]">
+          <span className="text-[13px] font-medium tabular-nums text-[#5B3FD9]">
             {steps[active].n}
           </span>
           <h3 className="mt-3 text-[24px] font-medium tracking-[-0.025em] text-[#1D1D1F] md:text-[30px]">

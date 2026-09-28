@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useId, useState } from "react"
 import { Check, Plus } from "lucide-react"
 import { Body, Glass, Section, Title } from "@/components/v3/glass"
 import { projectsContent } from "@/lib/landing-content"
@@ -137,6 +137,7 @@ export function CheckAccordion({
   className?: string
 }) {
   const [open, setOpen] = useState(0)
+  const uid = useId()
   return (
     <ul className={`mx-auto flex max-w-[860px] flex-col gap-3 ${className}`}>
       {list.map((it, i) => {
@@ -147,6 +148,7 @@ export function CheckAccordion({
               <button
                 type="button"
                 aria-expanded={isOpen}
+                aria-controls={`${uid}-${i}`}
                 onClick={() => setOpen(isOpen ? -1 : i)}
                 className="flex w-full items-center gap-5 px-6 py-5 text-left focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-[#7C5CFA] md:px-7"
               >
@@ -158,10 +160,12 @@ export function CheckAccordion({
                 />
               </button>
               <div
-                className={`grid transition-[grid-template-rows] duration-300 ${isOpen ? "grid-rows-[1fr]" : "grid-rows-[0fr]"}`}
+                id={`${uid}-${i}`}
+                aria-hidden={!isOpen}
+                className={`grid transition-[grid-template-rows] duration-300 ${isOpen ? "grid-rows-[1fr]" : "invisible grid-rows-[0fr]"}`}
               >
                 <div className="overflow-hidden">
-                  <Body className="px-6 pb-6 pl-[84px] text-[15px] md:px-7 md:pl-[88px]">{it.desc}</Body>
+                  <Body className="px-6 pb-6 text-[15px] sm:pl-[84px] md:px-7 md:pl-[88px]">{it.desc}</Body>
                 </div>
               </div>
             </Glass>

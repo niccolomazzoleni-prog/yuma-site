@@ -58,9 +58,9 @@ function Shot({
       className={`flex items-center justify-center rounded-[14px] border border-dashed border-[#7C5CFA]/35 bg-white/45 ${className}`}
       style={{ aspectRatio: ratio ?? product.ratio }}
     >
-      <span className="px-6 text-center text-[13px] font-medium text-[#86868B]">
+      <span className="px-6 text-center text-[13px] font-medium text-[#56565B]">
         Screenshot {product.name}
-        <span className="mt-1 block text-[11px] font-normal text-[#A1A1A6]">
+        <span className="mt-1 block text-[11px] font-normal text-[#56565B]">
           formato {(ratio ?? product.ratio).replace(" / ", ":")}
         </span>
       </span>
@@ -68,11 +68,12 @@ function Shot({
   )
 }
 
-function Cta({ href }: { href: string }) {
+function Cta({ href, name }: { href: string; name?: string }) {
   return (
     <a
       href={href}
-      className="group inline-flex items-center gap-2 self-start rounded-full bg-[#7C5CFA] px-5 py-2.5 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D1D1F] focus-visible:ring-offset-2"
+      aria-label={name ? `Scopri di più su ${name}` : undefined}
+      className="group inline-flex items-center gap-2 self-start rounded-full bg-[#6D4CF2] px-5 py-2.5 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D1D1F] focus-visible:ring-offset-2"
     >
       Scopri di più
       <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
@@ -95,7 +96,7 @@ export function CardsShowcase() {
           </h3>
           <Body className="mt-3 flex-1">{p.desc}</Body>
           <div className="mt-6">
-            <Cta href={p.href} />
+            <Cta href={p.href} name={p.name} />
           </div>
         </Glass>
       ))}
@@ -124,7 +125,7 @@ export function CardsSplit() {
               </h3>
               <Body className="mt-4 max-w-[46ch]">{p.desc}</Body>
               <div className="mt-7">
-                <Cta href={p.href} />
+                <Cta href={p.href} name={p.name} />
               </div>
             </div>
           </div>
@@ -145,7 +146,7 @@ export function CardsWindow() {
               <span className="h-2.5 w-2.5 rounded-full bg-[#1D1D1F]/15" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#1D1D1F]/15" />
               <span className="h-2.5 w-2.5 rounded-full bg-[#1D1D1F]/15" />
-              <span className="ml-2 text-[11px] font-medium text-[#86868B]">
+              <span className="ml-2 text-[11px] font-medium text-[#56565B]">
                 {p.name.toLowerCase().replace(/\s+/g, "-")}.yuma.app
               </span>
             </div>
@@ -166,7 +167,7 @@ export function CardsWindow() {
           </h3>
           <Body className="mt-3 flex-1">{p.desc}</Body>
           <div className="mt-6">
-            <Cta href={p.href} />
+            <Cta href={p.href} name={p.name} />
           </div>
         </Glass>
       ))}

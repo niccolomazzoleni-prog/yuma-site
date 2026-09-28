@@ -64,7 +64,7 @@ export default function FontPage() {
 
       {/* selettore: flottante in basso a sinistra, sopra la barra WhatsApp */}
       <div className="fixed bottom-24 left-4 z-[70] w-[300px] rounded-[20px] border border-white/70 bg-white/85 p-3 shadow-[0_20px_60px_-25px_rgba(1,1,16,0.5)] backdrop-blur-xl" style={{ fontFamily: '"Geist", sans-serif' }}>
-        <p className="px-2 pb-2 pt-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#86868B]">Prova caratteri</p>
+        <p className="px-2 pb-2 pt-1 text-[11px] font-medium uppercase tracking-[0.14em] text-[#56565B]">Prova caratteri</p>
         <div className="flex flex-col gap-1">
           {options.map((opt, i) => (
             <button

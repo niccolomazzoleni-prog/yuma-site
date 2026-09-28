@@ -33,7 +33,7 @@ export default function ExplorePage() {
     <div className="min-h-screen bg-white">
       <header className="sticky top-0 z-50 border-b border-[#E6E6EA] bg-white/90 backdrop-blur-md">
         <div className="mx-auto flex max-w-[1280px] flex-wrap items-center gap-3 px-6 py-4">
-          <span className="mr-4 text-[13px] uppercase tracking-[0.14em] text-[#A1A1A6]">
+          <span className="mr-4 text-[13px] uppercase tracking-[0.14em] text-[#56565B]">
             YUMA · direzioni
           </span>
           {tabs.map((t, i) => (

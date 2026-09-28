@@ -11,7 +11,7 @@ import {
 } from "@/lib/leads"
 
 const inputClass =
-  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1D1D1F] placeholder:text-[#9A9AA6] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15 aria-[invalid=true]:border-[#D93F3F] aria-[invalid=true]:ring-4 aria-[invalid=true]:ring-[#D93F3F]/15"
+  "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1D1D1F] placeholder:text-[#6E6E73] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15 aria-[invalid=true]:border-[#B42318] aria-[invalid=true]:ring-4 aria-[invalid=true]:ring-[#B42318]/15"
 const labelClass = "text-[14px] font-medium text-[#1D1D1F]"
 
 type Status = "idle" | "sending" | "qualified" | "discarded" | "error"
@@ -20,9 +20,15 @@ export function LeadForm({ form, submitLabel }: { form: LeadFormKey; submitLabel
   const [status, setStatus] = useState<Status>("idle")
   const [emailError, setEmailError] = useState("")
   const loadTime = useRef(Date.now())
+  const doneRef = useRef<HTMLDivElement>(null)
   const id = (name: string) => `${form}-${name}`
 
   useEffect(loadRecaptcha, [])
+
+  // a invio riuscito il modulo sparisce: il focus va sul messaggio di conferma
+  useEffect(() => {
+    if (status === "qualified" || status === "discarded") doneRef.current?.focus()
+  }, [status])
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
@@ -56,8 +62,8 @@ export function LeadForm({ form, submitLabel }: { form: LeadFormKey; submitLabel
 
   if (status === "qualified" || status === "discarded") {
     return (
-      <Glass className="mx-auto mt-10 max-w-[620px] p-10 text-center">
-        <div role="status">
+      <Glass className="mx-auto mt-10 max-w-[620px] p-6 text-center sm:p-10">
+        <div role="status" ref={doneRef} tabIndex={-1} className="outline-none">
         <Body className="text-[#1D1D1F]">
           {status === "qualified"
             ? "Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un giorno lavorativo."
@@ -111,7 +117,7 @@ export function LeadForm({ form, submitLabel }: { form: LeadFormKey; submitLabel
               className={inputClass}
             />
             {emailError ? (
-              <p id={id("email-err")} role="alert" className="text-[13px] leading-[1.4] text-[#D93F3F]">
+              <p id={id("email-err")} role="alert" className="text-[13px] leading-[1.4] text-[#B42318]">
                 {emailError}
               </p>
             ) : null}
@@ -136,7 +142,7 @@ export function LeadForm({ form, submitLabel }: { form: LeadFormKey; submitLabel
         </p>
 
         {status === "error" ? (
-          <p role="alert" className="text-center text-[14px] text-[#D93F3F]">
+          <p role="alert" className="text-center text-[14px] text-[#B42318]">
             Invio non riuscito. Riprova tra qualche istante.
           </p>
         ) : null}
@@ -144,7 +150,7 @@ export function LeadForm({ form, submitLabel }: { form: LeadFormKey; submitLabel
         <button
           type="submit"
           disabled={status === "sending"}
-          className="mt-1 inline-flex items-center justify-center justify-self-center rounded-full bg-[#7C5CFA] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D1D1F] focus-visible:ring-offset-2"
+          className="mt-1 inline-flex items-center justify-center justify-self-center rounded-full bg-[#6D4CF2] px-6 py-3 text-[15px] font-medium text-white transition-transform hover:-translate-y-0.5 disabled:opacity-60 disabled:hover:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#1D1D1F] focus-visible:ring-offset-2"
         >
           {status === "sending" ? "Invio in corso…" : submitLabel}
         </button>

@@ -1,7 +1,8 @@
 import { useState, type ReactNode } from "react"
 import { ChevronRight } from "lucide-react"
 import { Body, Eyebrow, Glass, Section, Title } from "@/components/v3/glass"
-import { Shot } from "@/components/v3/landing"
+import { Shot } from "@/components/v3/shot"
+import { useTabs } from "@/lib/use-tabs"
 
 // Elenco selezionabile a sinistra, dettaglio con immagine a destra.
 // Usato per i ruoli e, con i badge di stato, per i moduli.
@@ -26,6 +27,7 @@ export function SelectorBlock({
   imageRatio?: string
 }) {
   const [active, setActive] = useState(0)
+  const { tab, panel } = useTabs(items.length, active, setActive)
 
   return (
     <Section id={id} className="pt-0">
@@ -35,13 +37,13 @@ export function SelectorBlock({
       </div>
 
       <div className="mt-12 grid gap-5 lg:grid-cols-[minmax(0,0.85fr)_minmax(0,1.15fr)]">
-        <ul className="flex flex-col gap-2">
+        <div role="tablist" aria-orientation="vertical" className="flex flex-col gap-2">
           {items.map((it, i) => (
-            <li key={it.label}>
+            <div key={it.label}>
               <button
                 type="button"
+                {...tab(i)}
                 onClick={() => setActive(i)}
-                aria-current={i === active}
                 className={`flex w-full items-center justify-between gap-4 rounded-[16px] px-5 py-4 text-left transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA] ${
                   i === active
                     ? "border border-white/70 bg-white/70 text-[#1D1D1F]"
@@ -55,14 +57,22 @@ export function SelectorBlock({
                   {it.badge}
                 </span>
                 <ChevronRight
-                  className={`h-4 w-4 shrink-0 ${i === active ? "text-[#7C5CFA]" : "text-[#A1A1A6]"}`}
+                  aria-hidden
+                  className={`h-4 w-4 shrink-0 transition-transform ${i === active ? "rotate-90 text-[#7C5CFA] lg:rotate-0" : "text-[#56565B]"}`}
                 />
               </button>
-            </li>
+              {/* su telefono il dettaglio si apre sotto la voce scelta, non in fondo all'elenco */}
+              {i === active ? (
+                <div className="px-5 pb-2 pt-3 lg:hidden">
+                  <Body className="text-[15px]">{it.desc}</Body>
+                </div>
+              ) : null}
+            </div>
           ))}
-        </ul>
+        </div>
 
-        <Glass className="grid gap-6 p-7 md:grid-cols-[minmax(0,1fr)_220px] md:items-center md:p-8">
+        <div {...panel()} className="hidden lg:block">
+        <Glass className="grid h-full gap-6 p-7 md:grid-cols-[minmax(0,1fr)_220px] md:items-center md:p-8">
           <div>
             <div className="flex flex-wrap items-center gap-3">
               <h3 className="text-[22px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[26px]">
@@ -74,6 +84,7 @@ export function SelectorBlock({
           </div>
           <Shot label={`Schermata ${items[active].label}`} ratio={imageRatio} />
         </Glass>
+        </div>
       </div>
     </Section>
   )
