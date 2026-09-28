@@ -77,9 +77,8 @@ export const projectsContent: LandingContent = {
         text: "Oltre 10 anni di progetti di trasformazione digitale nelle più grandi aziende italiane",
       },
       { text: "N imprese la usano oggi su N cantieri attivi", todo: true },
-      { text: "Integrazione con i gestionali già in uso, senza sostituirli" },
+      { text: "Scrittura diretta nei gestionali già in uso, senza sostituirli" },
     ],
-    note: "Compatibile con: lista gestionali",
     sectors: "Dove lavoriamo: impianti e costruzioni · manifattura · distribuzione B2B · farmaceutico",
   },
   problem: {
