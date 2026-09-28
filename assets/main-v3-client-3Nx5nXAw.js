@@ -1,0 +1,1 @@
+import{c as e,j as t,r}from"./index-BaxW4Dxk.js";import{L as o}from"./landing-DJ-1A_j2.js";import{c as n}from"./landing-content-mCTiWRnQ.js";e.createRoot(document.getElementById("root")).render(t.jsx(r.StrictMode,{children:t.jsx(o,{content:n})}));
