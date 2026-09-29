@@ -69,7 +69,7 @@ function PillNav() {
         <div className="flex items-center gap-2">
           <a
             href="#contatti"
-            className={`rounded-full px-4 py-2.5 text-[14px] font-medium transition-transform hover:-translate-y-0.5 ${
+            className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-3.5 py-2 text-center text-[13px] font-medium sm:px-4 sm:py-2.5 sm:text-[14px] transition-transform hover:-translate-y-0.5 ${
               light ? "bg-[#6D4CF2] text-white" : "bg-white text-[#1D1D1F]"
             }`}
           >

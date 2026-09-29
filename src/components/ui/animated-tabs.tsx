@@ -51,7 +51,15 @@ const AnimatedTabs = ({
 
   return (
     <div className={cn("flex w-full flex-col gap-y-2", className)}>
-      <div role="tablist" className={cn("flex flex-wrap gap-2 rounded-xl p-1", barClass)}>
+      {/* su telefono una griglia regolare (2x2 con 4 schede) invece di righe spezzate */}
+      <div
+        role="tablist"
+        className={cn(
+          "grid gap-2 rounded-xl p-1 sm:flex sm:flex-wrap",
+          tabs.length % 2 === 0 ? "grid-cols-2" : "grid-cols-3",
+          barClass,
+        )}
+      >
         {tabs.map((tab, i) => (
           <button
             key={tab.id}
@@ -59,7 +67,7 @@ const AnimatedTabs = ({
             {...tabProps(i)}
             onClick={() => setActiveTab(tab.id)}
             className={cn(
-              "relative flex-1 whitespace-nowrap rounded-lg px-3 py-2.5 text-sm font-medium outline-none transition-colors focus-visible:ring-2 sm:flex-none sm:py-1.5",
+              "relative whitespace-nowrap rounded-lg px-3 py-2.5 text-sm font-medium outline-none transition-colors focus-visible:ring-2 sm:py-1.5",
               activeTab === tab.id ? activeTextClass : tabTextClass,
               glass ? "focus-visible:ring-[#7C5CFA]/60" : "focus-visible:ring-white/60",
             )}

@@ -2,6 +2,7 @@ import { useState, type ReactNode } from "react"
 import { ChevronRight } from "lucide-react"
 import { Body, Eyebrow, Glass, Section, Title } from "@/components/v3/glass"
 import { Shot } from "@/components/v3/shot"
+import { Info } from "@/components/v3/infographic"
 import { useTabs } from "@/lib/use-tabs"
 
 // Elenco selezionabile a sinistra, dettaglio con immagine a destra.
@@ -19,13 +20,23 @@ export function SelectorBlock({
   title,
   items,
   imageRatio = "3 / 4",
+  infographics,
 }: {
   id: string
   eyebrow: string
   title: string
   items: SelectorItem[]
   imageRatio?: string
+  /** numeri delle infografiche, una per voce; senza, resta il segnaposto "schermata" */
+  infographics?: number[]
 }) {
+  const visual = (i: number, ratio: string) =>
+    infographics?.[i] ? (
+      <Info n={infographics[i]} ratio={ratio} className="rounded-[16px]" />
+    ) : (
+      <Shot label={`Schermata ${items[i].label}`} ratio={ratio} />
+    )
+
   const [active, setActive] = useState(0)
   const { tab, panel } = useTabs(items.length, active, setActive)
 
@@ -65,6 +76,7 @@ export function SelectorBlock({
               {i === active ? (
                 <div className="px-5 pb-2 pt-3 lg:hidden">
                   <Body className="text-[15px]">{it.desc}</Body>
+                  {infographics ? <div className="mt-4">{visual(i, "4 / 3")}</div> : null}
                 </div>
               ) : null}
             </div>
@@ -82,7 +94,7 @@ export function SelectorBlock({
             </div>
             <Body className="mt-4">{items[active].desc}</Body>
           </div>
-          <Shot label={`Schermata ${items[active].label}`} ratio={imageRatio} />
+          {visual(active, imageRatio)}
         </Glass>
         </div>
       </div>

@@ -111,7 +111,7 @@ export function SystemsDiagramBlock({
         <Lead className="mx-auto mt-5 max-w-[62ch]">{systems.sub}</Lead>
       </div>
 
-      <Glass className="mt-12 overflow-hidden p-4 md:p-6">
+      <Glass className="-mx-3 mt-12 overflow-hidden p-1.5 sm:mx-0 sm:p-4 md:p-6">
         {image ? (
           <img
             src={image}

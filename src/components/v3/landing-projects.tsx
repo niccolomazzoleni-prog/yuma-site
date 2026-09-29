@@ -75,7 +75,7 @@ function Nav() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a href="#demo" className="rounded-full bg-[#6D4CF2] px-4 py-2.5 text-[14px] font-medium text-white">
+          <a href="#demo" className="inline-flex items-center justify-center whitespace-nowrap rounded-full px-3.5 py-2 text-center text-[13px] font-medium sm:px-4 sm:py-2.5 sm:text-[14px] bg-[#6D4CF2] text-white">
             Richiedi una demo
           </a>
           <MobileNav anchors={items} current="projects" cta={{ label: "Richiedi una demo", href: "#demo" }} />
@@ -121,8 +121,9 @@ function Credibility() {
         <Lead className="max-w-[58ch] lg:pt-2">{c.credibility.body}</Lead>
       </div>
 
-      <Glass className="mt-12 p-5 md:p-6">
-        <PhotoSlot n={5} ratio="21 / 9" subject="un cantiere vero in piena attività: un capo cantiere con il casco al telefono, mezzi e materiali sullo sfondo" />
+      <Glass className="mt-12 overflow-hidden p-2 sm:p-5 md:p-6">
+        {/* su telefono 4:3, tenendo il capo cantiere a sinistra */}
+        <PhotoSlot n={5} ratio="21 / 9" mobileRatio="4 / 3" position="15% 70%" className="rounded-[20px] sm:rounded-[16px]" subject="un cantiere vero in piena attività: un capo cantiere con il casco al telefono, mezzi e materiali sullo sfondo" />
       </Glass>
 
       <p className="mt-8 flex flex-wrap items-center justify-center gap-3 text-center text-[16px] text-[#333336]">
@@ -231,6 +232,7 @@ function Modules() {
         title={c.modules.headline}
         items={items}
         imageRatio="4 / 3"
+        infographics={[27, 28, 29, 30, 31, 32]}
       />
       <div className="mx-auto -mt-16 max-w-[1180px] px-5 pb-20 text-center md:pb-28">
         {c.modules.note ? (

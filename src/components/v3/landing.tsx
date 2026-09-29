@@ -98,7 +98,7 @@ function LandingNav({ product }: { product: string }) {
         <div className="flex items-center gap-2">
           <a
             href="#demo"
-            className="rounded-full bg-[#6D4CF2] px-4 py-2.5 text-[14px] font-medium text-white"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-full px-3.5 py-2 text-center text-[13px] font-medium sm:px-4 sm:py-2.5 sm:text-[14px] bg-[#6D4CF2] text-white"
             aria-label={`Richiedi una demo di ${product}`}
           >
             Richiedi una demo
@@ -153,8 +153,9 @@ function Credibility({ c }: { c: LandingContent }) {
         <Lead className="max-w-[58ch] lg:pt-2">{c.credibility.body}</Lead>
       </div>
 
-      <Glass className="mt-12 p-5 md:p-6">
-        <Info n={9} ratio="21 / 9" />
+      <Glass className="mt-12 overflow-hidden p-2 sm:p-5 md:p-6">
+        {/* su telefono il 21:9 diventa una striscia: ritaglio 16:10 da sinistra (canali e groviglio) */}
+        <Info n={9} ratio="21 / 9" mobileRatio="16 / 10" position="left center" className="rounded-[20px] sm:rounded-none" />
       </Glass>
 
       <p className="mt-8 flex flex-wrap items-center justify-center gap-3 text-center text-[16px] text-[#333336]">
@@ -273,9 +274,9 @@ function Modules({ c }: { c: LandingContent }) {
       </div>
 
       <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-        {c.modules.items.map((m) => (
+        {c.modules.items.map((m, i) => (
           <Glass key={m.name} className="flex h-full flex-col p-6 md:p-7">
-            <Shot label={`Schermata ${m.name}`} ratio="4 / 3" className="w-full" />
+            <Info n={[33, 34, 35][i] ?? 33 + i} ratio="4 / 3" />
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]">
                 {m.name}

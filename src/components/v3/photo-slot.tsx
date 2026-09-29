@@ -1,3 +1,4 @@
+import type React from "react"
 import { Camera } from "lucide-react"
 import { cn } from "@/lib/utils"
 
@@ -30,8 +31,14 @@ export function PhotoSlot({
   n,
   subject,
   ratio = "4 / 3",
+  mobileRatio,
+  position,
   className,
 }: {
+  /** formato su telefono (sotto i 640px) */
+  mobileRatio?: string
+  /** punto da tenere nel ritaglio */
+  position?: string
   n: number
   /** cosa deve mostrare la foto, compare nel segnaposto */
   subject: string
@@ -48,8 +55,19 @@ export function PhotoSlot({
         height={SIZE[ready.file]?.[1]}
         alt={ready.alt}
         loading="lazy"
-        className={cn("w-full rounded-[16px] object-cover", className)}
-        style={{ aspectRatio: ratio, objectPosition: ready.position }}
+        className={cn(
+          "w-full rounded-[16px] object-cover",
+          mobileRatio ? "[aspect-ratio:var(--rm)] sm:[aspect-ratio:var(--r)]" : "",
+          className,
+        )}
+        style={
+          {
+            aspectRatio: mobileRatio ? undefined : ratio,
+            "--rm": mobileRatio,
+            "--r": ratio,
+            objectPosition: position ?? ready.position,
+          } as React.CSSProperties
+        }
       />
     )
   }

@@ -1,3 +1,4 @@
+import type React from "react"
 import { cn } from "@/lib/utils"
 
 // Infografiche del sito. Il numero corrisponde a quello del file
@@ -117,9 +118,15 @@ export function Info({
   className,
   src,
   alt,
+  mobileRatio,
+  position,
 }: {
   n: number
   ratio?: string
+  /** formato su telefono (sotto i 640px): per le immagini larghe che lì diventerebbero una striscia */
+  mobileRatio?: string
+  /** punto da tenere nel ritaglio, es. "left center" */
+  position?: string
   className?: string
   /** quando l'infografica è pronta, basta passarla qui */
   src?: string
@@ -137,7 +144,16 @@ export function Info({
         height={ready ? SIZE[ready.file]?.[1] : undefined}
         alt={description ?? `Infografica ${n}`}
         loading="lazy"
-        className={cn("h-full w-full object-cover", className)}
+        className={cn(
+          "h-full w-full object-cover",
+          mobileRatio && "[aspect-ratio:var(--rm)] sm:[aspect-ratio:var(--r)]",
+          className,
+        )}
+        style={
+          mobileRatio
+            ? ({ "--rm": mobileRatio, "--r": ratio, objectPosition: position } as React.CSSProperties)
+            : undefined
+        }
       />
     )
   }
