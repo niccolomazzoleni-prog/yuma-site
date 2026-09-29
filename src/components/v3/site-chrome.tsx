@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react"
 import { createPortal } from "react-dom"
 import { Menu, X } from "lucide-react"
 import { links } from "@/lib/links"
+import { YumaLogo } from "@/components/v3/logo"
 
 // Pezzi comuni alle tre pagine pubbliche: link "salta al contenuto",
 // menu mobile e footer. Stesso comportamento su home e landing.
@@ -100,7 +101,7 @@ export function MobileNav({
         aria-expanded={open}
         aria-controls="menu-mobile"
         onClick={() => setOpen(true)}
-        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors lg:hidden ${
+        className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#7C5CFA] lg:hidden ${
           tone === "dark"
             ? "border-white/30 bg-white/10 text-white hover:bg-white/20"
             : "border-white/70 bg-white/60 text-[#1D1D1F] hover:bg-white/80"
@@ -126,7 +127,9 @@ export function MobileNav({
                 className="yuma-slide-in fixed inset-y-0 right-0 z-[1201] flex w-[min(88vw,360px)] flex-col border-l border-white/70 bg-white/90 p-5 text-[#1D1D1F] shadow-[0_30px_80px_-30px_rgba(1,1,16,0.5)] backdrop-blur-2xl"
               >
                 <div className="flex items-center justify-between">
-                  <span className="pl-4 text-[15px] font-semibold tracking-[0.18em]">YUMA</span>
+                  <span className="pl-4 text-[#1D1D1F]">
+                    <YumaLogo className="h-[18px] w-auto" />
+                  </span>
                   <button
                     ref={closeBtn}
                     type="button"
@@ -184,7 +187,9 @@ export function SiteFooter({ current, extra }: { current: PageKey; extra?: React
     <footer className="border-t border-white/60 bg-white/40 backdrop-blur-xl">
       <div className="mx-auto flex max-w-[1180px] flex-col gap-6 px-5 py-12 md:flex-row md:items-start md:justify-between">
         <div>
-          <div className="text-[15px] font-semibold tracking-[0.18em] text-[#1D1D1F]">YUMA</div>
+          <a href={links.home} className="inline-flex text-[#1D1D1F]">
+            <YumaLogo className="h-5 w-auto" />
+          </a>
           <div className="mt-3 space-y-1 text-[13px] leading-[1.6] text-[#56565B]">
             <div>YUMA TX S.r.l. · P. IVA 14244440963</div>
             <div>Sede legale: Via Giacomo Leopardi 14, Milano</div>

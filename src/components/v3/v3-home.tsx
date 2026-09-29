@@ -14,6 +14,7 @@ import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import { useEffect, useState } from "react"
 import { MobileNav, SiteFooter, SkipLink } from "@/components/v3/site-chrome"
+import { YumaLogo } from "@/components/v3/logo"
 
 // Versione 3 — vetro su gradiente viola, hero con shader invariata.
 // I blocchi seguono uno a uno il copy definitivo (10 blocchi della home).
@@ -46,8 +47,8 @@ function PillNav() {
             : "border-white/25 bg-white/10 text-white"
         }`}
       >
-        <a href="#top" className="text-[15px] font-semibold tracking-[0.18em]">
-          YUMA
+        <a href="#top" className="inline-flex items-center py-1">
+          <YumaLogo className="h-[18px] w-auto md:h-5" />
         </a>
         <nav
           aria-label="Principale"

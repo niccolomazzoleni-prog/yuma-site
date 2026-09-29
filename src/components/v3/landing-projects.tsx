@@ -22,6 +22,7 @@ import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import { LeadForm } from "@/components/v3/lead-form"
 import { projectsContent as c } from "@/lib/landing-content"
+import { YumaLogo } from "@/components/v3/logo"
 
 // Landing YUMA Projects, direzione vetro su gradiente. Riusa i blocchi scelti
 // per Client Interface, ma cambia struttura dove altrimenti si ripeterebbe:
@@ -63,8 +64,8 @@ function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 md:pt-5">
       <div className="mx-auto flex w-full max-w-[1180px] items-center justify-between gap-4 rounded-full border border-white/70 bg-white/55 px-5 py-2 backdrop-blur-xl md:px-6">
-        <a href={links.home} className="text-[15px] font-semibold tracking-[0.18em] text-[#1D1D1F]">
-          YUMA
+        <a href={links.home} className="inline-flex items-center py-1 text-[#1D1D1F]">
+          <YumaLogo className="h-[18px] w-auto md:h-5" />
         </a>
         <nav aria-label="Principale" className="hidden items-center gap-7 text-[14px] text-[#424245] lg:flex">
           {items.map((i) => (
