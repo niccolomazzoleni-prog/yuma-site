@@ -22,12 +22,14 @@ export const products: Product[] = [
     desc: "Aiuta le aziende che lavorano a commessa a tenere sotto controllo margini, costi e avanzamento di ogni progetto. Raccoglie i dati dal campo come arrivano, con messaggi, foto e note vocali, e li trasforma in un quadro aggiornato ogni giorno di ogni commessa.",
     href: links.projects,
     ratio: "16 / 10",
+    image: `${import.meta.env.BASE_URL}screen-projects.webp`,
   },
   {
     name: "YUMA Client Interface",
     desc: "Gestisce ordini, richieste e reclami che arrivano dai tuoi clienti. Li interpreta e li porta già strutturati nei tuoi sistemi, liberando il tuo team dalle attività di data entry manuali e ripetitive.",
     href: links.clientInterface,
     ratio: "16 / 10",
+    image: `${import.meta.env.BASE_URL}screen-client-interface.webp`,
   },
 ]
 
@@ -43,11 +45,14 @@ function Shot({
 }) {
   if (product.image) {
     return (
+      // la schermata intera, nel suo formato: niente ritaglio del pannello a destra
       <img
         src={product.image}
         alt={`Schermata di ${product.name}`}
+        width={1600}
+        height={952}
         loading="lazy"
-        className={`h-full w-full object-cover ${className}`}
+        className={`block h-auto w-full rounded-[14px] border border-white/70 shadow-[0_24px_60px_-30px_rgba(1,1,16,0.45)] ${className.replace("h-full", "")}`}
       />
     )
   }
@@ -115,7 +120,7 @@ export function CardsSplit() {
               i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
             }`}
           >
-            <div className="p-4 md:p-6">
+            <div className="flex items-center p-4 md:p-6">
               <Shot product={p} className="h-full w-full" ratio="4 / 3" />
             </div>
             <div className="flex flex-col justify-center p-6 md:p-10">

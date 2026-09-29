@@ -104,7 +104,12 @@ function Hero() {
           </div>
         </div>
         <Glass className="p-5 md:p-6">
-          <Shot label={`Schermata ${c.product}`} />
+          <Shot
+            label={`Schermata ${c.product}`}
+            src={`${import.meta.env.BASE_URL}screen-projects.webp`}
+            alt="YUMA Projects, la vista Oggi: margine di portafoglio contro budget, opportunità trovate da Yuma e dichiarazioni arrivate dal campo"
+            eager
+          />
         </Glass>
       </div>
     </section>

@@ -134,7 +134,12 @@ function Hero({ c }: { c: LandingContent }) {
         </div>
 
         <Glass className="p-5 md:p-6">
-          <Shot label={`Schermata ${c.product}`} />
+          <Shot
+            label={`Schermata ${c.product}`}
+            src={c.slug === "client-interface" ? `${import.meta.env.BASE_URL}screen-client-interface.webp` : undefined}
+            alt="YUMA Client Interface, la vista Oggi: azioni suggerite, ordini, reclami e messaggi importanti, con la conversazione WhatsApp del cliente"
+            eager
+          />
         </Glass>
       </div>
     </section>

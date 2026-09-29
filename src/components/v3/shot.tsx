@@ -3,11 +3,33 @@ export function Shot({
   label,
   ratio = "16 / 10",
   className = "",
+  src,
+  alt,
+  eager = false,
 }: {
   label: string
   ratio?: string
   className?: string
+  /** schermata vera: se c'è, prende il posto del segnaposto */
+  src?: string
+  alt?: string
+  /** true per le immagini in cima alla pagina (hero) */
+  eager?: boolean
 }) {
+  if (src) {
+    return (
+      <img
+        src={src}
+        alt={alt ?? label}
+        width={1600}
+        height={952}
+        loading={eager ? "eager" : "lazy"}
+        // attributo scritto in minuscolo: React 18 non riconosce ancora fetchPriority
+        {...(eager ? { fetchpriority: "high" } : {})}
+        className={`block h-auto w-full rounded-[16px] border border-white/70 shadow-[0_24px_60px_-30px_rgba(1,1,16,0.45)] ${className}`}
+      />
+    )
+  }
   return (
     <div
       role="img"
