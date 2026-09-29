@@ -154,8 +154,8 @@ function Credibility({ c }: { c: LandingContent }) {
       </div>
 
       <Glass className="mt-12 overflow-hidden p-2 sm:p-5 md:p-6">
-        {/* su telefono il 21:9 diventa una striscia: ritaglio 16:10 da sinistra (canali e groviglio) */}
-        <Info n={9} ratio="21 / 9" mobileRatio="16 / 10" position="left center" className="rounded-[20px] sm:rounded-none" />
+        {/* immagine intera anche su telefono (niente ritaglio): solo meno bordo intorno */}
+        <Info n={9} ratio="21 / 9" className="rounded-[20px] sm:rounded-none" />
       </Glass>
 
       <p className="mt-8 flex flex-wrap items-center justify-center gap-3 text-center text-[16px] text-[#333336]">
