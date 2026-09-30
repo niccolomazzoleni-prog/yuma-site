@@ -1,0 +1,1 @@
+import{c as r,j as o,r as t}from"./index-DmijQ3Pl.js";import{V as e}from"./v3-home-C3vj2NZM.js";import{M as s}from"./index-MqIWoZah.js";r.createRoot(document.getElementById("root")).render(o.jsx(t.StrictMode,{children:o.jsx(s,{reducedMotion:"user",children:o.jsx(e,{})})}));
