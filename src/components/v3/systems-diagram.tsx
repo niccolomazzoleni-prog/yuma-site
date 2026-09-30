@@ -64,6 +64,8 @@ export function SystemsDiagramBlock({
   systems,
   image,
   imageAlt,
+  imageWidth = 1703,
+  imageHeight = 924,
   tabNumbers,
   diagramNumber,
 }: {
@@ -71,6 +73,9 @@ export function SystemsDiagramBlock({
   /** immagine dello schema; senza, resta il disegno a codice */
   image?: string
   imageAlt?: string
+  /** dimensioni reali del file dello schema (i default sono quelli di Client Interface) */
+  imageWidth?: number
+  imageHeight?: number
   /** numeri delle infografiche delle tre schede */
   tabNumbers?: number[]
   /** numero dell'infografica dello schema, quando l'immagine non c'è ancora */
@@ -116,8 +121,8 @@ export function SystemsDiagramBlock({
           <img
             src={image}
             alt={imageAlt ?? "Schema del flusso"}
-            width={1703}
-            height={924}
+            width={imageWidth}
+            height={imageHeight}
             loading="lazy"
             className="h-auto w-full rounded-[18px]"
           />

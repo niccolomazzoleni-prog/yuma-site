@@ -32,7 +32,7 @@ export function SelectorBlock({
 }) {
   const visual = (i: number, ratio: string) =>
     infographics?.[i] ? (
-      <Info n={infographics[i]} ratio={ratio} className="rounded-[16px]" />
+      <Info n={infographics[i]} ratio={ratio} className="h-auto rounded-[16px]" />
     ) : (
       <Shot label={`Schermata ${items[i].label}`} ratio={ratio} />
     )

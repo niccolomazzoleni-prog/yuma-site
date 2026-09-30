@@ -431,7 +431,13 @@ export default function ProjectsLanding() {
         <Problem />
         <Modules />
         <Roles />
-        <SystemsDiagramBlock systems={c.systems} diagramNumber={26} />
+        <SystemsDiagramBlock
+          systems={c.systems}
+          image={`${import.meta.env.BASE_URL}schema-projects.webp`}
+          imageAlt="Vocali, foto, messaggi e DDT convergono in YUMA, che li struttura e li scrive in ERP e gestionale di cantiere, che restano la fonte di verità"
+          imageWidth={1536}
+          imageHeight={864}
+        />
         <StepsWizard together={c.together} />
         <Fit />
         <Faq />

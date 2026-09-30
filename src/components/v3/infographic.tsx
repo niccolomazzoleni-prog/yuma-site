@@ -86,6 +86,42 @@ const READY: Record<number, { file: string; alt: string }> = {
     file: "infografica-25.webp",
     alt: "Documenti che diventano grafici e tabelle di confronto aggiornati",
   },
+  27: {
+    file: "infografica-27.webp",
+    alt: "Dashboard direzionale con fatturato, margine e scostamento, e quattro commesse con barra di margine, una segnalata da intervenire",
+  },
+  28: {
+    file: "infografica-28.webp",
+    alt: "Diagramma di Gantt con barre pianificato e consuntivo affiancate, squadre, mezzi e un segnale di imprevisto",
+  },
+  29: {
+    file: "infografica-29.webp",
+    alt: "Una chat su smartphone con vocale e foto che diventa ore, mezzi e materiali, con il badge approvato",
+  },
+  30: {
+    file: "infografica-30.webp",
+    alt: "Grafico che affianca preventivo e reale, con l'area di scostamento in evidenza, una campanella di alert e la tappa SAL",
+  },
+  31: {
+    file: "infografica-31.webp",
+    alt: "Contratto, relazione e prescrizioni confluiscono in una barra di ricerca a voce, con risposta e scadenza in calendario",
+  },
+  32: {
+    file: "infografica-32.webp",
+    alt: "Commesse già chiuse alimentano un preventivo in costruzione, con la ricerca di un bando",
+  },
+  33: {
+    file: "infografica-33.webp",
+    alt: "Email, WhatsApp, portale, PDF e vocali entrano in un'unica casella che riconosce ordini, richieste e reclami e li passa a ERP e CRM",
+  },
+  34: {
+    file: "infografica-34.webp",
+    alt: "Elenco clienti con andamento e sentiment, avvisi su cliente silente, ordinato in calo e reclami, e un report a barre",
+  },
+  35: {
+    file: "infografica-35.webp",
+    alt: "Una chat con la domanda sullo stato dell'ordine e la risposta, e tre suggerimenti: riordino, sostitutivo e cross sell, ognuno con il suo indicatore di margine",
+  },
 }
 
 // Dimensioni reali dei file: con width/height il browser riserva lo spazio
@@ -111,6 +147,15 @@ const SIZE: Record<string, [number, number]> = {
   "infografica-23.webp": [1672, 941],
   "infografica-24.webp": [1672, 941],
   "infografica-25.webp": [1672, 941],
+  "infografica-27.webp": [1360, 1020],
+  "infografica-28.webp": [1360, 1020],
+  "infografica-29.webp": [1360, 1020],
+  "infografica-30.webp": [1360, 1020],
+  "infografica-31.webp": [1360, 1020],
+  "infografica-32.webp": [1360, 1020],
+  "infografica-33.webp": [1360, 1020],
+  "infografica-34.webp": [1360, 1020],
+  "infografica-35.webp": [1360, 1020],
 }
 export function Info({
   n,

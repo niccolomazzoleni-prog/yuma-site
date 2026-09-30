@@ -281,7 +281,7 @@ function Modules({ c }: { c: LandingContent }) {
       <div className="mt-12 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
         {c.modules.items.map((m, i) => (
           <Glass key={m.name} className="flex h-full flex-col p-6 md:p-7">
-            <Info n={[33, 34, 35][i] ?? 33 + i} ratio="4 / 3" />
+            <Info n={[33, 34, 35][i] ?? 33 + i} ratio="4 / 3" className="h-auto" />
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <h3 className="text-[19px] font-medium tracking-[-0.02em] text-[#1D1D1F] md:text-[21px]">
                 {m.name}
