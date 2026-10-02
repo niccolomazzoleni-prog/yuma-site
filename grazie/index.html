@@ -28,8 +28,13 @@
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '1098927475833280');
       fbq('track', 'PageView');
-      // invio del modulo riuscito (solo chi è sopra soglia arriva qui)
-      fbq('track', 'Lead');
+      // invio del modulo riuscito (solo chi è sopra soglia arriva qui).
+      // eventID = lo stesso inviato dall'Apps Script alla Conversions API: Meta li deduplica.
+      (function () {
+        var q = new URLSearchParams(location.search);
+        var opts = q.get('eid') ? { eventID: q.get('eid') } : undefined;
+        fbq('track', 'Lead', { content_name: q.get('da') || 'home' }, opts);
+      })();
     </script>
     <!-- End Meta Pixel Code -->
     <!-- Iubenda Privacy Controls and Cookie Solution -->

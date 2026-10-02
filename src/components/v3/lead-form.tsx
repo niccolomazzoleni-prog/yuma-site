@@ -9,6 +9,7 @@ import {
   sendLead,
   type LeadFormKey,
 } from "@/lib/leads"
+import { metaCookies, newEventId } from "@/lib/meta-events"
 
 const inputClass =
   "w-full rounded-[10px] border border-white/70 bg-white/70 px-4 py-3 text-[16px] text-[#1D1D1F] placeholder:text-[#6E6E73] outline-none transition-shadow duration-200 focus:border-[#7C5CFA] focus:ring-4 focus:ring-[#7C5CFA]/15 aria-[invalid=true]:border-[#B42318] aria-[invalid=true]:ring-4 aria-[invalid=true]:ring-[#B42318]/15"
@@ -53,6 +54,8 @@ export function LeadForm({
     }
 
     const qualified = isQualified(form, data.fatturato)
+    // stesso event_id per il Lead del pixel (pagina grazie) e della Conversions API
+    const eventId = newEventId()
     setStatus("sending")
     try {
       // Honeypot (website) e tempo di compilazione vengono verificati dall'Apps Script.
@@ -60,11 +63,14 @@ export function LeadForm({
         ...data,
         form,
         pagina: window.location.href,
+        event_id: eventId,
+        ...metaCookies(),
+        ua: navigator.userAgent,
         form_load_time: String(loadTime.current),
       })
       if (qualified) {
         // pagina vera di ringraziamento (con Calendly): è anche la conversione da misurare in GTM
-        window.location.assign(`${import.meta.env.BASE_URL}grazie/?da=${form}`)
+        window.location.assign(`${import.meta.env.BASE_URL}grazie/?da=${form}&eid=${encodeURIComponent(eventId)}`)
         return
       }
       setStatus("discarded")

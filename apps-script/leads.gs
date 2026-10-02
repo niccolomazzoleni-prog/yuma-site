@@ -18,7 +18,14 @@
  * Gli invii bloccati finiscono nella tab "Spam bloccati" con il motivo.
  * Al bot si risponde sempre ok, cosi' non capisce quale controllo lo ha fermato.
  *
- * DEPLOY_VERSION 2026-09-28-v2
+ * Meta Conversions API (dal 2026-10-02): per i lead qualificati invia a Meta un
+ * evento Lead lato server, con lo stesso event_id del pixel sulla pagina grazie
+ * (Meta deduplica e conta un solo lead). Si attiva solo se nelle Script
+ * Properties c'e' META_CAPI_TOKEN. META_TEST_EVENT_CODE (facoltativo) manda gli
+ * eventi nella scheda "Eventi di test" di Events Manager: va tolto dopo i test.
+ * Ogni chiamata viene annotata nella tab "Meta CAPI".
+ *
+ * DEPLOY_VERSION 2026-10-02-capi
  */
 
 const SHEET_ID = '1alFVA5jFUjBooTZ8IZ_280cWW1onCif6nL4nHF9LWBE';
@@ -31,6 +38,9 @@ const FORMS = {
 const REVENUE_BANDS = ['0-2M', '2M-10M', '10M-30M', '30M+'];
 
 const SPAM_TAB         = 'Spam bloccati';
+const CAPI_TAB         = 'Meta CAPI';
+const META_PIXEL_ID    = '1098927475833280';
+const META_GRAPH_VER   = 'v23.0';
 const MIN_FORM_TIME_MS = 3000;     // min 3 s tra caricamento pagina e invio
 const MAX_FORM_TIME_MS = 3600000;  // max 1 h
 const RATE_LIMIT_N     = 8;        // max invii per finestra
@@ -39,6 +49,7 @@ const DEDUP_HOURS      = 24;       // stessa email bloccata per 24 h
 
 const HEADERS      = ['Data', 'Nome', 'Cognome', 'Azienda', 'Ruolo', 'Email', 'Fatturato', 'Esito', 'Pagina'];
 const SPAM_HEADERS = ['Data', 'Motivo', 'Modulo', 'Email', 'Nome', 'Azienda', 'Pagina', 'Payload (troncato)'];
+const CAPI_HEADERS = ['Data', 'Modulo', 'event_id', 'Esito HTTP', 'Risposta Meta (troncata)'];
 
 const PERSONAL_DOMAINS = [
   'gmail.com', 'googlemail.com', 'yahoo.com', 'yahoo.it', 'ymail.com', 'rocketmail.com',
@@ -59,6 +70,7 @@ function setup() {
   SpreadsheetApp.openById(SHEET_ID).setSpreadsheetTimeZone('Europe/Rome');
   Object.keys(FORMS).forEach(function (k) { getTab(FORMS[k].tab, HEADERS); });
   getTab(SPAM_TAB, SPAM_HEADERS);
+  getTab(CAPI_TAB, CAPI_HEADERS);
 }
 
 // ── Entry point ──────────────────────────────────────────────
@@ -122,7 +134,65 @@ function handleLead(p) {
       email, clean(p.fatturato), esito, clean(p.pagina),
     ]);
   });
+
+  // Meta Conversions API: solo i lead qualificati, come il pixel sulla pagina grazie
+  if (esito === 'Qualificato') sendMetaLead(p, email, now);
   return ok();
+}
+
+// ── Meta Conversions API ─────────────────────────────────────
+function sendMetaLead(p, email, now) {
+  const props = PropertiesService.getScriptProperties();
+  const token = props.getProperty('META_CAPI_TOKEN');
+  if (!token) return;
+  const testCode = props.getProperty('META_TEST_EVENT_CODE');
+
+  const userData = {
+    em: [sha256(email)],
+    fn: [sha256(String(p.nome || '').trim().toLowerCase())],
+    ln: [sha256(String(p.cognome || '').trim().toLowerCase())],
+    country: [sha256('it')],
+    external_id: [sha256(email)],
+  };
+  if (p.fbp) userData.fbp = String(p.fbp);
+  if (p.fbc) userData.fbc = String(p.fbc);
+  if (p.ua) userData.client_user_agent = String(p.ua).slice(0, 500);
+
+  const event = {
+    event_name: 'Lead',
+    event_time: Math.floor(now.getTime() / 1000),
+    action_source: 'website',
+    event_source_url: String(p.pagina || ''),
+    user_data: userData,
+    custom_data: { content_name: String(p.form || '') },
+  };
+  if (p.event_id) event.event_id = String(p.event_id);
+
+  const body = { data: [event] };
+  if (testCode) body.test_event_code = testCode;
+
+  let code = 0;
+  let text = '';
+  try {
+    const res = UrlFetchApp.fetch(
+      'https://graph.facebook.com/' + META_GRAPH_VER + '/' + META_PIXEL_ID + '/events?access_token=' + encodeURIComponent(token),
+      { method: 'post', contentType: 'application/json', payload: JSON.stringify(body), muteHttpExceptions: true }
+    );
+    code = res.getResponseCode();
+    text = res.getContentText();
+  } catch (ex) {
+    text = 'errore: ' + ex;
+  }
+  try {
+    withLock(function () {
+      getTab(CAPI_TAB, CAPI_HEADERS).appendRow([now, clean(p.form), clean(p.event_id), code, clean(text.slice(0, 400))]);
+    });
+  } catch (_) {}
+}
+
+function sha256(s) {
+  const bytes = Utilities.computeDigest(Utilities.DigestAlgorithm.SHA_256, s, Utilities.Charset.UTF_8);
+  return bytes.map(function (b) { return ('0' + (b & 0xff).toString(16)).slice(-2); }).join('');
 }
 
 // ── Rate limit con LockService + PropertiesService ───────────
@@ -219,6 +289,16 @@ function clean(v) {
 
 function ok() {
   return ContentService.createTextOutput(JSON.stringify({ ok: true })).setMimeType(ContentService.MimeType.JSON);
+}
+
+// Test dall'editor: invia a Meta un Lead di prova (serve META_CAPI_TOKEN; con
+// META_TEST_EVENT_CODE compare in Events Manager > Eventi di test). Controlla
+// l'esito nella tab "Meta CAPI": 200 e "events_received":1 = funziona.
+function testMetaCapi() {
+  sendMetaLead({
+    form: 'projects', nome: 'Test', cognome: 'Yuma', pagina: 'https://niccolomazzoleni-prog.github.io/yuma-site/projects/',
+    event_id: 'test-' + Date.now(), ua: 'Apps Script test',
+  }, 'test@yuma-tx.com', new Date());
 }
 
 // Test dall'editor: simula un invio valido (compare una riga in "Projects").
