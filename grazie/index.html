@@ -28,8 +28,13 @@
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '1098927475833280');
       fbq('track', 'PageView');
-      // invio del modulo riuscito (solo chi è sopra soglia arriva qui)
-      fbq('track', 'Lead');
+      // invio del modulo riuscito (solo chi è sopra soglia arriva qui).
+      // eventID = lo stesso inviato dall'Apps Script alla Conversions API: Meta li deduplica.
+      (function () {
+        var q = new URLSearchParams(location.search);
+        var opts = q.get('eid') ? { eventID: q.get('eid') } : undefined;
+        fbq('track', 'Lead', { content_name: q.get('da') || 'home' }, opts);
+      })();
     </script>
     <!-- End Meta Pixel Code -->
     <!-- Iubenda Privacy Controls and Cookie Solution -->
@@ -49,17 +54,17 @@
     <meta name="theme-color" content="#f7f7fb" />
     <title>Grazie · YUMA</title>
     <style>body{font-family:"Geist",ui-sans-serif,system-ui,-apple-system,sans-serif;margin:0;background:#F7F7FB}</style>
-    <script type="module" crossorigin src="/yuma-site/assets/grazie-d3-y8uWI.js"></script>
+    <script type="module" crossorigin src="/yuma-site/assets/grazie-BbF_ExIv.js"></script>
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/index-DB7uE5BJ.js">
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/analytics-1niJ85P5.js">
-    <link rel="modulepreload" crossorigin href="/yuma-site/assets/utils-DOIGBiOF.js">
-    <link rel="modulepreload" crossorigin href="/yuma-site/assets/glass-BwqxUQiC.js">
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/index-SQIzfNnU.js">
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/links-QNrn9yMq.js">
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/createLucideIcon-B6hNOU3n.js">
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/menu-Br9weB7T.js">
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/x-D04jw-IR.js">
-    <link rel="modulepreload" crossorigin href="/yuma-site/assets/site-chrome-CpS362BV.js">
+    <link rel="modulepreload" crossorigin href="/yuma-site/assets/site-chrome-C5z5O4Bg.js">
+    <link rel="modulepreload" crossorigin href="/yuma-site/assets/utils-DOIGBiOF.js">
+    <link rel="modulepreload" crossorigin href="/yuma-site/assets/glass-BwqxUQiC.js">
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/check-D8S-nKN6.js">
     <link rel="modulepreload" crossorigin href="/yuma-site/assets/arrow-right-ArwoeGmB.js">
     <link rel="stylesheet" crossorigin href="/yuma-site/assets/index-C68dd39W.css">
