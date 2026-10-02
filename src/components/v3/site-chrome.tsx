@@ -35,7 +35,7 @@ export function MobileNav({
 }: {
   anchors: { label: string; href: string }[]
   current: PageKey
-  cta: { label: string; href: string }
+  cta: { label: string; href: string; external?: boolean }
   tone?: "light" | "dark"
 }) {
   const [open, setOpen] = useState(false)
@@ -167,9 +167,11 @@ export function MobileNav({
                 <a
                   href={cta.href}
                   onClick={(e) => goTo(e, cta.href)}
+                  {...(cta.external ? { target: "_blank", rel: "noopener" } : {})}
                   className="mt-auto flex min-h-[52px] items-center justify-center rounded-full bg-[#6D4CF2] px-5 text-[16px] font-medium text-white"
                 >
                   {cta.label}
+                  {cta.external ? <span className="sr-only"> (si apre in una nuova scheda)</span> : null}
                 </a>
               </div>
             </div>,
@@ -181,7 +183,7 @@ export function MobileNav({
 }
 
 // ── footer ───────────────────────────────────────────────────────────────────
-export function SiteFooter({ current, extra }: { current: PageKey; extra?: React.ReactNode }) {
+export function SiteFooter({ current, extra }: { current?: PageKey; extra?: React.ReactNode }) {
   const link = "inline-flex min-h-[40px] items-center hover:text-[#1D1D1F]"
   return (
     <footer className="border-t border-white/60 bg-white/40 backdrop-blur-xl">

@@ -6,4 +6,7 @@ export const links = {
   projects: `${base}projects/`,
   clientInterface: `${base}client-interface/`,
   homeSection: (id: string) => `${base}#${id}`,
+  grazie: `${base}grazie/`,
+  // prenotazione diretta della chiamata (si apre in una nuova scheda)
+  calendly: "https://calendly.com/e-turatti-yuma-tx/30min",
 }

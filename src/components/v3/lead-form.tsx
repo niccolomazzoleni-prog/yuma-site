@@ -62,7 +62,12 @@ export function LeadForm({
         pagina: window.location.href,
         form_load_time: String(loadTime.current),
       })
-      setStatus(qualified ? "qualified" : "discarded")
+      if (qualified) {
+        // pagina vera di ringraziamento (con Calendly): è anche la conversione da misurare in GTM
+        window.location.assign(`${import.meta.env.BASE_URL}grazie/?da=${form}`)
+        return
+      }
+      setStatus("discarded")
     } catch (err) {
       console.error(err)
       setStatus("error")

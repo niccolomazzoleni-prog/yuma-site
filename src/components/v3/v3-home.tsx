@@ -68,17 +68,20 @@ function PillNav() {
         </nav>
         <div className="flex items-center gap-2">
           <a
-            href="#contatti"
+            href={links.calendly}
+            target="_blank"
+            rel="noopener"
             className={`inline-flex items-center justify-center whitespace-nowrap rounded-full px-3.5 py-2 text-center text-[13px] font-medium sm:px-4 sm:py-2.5 sm:text-[14px] transition-transform hover:-translate-y-0.5 ${
               light ? "bg-[#6D4CF2] text-white" : "bg-white text-[#1D1D1F]"
             }`}
           >
             Prenota una call
+            <span className="sr-only"> (si apre in una nuova scheda)</span>
           </a>
           <MobileNav
             anchors={items}
             current="home"
-            cta={{ label: "Prenota una call", href: "#contatti" }}
+            cta={{ label: "Prenota una call", href: links.calendly, external: true }}
             tone={light ? "light" : "dark"}
           />
         </div>
