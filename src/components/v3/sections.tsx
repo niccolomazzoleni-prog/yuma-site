@@ -309,6 +309,22 @@ export function Team() {
 }
 
 // ── 7 · I nostri clienti e partner ───────────────────────────────────────────
+// Solo i clienti di YUMA (non le aziende dove il team ha lavorato prima).
+// Loghi in grigio per tenere il blocco sobrio; a colori al passaggio del mouse.
+// h = altezza massima in px: i loghi tondi o su due righe ne vogliono di più
+// per avere lo stesso peso visivo di quelli orizzontali.
+// wide: wordmark molto lungo, su telefono occupa tutta la riga per restare leggibile
+const clientLogos: { name: string; file: string; w: number; h: number; size: number; wide?: boolean }[] = [
+  { name: "AVM", file: "avm.webp", w: 600, h: 221, size: 46 },
+  { name: "Napolillo Industry", file: "napolillo.svg", w: 109, h: 21, size: 34 },
+  { name: "Sirai", file: "sirai.webp", w: 454, h: 233, size: 48 },
+  { name: "Mountech", file: "mountech.svg", w: 170, h: 46, size: 38 },
+  { name: "EKORE", file: "ekore.svg", w: 581, h: 111, size: 28 },
+  { name: "Polo", file: "polo.svg", w: 227, h: 61, size: 40 },
+  { name: "B2O Birrificio Agricolo", file: "b2o.webp", w: 360, h: 384, size: 60 },
+  { name: "ADHOX", file: "adhox.webp", w: 900, h: 81, size: 20, wide: true },
+]
+
 export function Clients() {
   return (
     <Section id="clienti" className="pt-0">
@@ -316,18 +332,24 @@ export function Clients() {
         <h2 className="text-[12px] font-medium uppercase tracking-[0.14em] text-[#5B3FD9]">
           I nostri clienti e partner
         </h2>
-        <div className="mt-8 grid grid-cols-2 gap-3 sm:flex sm:flex-wrap sm:items-center sm:justify-center sm:gap-5">
-          {[0, 1, 2, 3, 4].map((i) => (
-            <div
-              key={i}
-              role="img"
-              aria-label="Logo cliente (segnaposto)"
-              className="flex h-16 w-full items-center justify-center rounded-[12px] border border-dashed border-[#7C5CFA]/30 bg-white/45 text-[12px] font-medium text-[#56565B] sm:w-36"
+        <ul className="mt-8 grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-4 md:gap-x-8">
+          {clientLogos.map((l) => (
+            <li
+              key={l.file}
+              className={`flex h-20 items-center justify-center md:h-24 ${l.wide ? "col-span-2 sm:col-span-1" : ""}`}
             >
-              Logo
-            </div>
+              <img
+                src={`${import.meta.env.BASE_URL}loghi/${l.file}`}
+                alt={l.name}
+                width={l.w}
+                height={l.h}
+                loading="lazy"
+                style={{ maxHeight: l.size }}
+                className={`h-auto w-auto object-contain opacity-80 grayscale transition-[filter,opacity] duration-300 hover:opacity-100 hover:grayscale-0 ${l.wide ? "max-w-[70%] sm:max-w-[90%] md:max-w-[210px]" : "max-w-[78%] md:max-w-[170px]"}`}
+              />
+            </li>
           ))}
-        </div>
+        </ul>
       </Glass>
     </Section>
   )

@@ -21,7 +21,7 @@ import { MobileNav, SiteFooter, SkipLink } from "@/components/v3/site-chrome"
 import { WhatsAppBar } from "@/components/home/whatsapp-bar"
 import { links } from "@/lib/links"
 import { LeadForm } from "@/components/v3/lead-form"
-import { projectsContent as c } from "@/lib/landing-content"
+import { projectsContent as c, type LandingContent } from "@/lib/landing-content"
 import { YumaLogo } from "@/components/v3/logo"
 
 // Landing YUMA Projects, direzione vetro su gradiente. Riusa i blocchi scelti
@@ -394,6 +394,21 @@ function Faq() {
 }
 
 // ── 11 obiezione + modulo demo ───────────────────────────────────────────────
+// ── modulo subito sotto l'hero: chi è già convinto non deve scorrere fino in fondo
+function TopForm({ c }: { c: LandingContent }) {
+  return (
+    <Section id="richiedi-demo" className="pb-10 pt-6 md:pb-16 md:pt-10">
+      <div className="mx-auto max-w-[720px] text-center">
+        <h2 className="text-balance text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[30px]">
+          {c.cta.headline}
+        </h2>
+        <Lead className="mx-auto mt-3 max-w-[56ch] text-[16px] md:text-[17px]">{c.cta.body}</Lead>
+      </div>
+      <LeadForm form="projects" instance="top" submitLabel="Richiedi la demo" />
+    </Section>
+  )
+}
+
 function DemoForm() {
   return (
     <Section id="demo" className="pt-0">
@@ -427,6 +442,7 @@ export default function ProjectsLanding() {
 
       <main id="contenuto">
         <Hero />
+        <TopForm c={c} />
         <Credibility />
         <Problem />
         <Modules />

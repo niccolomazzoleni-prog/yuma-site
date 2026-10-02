@@ -390,6 +390,21 @@ function Faq({ c }: { c: LandingContent }) {
 }
 
 // ── 11 obiezione + modulo demo ───────────────────────────────────────────────
+// ── modulo subito sotto l'hero: chi è già convinto non deve scorrere fino in fondo
+function TopForm({ c }: { c: LandingContent }) {
+  return (
+    <Section id="richiedi-demo" className="pb-10 pt-6 md:pb-16 md:pt-10">
+      <div className="mx-auto max-w-[720px] text-center">
+        <h2 className="text-balance text-[24px] font-medium leading-[1.15] tracking-[-0.025em] text-[#1D1D1F] md:text-[30px]">
+          {c.cta.headline}
+        </h2>
+        <Lead className="mx-auto mt-3 max-w-[56ch] text-[16px] md:text-[17px]">{c.cta.body}</Lead>
+      </div>
+      <LeadForm form="client" instance="top" submitLabel="Richiedi la demo" />
+    </Section>
+  )
+}
+
 function DemoForm({ c }: { c: LandingContent }) {
   return (
     <Section id="demo" className="pt-0">
@@ -424,6 +439,7 @@ export default function LandingV3({ content }: { content: LandingContent }) {
 
       <main id="contenuto">
         <Hero c={content} />
+        <TopForm c={content} />
         <Credibility c={content} />
         <Problem c={content} />
         <Modules c={content} />

@@ -42,7 +42,7 @@ export function WhatsAppBar() {
     onScroll()
     window.addEventListener("scroll", onScroll, { passive: true })
 
-    const forms = ["#contatti", "#demo"]
+    const forms = ["#contatti", "#demo", "#richiedi-demo"]
       .map((id) => document.querySelector(id))
       .filter((el): el is Element => Boolean(el))
     const seen = new Set<Element>()

@@ -16,12 +16,21 @@ const labelClass = "text-[14px] font-medium text-[#1D1D1F]"
 
 type Status = "idle" | "sending" | "qualified" | "discarded" | "error"
 
-export function LeadForm({ form, submitLabel }: { form: LeadFormKey; submitLabel: string }) {
+export function LeadForm({
+  form,
+  submitLabel,
+  instance,
+}: {
+  form: LeadFormKey
+  submitLabel: string
+  /** distingue gli id quando lo stesso modulo è in pagina due volte (es. "top") */
+  instance?: string
+}) {
   const [status, setStatus] = useState<Status>("idle")
   const [emailError, setEmailError] = useState("")
   const loadTime = useRef(Date.now())
   const doneRef = useRef<HTMLDivElement>(null)
-  const id = (name: string) => `${form}-${name}`
+  const id = (name: string) => (instance ? `${form}-${instance}-${name}` : `${form}-${name}`)
 
   useEffect(loadRecaptcha, [])
 
