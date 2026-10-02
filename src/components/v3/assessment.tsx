@@ -8,7 +8,7 @@ import { Info } from "@/components/v3/infographic"
 // (1960), Download Options Section (4571), Accordion Multiple (29251).
 
 const CTA_LABEL = "Richiedi il tuo assessment"
-const NOTE = "Ti rispondiamo entro un giorno lavorativo."
+const NOTE = "Ti rispondiamo entro 12 ore lavorative."
 
 const deliverables = [
   "Un documento con i casi d'uso individuati",

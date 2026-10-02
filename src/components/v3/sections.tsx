@@ -398,7 +398,7 @@ export function Contact() {
         <Title className="mt-5">Parliamone</Title>
         <Lead className="mx-auto mt-6 max-w-[58ch]">
           Raccontaci come lavori oggi e cosa vorresti migliorare. Ti rispondiamo
-          entro un giorno lavorativo e fissiamo una prima call conoscitiva di
+          entro 12 ore lavorative e fissiamo una prima call conoscitiva di
           trenta minuti, senza impegno.
         </Lead>
       </div>

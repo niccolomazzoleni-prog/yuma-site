@@ -323,7 +323,7 @@ export const projectsContent: LandingContent = {
   },
   cta: {
     headline: "Vuoi provare YUMA Projects?",
-    body: "Compila il modulo qui sotto, ti ricontatteremo entro un giorno lavorativo per fissare una demo del software.",
+    body: "Compila il modulo qui sotto, ti ricontatteremo entro 12 ore lavorative per fissare una demo del software.",
   },
 }
 
@@ -530,6 +530,6 @@ export const clientInterfaceContent: LandingContent = {
   },
   cta: {
     headline: "Vuoi provare YUMA Client Interface?",
-    body: "Compila il modulo qui sotto, ti ricontatteremo entro un giorno lavorativo per fissare una demo del software.",
+    body: "Compila il modulo qui sotto, ti ricontatteremo entro 12 ore lavorative per fissare una demo del software.",
   },
 }

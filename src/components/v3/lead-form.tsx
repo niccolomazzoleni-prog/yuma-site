@@ -80,7 +80,7 @@ export function LeadForm({
         <div role="status" ref={doneRef} tabIndex={-1} className="outline-none">
         <Body className="text-[#1D1D1F]">
           {status === "qualified"
-            ? "Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro un giorno lavorativo."
+            ? "Grazie, abbiamo ricevuto la tua richiesta. Ti scriviamo entro 12 ore lavorative."
             : `Grazie per l'interesse. Oggi lavoriamo con aziende che superano i ${minRevenueLabel[form]} di fatturato, quindi non riusciamo a dare seguito alla richiesta.`}
         </Body>
         </div>
