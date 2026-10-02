@@ -191,7 +191,7 @@ export function CompareCardsBlock({ className = "mt-10" }: { className?: string 
             ))}
           </ul>
           <a
-            href="#demo"
+            href="#richiedi-demo"
             className="mt-8 inline-flex items-center gap-2 rounded-full bg-[#6D4CF2] px-5 py-3 text-[15px] font-medium text-white transition-transform duration-300 hover:-translate-y-0.5"
           >
             Richiedi una demo <ArrowRight className="h-4 w-4" />

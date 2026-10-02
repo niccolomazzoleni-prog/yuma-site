@@ -50,7 +50,7 @@ function BulletText({ item }: { item: Bullet }) {
 }
 
 function Cta({
-  href = "#demo",
+  href = "#richiedi-demo",
   children,
   variant = "violet",
 }: {
@@ -97,7 +97,7 @@ function LandingNav({ product }: { product: string }) {
         </nav>
         <div className="flex items-center gap-2">
           <a
-            href="#demo"
+            href="#richiedi-demo"
             className="inline-flex items-center justify-center whitespace-nowrap rounded-full px-3.5 py-2 text-center text-[13px] font-medium sm:px-4 sm:py-2.5 sm:text-[14px] bg-[#6D4CF2] text-white"
             aria-label={`Richiedi una demo di ${product}`}
           >
@@ -106,7 +106,7 @@ function LandingNav({ product }: { product: string }) {
           <MobileNav
             anchors={items}
             current="client-interface"
-            cta={{ label: "Richiedi una demo", href: "#demo" }}
+            cta={{ label: "Richiedi una demo", href: "#richiedi-demo" }}
           />
         </div>
       </div>

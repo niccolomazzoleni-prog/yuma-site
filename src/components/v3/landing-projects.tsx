@@ -37,7 +37,7 @@ function TodoTag() {
   )
 }
 
-function Cta({ children, href = "#demo", variant = "violet" }: { children: React.ReactNode; href?: string; variant?: "violet" | "ghost" }) {
+function Cta({ children, href = "#richiedi-demo", variant = "violet" }: { children: React.ReactNode; href?: string; variant?: "violet" | "ghost" }) {
   const styles =
     variant === "violet"
       ? "bg-[#6D4CF2] text-white"
@@ -75,10 +75,10 @@ function Nav() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <a href="#demo" className="inline-flex items-center justify-center whitespace-nowrap rounded-full px-3.5 py-2 text-center text-[13px] font-medium sm:px-4 sm:py-2.5 sm:text-[14px] bg-[#6D4CF2] text-white">
+          <a href="#richiedi-demo" className="inline-flex items-center justify-center whitespace-nowrap rounded-full px-3.5 py-2 text-center text-[13px] font-medium sm:px-4 sm:py-2.5 sm:text-[14px] bg-[#6D4CF2] text-white">
             Richiedi una demo
           </a>
-          <MobileNav anchors={items} current="projects" cta={{ label: "Richiedi una demo", href: "#demo" }} />
+          <MobileNav anchors={items} current="projects" cta={{ label: "Richiedi una demo", href: "#richiedi-demo" }} />
         </div>
       </div>
     </header>
