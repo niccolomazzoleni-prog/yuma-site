@@ -20,7 +20,7 @@ const port = 4179
 const server = await preview({ base, preview: { port, strictPort: true, open: false }, logLevel: "error" })
 const browser = await chromium.launch()
 
-const THIRD_PARTY = /iubenda\.com|googletagmanager\.com|google-analytics\.com|clarity\.ms|facebook\.(net|com)|doubleclick\.net/
+const THIRD_PARTY = /iubenda\.com|googletagmanager\.com|google-analytics\.com|clarity\.ms|facebook\.(net|com)|doubleclick\.net|posthog\.com/
 
 for (const p of pages) {
   // script e link già presenti nell'HTML di partenza: gli unici da tenere

@@ -1,9 +1,13 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
+import { initAnalytics } from "@/lib/analytics";
 import { MotionConfig } from "framer-motion";
 import LandingV3 from "@/components/v3/landing";
 import { clientInterfaceContent } from "@/lib/landing-content";
+
+// PostHog parte per primo, spento finché il banner cookie non dà il consenso
+initAnalytics();
 
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
