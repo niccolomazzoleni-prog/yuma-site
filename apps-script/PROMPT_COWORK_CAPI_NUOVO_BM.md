@@ -58,6 +58,10 @@ PASSI
    - Verifica che l'URL /exec sia identico a quello sopra.
 
 6. Test dal sito
+   - Prima controlla che il sito online sia la versione nuova: apri
+     view-source:https://yuma-ai-site.netlify.app/ e cerca "1102685935841738".
+     Se non c'è, salta questo passo e scrivilo nel report (il deploy Netlify
+     non è ancora partito).
    - Apri https://yuma-ai-site.netlify.app/projects/ (finestra normale), accetta
      i cookie, compila il modulo: Nome "Test", Cognome "CAPI", Azienda
      "Test CAPI", Ruolo "Test", email aziendale mai usata
