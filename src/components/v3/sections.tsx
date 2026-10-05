@@ -259,6 +259,14 @@ export function HowWeWork() {
 }
 
 // ── 6 · Le persone dietro YUMA ───────────────────────────────────────────────
+// Foto in bianco e nero per uniformare scatti molto diversi; a colori al passaggio del mouse.
+const team = [
+  { name: "Niccolò Mazzoleni", role: "CMO", file: "niccolo-mazzoleni.webp", size: 640 },
+  { name: "Victor Mion", role: "CTO", file: "victor-mion.webp", size: 640 },
+  { name: "Elia Turatti", role: "Founder", file: "elia-turatti.webp", size: 290 },
+  { name: "Davide Corradi", role: "Head of Sales", file: "davide-corradi.webp", size: 640 },
+]
+
 export function Team() {
   return (
     <Section id="team" className="pt-0">
@@ -279,26 +287,22 @@ export function Team() {
         </Lead>
       </div>
 
-      <ul className="mt-12 grid gap-5 sm:grid-cols-3">
-        {[0, 1, 2].map((i) => (
-          <li key={i}>
+      <ul className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {team.map((m) => (
+          <li key={m.name}>
             {/* su telefono foto piccola accanto al testo, da sm in su foto quadrata sopra */}
-            <Glass className="flex h-full items-start gap-4 p-5 text-left sm:block sm:p-6 sm:text-center md:p-7">
-              <div
-                role="img"
-                aria-label="Foto del founder (segnaposto)"
-                className="flex aspect-square w-24 shrink-0 items-center justify-center rounded-[18px] border border-dashed border-[#7C5CFA]/35 bg-white/45 text-[12px] font-medium text-[#56565B] sm:w-full"
-              >
-                Foto
-              </div>
+            <Glass className="group flex h-full items-center gap-4 p-4 text-left sm:block sm:p-5 sm:text-center">
+              <img
+                src={`${import.meta.env.BASE_URL}team/${m.file}`}
+                alt={`${m.name}, ${m.role}`}
+                width={m.size}
+                height={m.size}
+                loading="lazy"
+                className="aspect-square w-24 shrink-0 rounded-[18px] object-cover grayscale transition-[filter] duration-500 group-hover:grayscale-0 sm:w-full"
+              />
               <div>
-                <div className="text-[17px] font-medium text-[#1D1D1F] sm:mt-6">
-                  Nome Cognome
-                </div>
-                <div className="mt-1 text-[13px] text-[#56565B]">Co-founder</div>
-                <Body className="mt-3 text-[15px]">
-                  Una riga di descrizione del founder.
-                </Body>
+                <div className="text-[17px] font-medium text-[#1D1D1F] sm:mt-5">{m.name}</div>
+                <div className="mt-1 text-[14px] text-[#56565B]">{m.role}</div>
               </div>
             </Glass>
           </li>
