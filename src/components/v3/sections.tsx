@@ -261,10 +261,10 @@ export function HowWeWork() {
 // ── 6 · Le persone dietro YUMA ───────────────────────────────────────────────
 // Foto in bianco e nero per uniformare scatti molto diversi; a colori al passaggio del mouse.
 const team = [
-  { name: "Niccolò Mazzoleni", role: "CMO", file: "niccolo-mazzoleni.webp", size: 640 },
-  { name: "Victor Mion", role: "CTO", file: "victor-mion.webp", size: 640 },
   { name: "Elia Turatti", role: "Founder", file: "elia-turatti.webp", size: 290 },
+  { name: "Victor Mion", role: "CTO", file: "victor-mion.webp", size: 640 },
   { name: "Davide Corradi", role: "Head of Sales", file: "davide-corradi.webp", size: 640 },
+  { name: "Niccolò Mazzoleni", role: "CMO", file: "niccolo-mazzoleni.webp", size: 640 },
 ]
 
 export function Team() {
