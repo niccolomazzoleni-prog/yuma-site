@@ -39,7 +39,7 @@ const REVENUE_BANDS = ['0-2M', '2M-10M', '10M-30M', '30M+'];
 
 const SPAM_TAB         = 'Spam bloccati';
 const CAPI_TAB         = 'Meta CAPI';
-const META_PIXEL_ID    = '1098927475833280';
+const META_PIXEL_ID    = '1102685935841738';
 const META_GRAPH_VER   = 'v23.0';
 const MIN_FORM_TIME_MS = 3000;     // min 3 s tra caricamento pagina e invio
 const MAX_FORM_TIME_MS = 3600000;  // max 1 h

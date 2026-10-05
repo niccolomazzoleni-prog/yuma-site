@@ -1,0 +1,10 @@
+[build]
+  # build + fotografia statica delle pagine pubbliche (SEO e anteprime social).
+  # Se Chromium non parte sull'immagine Netlify, il sito esce comunque (solo SPA).
+  command = "npm run build && (npx playwright install chromium && node scripts/prerender.mjs || echo 'prerender saltato')"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "22"
+  VITE_SITE_URL = "https://yuma-tx.com"
+  VITE_ROBOTS = "index, follow"

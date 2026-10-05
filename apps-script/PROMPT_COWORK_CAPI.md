@@ -11,7 +11,7 @@ Devi attivare la Meta Conversions API per i lead del sito YUMA. Il codice è gi�
 pronto: tu fai solo i passaggi nei pannelli di Meta e Google, poi verifichi.
 
 CONTESTO
-- Pixel / dataset Meta: 1098927475833280
+- Pixel / dataset Meta: 1102685935841738
 - Il sito invia i moduli a una web app Apps Script. URL della web app (non va
   cambiato): https://script.google.com/macros/s/AKfycbzlU4LXgoniqOHsgiUlnbJ7yzFfYYbSb3uHuosOpdnacVIPyL_qLkYTNGWTJRNJ4bptjQ/exec
 - Il nuovo codice dello script è nel file:
@@ -32,7 +32,7 @@ REGOLE
 PASSI
 
 1. Token della Conversions API
-   - Apri business.facebook.com > Events Manager > dataset 1098927475833280.
+   - Apri business.facebook.com > Events Manager > dataset 1102685935841738.
    - Impostazioni > sezione "Conversions API" > "Genera token di accesso".
    - Copia il token (servirà al passo 3).
 
