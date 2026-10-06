@@ -84,6 +84,12 @@ export function HeroSilk() {
               >
                 Richiedi informazioni
               </a>
+              <a
+                href="#"
+                className="inline-flex items-center justify-center rounded-full border border-white/25 px-6 py-3 text-sm font-medium text-white/90 backdrop-blur-sm transition hover:bg-white/10"
+              >
+                Test
+              </a>
             </div>
           </div>
         </div>
