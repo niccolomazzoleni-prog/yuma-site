@@ -7,27 +7,12 @@ import { Info } from "@/components/v3/infographic"
 // dati). Riferimenti 21st: Sticky Scroll Reveal (952), Image Text (19322),
 // Alternating Rows With Stats (28168), Growth Story Timeline (28273).
 
-const PHOTO = `${import.meta.env.BASE_URL}team.webp`
-
 type Beat = {
   id: string
   kicker: string
   title: string
   body: ReactNode
-  visual: ReactNode
-}
-
-function Photo({ className = "" }: { className?: string }) {
-  return (
-    <img
-      src={PHOTO}
-      width={800}
-      height={600}
-      alt="Il team di YUMA al lavoro"
-      loading="lazy"
-      className={`h-full w-full object-cover ${className}`}
-    />
-  )
+  visual?: ReactNode
 }
 
 const beats: Beat[] = [
@@ -43,7 +28,6 @@ const beats: Beat[] = [
         utilizzare la tecnologia.
       </>
     ),
-    visual: <Photo />,
   },
   {
     id: "svolta",
@@ -121,9 +105,11 @@ export function StoryStickyScroll() {
               </h3>
               <Body className="mt-4 max-w-[52ch]">{b.body}</Body>
               {/* su mobile il visual sta sotto il suo testo */}
-              <Glass className="mt-6 aspect-[4/3] overflow-hidden lg:hidden">
-                {b.visual}
-              </Glass>
+              {b.visual && (
+                <Glass className="mt-6 aspect-[4/3] overflow-hidden lg:hidden">
+                  {b.visual}
+                </Glass>
+              )}
             </div>
           ))}
         </div>
@@ -165,13 +151,15 @@ export function StoryAlternating() {
         {beats.map((b, i) => (
           <Glass key={b.id} className="overflow-hidden">
             <div
-              className={`grid items-center gap-8 md:grid-cols-2 ${
+              className={`grid items-center gap-8 ${b.visual ? "md:grid-cols-2" : ""} ${
                 i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
               }`}
             >
-              <div className="aspect-[4/3] overflow-hidden md:aspect-auto md:h-full md:min-h-[320px]">
-                {b.visual}
-              </div>
+              {b.visual && (
+                <div className="aspect-[4/3] overflow-hidden md:aspect-auto md:h-full md:min-h-[320px]">
+                  {b.visual}
+                </div>
+              )}
               <div className="p-8 md:p-10">
                 <Eyebrow>{b.kicker}</Eyebrow>
                 <h3 className="mt-4 max-w-[20ch] text-[24px] font-medium leading-[1.1] tracking-[-0.03em] text-[#1D1D1F] md:text-[30px]">
@@ -246,9 +234,11 @@ export function StoryTimeline() {
               {b.title}
             </h3>
             <Body className="mt-3 max-w-[54ch]">{b.body}</Body>
-            <Glass className="mt-6 aspect-[16/9] overflow-hidden">
-              {b.visual}
-            </Glass>
+            {b.visual && (
+              <Glass className="mt-6 aspect-[16/9] overflow-hidden">
+                {b.visual}
+              </Glass>
+            )}
           </li>
         ))}
       </ol>
